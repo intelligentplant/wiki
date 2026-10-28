@@ -1,0 +1,5356 @@
+/*!********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./styles/style.css ***!
+  \********************************************************************/
+
+:root {
+    /* -- ststic variables -- */
+    font-family: 'Verdana';
+    /* 108.333% of the browser's 16px default is 13pt (17.33px), the size the library is
+       designed at. A percentage (rather than pt or px) keeps the user's browser font size
+       setting working, so everything sized in rem scales with it. */
+    font-size: 108.333%;
+    transition-delay: 1s;
+    /* -- font sizes --
+       All font sizes are in rem through these tokens. Use px only for borders and other
+       hairlines, and em only for spacing that should follow the element's own text size. */
+    --fontSizeXSmall: 0.6923rem; /* 12px at the default root size */
+    --fontSizeSmall: 0.875rem;
+    --fontSizeBase: 1rem;
+    --fontSizeMedium: 1.125rem;
+    --fontSizeTitle: 1.3rem;
+    --fontSizeLarge: 1.5rem;
+    --fontSizeXLarge: 1.875rem;
+    --fontSizeHeader: 2rem;
+    --borderRadius: 6px;
+    --borderWidth: 2px;
+    --charcoalGrey: #4C4C4C;
+    --dangerColour: #CC0000;
+    --darkCharcoalGrey: #333333;
+    --darkOrange: #FF6600;
+    /* kept for apps that already use it, prefer --fontSizeBase */
+    --font-size: var(--fontSizeBase);
+    --infoColour: #9C9B9D;
+    --ipLogoGreen: #7AC143;
+    --lightOrange: #FF9933;
+    --verticalPadding: 5px;
+    --horizontalPadding: 15px;
+    --warningColour: #FF9933;
+    /* -- theme variables -- */
+    --fontColour: #4C4C4C;
+    --primaryColour: #ffffff;
+    --primaryDarkColour: #ffffff;
+    --primaryLightColour: #E7E6E6;
+    --primaryMidColour: #F7F7F7;
+    --primaryMidDarkColour: #eeeeee;
+    --primaryOutlineColour: #afabab;
+    --successColour: #7AC143;
+    --titleColour: #717073;
+    /* 100vw includes the scrollbar and causes a horizontal scroll. On mobile browsers 100vh
+       is taller than the visible area (address bar), so 100dvh is used where supported. */
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
+    list-style-type: none;
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+}
+
+/**------------------------------------------------Base
+ * These replace the Tailwind preflight that used to ship via tailwindcss.css.
+ * Apps using the library were built against it, so it is kept here to avoid
+ * default margins, bullets, underlined links and native buttons reappearing.
+ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--primaryOutlineColour);
+}
+
+html {
+    line-height: 1.5;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    display: block;
+    vertical-align: middle;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+    margin: 0;
+}
+
+hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+legend, dialog {
+    padding: 0;
+}
+
+ol, ul, menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+}
+
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+button, select {
+    text-transform: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    opacity: 1;
+    color: #9ca3af;
+}
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none;
+}
+
+button, [role="button"] {
+    cursor: pointer;
+}
+
+:disabled {
+    cursor: default;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;  
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primaryDarkColour);
+    border: solid 1px var(--successColour);
+    border-radius: var(--borderRadius);
+}
+
+.scrollbar{
+    overflow-y: scroll;
+}
+
+/**------------------------------------------------Heights and Widths*/
+
+.full-width{
+    width:100%;
+}
+
+
+.half-width{
+    width:50%;
+}
+
+.quarter-width{
+    width:25%;
+}
+
+.full-height{
+   height:100%;
+}
+
+.half-height{
+    height:50%;
+}
+
+
+/**------------------------------------------------Displays Flex*/
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.grow-2{
+    flex-grow: 2;
+}
+
+.flex-column-centred-top {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.flex-column-stretch-top {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.flex-column-centred-centre {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.flex-column-centred-even {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.flex-column-left-top {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.flex-row-right {
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.flex-row-left {
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.flex-row-centre {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+.flex-row-even {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-around;
+    align-items: center;
+}
+.flex-row-sides {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-around;
+    align-items: center;
+}
+
+.flex-bottom-right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.wrap{
+    flex-wrap:wrap;
+}
+
+.align-right{
+    text-align: right;
+}
+.align-left {
+    text-align: left;
+}
+.align-center {
+    text-align: center;
+}
+
+.border {
+    border: var(--borderWidth) solid var(--primaryOutlineColour);
+}
+
+/**------------------------------------------------Text*/
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.header {
+    background: var(--primaryDarkColour);
+    color: var(--titleColour);
+    font-size: var(--fontSizeHeader);
+}
+
+.title {
+    background: var(--primaryMidDarkColour);
+
+    color: var(--fontColour);
+    font-size: var(--fontSizeTitle);
+}
+
+.subtitle {
+    background: var(--primaryLightColour);
+    color: var(--fontColour);
+    font-size: var(--fontSizeBase);
+}
+
+.item {
+    background: var(--primaryColour);
+    color: var(--fontColour);
+    font-size: var(--fontSizeBase);
+}
+/**------------------------------------------------Margins*/
+.margin-top-14 {
+    margin-top: 0.875rem;
+}
+
+.margin-bottom-10{
+    margin-bottom : 10px;
+}
+
+.margin-left-6 {
+    margin-left: 0.375rem;
+}
+.margin-left-15 {
+    margin-left: 15px;
+}
+
+.margin-left-20 {
+    margin-left: 20px;
+}
+
+.margin-left-35 {
+    margin-left: 35px;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
+}
+
+.margin-right-5 {
+    margin-right: 5px;
+}
+.margin-right-15 {
+    margin-right: 15px;
+}
+
+/**------------------------------------------------*/
+
+.disabled {
+    color: #717073;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+/* Hover colours only on devices that can hover, so they do not stick after a tap */
+@media (hover: hover) {
+    .clickable:hover {
+        color: var(--successColour);
+    }
+}
+
+
+
+
+/**------------------------------------------------Flex direction and alignment*/
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.grow-1 {
+    flex-grow: 1;
+}
+
+.items-centre {
+    align-items: center;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.items-stretch {
+    align-items: stretch;
+}
+
+.justify-centre {
+    justify-content: center;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-even {
+    justify-content: space-evenly;
+}
+
+.justify-sides {
+    justify-content: space-between;
+}
+
+.self-centre {
+    align-self: center;
+}
+
+.gap-10 {
+    gap: 0.625rem;
+}
+
+/**------------------------------------------------Position*/
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.top-48 {
+    top: 3rem;
+}
+
+.top-third {
+    top: 33.333333%;
+}
+
+.left-40 {
+    left: 2.5rem;
+}
+
+.left-third {
+    left: 33.333333%;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/**------------------------------------------------Sizes*/
+
+.height-4 {
+    height: 0.25rem;
+}
+
+.height-16 {
+    height: 1rem;
+}
+
+.height-20 {
+    height: 1.25rem;
+}
+
+.height-28 {
+    height: 1.75rem;
+}
+
+.height-96 {
+    height: 6rem;
+}
+
+.height-fifth {
+    height: 20%;
+}
+
+.width-4 {
+    width: 0.25rem;
+}
+
+.width-16 {
+    width: 1rem;
+}
+
+.width-20 {
+    width: 1.25rem;
+}
+
+.width-fifth {
+    width: 20%;
+}
+
+
+.max-height-96 {
+    max-height: 6rem;
+}
+
+.max-height-256 {
+    max-height: 16rem;
+}
+
+.max-width-256 {
+    max-width: 16rem;
+}
+
+/**------------------------------------------------Margins and padding*/
+
+.margin-2 {
+    margin: 0.125rem;
+}
+
+.margin-4 {
+    margin: 0.25rem;
+}
+
+.margin-8 {
+    margin: 0.5rem;
+}
+
+.margin-20 {
+    margin: 1.25rem;
+}
+
+.margin-top-6 {
+    margin-top: 0.375rem;
+}
+
+.margin-left-12 {
+    margin-left: 0.75rem;
+}
+
+.margin-left-14 {
+    margin-left: 0.875rem;
+}
+
+.margin-left-16 {
+    margin-left: 1rem;
+}
+
+.margin-right-14 {
+    margin-right: 0.875rem;
+}
+
+.margin-x-14 {
+    margin-left: 0.875rem;
+    margin-right: 0.875rem;
+}
+
+.padding-1 {
+    padding: 1px;
+}
+
+/**------------------------------------------------Borders*/
+
+.border-bottom {
+    border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
+}
+
+.border-right {
+    border-right: var(--borderWidth) solid var(--primaryOutlineColour);
+}
+
+.rounded {
+    border-radius: var(--borderRadius);
+}
+
+/* Matches the radius of the .small component variants */
+.rounded-small {
+    border-radius: 4px;
+}
+
+.appearance-none {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/**------------------------------------------------Font sizes and weights*/
+
+.bold {
+    font-weight: 700;
+}
+
+.font-size-small {
+    font-size: var(--fontSizeSmall);
+    line-height: 1.25rem;
+}
+
+.font-size-large {
+    font-size: var(--fontSizeLarge);
+    line-height: 2rem;
+}
+
+.font-size-xlarge {
+    font-size: var(--fontSizeXLarge);
+    line-height: 2.25rem;
+}
+
+/**------------------------------------------------Colours*/
+
+.colour-font {
+    color: var(--fontColour);
+}
+
+.colour-info {
+    color: var(--infoColour);
+}
+
+.colour-success {
+    color: var(--successColour);
+}
+
+.colour-danger {
+    color: var(--dangerColour);
+}
+
+.colour-title {
+    color: var(--titleColour);
+}
+
+.background-primary {
+    background-color: var(--primaryColour);
+}
+
+.background-primary-dark {
+    background-color: var(--primaryDarkColour);
+}
+
+.background-outline {
+    background-color: var(--primaryOutlineColour);
+}
+
+.background-title {
+    background-color: var(--titleColour);
+}
+
+/**------------------------------------------------Responsive
+ * Breakpoints: phone up to 640px, tablet up to 1024px.
+ * CSS variables cannot be used in media queries, so these values are repeated in each
+ * query. Keep them in sync with _PopUp.css and _TagSearch.css.
+ */
+
+@media (max-width: 640px) {
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .mobile-flex-column {
+        flex-direction: column;
+    }
+
+    .mobile-full-width {
+        width: 100%;
+    }
+
+    .mobile-wrap {
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 641px) {
+    .show-mobile {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hide-tablet {
+        display: none !important;
+    }
+}
+
+/*!************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./components/App/Modals/_PopUp.css ***!
+  \************************************************************************************/
+.popUpWrapper {
+  /* fixed so the pop up stays over the visible area when the page is scrolled */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.alertWrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+}
+
+.popUpBox {
+    background: var(--primaryColour);
+    color: var(--fontColour);
+    width: 50%;
+    height: 70%;
+    border: solid var(--borderWidth) var(--successColour);
+    border-radius: var(--borderRadius);
+    padding: 15px;
+    max-height:600px;
+    max-width:800px;
+}
+
+.popUpBox > * {
+    margin-bottom: 10px;
+    color: var(--fontColour);
+}
+
+.popUpClose {
+    align-self: end;
+}
+
+.popUpContent{
+    text-align:center
+}
+
+.alertBox {
+    background: var(--primaryColour);
+    color: var(--fontColour);
+    border: solid var(--borderWidth) var(--successColour);
+    border-radius: var(--borderRadius);
+    padding: 15px;
+    margin:10px;
+    opacity:0;
+    width:200px;
+    max-width: calc(100vw - 20px);
+}
+.alert-hide {
+    opacity: 0;
+    transition: all 2s linear ;
+}
+
+.alert-show {
+    animation: show 2s forwards;
+}
+
+@keyframes show {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Phone breakpoint, see the Responsive section in style.css */
+@media (max-width: 640px) {
+    .popUpBox {
+        width: calc(100% - 2rem);
+        height: auto;
+        max-height: 90vh;
+        max-height: 90dvh;
+        overflow: auto;
+    }
+}
+
+
+/*!*********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./styles/components.classes.css ***!
+  \*********************************************************************************/
+/* Components must not depend on a page-wide CSS reset: these rules give <a>, <button>,
+   <input> and <select> the same starting point whether or not the host app has one.
+   Some rules (here and on .ipButton, .ipTextInput, ...) repeat the base reset in style.css
+   on purpose, so components keep working if that reset is ever moved out or overridden.
+   :where() keeps the link rule at zero specificity so app styles can still override it. */
+:where(a.clickable, a.ipButton, a.ipIconButton, .ipIconTextButton a, .dropDownMenu a) {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* No browser focus ring on any component. A transparent outline (instead of none) still
+   shows in Windows high-contrast mode. Each focusable component gets its own keyboard focus
+   style below (a glow or a colour change) so focus stays visible without the black line. */
+.ipButton:focus, .ipButton:focus-visible,
+.ipIconButton:focus, .ipIconButton:focus-visible,
+.ipIconTextButton:focus, .ipIconTextButton:focus-visible,
+.ipIconTextButton a:focus, .ipIconTextButton a:focus-visible,
+.ipCheckBox:focus, .ipCheckBox:focus-visible,
+.ipToggle input:focus, .ipToggle input:focus-visible,
+.dropDownMenu a:focus, .dropDownMenu a:focus-visible,
+.dropDownMenu.header:focus, .dropDownMenu.header:focus-visible,
+.clickable:focus, .clickable:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+.ipButton:focus-visible,
+.ipCheckBox:focus-visible,
+.ipToggle.background:has(input:focus-visible) {
+    box-shadow: 0 0 4px 0px var(--fontColour);
+}
+/* Browsers without :has() (e.g. Firefox before 121) still get a toggle focus glow,
+   though it also shows after a mouse click */
+@supports not selector(:has(*)) {
+    .ipToggle.background:focus-within {
+        box-shadow: 0 0 4px 0px var(--fontColour);
+    }
+}
+.ipIconButton:focus-visible, .clickable:focus-visible, .dropDownMenu a:focus-visible {
+    color: var(--successColour);
+}
+
+.ipButton {
+    font: inherit;
+    color: inherit;
+    margin: 0;
+    border-style: solid;
+    border-width: var(--borderWidth);
+    border-color: var(--primaryOutlineColour);
+    cursor: pointer;
+    text-align: center;
+    min-width: 12px;
+    border-radius: var(--borderRadius);
+    font-size: var(--fontSizeSmall);
+    line-height: 1.25rem;
+    padding: 0.25rem 0.75rem;
+}
+.ipButton.small {
+    font-size: var(--fontSizeXSmall);
+    line-height: 1rem;
+    padding: 0 0.25rem ;
+    border-radius: 4px;
+}
+.ipButton.medium{   
+    font-size: var(--fontSizeSmall);
+    line-height: 1.25rem;
+    padding: 0.25rem 0.75rem;
+}
+.ipButton.big{
+    font-size: var(--fontSizeMedium);
+    line-height: 1.75rem;
+    padding: 0.25rem 0.75rem;
+}
+.ipButton.primary, .ipButton.danger{
+    color: var(--fontColour);
+    background-color: var(--primaryMidColour);
+}
+.ipButton.highlight{
+    color: var(--primaryColour);
+    background-color: var(--infoColour);
+}
+.ipButton.success{
+    color: var(--successColour);
+    background-color: var(--primaryMidColour);
+}
+.ipButton.info{
+    color: var(--primaryColour);
+    background-color: var(--titleColour);
+}
+.ipButton.warning{ background-color: var(--warningColour);
+    border-color: var(--warningColour);
+}
+
+/* Hover styles only on devices that can hover, so they do not stick after a tap */
+@media (hover: hover) {
+    .ipButton:hover{
+        box-shadow: 0 0 4px 0px var(--fontColour);
+        color: var(--fontColour);
+    }
+    .ipButton.success:hover{
+        color: var(--primaryOutlineColour);
+    }
+    .ipButton.danger:hover{
+        background-color: var(--dangerColour);
+        color: var(--primaryColour);
+    }
+    .ipButton.warning:hover{
+        color: var(--titleColour);
+    }
+    .ipIconButton:hover{
+        color: var(--successColour);
+    }
+    .ipIconTextButton:hover {
+        color: var(--fontColour);
+    }
+}
+
+.ipIconButton {
+    font-size: var(--fontSizeMedium);
+    border: none;
+    border-radius: none;
+    cursor: pointer;
+    background: transparent;
+    color: var(--fontColour);
+}
+
+.ipIconButton.active{
+    color: var(--successColour);
+}
+
+.ipIconTextButton {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 0.75rem;
+    border: none;
+    cursor: pointer;
+    gap: 0.625rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background-color: transparent;
+    color: var(--successColour);
+    font-size: var(--fontSizeMedium);
+}
+
+.ipIconTextButton > * {
+    margin: 0.125rem;
+}
+
+.ipTextInput {
+    font: inherit;
+    margin: 0;
+    background: var(--primaryMidDarkColour);
+    border-radius: var(--borderRadius);
+    border-style: solid;
+    border-width: var(--borderWidth);
+    border-color: var(--primaryOutlineColour);
+    color: var(--fontColour);
+    height: fit-content;
+    font-size: var(--fontSizeSmall);
+    line-height: 1.25rem;
+    padding: 0.25rem 0.75rem;
+}
+.ipTextInput:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+.ipTextInput:focus {
+    box-shadow: inset 0 -2px 1px var(--warningColour);
+    border-bottom-color: var(--warningColour);
+        
+}
+.ipTextInput.invalid {
+    border-color: var(--warningColour);
+}
+.ipTextInput.small {
+    font-size: var(--fontSizeXSmall);
+    line-height: 1rem;
+    padding: 0 0.25rem 1px 0.25rem;
+    border-radius: 4px;
+}
+.ipTextInput.medium {
+    font-size: var(--fontSizeSmall);
+    line-height: 1.25rem;
+    padding: 0.25rem 0.75rem;
+}
+
+.ipTextInput.big {
+    font-size: var(--fontSizeMedium);
+    line-height: 1.75rem;
+    padding: 0.25rem 0.75rem;
+}
+
+.ipSelectBox {
+    font: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: var(--primaryMidDarkColour);
+    color: var(--fontColour);
+    width: 11rem;
+    margin: 0;
+    height: 100%;
+    border-radius: var(--borderRadius);
+    border-style: solid;
+    border-width: var(--borderWidth);
+    border-color: var(--primaryOutlineColour);
+    font-size: var(--fontSizeSmall);
+    line-height: 1.25rem;
+    padding: 0.25rem 0.75rem;
+}
+
+.ipSelectBox:hover, .ipSelectBox:focus, .ipSelectBox:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+.ipSelectBox.small {
+    font-size: var(--fontSizeXSmall);
+    line-height: 1rem;
+    padding: 0 0.25rem 1px 0.25rem;
+    border-radius: 4px;
+}
+
+.ipSelectBox.medium {
+    font-size: var(--fontSizeSmall);
+    line-height: 1.25rem;
+    padding: 0.25rem 0.75rem;
+}
+
+.ipSelectBox.big {
+    font-size: var(--fontSizeMedium);
+    line-height: 1.75rem;
+    padding: 0.25rem 0.75rem;
+}
+.ipSelectBox.option {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: var(--fontColour);
+    background: var(--primaryMidDarkColour);
+    font-size: var(--fontSizeSmall);
+    line-height: 1.25rem;
+    padding: 0;
+}
+.ipSelectBox.option:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+.ipBoxIcon {
+    position: absolute;
+    pointer-events: none;
+    color: var(--fontColour);
+}
+
+.ipToggle.background {
+    position: relative;
+    height: 1.5rem;
+    width: 2.5rem;
+    padding: 0.25rem;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: var(--borderWidth);
+    border-color: var(--primaryOutlineColour);
+}
+
+/* Hidden visually but still reachable with Tab, so the toggle works from the keyboard. */
+.ipToggle input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.ipToggle.background.on {
+    background-color: var(--successColour);
+}
+.ipToggle.background.off {
+    background-color: var(--primaryLightColour);
+}
+
+
+.ipToggle.circle {
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    padding: 0.25rem;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    border-radius: 1em;
+    background: var(--primaryColour);
+    top:0.2rem;
+}
+
+.ipToggle.circle.on {
+    transform: translateX(0.9em);
+}
+
+.ipCheckBox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0 0.25rem;
+    height: 0.75rem;
+    width: 0.75rem;
+    border: var(--borderWidth) solid var(--primaryOutlineColour);
+    border-radius: 0.2rem;
+}
+.ipCheckBox:checked {
+    background: var(--successColour);
+}
+
+.dropDownMenu.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-right: 0.875rem;
+    position: relative;  
+    height:inherit;
+
+}
+
+.dropDownMenu.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 20;
+    cursor: pointer;
+    font-size: var(--fontSizeMedium);
+}
+
+.dropDownMenu.menuContainer {
+    color: var(--fontColour);
+    padding: 0.375rem;
+    background-color: var(--primaryDarkColour);
+    border-radius: var(--borderRadius);
+    border: var(--borderWidth) solid var(--primaryOutlineColour);
+    z-index: 10;
+    position: absolute;
+    right: 0px;
+    top: 2.25rem;
+    width: max-content;
+    max-width: calc(100vw - 2rem);
+}
+
+.loader.tree {
+    max-width: 2.5rem;
+    width: 100%;
+    fill: none;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    background: var(--primaryMidDarkColour);
+    width: 24rem;
+    max-width: 100%;
+    min-height: 13rem;
+    margin: 0.25rem;
+    border: var(--borderWidth) solid var(--primaryOutlineColour);
+    border-radius: var(--borderRadius);
+    color: var(--titleColour);
+    font-size: var(--fontSizeBase);
+}
+
+.card.wrapper.alert {
+    border-color: var(--dangerColour);
+}
+
+.card.header {
+    background-color: var(--primaryDarkColour);
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.card.header.text {
+    margin-left: 1rem;
+    margin: 0.5rem;
+
+}
+
+/**------------------------------------------------Touch screens*/
+@media (pointer: coarse) {
+    /* An invisible area of at least 44px around small controls so they are easy to tap,
+       without changing how they look. It is on the element that has the click handler
+       (the link inside .ipIconTextButton), so it never covers a clickable child. */
+    .ipButton, .ipIconButton, .ipIconTextButton a, .dropDownMenu.header {
+        position: relative;
+    }
+    .ipButton::after, .ipIconButton::after, .ipIconTextButton a::after,
+    .dropDownMenu.header::after, .ipToggle.background::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: max(100%, 44px);
+        height: max(100%, 44px);
+        transform: translate(-50%, -50%);
+    }
+
+    /* Pseudo-elements do not work on checkbox inputs in every browser, so the box itself is bigger */
+    .ipCheckBox {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
+    /* iOS zooms the page when an input with text smaller than 16px is focused. That limit
+       is in px, so it is the one font size in px; max() still lets a larger user setting win. */
+    .ipTextInput, .ipTextInput.small, .ipTextInput.medium,
+    .ipSelectBox, .ipSelectBox.small, .ipSelectBox.medium {
+        font-size: max(16px, var(--fontSizeSmall));
+    }
+}
+/*!**********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./ip_icons/style.css ***!
+  \**********************************************************************/
+@font-face {
+  font-family: 'icomoon';
+  src:  url(39204061014fb552f7ab.eot?n5vtme);
+  src:  url(39204061014fb552f7ab.eot?n5vtme#iefix) format('embedded-opentype'),
+    url(34b3c9360fd006ab187b.ttf?n5vtme) format('truetype'),
+    url(be08856ed04f2254a741.woff?n5vtme) format('woff'),
+    url(c9010002e65769fbe05f.svg?n5vtme#icomoon) format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ip-uncertain:before {
+  content: "\ebdc";
+}
+.icon-ip-case-sensitive:before {
+  content: "\eab4";
+}
+.icon-ip-font:before {
+  content: "\ebd3";
+}
+.icon-ip-assets-1-reverse:before {
+  content: "\eb9b";
+}
+.icon-ip-cube-1-reverse:before {
+  content: "\ebc7";
+}
+.icon-ip-assets-1:before {
+  content: "\ebc9";
+}
+.icon-ip-cube-1:before {
+  content: "\ebd1";
+}
+.icon-ip-scales:before {
+  content: "\eb99";
+}
+.icon-ip-profile-text:before {
+  content: "\e9b0";
+}
+.icon-ip-table-1:before {
+  content: "\e9d4";
+}
+.icon-ip-left-arrow:before {
+  content: "\e9d5";
+}
+.icon-ip-right-arrow:before {
+  content: "\e9d6";
+}
+.icon-ip-list-2:before {
+  content: "\e9d7";
+}
+.icon-ip-list-1:before {
+  content: "\e9d8";
+}
+.icon-ip-list:before {
+  content: "\e9d9";
+}
+.icon-ip-info-reverse:before {
+  content: "\e9da";
+}
+.icon-ip-column-settings:before {
+  content: "\e9af";
+}
+.icon-ip-research-bug:before {
+  content: "\e9b1";
+}
+.icon-ip-dessert:before {
+  content: "\e9b2";
+}
+.icon-AppStore-Hydraulic-Intelligence .path1:before {
+  content: "\e9b3";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Hydraulic-Intelligence .path2:before {
+  content: "\e9b5";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Hydraulic-Intelligence .path3:before {
+  content: "\e9b6";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Hydraulic-Intelligence .path4:before {
+  content: "\e9b8";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Hydraulic-Intelligence .path5:before {
+  content: "\e9bc";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Hydraulic-Intelligence .path6:before {
+  content: "\e9c9";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Hydraulic-Intelligence .path7:before {
+  content: "\e9ca";
+  margin-left: -1em;
+  color: rgb(156, 155, 157);
+}
+.icon-AppStore-Hydraulic-Intelligence .path8:before {
+  content: "\e9cb";
+  margin-left: -1em;
+  color: rgb(156, 155, 157);
+}
+.icon-AppStore-Hydraulic-Intelligence .path9:before {
+  content: "\e9cc";
+  margin-left: -1em;
+  color: rgb(156, 155, 157);
+}
+.icon-AppStore-Hydraulic-Intelligence .path10:before {
+  content: "\e9d1";
+  margin-left: -1em;
+  color: rgb(156, 155, 157);
+}
+.icon-AppStore-Hydraulic-Intelligence .path11:before {
+  content: "\e9d2";
+  margin-left: -1em;
+  color: rgb(156, 155, 157);
+}
+.icon-AppStore-Hydraulic-Intelligence .path12:before {
+  content: "\e9d3";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-query:before {
+  content: "\ebc6";
+}
+.icon-AppStore-Alarm-Analysis-Pro .path1:before {
+  content: "\e960";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Alarm-Analysis-Pro .path2:before {
+  content: "\e961";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Alarm-Analysis-Pro .path3:before {
+  content: "\e962";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Alarm-Analysis-Pro .path4:before {
+  content: "\e963";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Alarm-Analysis-Pro .path5:before {
+  content: "\e964";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Alarm-Analysis-Pro .path6:before {
+  content: "\ebd4";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Alarm-Analysis-Pro .path7:before {
+  content: "\ebd5";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Alarm-Analysis-Pro .path8:before {
+  content: "\ebd6";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Alarm-Analysis-Pro .path9:before {
+  content: "\ebdb";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Alarm-Analysis-Pro .path10:before {
+  content: "\ebf7";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path1:before {
+  content: "\ebf8";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path2:before {
+  content: "\ebf9";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path3:before {
+  content: "\ebfb";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path4:before {
+  content: "\ebfc";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path5:before {
+  content: "\ebfe";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path6:before {
+  content: "\ebff";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path7:before {
+  content: "\ec01";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path8:before {
+  content: "\ec02";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path9:before {
+  content: "\ec06";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path10:before {
+  content: "\ec08";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path11:before {
+  content: "\ec09";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Alarm-Analysis-Reports .path12:before {
+  content: "\ec0a";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Aperture .path1:before {
+  content: "\ec0b";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Aperture .path2:before {
+  content: "\ec0e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Aperture .path3:before {
+  content: "\ec10";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Aperture .path4:before {
+  content: "\ec12";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Aperture .path5:before {
+  content: "\ec13";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Aperture .path6:before {
+  content: "\ec17";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Aperture .path7:before {
+  content: "\ec18";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Aperture .path8:before {
+  content: "\ec1e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Aperture .path9:before {
+  content: "\ec20";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Aperture .path10:before {
+  content: "\ec21";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Aperture .path11:before {
+  content: "\ec34";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Aperture .path12:before {
+  content: "\ec35";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Aperture .path13:before {
+  content: "\ec3b";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Aperture .path14:before {
+  content: "\ec3c";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Aperture .path15:before {
+  content: "\ec3e";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Aperture .path16:before {
+  content: "\ec3f";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Aperture .path17:before {
+  content: "\ec42";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Aperture .path18:before {
+  content: "\ec43";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Aperture .path19:before {
+  content: "\ec44";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Aperture .path20:before {
+  content: "\ec4c";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Aperture .path21:before {
+  content: "\ec4d";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Aperture .path22:before {
+  content: "\ec4e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Azimuth .path1:before {
+  content: "\ec4f";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Azimuth .path2:before {
+  content: "\ec50";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Azimuth .path3:before {
+  content: "\ec52";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Azimuth .path4:before {
+  content: "\ec53";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Azimuth .path5:before {
+  content: "\ec54";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Azimuth .path6:before {
+  content: "\ec55";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Azimuth .path7:before {
+  content: "\ec56";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Azimuth .path8:before {
+  content: "\ec59";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Azimuth .path9:before {
+  content: "\ec5b";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Azimuth .path10:before {
+  content: "\ec5d";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Azimuth .path11:before {
+  content: "\ec61";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Azimuth .path12:before {
+  content: "\ec74";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Azimuth .path13:before {
+  content: "\ec8a";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Azimuth .path14:before {
+  content: "\ec8b";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Azimuth .path15:before {
+  content: "\ec8c";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Azimuth .path16:before {
+  content: "\eca5";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Azimuth .path17:before {
+  content: "\ecb1";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Azimuth .path18:before {
+  content: "\ecb2";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Azimuth .path19:before {
+  content: "\ecb8";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Azimuth .path20:before {
+  content: "\ecba";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Compressor .path1:before {
+  content: "\ecbb";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Compressor .path2:before {
+  content: "\ecbd";
+  margin-left: -1em;
+  color: rgb(156, 155, 157);
+}
+.icon-AppStore-Compressor .path3:before {
+  content: "\ecc1";
+  margin-left: -1em;
+  color: rgb(156, 155, 157);
+}
+.icon-AppStore-Compressor .path4:before {
+  content: "\ecc2";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Compressor .path5:before {
+  content: "\ecc3";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Compressor .path6:before {
+  content: "\ecc4";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Compressor .path7:before {
+  content: "\ecc5";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Compressor .path8:before {
+  content: "\ecc6";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Compressor .path9:before {
+  content: "\ecc7";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Compressor .path10:before {
+  content: "\ecc9";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Compressor .path11:before {
+  content: "\ecca";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Connect .path1:before {
+  content: "\eccb";
+  color: rgb(255, 153, 51);
+}
+.icon-AppStore-Connect .path2:before {
+  content: "\eccc";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Connect .path3:before {
+  content: "\eccd";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Connect .path4:before {
+  content: "\ecce";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Connect .path5:before {
+  content: "\eccf";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Connect .path6:before {
+  content: "\ecd0";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Controller-Consultant .path1:before {
+  content: "\ecd1";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Controller-Consultant .path2:before {
+  content: "\ecd2";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Controller-Consultant .path3:before {
+  content: "\ecd3";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Controller-Consultant .path4:before {
+  content: "\ecd4";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Controller-Consultant .path5:before {
+  content: "\ecd5";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Data-Lake-Connector .path1:before {
+  content: "\e965";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Data-Lake-Connector .path2:before {
+  content: "\e966";
+  margin-left: -1em;
+  color: rgb(175, 171, 171);
+}
+.icon-AppStore-Data-Lake-Connector .path3:before {
+  content: "\e967";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Data-Lake-Connector .path4:before {
+  content: "\e969";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Data-Lake-Connector .path5:before {
+  content: "\e96c";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Excel-Add-In .path1:before {
+  content: "\e96d";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Excel-Add-In .path2:before {
+  content: "\e96e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Excel-Add-In .path3:before {
+  content: "\e96f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Excel-Add-In .path4:before {
+  content: "\e970";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Excel-Add-In .path5:before {
+  content: "\e971";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Facit .path1:before {
+  content: "\e972";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Facit .path2:before {
+  content: "\e973";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Facit .path3:before {
+  content: "\e974";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Facit .path4:before {
+  content: "\e975";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Facit .path5:before {
+  content: "\e976";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Facit .path6:before {
+  content: "\e977";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Facit .path7:before {
+  content: "\e979";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Gestalt-PnID .path1:before {
+  content: "\e989";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Gestalt-PnID .path2:before {
+  content: "\e98a";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path3:before {
+  content: "\e98b";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path4:before {
+  content: "\e98c";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path5:before {
+  content: "\e98e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path6:before {
+  content: "\e98f";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path7:before {
+  content: "\e991";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path8:before {
+  content: "\e992";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path9:before {
+  content: "\e998";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path10:before {
+  content: "\e999";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path11:before {
+  content: "\e99a";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Gestalt-PnID .path12:before {
+  content: "\e99b";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path13:before {
+  content: "\e99c";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path14:before {
+  content: "\e99d";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path15:before {
+  content: "\e99e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-PnID .path16:before {
+  content: "\e9a0";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Gestalt-PnID .path17:before {
+  content: "\e9a7";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Gestalt-PnID .path18:before {
+  content: "\e9a8";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Gestalt-Trend .path1:before {
+  content: "\e9a9";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Gestalt-Trend .path2:before {
+  content: "\e9aa";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Gestalt-Trend .path3:before {
+  content: "\e9ac";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Gestalt-Trend .path4:before {
+  content: "\e9ad";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Gestalt-Trend .path5:before {
+  content: "\e9ae";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-IP-Hist .path1:before {
+  content: "\e9db";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-IP-Hist .path2:before {
+  content: "\e9dc";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-IP-Hist .path3:before {
+  content: "\e9dd";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-IP-Hist .path4:before {
+  content: "\e9df";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-IP-Hist .path5:before {
+  content: "\e9e0";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-OP-Mode .path1:before {
+  content: "\e9e1";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-OP-Mode .path2:before {
+  content: "\e9e2";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-OP-Mode .path3:before {
+  content: "\e9e3";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-OP-Mode .path4:before {
+  content: "\e9e4";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-OP-Mode .path5:before {
+  content: "\e9e5";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Power-Automate-Connector .path1:before {
+  content: "\e9e6";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Power-Automate-Connector .path2:before {
+  content: "\e9e7";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Power-Automate-Connector .path3:before {
+  content: "\e9e8";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Power-Automate-Connector .path4:before {
+  content: "\e9e9";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Power-Automate-Connector .path5:before {
+  content: "\e9ea";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Power-BI .path1:before {
+  content: "\e9eb";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Power-BI .path2:before {
+  content: "\e9ec";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Power-BI .path3:before {
+  content: "\e9ed";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Power-BI .path4:before {
+  content: "\e9ee";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Power-BI .path5:before {
+  content: "\e9ef";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-SEER .path1:before {
+  content: "\e9f0";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-SEER .path2:before {
+  content: "\e9f1";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-SEER .path3:before {
+  content: "\e9f2";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-SEER .path4:before {
+  content: "\e9f3";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-SEER .path5:before {
+  content: "\e9f4";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-SEER .path6:before {
+  content: "\e9f5";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-SEER .path7:before {
+  content: "\e9f6";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-SEER .path8:before {
+  content: "\e9f8";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-SOE-Explorer .path1:before {
+  content: "\e9f9";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-SOE-Explorer .path2:before {
+  content: "\e9fa";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-SOE-Explorer .path3:before {
+  content: "\ea0f";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-SOE-Explorer .path4:before {
+  content: "\ea13";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-SOE-Explorer .path5:before {
+  content: "\ea2f";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-SOE-Explorer .path6:before {
+  content: "\ea30";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Surge .path1:before {
+  content: "\ea6a";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Surge .path2:before {
+  content: "\ea6b";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Surge .path3:before {
+  content: "\ea6c";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Surge .path4:before {
+  content: "\ea6d";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Surge .path5:before {
+  content: "\ea77";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Surge .path6:before {
+  content: "\ea92";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Surge .path7:before {
+  content: "\ea93";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Surge .path8:before {
+  content: "\ea94";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Surge .path9:before {
+  content: "\ea95";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Taggle .path1:before {
+  content: "\ea96";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Taggle .path2:before {
+  content: "\eaa5";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Taggle .path3:before {
+  content: "\eaa6";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Taggle .path4:before {
+  content: "\eab5";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Taggle .path5:before {
+  content: "\ead1";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Taggle .path6:before {
+  content: "\ead2";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Taggle .path7:before {
+  content: "\ead5";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Taggle .path8:before {
+  content: "\ead6";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Taggle .path9:before {
+  content: "\ead7";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Taggle .path10:before {
+  content: "\ead9";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Taggle .path11:before {
+  content: "\eadb";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Taggle .path12:before {
+  content: "\eadc";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Taggle .path13:before {
+  content: "\eadd";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Taggle .path14:before {
+  content: "\eade";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Taggle .path15:before {
+  content: "\eae1";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-taggle-registered-trademark .path1:before {
+  content: "\eae2";
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-taggle-registered-trademark .path2:before {
+  content: "\eae3";
+  margin-left: -3.4130859375em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-taggle-registered-trademark .path3:before {
+  content: "\eae5";
+  margin-left: -3.4130859375em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-taggle-registered-trademark .path4:before {
+  content: "\eae6";
+  margin-left: -3.4130859375em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-taggle-registered-trademark .path5:before {
+  content: "\eae7";
+  margin-left: -3.4130859375em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-taggle-registered-trademark .path6:before {
+  content: "\eaea";
+  margin-left: -3.4130859375em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-taggle-registered-trademark .path7:before {
+  content: "\eaeb";
+  margin-left: -3.4130859375em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-taggle-registered-trademark .path8:before {
+  content: "\eaec";
+  margin-left: -3.4130859375em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-taggle-registered-trademark .path9:before {
+  content: "\eaed";
+  margin-left: -3.4130859375em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-taggle-registered-trademark .path10:before {
+  content: "\eaee";
+  margin-left: -3.4130859375em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-taggle-registered-trademark .path11:before {
+  content: "\eaef";
+  margin-left: -3.4130859375em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Uptime .path1:before {
+  content: "\eaf0";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Uptime .path2:before {
+  content: "\eaf1";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Uptime .path3:before {
+  content: "\eaf5";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Uptime .path4:before {
+  content: "\eaf9";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Uptime .path5:before {
+  content: "\eafa";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Uptime .path6:before {
+  content: "\eb27";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Uptime .path7:before {
+  content: "\eb29";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Uptime .path8:before {
+  content: "\eb2b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Uptime .path9:before {
+  content: "\eb2f";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Uptime .path10:before {
+  content: "\eb30";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Valve-Signature .path1:before {
+  content: "\eb31";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Valve-Signature .path2:before {
+  content: "\eb32";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Valve-Signature .path3:before {
+  content: "\eb34";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Valve-Signature .path4:before {
+  content: "\eb62";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Valve-Signature .path5:before {
+  content: "\eb73";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Valve-Signature .path6:before {
+  content: "\eb74";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Valve-Signature .path7:before {
+  content: "\eb75";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Valve-Signature .path8:before {
+  content: "\eb77";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Valve-Signature .path9:before {
+  content: "\eb78";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Valve-Signature .path10:before {
+  content: "\eb79";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Valve-Signature .path11:before {
+  content: "\eb7a";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Venti .path1:before {
+  content: "\eb7b";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Venti .path2:before {
+  content: "\eb7d";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Venti .path3:before {
+  content: "\eb7e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Venti .path4:before {
+  content: "\eb80";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Venti .path5:before {
+  content: "\eb81";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Venti .path6:before {
+  content: "\eb83";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Venti .path7:before {
+  content: "\eb84";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Venti .path8:before {
+  content: "\eb86";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Venti .path9:before {
+  content: "\eb87";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Wax-Intelligence .path1:before {
+  content: "\eb88";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Wax-Intelligence .path2:before {
+  content: "\eb89";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Wax-Intelligence .path3:before {
+  content: "\eb8a";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Wax-Intelligence .path4:before {
+  content: "\eb8b";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Wax-Intelligence .path5:before {
+  content: "\eb8c";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Wax-Intelligence .path6:before {
+  content: "\eb8d";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Wax-Intelligence .path7:before {
+  content: "\eb8f";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Wax-Intelligence .path8:before {
+  content: "\eb90";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-AppStore-Wax-Intelligence .path9:before {
+  content: "\eb92";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Wax-Intelligence .path10:before {
+  content: "\eb93";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Wax-Intelligence .path11:before {
+  content: "\eb94";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Wax-Intelligence .path12:before {
+  content: "\eb95";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Well-Intelligence .path1:before {
+  content: "\eb96";
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path2:before {
+  content: "\eb9a";
+  margin-left: -1em;
+  color: rgb(255, 102, 0);
+}
+.icon-AppStore-Well-Intelligence .path3:before {
+  content: "\eb9e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path4:before {
+  content: "\eba5";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Well-Intelligence .path5:before {
+  content: "\ebad";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-AppStore-Well-Intelligence .path6:before {
+  content: "\ebae";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path7:before {
+  content: "\ebaf";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path8:before {
+  content: "\ebb1";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path9:before {
+  content: "\ebb2";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path10:before {
+  content: "\ebb4";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path11:before {
+  content: "\ebb5";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path12:before {
+  content: "\ebb7";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path13:before {
+  content: "\ebb8";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path14:before {
+  content: "\ebba";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path15:before {
+  content: "\ebbb";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path16:before {
+  content: "\ebbd";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path17:before {
+  content: "\ebbe";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path18:before {
+  content: "\ebc0";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path19:before {
+  content: "\ebc1";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path20:before {
+  content: "\ebc3";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-AppStore-Well-Intelligence .path21:before {
+  content: "\ebc4";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-Industrial-App-Store .path1:before {
+  content: "\ebca";
+  color: rgb(255, 255, 255);
+}
+.icon-Industrial-App-Store .path2:before {
+  content: "\ebcb";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-Industrial-App-Store .path3:before {
+  content: "\ebcd";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Industrial-App-Store .path4:before {
+  content: "\ebce";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-Industrial-App-Store .path5:before {
+  content: "\ebd0";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-ascending:before {
+  content: "\e95d";
+}
+.icon-ip-descending:before {
+  content: "\e95e";
+}
+.icon-ip-sort:before {
+  content: "\e95f";
+}
+.icon-ip-send:before {
+  content: "\e943";
+}
+.icon-ip-eye-hide:before {
+  content: "\e95a";
+}
+.icon-ip-loudspeaker:before {
+  content: "\e95b";
+}
+.icon-ip-lightbulb:before {
+  content: "\e95c";
+}
+.icon-ip-air-con-circle:before {
+  content: "\e9a6";
+}
+.icon-ip-air-con:before {
+  content: "\e9ab";
+}
+.icon-ip-info:before {
+  content: "\e986";
+}
+.icon-ip-open:before {
+  content: "\ecb4";
+}
+.icon-ip-move:before {
+  content: "\ecb5";
+}
+.icon-ip-add:before {
+  content: "\ecb6";
+}
+.icon-ip-add-copy:before {
+  content: "\ecb7";
+}
+.icon-ip-recycle:before {
+  content: "\ec24";
+}
+.icon-ip-recycle-circle:before {
+  content: "\ec5e";
+}
+.icon-ip-trophy:before {
+  content: "\e920";
+}
+.icon-ip-trophy-logo:before {
+  content: "\e921";
+}
+.icon-ip-scm:before {
+  content: "\eb60";
+}
+.icon-ip-select:before {
+  content: "\eb64";
+}
+.icon-Home-1:before {
+  content: "\ebb3";
+}
+.icon-Info-Guide:before {
+  content: "\ebb9";
+}
+.icon-ip-maze:before {
+  content: "\e956";
+}
+.icon-ip-paste-properties-1:before {
+  content: "\e900";
+}
+.icon-ip-paste-all-properties-1:before {
+  content: "\e91b";
+}
+.icon-ip-Cogs-2:before {
+  content: "\e952";
+}
+.icon-ip-Cogs:before {
+  content: "\e953";
+}
+.icon-ip-Single-Cog:before {
+  content: "\e955";
+}
+.icon-ip-industrial:before {
+  content: "\e945";
+}
+.icon-ip-open-in-new-window-08:before {
+  content: "\e90b";
+}
+.icon-ip-Refresh-ip-8:before {
+  content: "\e91a";
+}
+.icon-ip-share-settings:before {
+  content: "\e959";
+}
+.icon-ip-copy-properties:before {
+  content: "\e957";
+}
+.icon-ip-copy-all-properties-1:before {
+  content: "\e958";
+}
+.icon-ip-battery-half-full:before {
+  content: "\ec37";
+}
+.icon-ip-template:before {
+  content: "\e9c5";
+}
+.icon-ip-youtube:before {
+  content: "\e9c7";
+}
+.icon-ip-W-Wiki-Icon:before {
+  content: "\e9c8";
+}
+.icon-ip-sign-out:before {
+  content: "\e9cd";
+}
+.icon-ip-eye:before {
+  content: "\e9ce";
+}
+.icon-ip-collapse:before {
+  content: "\e9cf";
+}
+.icon-ip-minus:before {
+  content: "\e9d0";
+}
+.icon-ip-pin-lock:before {
+  content: "\e9c6";
+}
+.icon-ip-trash-1:before {
+  content: "\e9c1";
+}
+.icon-ip-trash-2:before {
+  content: "\e9c2";
+}
+.icon-ip-trash-3:before {
+  content: "\e9c4";
+}
+.icon-ip-global-function:before {
+  content: "\e9c0";
+}
+.icon-ip-paper-money:before {
+  content: "\e9b9";
+}
+.icon-ip-database:before {
+  content: "\e9ba";
+}
+.icon-ip-upload-01:before {
+  content: "\e9bb";
+}
+.icon-ip-download-01:before {
+  content: "\e9bd";
+}
+.icon-ip-columns:before {
+  content: "\e9be";
+}
+.icon-ip-table:before {
+  content: "\e9bf";
+}
+.icon-ip-import-folder-01:before {
+  content: "\e9b7";
+}
+.icon-ip-one-year:before {
+  content: "\e9a5";
+}
+.icon-ip-wind-direction-north:before {
+  content: "\e9a1";
+}
+.icon-ip-wind-direction-south:before {
+  content: "\e9a2";
+}
+.icon-ip-wind-direction-east:before {
+  content: "\e9a3";
+}
+.icon-ip-wind-direction-west:before {
+  content: "\e9a4";
+}
+.icon-ip-demo-dashboards:before {
+  content: "\e997";
+}
+.icon-ip-sign-post:before {
+  content: "\e993";
+}
+.icon-ip-water-tank:before {
+  content: "\e994";
+}
+.icon-ip-tower-signal:before {
+  content: "\e995";
+}
+.icon-ip-aperture:before {
+  content: "\e996";
+}
+.icon-Write-Multiple-Values-Blk-512px:before {
+  content: "\e988";
+}
+.icon-Log-In-Blk-512px:before {
+  content: "\e98d";
+}
+.icon-Log-In:before {
+  content: "\e990";
+}
+.icon-ip-op-mode:before {
+  content: "\e987";
+}
+.icon-ip-paste-properties-11:before {
+  content: "\ecbf";
+}
+.icon-ip-paste-all-properties-11:before {
+  content: "\ecc0";
+}
+.icon-ip-paste-5:before {
+  content: "\ecc8";
+}
+.icon-ip-clock-2:before {
+  content: "\ecb9";
+}
+.icon-ip-open-link-2:before {
+  content: "\ecbc";
+}
+.icon-ip-add-link-2:before {
+  content: "\ecbe";
+}
+.icon-ip-open-in-new-window-07:before {
+  content: "\ecb3";
+}
+.icon-ip-curve-square-plus:before {
+  content: "\ecab";
+}
+.icon-ip-one-hour:before {
+  content: "\ecac";
+}
+.icon-ip-one-day:before {
+  content: "\ecad";
+}
+.icon-ip-one-week:before {
+  content: "\ecae";
+}
+.icon-ip-one-month:before {
+  content: "\ecaf";
+}
+.icon-ip-six-months:before {
+  content: "\ecb0";
+}
+.icon-ip-landmark:before {
+  content: "\eca8";
+}
+.icon-ip-planet:before {
+  content: "\eca9";
+}
+.icon-ip-funnel:before {
+  content: "\ecaa";
+}
+.icon-ip-low-vision:before {
+  content: "\eca7";
+}
+.icon-ip-charger:before {
+  content: "\eca6";
+}
+.icon-ip-trolley:before {
+  content: "\ec9f";
+}
+.icon-ip-shop-01:before {
+  content: "\eca0";
+}
+.icon-ip-shop-02:before {
+  content: "\eca1";
+}
+.icon-ip-microchip:before {
+  content: "\eca2";
+}
+.icon-ip-microscope:before {
+  content: "\eca3";
+}
+.icon-ip-brush:before {
+  content: "\eca4";
+}
+.icon-ip-keyboard-01:before {
+  content: "\ec9d";
+}
+.icon-ip-keyboard-02:before {
+  content: "\ec9e";
+}
+.icon-ip-zip-file:before {
+  content: "\ec90";
+}
+.icon-ip-audio-description:before {
+  content: "\ec91";
+}
+.icon-ip-audio-description-01:before {
+  content: "\ec92";
+}
+.icon-ip-subtitles:before {
+  content: "\ec93";
+}
+.icon-ip-text-to-speech:before {
+  content: "\ec94";
+}
+.icon-ip-audible-speech:before {
+  content: "\ec95";
+}
+.icon-ip-sign-language:before {
+  content: "\ec96";
+}
+.icon-ip-sign-in:before {
+  content: "\ec97";
+}
+.icon-ip-gift:before {
+  content: "\ec98";
+}
+.icon-ip-adjust:before {
+  content: "\ec99";
+}
+.icon-ip-certificate:before {
+  content: "\ec9a";
+}
+.icon-ip-rosette:before {
+  content: "\ec9b";
+}
+.icon-ip-fill-drip:before {
+  content: "\ec9c";
+}
+.icon-ip-stapler:before {
+  content: "\ec87";
+}
+.icon-ip-pen-nib:before {
+  content: "\ec88";
+}
+.icon-ip-data-lake:before {
+  content: "\ec89";
+}
+.icon-ip-data-02:before {
+  content: "\ec8d";
+}
+.icon-ip-data-01:before {
+  content: "\ec8e";
+}
+.icon-ip-data:before {
+  content: "\ec8f";
+}
+.icon-IP-Tree-02:before {
+  content: "\ec85";
+}
+.icon-IP-Tree-03:before {
+  content: "\ec86";
+}
+.icon-IP-Tree:before {
+  content: "\ec7d";
+}
+.icon-IP-Tree-01:before {
+  content: "\ec83";
+}
+.icon-ip-compressor-1:before {
+  content: "\ec84";
+}
+.icon-ip-heart:before {
+  content: "\ec80";
+}
+.icon-ip-heartbeat:before {
+  content: "\ec81";
+}
+.icon-ip-envelope:before {
+  content: "\ec7e";
+}
+.icon-ip-envelope-open:before {
+  content: "\ec7f";
+}
+.icon-ip-plane:before {
+  content: "\ec65";
+}
+.icon-ip-taxi:before {
+  content: "\ec66";
+}
+.icon-ip-subway:before {
+  content: "\ec67";
+}
+.icon-ip-train:before {
+  content: "\ec68";
+}
+.icon-ip-tv-1:before {
+  content: "\ec69";
+}
+.icon-ip-tv-2:before {
+  content: "\ec6a";
+}
+.icon-ip-tv-3:before {
+  content: "\ec6b";
+}
+.icon-ip-expand:before {
+  content: "\ec6c";
+}
+.icon-ip-maximise:before {
+  content: "\ec6d";
+}
+.icon-ip-man:before {
+  content: "\ec6e";
+}
+.icon-ip-woman:before {
+  content: "\ec6f";
+}
+.icon-ip-child:before {
+  content: "\ec70";
+}
+.icon-ip-thermometer-25:before {
+  content: "\ec71";
+}
+.icon-ip-thermometer-50:before {
+  content: "\ec72";
+}
+.icon-ip-cup:before {
+  content: "\ec73";
+}
+.icon-ip-umbrella-2:before {
+  content: "\ec7a";
+}
+.icon-ip-weight-kg:before {
+  content: "\ec7b";
+}
+.icon-ip-nuclear-cooling:before {
+  content: "\ec7c";
+}
+.icon-ip-back-left-2:before {
+  content: "\ea67";
+}
+.icon-ip-back-left-1:before {
+  content: "\ec62";
+}
+.icon-ip-forward-right-1:before {
+  content: "\ec63";
+}
+.icon-ip-forward-right-2:before {
+  content: "\ec64";
+}
+.icon-ip-free-ticket:before {
+  content: "\eabe";
+}
+.icon-ip-box:before {
+  content: "\eabf";
+}
+.icon-ip-box-opened:before {
+  content: "\eac3";
+}
+.icon-ip-package:before {
+  content: "\eac6";
+}
+.icon-ip-return-package:before {
+  content: "\eac7";
+}
+.icon-ip-blank-stamp:before {
+  content: "\eac8";
+}
+.icon-ip-open-stamp:before {
+  content: "\eac9";
+}
+.icon-ip-tick-1-Stamp:before {
+  content: "\eaca";
+}
+.icon-ip-tick-2-stamp:before {
+  content: "\ec60";
+}
+.icon-ip-oil-barrel:before {
+  content: "\eacd";
+}
+.icon-ip-barrel:before {
+  content: "\eace";
+}
+.icon-ip-traffic-cone:before {
+  content: "\ec5f";
+}
+.icon-ip-Refresh-ip-9:before {
+  content: "\ec5a";
+}
+.icon-ip-link-02:before {
+  content: "\ec5c";
+}
+.icon-ip-swap-03:before {
+  content: "\ec57";
+}
+.icon-ip-swap-04:before {
+  content: "\ec58";
+}
+.icon-ip-gripper:before {
+  content: "\ec75";
+}
+.icon-ip-gripper-outline:before {
+  content: "\ec76";
+}
+.icon-ip-AND:before {
+  content: "\ec77";
+}
+.icon-ip-OR:before {
+  content: "\ec78";
+}
+.icon-ip-NOT:before {
+  content: "\ec79";
+}
+.icon-ip-drop-down-02:before {
+  content: "\ec51";
+}
+.icon-ip-preferences-2:before {
+  content: "\ec40";
+}
+.icon-ip-camera-1:before {
+  content: "\ec41";
+}
+.icon-ip-lightening:before {
+  content: "\ec45";
+}
+.icon-ip-image:before {
+  content: "\ec46";
+}
+.icon-ip-server:before {
+  content: "\ec47";
+}
+.icon-ip-screwdriver-wrench:before {
+  content: "\ec48";
+}
+.icon-ip-screwdriver:before {
+  content: "\ec49";
+}
+.icon-ip-wrench-1:before {
+  content: "\ec4a";
+}
+.icon-ip-play-1:before {
+  content: "\ec4b";
+}
+.icon-ip-source-code:before {
+  content: "\ec3d";
+}
+.icon-ip-car-battery:before {
+  content: "\e906";
+}
+.icon-ip-hierarchy-p:before {
+  content: "\e907";
+}
+.icon-ip-hierarchy:before {
+  content: "\e908";
+}
+.icon-ip-binoculars:before {
+  content: "\e909";
+}
+.icon-ip-download:before {
+  content: "\e90a";
+}
+.icon-ip-angle-90:before {
+  content: "\e90c";
+}
+.icon-ip-angle:before {
+  content: "\e90d";
+}
+.icon-ip-stamper:before {
+  content: "\e90e";
+}
+.icon-ip-highlighter:before {
+  content: "\e90f";
+}
+.icon-ip-highlighter-line:before {
+  content: "\e910";
+}
+.icon-ip-scanner:before {
+  content: "\e911";
+}
+.icon-ip-dropper:before {
+  content: "\e912";
+}
+.icon-ip-send-back-Green .path1:before {
+  content: "\e913";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-send-back-Green .path2:before {
+  content: "\e914";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-send-back-Grey .path1:before {
+  content: "\e915";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-send-back-Grey .path2:before {
+  content: "\e916";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-send-to-back-Green .path1:before {
+  content: "\e917";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-send-to-back-Green .path2:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-send-to-back-Green .path3:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-send-to-back-Grey .path1:before {
+  content: "\e91e";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-send-to-back-Grey .path2:before {
+  content: "\e91f";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-send-to-back-Grey .path3:before {
+  content: "\ec28";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-bring-forward-Green .path1:before {
+  content: "\ec29";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-bring-forward-Green .path2:before {
+  content: "\ec2a";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-bring-forward-Grey .path1:before {
+  content: "\ec2b";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-bring-forward-Grey .path2:before {
+  content: "\ec2c";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-bring-to-front-Green .path1:before {
+  content: "\ec2d";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-bring-to-front-Green .path2:before {
+  content: "\ec2e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-bring-to-front-Green .path3:before {
+  content: "\ec2f";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-bring-to-front-Grey .path1:before {
+  content: "\ec30";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-bring-to-front-Grey .path2:before {
+  content: "\ec31";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-bring-to-front-Grey .path3:before {
+  content: "\ec32";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-frame:before {
+  content: "\ec33";
+}
+.icon-ip-battery-full:before {
+  content: "\ec36";
+}
+.icon-ip-battery-low:before {
+  content: "\ec38";
+}
+.icon-ip-battery-empty:before {
+  content: "\ec39";
+}
+.icon-ip-battery-failure:before {
+  content: "\ec3a";
+}
+.icon-ip-plus:before {
+  content: "\ec27";
+}
+.icon-ip-symbol-library-02:before {
+  content: "\ec25";
+}
+.icon-ip-symbols-02:before {
+  content: "\ec26";
+}
+.icon-ip-cog-01:before {
+  content: "\e901";
+}
+.icon-ip-lock:before {
+  content: "\e902";
+}
+.icon-ip-unlock:before {
+  content: "\e903";
+}
+.icon-ip-rotate-clockwise:before {
+  content: "\e904";
+}
+.icon-ip-rotate-anti-clockwise:before {
+  content: "\e905";
+}
+.icon-ip-group-01:before {
+  content: "\e91c";
+}
+.icon-ip-ungroup-01:before {
+  content: "\e91d";
+}
+.icon-ip-plug-plus:before {
+  content: "\e922";
+}
+.icon-ip-plug-minus:before {
+  content: "\e923";
+}
+.icon-ip-plug-exclamation:before {
+  content: "\e924";
+}
+.icon-ip-plug-cross:before {
+  content: "\e925";
+}
+.icon-ip-plug-checked:before {
+  content: "\e926";
+}
+.icon-ip-car:before {
+  content: "\e927";
+}
+.icon-ip-directional-arrows:before {
+  content: "\e928";
+}
+.icon-ip-arrow-top-left:before {
+  content: "\e929";
+}
+.icon-ip-arrow-top-right:before {
+  content: "\e92a";
+}
+.icon-ip-arrow-bottom-left:before {
+  content: "\e92b";
+}
+.icon-ip-arrow-bottom-right:before {
+  content: "\e92c";
+}
+.icon-ip-delivery-van:before {
+  content: "\ebd9";
+}
+.icon-ip-graduation:before {
+  content: "\ebda";
+}
+.icon-ip-open-book:before {
+  content: "\ebdd";
+}
+.icon-ip-robot:before {
+  content: "\ebde";
+}
+.icon-ip-send-email:before {
+  content: "\ebdf";
+}
+.icon-ip-spanner-a:before {
+  content: "\ebe0";
+}
+.icon-ip-spanner-b:before {
+  content: "\ebe1";
+}
+.icon-ip-tech-partner-01:before {
+  content: "\ebe2";
+}
+.icon-ip-tech-partner-02:before {
+  content: "\ebe3";
+}
+.icon-ip-tech-partner-03:before {
+  content: "\ebe4";
+}
+.icon-ip-aqua-culture:before {
+  content: "\ebe5";
+}
+.icon-ip-battery-storage:before {
+  content: "\ebe6";
+}
+.icon-ip-biofuels-biomass:before {
+  content: "\ebe7";
+}
+.icon-ip-carbon-capture-01:before {
+  content: "\ebe8";
+}
+.icon-ip-carbon-capture-02:before {
+  content: "\ebe9";
+}
+.icon-ip-geothermal:before {
+  content: "\ebea";
+}
+.icon-ip-grid-network:before {
+  content: "\ebeb";
+}
+.icon-ip-hydrogen:before {
+  content: "\ebec";
+}
+.icon-ip-marine:before {
+  content: "\ebed";
+}
+.icon-ip-network-distribution-01:before {
+  content: "\ebee";
+}
+.icon-ip-network-distribution-02:before {
+  content: "\ebef";
+}
+.icon-ip-nuclear:before {
+  content: "\ebf0";
+}
+.icon-ip-offshore-wind:before {
+  content: "\ebf1";
+}
+.icon-ip-oil-gas:before {
+  content: "\ebf2";
+}
+.icon-ip-onshore-wind:before {
+  content: "\ebf3";
+}
+.icon-ip-reuse-repurpose:before {
+  content: "\ebf4";
+}
+.icon-ip-solar:before {
+  content: "\ebf5";
+}
+.icon-ip-wave-tidal:before {
+  content: "\ebf6";
+}
+.icon-ip-sun-1:before {
+  content: "\ebd8";
+}
+.icon-ip-single-leaf-1:before {
+  content: "\edfe";
+}
+.icon-ip-single-leaf-2:before {
+  content: "\edff";
+}
+.icon-ip-fire-extinguisher:before {
+  content: "\edf2";
+}
+.icon-ip-palette:before {
+  content: "\edf3";
+}
+.icon-ip-tack:before {
+  content: "\edf4";
+}
+.icon-ip-bullseye:before {
+  content: "\edf5";
+}
+.icon-ip-moon:before {
+  content: "\edf6";
+}
+.icon-ip-raindrops:before {
+  content: "\edf7";
+}
+.icon-ip-stars:before {
+  content: "\edf8";
+}
+.icon-ip-sun:before {
+  content: "\edf9";
+}
+.icon-ip-snowflake:before {
+  content: "\edfa";
+}
+.icon-ip-double-dice:before {
+  content: "\edfb";
+}
+.icon-ip-wrench:before {
+  content: "\edfc";
+}
+.icon-ip-eraser:before {
+  content: "\edfd";
+}
+.icon-ip-compass:before {
+  content: "\edf1";
+}
+.icon-ip-building:before {
+  content: "\ede4";
+}
+.icon-ip-highway:before {
+  content: "\ede5";
+}
+.icon-ip-phone-handset:before {
+  content: "\ede6";
+}
+.icon-ip-folder-structure:before {
+  content: "\ede7";
+}
+.icon-ip-desk-bell:before {
+  content: "\ede8";
+}
+.icon-ip-barcode:before {
+  content: "\ede9";
+}
+.icon-ip-pin:before {
+  content: "\edea";
+}
+.icon-ip-megaphone:before {
+  content: "\edeb";
+}
+.icon-ip-wallet:before {
+  content: "\edec";
+}
+.icon-ip-add-to-bag:before {
+  content: "\eded";
+}
+.icon-ip-remove-from-bag:before {
+  content: "\edee";
+}
+.icon-ip-share-1:before {
+  content: "\edef";
+}
+.icon-ip-share-2:before {
+  content: "\edf0";
+}
+.icon-ip-briefcase-01:before {
+  content: "\eddf";
+}
+.icon-ip-briefcase-02:before {
+  content: "\ede2";
+}
+.icon-ip-microphone:before {
+  content: "\edcf";
+}
+.icon-ip-microphone-off .path1:before {
+  content: "\edd0";
+  color: rgb(217, 0, 0);
+}
+.icon-ip-microphone-off .path2:before {
+  content: "\edd1";
+  margin-left: -1em;
+  color: rgb(217, 0, 0);
+}
+.icon-ip-microphone-off .path3:before {
+  content: "\edd2";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ip-microphone-off .path4:before {
+  content: "\edd3";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ip-microphone-off .path5:before {
+  content: "\edd4";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ip-clapperboard:before {
+  content: "\edd5";
+}
+.icon-ip-clapperboard-play:before {
+  content: "\edd6";
+}
+.icon-ip-disc-drive:before {
+  content: "\edd7";
+}
+.icon-ip-waveform:before {
+  content: "\edd8";
+}
+.icon-ip-signal:before {
+  content: "\edd9";
+}
+.icon-ip-broadcast:before {
+  content: "\edda";
+}
+.icon-ip-dial-off:before {
+  content: "\eddb";
+}
+.icon-ip-dial-min:before {
+  content: "\eddc";
+}
+.icon-ip-dial-med-low:before {
+  content: "\eddd";
+}
+.icon-ip-dial-med1:before {
+  content: "\edde";
+}
+.icon-ip-dial-med-high:before {
+  content: "\ede0";
+}
+.icon-ip-dial-max:before {
+  content: "\ede1";
+}
+.icon-ip-x-tree:before {
+  content: "\edce";
+}
+.icon-ip-brain:before {
+  content: "\edc9";
+}
+.icon-ip-messages:before {
+  content: "\eab9";
+}
+.icon-ip-toolbox:before {
+  content: "\eabb";
+}
+.icon-ip-scissors:before {
+  content: "\eaf7";
+}
+.icon-ip-cookie-1:before {
+  content: "\edcc";
+}
+.icon-ip-address-book-1:before {
+  content: "\eb40";
+}
+.icon-ip-address-book-2:before {
+  content: "\eb41";
+}
+.icon-ip-input-text-2a:before {
+  content: "\edc7";
+}
+.icon-ip-embed:before {
+  content: "\ea4a";
+}
+.icon-ip-drawing-compass:before {
+  content: "\eb1a";
+}
+.icon-ip-globe-network:before {
+  content: "\eb61";
+}
+.icon-ip-ladybird-bug:before {
+  content: "\eb63";
+}
+.icon-ip-launch:before {
+  content: "\edc3";
+}
+.icon-ip-ticket-1:before {
+  content: "\edc4";
+}
+.icon-ip-bar-chart:before {
+  content: "\ea5f";
+}
+.icon-ip-line-chart:before {
+  content: "\eab7";
+}
+.icon-ip-scatter-plot:before {
+  content: "\eab8";
+}
+.icon-ip-fan:before {
+  content: "\eaba";
+}
+.icon-ip-braille:before {
+  content: "\eaf8";
+}
+.icon-ip-shopping-bag:before {
+  content: "\eb36";
+}
+.icon-ip-gauge-1:before {
+  content: "\eb37";
+}
+.icon-ip-gauge-2:before {
+  content: "\eb38";
+}
+.icon-ip-banned:before {
+  content: "\eb39";
+}
+.icon-ip-hashtag:before {
+  content: "\eb3a";
+}
+.icon-ip-id-badge:before {
+  content: "\eb3b";
+}
+.icon-ip-warning:before {
+  content: "\eb3c";
+}
+.icon-ip-certification:before {
+  content: "\eb3d";
+}
+.icon-ip-bookmark-1:before {
+  content: "\eb3e";
+}
+.icon-ip-bookmark-2:before {
+  content: "\eb3f";
+}
+.icon-ip-one-circle:before {
+  content: "\eb43";
+}
+.icon-ip-two-circle:before {
+  content: "\eb47";
+}
+.icon-ip-three-circle:before {
+  content: "\eb48";
+}
+.icon-ip-four-circle:before {
+  content: "\eb49";
+}
+.icon-ip-five-circle:before {
+  content: "\eb4a";
+}
+.icon-ip-six-circle:before {
+  content: "\eb4b";
+}
+.icon-ip-seven-circle:before {
+  content: "\eb4c";
+}
+.icon-ip-eight-circle:before {
+  content: "\eb4d";
+}
+.icon-ip-nine-circle:before {
+  content: "\eb4e";
+}
+.icon-ip-zero-circle:before {
+  content: "\eb4f";
+}
+.icon-ip-one-square:before {
+  content: "\eb50";
+}
+.icon-ip-two-square:before {
+  content: "\eb54";
+}
+.icon-ip-three-square:before {
+  content: "\eb55";
+}
+.icon-ip-four-square:before {
+  content: "\eb56";
+}
+.icon-ip-five-square:before {
+  content: "\eb57";
+}
+.icon-ip-six-square:before {
+  content: "\eb58";
+}
+.icon-ip-seven-square:before {
+  content: "\eb59";
+}
+.icon-ip-eight-square:before {
+  content: "\eb5a";
+}
+.icon-ip-nine-square:before {
+  content: "\eb5b";
+}
+.icon-ip-zero-square:before {
+  content: "\eb5c";
+}
+.icon-ip-data-set:before {
+  content: "\eb5d";
+}
+.icon-ip-hand-pointer:before {
+  content: "\eab3";
+}
+.icon-ip-circle-thin:before {
+  content: "\eab6";
+}
+.icon-ip-Align-Bottom:before {
+  content: "\e92d";
+}
+.icon-ip-Align-Bottom-Green .path1:before {
+  content: "\e92e";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Bottom-Green .path2:before {
+  content: "\e92f";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Bottom-Green .path3:before {
+  content: "\e930";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Bottom-Green .path4:before {
+  content: "\e931";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Bottom-Green .path5:before {
+  content: "\e932";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Bottom-Grey .path1:before {
+  content: "\e933";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Bottom-Grey .path2:before {
+  content: "\e934";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Bottom-Grey .path3:before {
+  content: "\e935";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Bottom-Grey .path4:before {
+  content: "\e936";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Bottom-Grey .path5:before {
+  content: "\e937";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Top:before {
+  content: "\e938";
+}
+.icon-ip-Align-Top-Green .path1:before {
+  content: "\e939";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Top-Green .path2:before {
+  content: "\e93a";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Top-Green .path3:before {
+  content: "\e93b";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Top-Green .path4:before {
+  content: "\e93c";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Top-Green .path5:before {
+  content: "\e93d";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Top-Grey .path1:before {
+  content: "\ea14";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Top-Grey .path2:before {
+  content: "\ea15";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Top-Grey .path3:before {
+  content: "\ea16";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Top-Grey .path4:before {
+  content: "\ea17";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Top-Grey .path5:before {
+  content: "\ea18";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Right:before {
+  content: "\ea19";
+}
+.icon-ip-Align-Right-Green .path1:before {
+  content: "\ea1a";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Right-Green .path2:before {
+  content: "\ea1b";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Right-Green .path3:before {
+  content: "\ea1c";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Right-Green .path4:before {
+  content: "\ea1d";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Right-Green .path5:before {
+  content: "\ea1e";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Right-Grey .path1:before {
+  content: "\ea1f";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Right-Grey .path2:before {
+  content: "\ea20";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Right-Grey .path3:before {
+  content: "\ea21";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Right-Grey .path4:before {
+  content: "\ea22";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Right-Grey .path5:before {
+  content: "\ea23";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Left:before {
+  content: "\ea24";
+}
+.icon-ip-Align-Left-Green .path1:before {
+  content: "\ea25";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Left-Green .path2:before {
+  content: "\ea26";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Left-Green .path3:before {
+  content: "\ea27";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Left-Green .path4:before {
+  content: "\ea28";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Left-Green .path5:before {
+  content: "\ea29";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Left-Grey .path1:before {
+  content: "\ea2a";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Left-Grey .path2:before {
+  content: "\ea2b";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Left-Grey .path3:before {
+  content: "\ea2c";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Left-Grey .path4:before {
+  content: "\ea2d";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Left-Grey .path5:before {
+  content: "\ea2e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center:before {
+  content: "\ea35";
+}
+.icon-ip-Align-Center-Green .path1:before {
+  content: "\ea36";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-Green .path2:before {
+  content: "\ea37";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-Green .path3:before {
+  content: "\ea38";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-Green .path4:before {
+  content: "\ea39";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-Green .path5:before {
+  content: "\ea3a";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-Green .path6:before {
+  content: "\ea3b";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-Green .path7:before {
+  content: "\ea3c";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-Grey .path1:before {
+  content: "\ea3d";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-Grey .path2:before {
+  content: "\ea3e";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-Grey .path3:before {
+  content: "\ea3f";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-Grey .path4:before {
+  content: "\ea40";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-Grey .path5:before {
+  content: "\ea41";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-Grey .path6:before {
+  content: "\ea42";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-Grey .path7:before {
+  content: "\ea43";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V2:before {
+  content: "\ea44";
+}
+.icon-ip-Dist-V2-Green .path1:before {
+  content: "\ea45";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V2-Green .path2:before {
+  content: "\ea46";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V2-Green .path3:before {
+  content: "\ea47";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V2-Green .path4:before {
+  content: "\ea48";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V2-Grey .path1:before {
+  content: "\ea50";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V2-Grey .path2:before {
+  content: "\ea51";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V2-Grey .path3:before {
+  content: "\ea52";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V2-Grey .path4:before {
+  content: "\ea53";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-H:before {
+  content: "\ea54";
+}
+.icon-ip-Align-Center-H-Green .path1:before {
+  content: "\ea55";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-H-Green .path2:before {
+  content: "\ea56";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-H-Green .path3:before {
+  content: "\ea57";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-H-Green .path4:before {
+  content: "\ea58";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-H-Green .path5:before {
+  content: "\ea59";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-H-Green .path6:before {
+  content: "\ea5a";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-H-Green .path7:before {
+  content: "\ea5b";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-H-Grey .path1:before {
+  content: "\ea5c";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-H-Grey .path2:before {
+  content: "\ea5d";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Align-Center-H-Grey .path3:before {
+  content: "\ea5e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-H-Grey .path4:before {
+  content: "\ea60";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-H-Grey .path5:before {
+  content: "\ea61";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-H-Grey .path6:before {
+  content: "\ea62";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Align-Center-H-Grey .path7:before {
+  content: "\ea63";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H2:before {
+  content: "\ea6e";
+}
+.icon-ip-Dist-H2-Green .path1:before {
+  content: "\ea6f";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H2-Green .path2:before {
+  content: "\ea70";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H2-Green .path3:before {
+  content: "\ea71";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H2-Green .path4:before {
+  content: "\ea72";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H2-Grey .path1:before {
+  content: "\ea73";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H2-Grey .path2:before {
+  content: "\ea74";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H2-Grey .path3:before {
+  content: "\ea75";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H2-Grey .path4:before {
+  content: "\ea76";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1:before {
+  content: "\ea78";
+}
+.icon-ip-Dist-H1-Green .path1:before {
+  content: "\ea79";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Green .path2:before {
+  content: "\ea7a";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Green .path3:before {
+  content: "\ea7b";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Green .path4:before {
+  content: "\ea7c";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H1-Green .path5:before {
+  content: "\ea7d";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Green .path6:before {
+  content: "\ea7e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Green .path7:before {
+  content: "\ea7f";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Green .path8:before {
+  content: "\ea80";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H1-Green .path9:before {
+  content: "\ea81";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H1-Green .path10:before {
+  content: "\ea82";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Green .path11:before {
+  content: "\ea83";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Green .path12:before {
+  content: "\ea84";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Grey .path1:before {
+  content: "\ea85";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H1-Grey .path2:before {
+  content: "\ea86";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H1-Grey .path3:before {
+  content: "\ea87";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H1-Grey .path4:before {
+  content: "\ea88";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Grey .path5:before {
+  content: "\ea89";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H1-Grey .path6:before {
+  content: "\ea8a";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H1-Grey .path7:before {
+  content: "\ea8b";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H1-Grey .path8:before {
+  content: "\ea8c";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Grey .path9:before {
+  content: "\ea8d";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-H1-Grey .path10:before {
+  content: "\ea8e";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H1-Grey .path11:before {
+  content: "\ea8f";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-H1-Grey .path12:before {
+  content: "\ea90";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1:before {
+  content: "\ea91";
+}
+.icon-ip-Dist-V1-Green .path1:before {
+  content: "\ea99";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V1-Green .path2:before {
+  content: "\ea9a";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V1-Green .path3:before {
+  content: "\ea9b";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V1-Green .path4:before {
+  content: "\ea9c";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Green .path5:before {
+  content: "\ea9d";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V1-Green .path6:before {
+  content: "\ea9e";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V1-Green .path7:before {
+  content: "\ea9f";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V1-Green .path8:before {
+  content: "\eaa0";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Green .path9:before {
+  content: "\eaa1";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Green .path10:before {
+  content: "\eaa2";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V1-Green .path11:before {
+  content: "\eaa3";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V1-Green .path12:before {
+  content: "\eaa4";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V1-Grey .path1:before {
+  content: "\eaa7";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Grey .path2:before {
+  content: "\eaa8";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Grey .path3:before {
+  content: "\eaa9";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Grey .path4:before {
+  content: "\eaaa";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Grey .path5:before {
+  content: "\eaab";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Grey .path6:before {
+  content: "\eaac";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Grey .path7:before {
+  content: "\eaad";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Grey .path8:before {
+  content: "\eaae";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Grey .path9:before {
+  content: "\eaaf";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Dist-V1-Grey .path10:before {
+  content: "\eab0";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V1-Grey .path11:before {
+  content: "\eab1";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Dist-V1-Grey .path12:before {
+  content: "\eab2";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-drag-window-01:before {
+  content: "\ea68";
+}
+.icon-AppStore-Gestalt-PnID-T:before {
+  content: "\ea66";
+}
+.icon-AppStore-Gestalt-Trend-T:before {
+  content: "\ec82";
+}
+.icon-ip-get-tag-data-4:before {
+  content: "\ea65";
+}
+.icon-ip-set-request-query-3:before {
+  content: "\ea64";
+}
+.icon-ip-drop-down-arrow-filled:before {
+  content: "\ea69";
+}
+.icon-ip-licence:before {
+  content: "\ea4e";
+}
+.icon-ip-licenced:before {
+  content: "\ea4f";
+}
+.icon-ip-copy-2:before {
+  content: "\ea4c";
+}
+.icon-ip-copy-1:before {
+  content: "\ea4d";
+}
+.icon-ip-drop-down-arrow:before {
+  content: "\ea4b";
+}
+.icon-ip-remove-share-3:before {
+  content: "\ea49";
+}
+.icon-ip-folder-group-c:before {
+  content: "\ea31";
+}
+.icon-ip-folder-user-c:before {
+  content: "\ea32";
+}
+.icon-ip-folder-read-access-c:before {
+  content: "\ea33";
+}
+.icon-ip-folder-write-access-c:before {
+  content: "\ea34";
+}
+.icon-ip-Social-Share:before {
+  content: "\ea12";
+}
+.icon-ip-shield-1:before {
+  content: "\ea10";
+}
+.icon-ip-shield:before {
+  content: "\ea11";
+}
+.icon-ip-write-access:before {
+  content: "\ea0d";
+}
+.icon-ip-read-access-3:before {
+  content: "\ea0e";
+}
+.icon-ip-single-dashboard-users:before {
+  content: "\ea04";
+}
+.icon-ip-single-dashboard-user:before {
+  content: "\ea05";
+}
+.icon-ip-dashboard-users-4:before {
+  content: "\ea06";
+}
+.icon-ip-dashboard-user-4:before {
+  content: "\ea07";
+}
+.icon-ip-user-1:before {
+  content: "\ea08";
+}
+.icon-ip-users-1:before {
+  content: "\ea09";
+}
+.icon-ip-single-page:before {
+  content: "\ea0a";
+}
+.icon-ip-double-page-1:before {
+  content: "\ea0b";
+}
+.icon-ip-double-page-2:before {
+  content: "\ea0c";
+}
+.icon-ip-reload-previous-query:before {
+  content: "\ea03";
+}
+.icon-ip-add-event-1:before {
+  content: "\e93e";
+}
+.icon-ip-get-tag-value-5A-2:before {
+  content: "\e93f";
+}
+.icon-ip-add-property-actionA:before {
+  content: "\e940";
+}
+.icon-ip-add-annotation-actionA:before {
+  content: "\e941";
+}
+.icon-ip-add-tag-refA:before {
+  content: "\e942";
+}
+.icon-ip-add-component-refA:before {
+  content: "\e954";
+}
+.icon-ip-add-position-actionA:before {
+  content: "\e9f7";
+}
+.icon-ip-add-write-actionA:before {
+  content: "\e9fb";
+}
+.icon-ip-c-get-tag-value-5:before {
+  content: "\e9fc";
+}
+.icon-ip-c-add-property-action:before {
+  content: "\e9fd";
+}
+.icon-ip-c-add-annotation-action:before {
+  content: "\e9fe";
+}
+.icon-ip-c-add-tag-ref:before {
+  content: "\e9ff";
+}
+.icon-ip-c-add-component-ref:before {
+  content: "\ea00";
+}
+.icon-ip-c-add-position-action:before {
+  content: "\ea01";
+}
+.icon-ip-c-add-write-action:before {
+  content: "\ea02";
+}
+.icon-ip-function-a:before {
+  content: "\e944";
+}
+.icon-ip-tag-manager:before {
+  content: "\eaf2";
+}
+.icon-ip-remove-tag-1:before {
+  content: "\eaf3";
+}
+.icon-ip-add-tag-1:before {
+  content: "\eaf4";
+}
+.icon-ip-select-tag-1:before {
+  content: "\eaf6";
+}
+.icon-ip-slider-5:before {
+  content: "\eae4";
+}
+.icon-ip-button-1:before {
+  content: "\ead8";
+}
+.icon-ip-keyboard:before {
+  content: "\eada";
+}
+.icon-ip-tool-gripper-up:before {
+  content: "\eadf";
+}
+.icon-ip-tool-gripper-down:before {
+  content: "\eae0";
+}
+.icon-AA-Acceptable-Green-C:before {
+  content: "\e946";
+  color: #00b050;
+}
+.icon-AA-Improving-Blue-C:before {
+  content: "\e947";
+  color: #2e75b6;
+}
+.icon-AA-Manageable-Yellow-C .path1:before {
+  content: "\e948";
+  color: rgb(255, 255, 0);
+}
+.icon-AA-Manageable-Yellow-C .path2:before {
+  content: "\e949";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-AA-Overdemanding-Amber-C .path1:before {
+  content: "\e94a";
+  color: rgb(255, 192, 0);
+}
+.icon-AA-Overdemanding-Amber-C .path2:before {
+  content: "\e94b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-AA-Unacceptable-Red-C:before {
+  content: "\e94c";
+  color: #f00;
+}
+.icon-black-circle:before {
+  content: "\e94d";
+}
+.icon-black-diamond:before {
+  content: "\e94e";
+}
+.icon-black-diamond-circle-cutout:before {
+  content: "\e94f";
+}
+.icon-black-square:before {
+  content: "\e950";
+}
+.icon-black-square-circle-cutout:before {
+  content: "\e951";
+}
+.icon-Cross-S:before {
+  content: "\e968";
+}
+.icon-GreaterThan-S:before {
+  content: "\e96a";
+}
+.icon-LessThan-S:before {
+  content: "\e96b";
+}
+.icon-Tick-C:before {
+  content: "\e978";
+}
+.icon-ip-Bar-Chart-Screen:before {
+  content: "\e97a";
+}
+.icon-ip-Bar-Chart-Tablet:before {
+  content: "\e97b";
+}
+.icon-ip-Data-Screen:before {
+  content: "\e97c";
+}
+.icon-ip-Empty-Screen:before {
+  content: "\e97d";
+}
+.icon-ip-Graph-Screen:before {
+  content: "\e97e";
+}
+.icon-ip-Graph-Tablet:before {
+  content: "\e97f";
+}
+.icon-ip-Organistion-Chart-Screen:before {
+  content: "\e980";
+}
+.icon-ip-Organistion-Chart-Tablet:before {
+  content: "\e981";
+}
+.icon-ip-Pie-Chart:before {
+  content: "\e982";
+}
+.icon-ip-Pie-Chart-Screen:before {
+  content: "\e983";
+}
+.icon-ip-Pie-Chart-Tablet:before {
+  content: "\e984";
+}
+.icon-Get-Current-Blk-512px:before {
+  content: "\e985";
+}
+.icon-Get-Hist-Blk-512px:before {
+  content: "\e99f";
+}
+.icon-Help-Blk-512px:before {
+  content: "\e9b4";
+}
+.icon-Refresh-Data-Blk-512px:before {
+  content: "\e9c3";
+}
+.icon-Refresh-Selection-Blk-512px:before {
+  content: "\e9de";
+}
+.icon-ip-actioned:before {
+  content: "\ea97";
+}
+.icon-ip-actioned-circle:before {
+  content: "\ea98";
+}
+.icon-ip-active:before {
+  content: "\eabc";
+}
+.icon-ip-active-circle:before {
+  content: "\eabd";
+}
+.icon-ip-active-outline:before {
+  content: "\eac0";
+}
+.icon-ip-completed:before {
+  content: "\eac1";
+}
+.icon-ip-completed-circle:before {
+  content: "\eac2";
+}
+.icon-ip-ownership:before {
+  content: "\eac4";
+}
+.icon-ip-ownership-circle:before {
+  content: "\eac5";
+}
+.icon-ip-unacknowledged:before {
+  content: "\eacb";
+}
+.icon-ip-unacknowledged-circle:before {
+  content: "\eacc";
+}
+.icon-ip-Alarm-Analysis:before {
+  content: "\eacf";
+}
+.icon-ip-Alert-Ding:before {
+  content: "\ead0";
+}
+.icon-ip-App-Store:before {
+  content: "\ead3";
+}
+.icon-ip-Arc:before {
+  content: "\ead4";
+}
+.icon-ip-asset-group:before {
+  content: "\eae8";
+}
+.icon-ip-asset-single:before {
+  content: "\eae9";
+}
+.icon-ip-Base:before {
+  content: "\eafb";
+}
+.icon-ip-Burger:before {
+  content: "\eafc";
+}
+.icon-ip-Calendar:before {
+  content: "\eafd";
+}
+.icon-ip-Clock:before {
+  content: "\eafe";
+}
+.icon-ip-Close:before {
+  content: "\eaff";
+}
+.icon-ip-Connect:before {
+  content: "\eb00";
+}
+.icon-ip-container:before {
+  content: "\eb01";
+}
+.icon-ip-control-valve:before {
+  content: "\eb02";
+}
+.icon-ip-Ding:before {
+  content: "\eb03";
+}
+.icon-ip-Empty-Base:before {
+  content: "\eb04";
+}
+.icon-ip-Excel:before {
+  content: "\eb05";
+}
+.icon-ip-field:before {
+  content: "\eb06";
+}
+.icon-ip-Flip-Horizontal-Green .path1:before {
+  content: "\eb07";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Horizontal-Green .path2:before {
+  content: "\eb08";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Horizontal-Green .path3:before {
+  content: "\eb09";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Horizontal-Green .path4:before {
+  content: "\eb0a";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Horizontal-Green .path5:before {
+  content: "\eb0b";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Horizontal-Green .path6:before {
+  content: "\eb0c";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Horizontal-Green .path7:before {
+  content: "\eb0d";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Horizontal-Grey .path1:before {
+  content: "\eb0e";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Horizontal-Grey .path2:before {
+  content: "\eb0f";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Horizontal-Grey .path3:before {
+  content: "\eb10";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Horizontal-Grey .path4:before {
+  content: "\eb11";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Horizontal-Grey .path5:before {
+  content: "\eb12";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Horizontal-Grey .path6:before {
+  content: "\eb13";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Horizontal-Grey .path7:before {
+  content: "\eb14";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Vertical-Green .path1:before {
+  content: "\eb15";
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Vertical-Green .path2:before {
+  content: "\eb16";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Vertical-Green .path3:before {
+  content: "\eb17";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Vertical-Green .path4:before {
+  content: "\eb18";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Vertical-Green .path5:before {
+  content: "\eb19";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Vertical-Green .path6:before {
+  content: "\eb1b";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Vertical-Green .path7:before {
+  content: "\eb1c";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Vertical-Grey .path1:before {
+  content: "\eb1d";
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Vertical-Grey .path2:before {
+  content: "\eb1e";
+  margin-left: -1em;
+  color: rgb(122, 193, 67);
+}
+.icon-ip-Flip-Vertical-Grey .path3:before {
+  content: "\eb1f";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Vertical-Grey .path4:before {
+  content: "\eb20";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Vertical-Grey .path5:before {
+  content: "\eb21";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Vertical-Grey .path6:before {
+  content: "\eb22";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Flip-Vertical-Grey .path7:before {
+  content: "\eb23";
+  margin-left: -1em;
+  color: rgb(113, 112, 115);
+}
+.icon-ip-Gas-Mixture:before {
+  content: "\eb24";
+}
+.icon-ip-Gestalt:before {
+  content: "\eb25";
+}
+.icon-ip-hpu:before {
+  content: "\eb26";
+}
+.icon-ip-Hydrant-Gate-Valve:before {
+  content: "\eb28";
+}
+.icon-ip-Intelligent-Plant-Tree:before {
+  content: "\eb2a";
+}
+.icon-ip-manifold:before {
+  content: "\eb2c";
+}
+.icon-ip-movement:before {
+  content: "\eb2d";
+}
+.icon-ip-One-Window:before {
+  content: "\eb2e";
+}
+.icon-ip-Place-Marker:before {
+  content: "\eb33";
+}
+.icon-ip-Play:before {
+  content: "\eb35";
+}
+.icon-ip-Polyline:before {
+  content: "\eb42";
+}
+.icon-ip-profile:before {
+  content: "\eb44";
+}
+.icon-ip-profile-1:before {
+  content: "\eb45";
+}
+.icon-ip-profile-2:before {
+  content: "\eb46";
+}
+.icon-ip-profile-3:before {
+  content: "\eb51";
+}
+.icon-ip-pump:before {
+  content: "\eb52";
+}
+.icon-ip-rectangle:before {
+  content: "\eb53";
+}
+.icon-ip-Refresh:before {
+  content: "\eb5e";
+}
+.icon-ip-Save:before {
+  content: "\eb5f";
+}
+.icon-ip-Step-Back:before {
+  content: "\eb65";
+}
+.icon-ip-Step-Forward:before {
+  content: "\eb66";
+}
+.icon-ip-Stop:before {
+  content: "\eb67";
+}
+.icon-ip-Tag-Intelligence:before {
+  content: "\eb68";
+}
+.icon-ip-Three-Windows:before {
+  content: "\eb69";
+}
+.icon-ip-Two-Windows:before {
+  content: "\eb6a";
+}
+.icon-ip-valve:before {
+  content: "\eb6b";
+}
+.icon-ip-valve-1:before {
+  content: "\eb6c";
+}
+.icon-ip-Valve-Signature:before {
+  content: "\eb6d";
+}
+.icon-ip-well:before {
+  content: "\eb6e";
+}
+.icon-ip-Zoom:before {
+  content: "\eb6f";
+}
+.icon-ip-Zoom-In:before {
+  content: "\eb70";
+}
+.icon-ip-Zoom-Out:before {
+  content: "\eb71";
+}
+.icon-Arrows-512px:before {
+  content: "\eb72";
+}
+.icon-DNA-Blk-512px:before {
+  content: "\eb76";
+}
+.icon-Drink-Blk-512px:before {
+  content: "\eb7c";
+}
+.icon-Droplet-Blk-512px:before {
+  content: "\eb7f";
+}
+.icon-Droplet-Wide-Blk-512px:before {
+  content: "\eb82";
+}
+.icon-Money-Bag-Blk-512px:before {
+  content: "\eb85";
+}
+.icon-Plant-Blk-512px:before {
+  content: "\eb8e";
+}
+.icon-Star-Blk-512px:before {
+  content: "\eb91";
+}
+.icon-ip-Add-New-Folder:before {
+  content: "\eb97";
+}
+.icon-ip-Add-Tag:before {
+  content: "\eb98";
+}
+.icon-ip-Dashboard-1:before {
+  content: "\eb9c";
+}
+.icon-ip-Folder:before {
+  content: "\eb9d";
+}
+.icon-ip-New-Dashboard-1:before {
+  content: "\eb9f";
+}
+.icon-ip-Remove--Tag:before {
+  content: "\eba0";
+}
+.icon-ip-SaveAs:before {
+  content: "\eba1";
+}
+.icon-ip-Share-Dashboard:before {
+  content: "\eba2";
+}
+.icon-ip-Share-Dashboard-1:before {
+  content: "\eba3";
+}
+.icon-ip-Share-Folder:before {
+  content: "\eba4";
+}
+.icon-ip-Single-Cog-1:before {
+  content: "\eba6";
+}
+.icon-ip-Tag:before {
+  content: "\eba7";
+}
+.icon-ip-Trend-Menu:before {
+  content: "\eba8";
+}
+.icon-ip-Trend-Menu-1:before {
+  content: "\eba9";
+}
+.icon-ip-Trend-Menu-2:before {
+  content: "\ebaa";
+}
+.icon-ip-Trend-Menu-Single:before {
+  content: "\ebab";
+}
+.icon-ip-Trend-Menu-Single-1:before {
+  content: "\ebac";
+}
+.icon-Edit-Note:before {
+  content: "\ebb0";
+}
+.icon-Home-2-512px:before {
+  content: "\ebb6";
+}
+.icon-Oil-Molecule-1-512px:before {
+  content: "\ebbc";
+}
+.icon-Oil-Molecule-2-512px:before {
+  content: "\ebbf";
+}
+.icon-Plant-512px:before {
+  content: "\ebc2";
+}
+.icon-Platform-1-512px:before {
+  content: "\ebc5";
+}
+.icon-Platform-2-512px:before {
+  content: "\ebc8";
+}
+.icon-Radio-512px:before {
+  content: "\ebcc";
+}
+.icon-Tanks-1-512px:before {
+  content: "\ebcf";
+}
+.icon-Tanks-2-512px:before {
+  content: "\ebd2";
+}
+.icon-traffic-lights-512px:before {
+  content: "\ede3";
+}
+.icon-Van-1-512px:before {
+  content: "\ebd7";
+}
+.icon-Wind-Turbine-512px:before {
+  content: "\ebfa";
+}
+.icon-Workman-1-512px:before {
+  content: "\ebfd";
+}
+.icon-Workman-2-512px:before {
+  content: "\ec00";
+}
+.icon-ip-Calendar-Refresh:before {
+  content: "\ec03";
+}
+.icon-ip-Axis-Cog-5:before {
+  content: "\ec04";
+}
+.icon-ip-Axis-Zoom-Refresh:before {
+  content: "\ec05";
+}
+.icon-ip-Axis-Zoom:before {
+  content: "\ec07";
+}
+.icon-ip-Axis-Left:before {
+  content: "\ec0c";
+}
+.icon-ip-Axis-Right:before {
+  content: "\ec0d";
+}
+.icon-ip-Axis-Add:before {
+  content: "\ec0f";
+}
+.icon-ip-Axis-Remove-4:before {
+  content: "\ec11";
+}
+.icon-ip-Downgrade-4:before {
+  content: "\ec14";
+}
+.icon-ip-Downgrade-2:before {
+  content: "\ec15";
+}
+.icon-ip-Downgrade-3:before {
+  content: "\ec16";
+}
+.icon-ip-Refresh-ip-2:before {
+  content: "\ec19";
+}
+.icon-ip-Refresh-ip-11:before {
+  content: "\ec1a";
+}
+.icon-ip-Refresh-ip-1:before {
+  content: "\ec1b";
+}
+.icon-ip-Save-Tag:before {
+  content: "\ec1c";
+}
+.icon-ip-Edit-Tag-1:before {
+  content: "\ec1d";
+}
+.icon-ip-genie-library:before {
+  content: "\ec1f";
+}
+.icon-ip-Export-Data:before {
+  content: "\ec22";
+}
+.icon-ip-Import-File:before {
+  content: "\ec23";
+}
+
+/*!*****************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./components/common/Loading/_loader.css ***!
+  \*****************************************************************************************/
+
+.loaderTree {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    height: 7vh;
+    width: 7vh;
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+}
+
+svg {
+    max-width: 2.5em;
+    fill: none;
+    stroke: white;
+    stroke-width: 4;
+}
+
+.draw {
+    stroke-dasharray: 950;
+    stroke-dashoffset: 950;
+    animation: drawing 2s linear infinite;
+}
+
+@keyframes drawing {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+/*!**********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./components/IntelligentPlant/_TagSearch.css ***!
+  \**********************************************************************************************/
+.tagsBox {
+    height: 500px;
+    width: 500px;
+    max-width: 100%;
+    background-color: var(--primaryDarkColour);
+    color: var(--successColour);
+}
+
+/* Phone breakpoint, see the Responsive section in style.css */
+@media (max-width: 640px) {
+    .tagsBox {
+        height: min(500px, 70vh);
+        height: min(500px, 70dvh);
+    }
+}
+
+.tagBox > * {
+    margin: 5px;
+    padding-left: 5px;
+}
+
+.tagDetails {
+    font-size: var(--fontSizeXSmall);
+}
+
+.tagName:hover {
+    cursor: pointer;
+}
+
+.dataSearchBox {
+    width: 170px;
+}
+
+.selected {
+    color: var(--successColour);
+    font-weight: bold
+}
+
+.tagElement {
+    border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
+    padding-bottom: 5px;
+}
+
+
+/*# sourceMappingURL=index.css.map*/

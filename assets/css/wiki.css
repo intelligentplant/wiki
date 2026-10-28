@@ -1,0 +1,570 @@
+/* Industrial App Store Wiki
+   Only UI Library tokens are used for colour — no hex values (guide §4.1).
+   The library's base reset strips list markers, link underlines, heading styles
+   and margins, so document content has to opt back in here. */
+
+/* ------------------------------------------------------------------ shell */
+
+:root {
+  --wiki-sidebar-width: 300px;
+  /* Shared by the burger and the contents panel so they slide in lockstep,
+     the way Gestalt puts the same `transition: all .5s` on #trigger and the
+     pushed panel. */
+  --wiki-nav-duration: 0.3s;
+}
+
+.wiki-body {
+  background: var(--primaryColour);
+  color: var(--fontColour);
+  min-height: 100vh;
+}
+
+.wiki-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Top toolbar: 36px, --primaryDarkColour, 2px bottom border (guide §4.7). */
+.wiki-toolbar {
+  flex: none;
+  height: 36px;
+  padding: 0 var(--horizontalPadding);
+  background: var(--primaryDarkColour);
+  border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
+}
+
+.wiki-logo {
+  height: 26px;
+  width: auto;
+}
+
+.wiki-app-name {
+  font-size: var(--fontSizeSmall);
+  color: var(--titleColour);
+}
+
+/* Contents toggle. Copied from Gestalt: the burger is a fixed element at the
+   left edge of the viewport (component.css `.menu-trigger`: position fixed,
+   top 10px, left 0) and mlpushmenu.js slides it with the panel
+   (`_setTransform('translateX(' + (menuWidth - 60) + 'px)', trigger)` when
+   opening, `translateX(0)` when closing). So it never moves vertically, it only
+   travels horizontally with the contents panel, and it ends up on the same row
+   as the "Contents" title. */
+.wiki-nav-toggle {
+  position: fixed;
+  /* 36px toolbar + 2px border + the vertical centre of the "Contents" row. */
+  top: 49px;
+  left: 0;
+  z-index: 50;
+  flex: none;
+  width: 34px;
+  height: 26px;
+  font-size: 18px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--titleColour);
+  background: transparent;
+  border: none;
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+  transform: translateX(6px);
+  transition: color 0.15s ease;
+}
+
+body:not(.wiki-nav-hidden) .wiki-nav-toggle {
+  transform: translateX(calc(var(--wiki-sidebar-width) - 44px));
+}
+
+/* The slide is only enabled once the page is ready (see `wiki-nav-ready` in
+   wiki.js) so that a stored "closed" state does not animate on page load. */
+body.wiki-nav-ready .wiki-nav-toggle {
+  transition: transform var(--wiki-nav-duration) ease, color 0.15s ease;
+}
+
+.wiki-nav-toggle:hover {
+  color: var(--successColour);
+}
+
+.wiki-theme-label {
+  color: var(--titleColour);
+}
+
+/* Layout only (guide §0.2): the library dropDownMenu supplies all colour, border
+   and radius. The library header is --fontSizeMedium; the toolbar is 36px high,
+   so the compact size from §4.3 is used instead. */
+.wiki-toolbar .dropDownMenu.header {
+  font-size: var(--fontSizeXSmall);
+  color: var(--titleColour);
+}
+
+#ipThemeList a {
+  display: block;
+  padding: 4px 10px;
+  font-size: var(--fontSizeSmall);
+  white-space: nowrap;
+}
+
+#ipThemeList > div {
+  padding: 2px 10px 4px;
+  color: var(--titleColour);
+}
+
+.wiki-main {
+  min-height: 0;
+  /* Clip the contents panel while it slides out of view. */
+  overflow: hidden;
+}
+
+/* Left icon rail removed: the contents panel is toggled from its own header. */
+
+/* Contents panel.
+   The UI Library has no tree/accordion component, so this panel copies the
+   Gestalt file tree (Gestalt.Web/Content/component.css `.mp-menu`,
+   `.menuTitle`, `ul.subFolderMenu` and PnIDSite.css `.multiaccordion`).
+   Row rules:
+   - collapsible rows (sections, "On this page"): --primaryDarkColour
+     background, --fontColour text, --successColour on hover;
+   - leaf rows (pages, headings): --primaryMidDarkColour background,
+     --fontColour text, --successColour on hover;
+   - the selected leaf row: --primaryOutlineColour background.
+   Rows are separated by a full-width 1px --primaryOutlineColour rule and
+   nested lists are indented behind a 1px guide. */
+.wiki-sidebar {
+  flex: none;
+  width: var(--wiki-sidebar-width);
+  overflow-y: auto;
+  background: var(--primaryDarkColour);
+  border-right: var(--borderWidth) solid var(--primaryOutlineColour);
+  cursor: default;
+  /* Slides out to the left in step with the burger, instead of disappearing. */
+}
+
+/* Gestalt pushes the panel off-screen (`transform: translateX(-100%)` on
+   `.mp-level`); here the panel is a flex item, so an equal negative margin
+   makes it slide out and lets the content re-centre as it goes. */
+body.wiki-nav-hidden .wiki-sidebar {
+  margin-left: calc(-1 * (var(--wiki-sidebar-width) + var(--borderWidth)));
+  visibility: hidden;
+}
+
+body.wiki-nav-ready .wiki-sidebar {
+  transition: margin-left var(--wiki-nav-duration) ease;
+}
+
+body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
+  transition: margin-left var(--wiki-nav-duration) ease,
+              visibility 0s linear var(--wiki-nav-duration);
+}
+
+/* Gestalt .menuTitle + .mp-menu h2: title in --titleColour, light weight,
+   2px bottom border. Sticky so it always sits beside the fixed burger. */
+.wiki-nav-title {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 8px 10px 8px var(--horizontalPadding);
+  border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
+  background: var(--primaryDarkColour);
+  color: var(--titleColour);
+  font-weight: 300;
+  font-size: var(--fontSizeTitle);
+}
+
+.wiki-nav,
+.wiki-nav-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Gestalt .multiaccordion > li / .mp-menu ul li.folder */
+.wiki-nav-section > details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  min-height: 40px;
+  padding: 6px 10px 6px 5px;
+  border-bottom: 1px solid var(--primaryOutlineColour);
+  background: var(--primaryDarkColour);
+  color: var(--fontColour);
+  font-size: var(--fontSizeSmall);
+  cursor: pointer;
+  list-style: none;
+}
+
+.wiki-nav-section > details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* The expander has no icon: an open section is shown by its bold title and the
+   list revealed underneath it. */
+.wiki-nav-section > details > summary:hover {
+  color: var(--successColour);
+}
+
+/* An expanded section must not look like the selected page. */
+.wiki-nav-section.active > details > summary {
+  font-weight: bold;
+}
+
+/* Gestalt ul.subFolderMenu: indent the children behind a 1px rule. */
+.wiki-nav-items {
+  margin-left: 8px;
+  border-left: 1px solid var(--titleColour);
+}
+
+/* Gestalt .mp-menu ul li.file: --primaryMidDarkColour row, 1px separator,
+   0.93em label, --successColour on hover. */
+.wiki-nav-items li {
+  border-bottom: 1px solid var(--primaryOutlineColour);
+}
+
+.wiki-nav-items a,
+.wiki-nav-items a:visited {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 4px 10px 4px 5px;
+  background: var(--primaryMidDarkColour);
+  color: var(--fontColour);
+  font-size: var(--fontSizeSmall);
+  text-decoration: none;
+}
+
+.wiki-nav-items a:hover {
+  color: var(--successColour);
+}
+
+/* Selected leaf row: --primaryOutlineColour fill, bold, text stays --fontColour. */
+.wiki-nav-items a.wiki-nav-current,
+.wiki-nav-items a.wiki-nav-current:visited {
+  background: var(--primaryOutlineColour);
+  font-weight: bold;
+}
+
+/* The selected row is already highlighted, so hovering it must not turn it
+   green — it keeps its --primaryOutlineColour fill and --fontColour text. */
+.wiki-nav-items a.wiki-nav-current:hover {
+  color: var(--fontColour);
+}
+
+/* Content column */
+.wiki-content {
+  overflow-y: auto;
+  background: var(--primaryColour);
+  padding: 20px 32px 64px;
+  min-width: 0;
+}
+
+.wiki-article {
+  max-width: 1080px;
+  /* Centred in the available width, so closing the contents panel keeps the
+     reading column in the middle of the page instead of snapping to the left. */
+  margin-inline: auto;
+  /* Gestalt card: single rounded outline around the whole article
+     (PnIDSite.css `.component-table-container` / `.card`). */
+  border: 1px solid var(--primaryOutlineColour);
+  border-radius: var(--borderRadius);
+  background: var(--primaryColour);
+  overflow: hidden;
+  padding: 0 0 16px;
+}
+
+.wiki-article > *:last-child {
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------- document content */
+
+/* Heading hierarchy follows guide §3.3 and uses the library text classes as they
+   are defined, without restyling them (guide §0.2):
+     h1 = .header --primaryDarkColour / --titleColour / --fontSizeHeader
+     h2, h3 = .title --primaryMidDarkColour / --fontColour / --fontSizeTitle
+   The converter emits `## Heading {: .title}` / `### Heading {: .title}` so
+   kramdown puts those classes on the heading elements. Only layout is added
+   here: the library classes carry no padding, margin, weight or radius. */
+
+.wiki-article h1.header {
+  padding: 8px var(--horizontalPadding);
+  margin-bottom: 16px;
+}
+
+.wiki-article h2.title {
+  font-weight: bold;
+  border-radius: var(--borderRadius);
+  padding: 4px var(--horizontalPadding);
+  margin: 24px 0 8px;
+}
+
+.wiki-article h3.title {
+  font-weight: bold;
+  border-radius: var(--borderRadius);
+  padding: 3px var(--horizontalPadding);
+  margin: 20px 0 6px;
+}
+
+/* Deeper levels have no library class; they stay plain bold text. */
+.wiki-article h4,
+.wiki-article h5,
+.wiki-article h6 {
+  color: var(--fontColour);
+  font-size: var(--fontSizeBase);
+  font-weight: bold;
+  margin: 16px 0 4px;
+}
+
+.wiki-article p {
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+
+.wiki-article li {
+  margin: 0 0 4px;
+}
+
+.wiki-article ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin: 0 0 10px;
+}
+
+.wiki-article ol {
+  list-style: decimal;
+  padding-left: 24px;
+  margin: 0 0 10px;
+}
+
+.wiki-article ul ul,
+.wiki-article ol ol,
+.wiki-article ul ol,
+.wiki-article ol ul {
+  margin: 4px 0 0;
+}
+
+/* Links follow the library affordance (guide §3.3 `clickable`): they inherit the
+   text colour and turn --successColour on hover. The underline stays so links
+   are still recognisable inside long documentation prose. */
+.wiki-article a,
+.wiki-article a:visited {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.wiki-article a:hover {
+  color: var(--successColour);
+}
+
+/* Dividers use the library `.title` band (the converter emits
+   `<div class="title wiki-divider">`), so only the size and spacing are added
+   here — the band colour comes from the class (guide §0.2). */
+.wiki-article .wiki-divider {
+  height: 6px;
+  border-radius: var(--borderRadius);
+  margin: 20px var(--horizontalPadding);
+}
+
+.wiki-article hr {
+  border-top: var(--borderWidth) solid var(--primaryOutlineColour);
+  margin: 20px 0;
+}
+
+.wiki-article blockquote {
+  border-left: var(--borderWidth) solid var(--successColour);
+  background: var(--primaryLightColour);
+  padding: 8px 12px;
+  margin: 0 0 12px;
+}
+
+.wiki-article img {
+  max-width: 100%;
+  height: auto;
+  border: var(--borderWidth) solid var(--primaryOutlineColour);
+  border-radius: var(--borderRadius);
+  margin: 8px 0;
+}
+
+.wiki-article code,
+.wiki-article pre {
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 0.8rem;
+  background: var(--primaryMidDarkColour);
+  color: var(--fontColour);
+  border-radius: var(--borderRadius);
+}
+
+.wiki-article code {
+  padding: 1px 4px;
+}
+
+.wiki-article pre {
+  padding: 10px 12px;
+  overflow-x: auto;
+  margin: 0 0 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.wiki-article pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.wiki-centre {
+  text-align: center;
+  margin: 12px 0;
+}
+
+/* Footnote markers are informational, not a selected/positive state, so they
+   use --infoColour (muted) rather than --successColour (guide §4.1). */
+.wiki-footnote {
+  color: var(--infoColour);
+  cursor: help;
+  font-weight: bold;
+}
+
+/* Tables produced by the converter.
+   The UI Library does not define a data table, so this copies the Gestalt table
+   UI (PnIDSite.css `.component-table-container` + `.bound_tagsTable`): one
+   1px --primaryOutlineColour border with 6px radius around the whole table,
+   a header row on --primaryDarkColour in bold, no vertical cell rules, 1px row
+   separators, small text, and --primaryOutlineColour on row hover. */
+.wiki-table {
+  border: 1px solid var(--primaryOutlineColour);
+  border-radius: var(--borderRadius);
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 0 0 16px;
+  background: var(--primaryColour);
+  color: var(--fontColour);
+  font-size: var(--fontSizeSmall);
+  text-align: left;
+  overflow: hidden;
+}
+
+.wiki-table th,
+.wiki-table td {
+  border: none;
+  border-bottom: 1px solid var(--primaryOutlineColour);
+  padding: 5px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.wiki-table tr:last-child th,
+.wiki-table tr:last-child td {
+  border-bottom: none;
+}
+
+.wiki-table th {
+  background: var(--primaryMidDarkColour);
+  color: var(--fontColour);
+  font-weight: bold;
+}
+
+.wiki-table tbody tr:hover td,
+.wiki-table tbody tr:hover th {
+  background: var(--primaryOutlineColour);
+}
+
+/* "On this page" sub-menu, nested inside the current page's entry in the
+   contents panel. Same Gestalt disclosure language as the section rows, one
+   indent deeper and slightly smaller. */
+.wiki-page-toc {
+  /* Gestalt ul.subFolderMenu: indent the children behind a 1px rule, so the
+     sub-menu reads as nested under the selected page row. */
+  margin-left: 8px;
+  border-left: 1px solid var(--titleColour);
+}
+
+/* "On this page" is a collapsible row, so it follows the collapsible rule:
+   --primaryDarkColour background, --fontColour text, --successColour on hover. */
+.wiki-page-toc > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  min-height: 30px;
+  padding: 4px 10px 4px 5px;
+  background: var(--primaryDarkColour);
+  color: var(--fontColour);
+  font-size: var(--fontSizeXSmall);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.wiki-page-toc > summary::-webkit-details-marker {
+  display: none;
+}
+
+.wiki-page-toc > summary:hover {
+  color: var(--successColour);
+}
+
+.wiki-page-toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wiki-page-toc-list li {
+  overflow: hidden;
+}
+
+/* Leaf rows (headings): --primaryMidDarkColour background, --fontColour text,
+   --successColour on hover. */
+.wiki-page-toc-list a,
+.wiki-page-toc-list a:visited {
+  display: block;
+  padding: 4px 8px;
+  background: var(--primaryMidDarkColour);
+  color: var(--fontColour);
+  font-size: var(--fontSizeXSmall);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wiki-page-toc-list a:hover {
+  color: var(--successColour);
+}
+
+/* The heading in view follows the selected-leaf rule: --primaryOutlineColour
+   fill, bold, text stays --fontColour. */
+.wiki-page-toc-list li.active > a,
+.wiki-page-toc-list li.active > a:visited {
+  background: var(--primaryOutlineColour);
+  font-weight: bold;
+}
+
+.wiki-page-toc-list li.active > a:hover {
+  color: var(--fontColour);
+}
+
+.wiki-page-toc-sub {
+  padding-left: 12px;
+}
+
+/* Home page */
+.wiki-home {
+  max-width: 900px;
+}
+
+/* ------------------------------------------------------------- responsive */
+
+@media (max-width: 900px) {
+  :root {
+    --wiki-sidebar-width: 240px;
+  }
+  .wiki-content {
+    padding: 16px;
+  }
+}

@@ -1,1 +1,28 @@
-theme: minima
+# Industrial App Store Wiki — content generated from root/DokuWiki
+# by tools/convert-dokuwiki.js. Do not edit wiki/*.md by hand.
+
+title: "Industrial App Store Wiki"
+description: >-
+  Documentation for the Industrial App Store: user guides, administrator
+  resources, data connection setup and app release notes.
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: null
+
+plugins: []
+
+exclude:
+  - tools
+  - vendor
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+sass:
+  style: compressed

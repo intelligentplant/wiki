@@ -1,69 +1,51 @@
-### WORK IN PROGRESS...
+---
+layout: home
+title: "Industrial App Store Wiki"
+permalink: /index.html
+---
+#### Welcome
 
-### Welcome
+The <strong>Industrial App Store</strong> is an open online marketplace of apps built on an architecture that supports secure connectivity with on-premises data sources.
 
-The **App Store Wiki** is the centre of knowledge for all things App
-Store.
+The <strong>App Store Wiki</strong> is the central knowledge base for the Industrial App Store, providing information for:
 
-Have a question? Search the site or browse the sitemap.
+- <strong>Users</strong> - Getting started with apps and features
+- <strong>Organizations</strong> - Onboarding and registration guidance
+- <strong>Administrators</strong> - Managing access to apps and data
+- <strong>Developers</strong> - Building and deploying apps to the marketplace
 
-Can't find what you're looking for? [Get in
-touch](http://www.intelligentplant.com/contact.html) and let us know.
+Have a question? Search the wiki.
 
-### Contents
+Can't find what you're looking for? [Get in touch](https://www.intelligentplant.com/contact-us) and let us know.
 
-  -  [App Store Users](pages/general/app_store_users.md): New to the
-    Industrial App Store? Here's what you need to know.
+#### Contents
 
-<!-- end list -->
+- [Welcome to the Industrial App Store](/general/app_store_users.html) <br /> New to the Industrial App Store? Here's what you need to know.
 
-  -  [Apps](pages/general/apps.md): User guides and notes on Apps available in
-    the Industrial App Store.
+- [Resources for Administrators](/general/app_store_administrators.html) <br /> Resources for administrators.
 
-<!-- end list -->
+- [Organization Onboarding Guide](/general/organization_onboarding_guide.html) <br /> Complete guide for onboarding your organization to the Industrial App Store, from registration to user management.
 
-  -  [App Store Connect](pages/app_store_connect/app_store_connect.md):
-    Connect your data to cloud-based apps.
+- [Industrial App Store FAQ](/general/industrial_app_store_faq.html) <br /> Thinking about registering with the App Store but want to know a bit more about it first? You're not alone, here are our most Frequently Asked Questions.
 
-<!-- end list -->
+- [App Store Security](/general/security.html) <br /> Key notes from our security model.
 
-  -  [App Store Developers](pages/dev/app_store_developers.md): How to get
-    your App onto the Industrial App Store.
+- [Uptime, Maintenance Schedules and Release Notes](/general/uptime_and_maintenance_schedules.html) <br /> General details on uptime, upcoming maintenance schedules, and release notes for the Industrial App Store portal and Intelligent Plant apps.
 
-<!-- end list -->
+- [App Wiki Pages](/general/apps.html) <br /> User guides and notes on Apps available in the Industrial App Store.
 
-  -  [Security](pages/general/security.md): Find out about our Security Policy.
+- [App Store Connect](/app_store_connect/app_store_connect.html) <br /> Connect your data to cloud-based apps.
 
-<!-- end list -->
+- [App Store Developers](/dev/app_store_developers.html) <br /> How to get your killer app onto the Industrial App Store.
 
-  -  [Industrial App Store Digital
-    Security](https://www.intelligentplant.com/datasheets/IAS-Digital_Security-Key_Features.pdf):
-    Key features.
+- [Dashboarding](/dashboarding/dashboarding.html) <br /> Guidance on creating dashboards using the Industrial App Store.
 
-<!-- end list -->
+- [Support](/support/support.html) <br /> Contact Details and Self Help Guides
 
-  -  [Organization User and Data
-    Management](pages/general/Organization_User_and_Data_Management.md):
-    Learn how registered organizations can manage the apps that their
-    users can access, and share access to their data sources with
-    trusted 3rd parties. Download the [Industrial App Store Organization
-    Registration Information
-    Sheet](https://appstore.intelligentplant.com/nuget/downloads/App_Store_Organisation_Registration.pdf)
-    to learn how organizations can enable users to sign in to the
-    Industrial App Store with their work accounts.
+#### Downloads
 
-<!-- end list -->
+- [Industrial App Store Digital Security Key Features](https://appstore.intelligentplant.com/nuget/downloads/IAS-Digital%20Security-Key%20Features.pdf)
 
-  -  [Uptime, Maintenance Schedules and Release
-    Notes](pages/general/Uptime_and_Maintenance_Schedules.md): General
-    details on uptime, upcoming maintenance schedules, and release notes
-    for the Industrial App Store portal and Intelligent Plant apps.
+- [App Store Connect Quick Reference](http://appstore.intelligentplant.com/nuget/downloads/App%20Store%20Connect%20Quick%20Reference.pdf)
 
-<!-- end list -->
-
-  - [Support](pages/support/support.md): Contact Details and Self Help Guides
-
-<!-- end list -->
-
-  - [Customer Data, Data Security & GDPR](pages/general/customerdata.md):
-    Information on our Data Security policy.
+- [Industrial App Store Organization Registration Information Sheet](https://appstore.intelligentplant.com/nuget/downloads/App%20Store%20Organisation%20Registration.pdf)

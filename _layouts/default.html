@@ -1,55 +1,65 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
 
-  {%- include head.html -%}
+  <link rel="stylesheet" href="{{ '/assets/ui-library/index.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/wiki.css' | relative_url }}" />
 
-  <body>
+  <!-- Theme selection (UI Library guide §3.2). Runs before the body paints so
+       the page never renders in the wrong theme. -->
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+</head>
+<body class="wiki-body">
+  <div class="wiki-shell">
 
-    <header class="site-header" role="banner">
-
-      <div class="wrapper"><a class="site-title" rel="author" href="/">intelligentplant.github.io</a><nav class="site-nav">
-            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-            <label for="nav-trigger">
-              <span class="menu-icon">
-                <svg viewBox="0 0 18 15" width="18px" height="15px">
-                  <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-                </svg>
-              </span>
-            </label>
-        </nav></div>
-     </header>
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
+    <header class="wiki-toolbar flex-row-sides">
+      <div class="flex-row items-centre">
+        <a class="flex-row items-centre" href="{{ '/index.html' | relative_url }}" title="Industrial App Store Wiki home">
+          <img class="wiki-logo" src="{{ '/assets/ui-library/ip-logo.png' | relative_url }}" alt="Intelligent Plant" />
+        </a>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
-      <data class="u-url" href="/"></data>
-    
-      <div class="wrapper">
-    
-        <h2 class="footer-heading">intelligentplant.github.io</h2>
-    
-        <div class="footer-col-wrapper">
-          <div class="footer-col footer-col-1">
-            <ul class="contact-list">
-              <li class="p-name">intelligentplant.github.io</li></ul>
+      <div class="flex-row items-centre gap-10">
+        <span class="wiki-app-name">Industrial App Store Wiki</span>
+        <!-- Theme menu: library dropDownMenu (guide §3.3 / §4.7). The selected
+             theme is marked in --successColour with the colour-success helper. -->
+        <div class="dropDownMenu wrapper" id="ipThemeMenu">
+          <div class="dropDownMenu header clickable font-size-small" id="ipThemeTrigger"
+               role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" title="Theme">
+            <span id="ipThemeLabel">Theme</span>
+            <span class="icon-ip-drop-down-arrow-filled margin-left-6" aria-hidden="true"></span>
           </div>
-    
-          <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
-            </div>
-    
-          <div class="footer-col footer-col-3">
-            <p>Intelligent Plant GitHub Pages</p>
+          <div class="dropDownMenu menuContainer" id="ipThemeList" hidden>
+            <div class="padding-1 margin-bottom-10">Theme</div>
+            <a class="clickable" href="#" data-theme="system default">System Default</a>
+            <a class="clickable" href="#" data-theme="whiteTheme">Light</a>
+            <a class="clickable" href="#" data-theme="darkTheme">Dark</a>
+            <a class="clickable" href="#" data-theme="blueTheme">Blue</a>
           </div>
         </div>
-    
       </div>
-    
-    </footer>
+    </header>
 
-   </body>
+    <div class="wiki-main flex-row grow-1">
+      <!-- Contents toggle. Like Gestalt's #trigger it lives outside the panel it
+           controls (component.css `.menu-trigger`, before `<nav id="mp-menu">`)
+           so it stays visible when the panel is hidden. -->
+      <button class="wiki-nav-toggle icon-ip-Burger" id="wikiNavToggle"
+              type="button" title="Toggle contents"
+              aria-controls="wikiNav" aria-expanded="true"></button>
+      <aside class="wiki-sidebar scrollbar" id="wikiNav" aria-label="Wiki contents">
+        {% include nav.html %}
+      </aside>
 
+      <main class="wiki-content scrollbar grow-1" id="main-content">
+        {{ content }}
+      </main>
+    </div>
+  </div>
+
+  <script src="{{ '/assets/js/wiki.js' | relative_url }}"></script>
+</body>
 </html>

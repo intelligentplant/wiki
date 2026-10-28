@@ -1,0 +1,1028 @@
+[
+  {
+    "key": "general",
+    "title": "General",
+    "items": [
+      {
+        "title": "App Store Security",
+        "href": "/general/security.html"
+      },
+      {
+        "title": "App Wiki Pages",
+        "href": "/general/apps.html"
+      },
+      {
+        "title": "Creating an Entra ID for Industrial App Store Access",
+        "href": "/general/creating_entra_id_for_app_store_access.html"
+      },
+      {
+        "title": "Creating an Onboarding Page",
+        "href": "/general/onboarding_page.html"
+      },
+      {
+        "title": "Customer Data",
+        "href": "/general/customerdata.html"
+      },
+      {
+        "title": "Industrial App Store FAQ",
+        "href": "/general/industrial_app_store_faq.html"
+      },
+      {
+        "title": "Organization Onboarding Guide",
+        "href": "/general/organization_onboarding_guide.html"
+      },
+      {
+        "title": "Organization User and Data Management",
+        "href": "/general/organization_user_and_data_management.html"
+      },
+      {
+        "title": "Preparing for a Server Upgrade",
+        "href": "/general/preparing_for_a_server_upgrade.html"
+      },
+      {
+        "title": "Preparing for Azure AD Graph retirement",
+        "href": "/general/azure_ad_graph_retirement.html"
+      },
+      {
+        "title": "Registering an Organization with the Industrial App Store",
+        "href": "/general/registering_an_organziation_with_the_app_store.html"
+      },
+      {
+        "title": "Resources for Administrators",
+        "href": "/general/app_store_administrators.html"
+      },
+      {
+        "title": "Uptime and Maintenance Schedules",
+        "href": "/general/uptime_and_maintenance_schedules.html"
+      },
+      {
+        "title": "Welcome to the Industrial App Store",
+        "href": "/general/app_store_users.html"
+      }
+    ]
+  },
+  {
+    "key": "general.organization_user_and_data_management",
+    "title": "Organization, User and Data Management",
+    "items": [
+      {
+        "title": "Entra ID Syncing",
+        "href": "/general/organization_user_and_data_management/entraid_syncing.html"
+      },
+      {
+        "title": "Group Management",
+        "href": "/general/organization_user_and_data_management/group_management.html"
+      },
+      {
+        "title": "Managing Approved Apps & Data Access",
+        "href": "/general/organization_user_and_data_management/app_access_management.html"
+      },
+      {
+        "title": "Organization Audit Logs",
+        "href": "/general/organization_user_and_data_management/audit_logs.html"
+      },
+      {
+        "title": "Trust Management",
+        "href": "/general/organization_user_and_data_management/trust_management.html"
+      },
+      {
+        "title": "User Management",
+        "href": "/general/organization_user_and_data_management/user_management.html"
+      }
+    ]
+  },
+  {
+    "key": "general.organization_user_and_data_management.trust_management",
+    "title": "Trust Management",
+    "items": [
+      {
+        "title": "Configuring Outgoing Trusts",
+        "href": "/general/organization_user_and_data_management/trust_management/outgoing.html"
+      },
+      {
+        "title": "Managing Incoming Trusts",
+        "href": "/general/organization_user_and_data_management/trust_management/incoming.html"
+      }
+    ]
+  },
+  {
+    "key": "app_store_connect",
+    "title": "App Store Connect",
+    "items": [
+      {
+        "title": "App Store Connect",
+        "href": "/app_store_connect/app_store_connect.html"
+      },
+      {
+        "title": "App Store Connect - Troubleshooting",
+        "href": "/app_store_connect/troubleshooting.html"
+      },
+      {
+        "title": "App Store Connect: Back Up and Restore",
+        "href": "/app_store_connect/back_up_and_restore.html"
+      },
+      {
+        "title": "App Store Connect: Connection Security",
+        "href": "/app_store_connect/connection_security.html"
+      },
+      {
+        "title": "App Store Connect: Custom Data Connections",
+        "href": "/app_store_connect/custom_data_connections.html"
+      },
+      {
+        "title": "Authorize Apps to connect to Data Sources",
+        "href": "/app_store_connect/authorize_apps_to_connect_to_your_data.html"
+      },
+      {
+        "title": "Data Core Administrator Privileges",
+        "href": "/app_store_connect/data_core_administrator_privileges.html"
+      },
+      {
+        "title": "Honeywell Uniformance Phd",
+        "href": "/app_store_connect/honeywell_uniformance_phd.html"
+      },
+      {
+        "title": "Instructions",
+        "href": "/app_store_connect/how_to_back-up_the_big_data_service.html"
+      },
+      {
+        "title": "Share your data with other App Store Users",
+        "href": "/app_store_connect/share_your_data_with_other_app_store_users.html"
+      }
+    ]
+  },
+  {
+    "key": "data_core",
+    "title": "Data Core",
+    "items": [
+      {
+        "title": "A&E Report Sink",
+        "href": "/data_core/aereportsink.html"
+      },
+      {
+        "title": "Advanced Data Core Configuration",
+        "href": "/data_core/advanced_data_core_configuration.html"
+      },
+      {
+        "title": "Alarm Analysis Event Sink",
+        "href": "/data_core/alarm_analysis.html"
+      },
+      {
+        "title": "Alarm Analysis Import Stream",
+        "href": "/data_core/alarm_analysis_import_stream.html"
+      },
+      {
+        "title": "App Store Connect Artifacts",
+        "href": "/data_core/app_store_connect_artifacts.html"
+      },
+      {
+        "title": "App Store Connect Updates",
+        "href": "/data_core/app_store_connect_updates.html"
+      },
+      {
+        "title": "App Store Connect: Configuration Testing",
+        "href": "/data_core/testing.html"
+      },
+      {
+        "title": "Aspentech Ip.21",
+        "href": "/data_core/aspentech_ip.21.html"
+      },
+      {
+        "title": "Big Data Event Source/Sink",
+        "href": "/data_core/bigdataeventsourcesink.html"
+      },
+      {
+        "title": "Configure Performance Counters to track Server and Data Core Performance",
+        "href": "/data_core/performance_counters.html"
+      },
+      {
+        "title": "Configuring SQL tag search statement",
+        "href": "/data_core/connect_to_ip.21.rest_api_via_app_store_connect.html"
+      },
+      {
+        "title": "Connect to a PI Server via App Store Connect",
+        "href": "/data_core/connect_to_a_pi_server_via_app_store_connect.html"
+      },
+      {
+        "title": "CSV Data Stream",
+        "href": "/data_core/csv_data_stream.html"
+      },
+      {
+        "title": "CSV File",
+        "href": "/data_core/csv_file.html"
+      },
+      {
+        "title": "Csv File Reader",
+        "href": "/data_core/csv_file_reader.html"
+      },
+      {
+        "title": "Data Core Event Source/Sink: Windows Event Log",
+        "href": "/data_core/windowseventlog.html"
+      },
+      {
+        "title": "Data Core: Create an Event Subscription",
+        "href": "/data_core/event_subscription.html"
+      },
+      {
+        "title": "Data Core: Stand-Alone Installation",
+        "href": "/data_core/stand-alone_installation.html"
+      },
+      {
+        "title": "Data Source Drivers",
+        "href": "/data_core/data_sources.html"
+      },
+      {
+        "title": "File System Event Sink",
+        "href": "/data_core/filesystemeventsink.html"
+      },
+      {
+        "title": "Holdingpage",
+        "href": "/data_core/holdingpage.html"
+      },
+      {
+        "title": "How to Connect your Data to the App Store",
+        "href": "/data_core/how_to_connect_your_data_to_the_app_store.html"
+      },
+      {
+        "title": "How to Run App Store Connect under a Service Account",
+        "href": "/data_core/how_to_run_app_store_connect_under_a_service_account.html"
+      },
+      {
+        "title": "Increase Service Timeout",
+        "href": "/data_core/increase_service_timeout.html"
+      },
+      {
+        "title": "IP Hist Migration Tool",
+        "href": "/data_core/ip_hist_migration_tool.html"
+      },
+      {
+        "title": "IP Historian v3",
+        "href": "/data_core/iphist_v3.html"
+      },
+      {
+        "title": "Met Office API",
+        "href": "/data_core/met_office_api.html"
+      },
+      {
+        "title": "Metrics",
+        "href": "/data_core/metrics.html"
+      },
+      {
+        "title": "Modbus",
+        "href": "/data_core/modbus.html"
+      },
+      {
+        "title": "Monitoring App Store Connect Availability",
+        "href": "/data_core/monitoring_app_store_connect_availability.html"
+      },
+      {
+        "title": "MSMQ Event Source/Sink",
+        "href": "/data_core/msmqeventsourcesink.html"
+      },
+      {
+        "title": "RabbitMQ",
+        "href": "/data_core/rabbitmq.html"
+      },
+      {
+        "title": "Script Tags",
+        "href": "/data_core/script_tags.html"
+      },
+      {
+        "title": "SQL Event Source",
+        "href": "/data_core/sqleventsource.html"
+      },
+      {
+        "title": "TCP Event Source and Sink",
+        "href": "/data_core/tcp.html"
+      },
+      {
+        "title": "TCP Printer",
+        "href": "/data_core/tcpprinter.html"
+      },
+      {
+        "title": "Text File Parser",
+        "href": "/data_core/text_file_event_source.html"
+      },
+      {
+        "title": "Text File Stream",
+        "href": "/data_core/text_file_stream.html"
+      },
+      {
+        "title": "Update-safe Configuration",
+        "href": "/data_core/update_safe_configuration.html"
+      }
+    ]
+  },
+  {
+    "key": "datacore",
+    "title": "Data Core (legacy)",
+    "items": [
+      {
+        "title": "Enable Resilient Data Transfer with RabbitMQ",
+        "href": "/datacore/enable_resilient_data_transfer_with_rabbitmq.html"
+      },
+      {
+        "title": "Enable Resilient Data Transfer with RabbitMQ - Fast Flow Variation",
+        "href": "/datacore/enable_resilient_data_transfer_with_rabbitmq_-_fast_flow_variation.html"
+      },
+      {
+        "title": "Intro to Data Core",
+        "href": "/datacore/intro.html"
+      },
+      {
+        "title": "Upgrading App Store Connect (ASC) to use TLS 1.2",
+        "href": "/datacore/appstoreconnect_tls.html"
+      }
+    ]
+  },
+  {
+    "key": "big_data_service",
+    "title": "Big Data Service",
+    "items": [
+      {
+        "title": "Antivirus Exclusion",
+        "href": "/big_data_service/antivirus_exclusion.html"
+      },
+      {
+        "title": "Big Data Service Advanced Configuration",
+        "href": "/big_data_service/big_data_service_advanced_configuration.html"
+      },
+      {
+        "title": "Big Data Service: Technical Advisories",
+        "href": "/big_data_service/technical-advisories.html"
+      },
+      {
+        "title": "Big Data Service: Use Alternative Instance",
+        "href": "/big_data_service/use_an_alternative_instance.html"
+      },
+      {
+        "title": "Elasticsearch Best Practice",
+        "href": "/big_data_service/best_practice.html"
+      },
+      {
+        "title": "Increase Big Data Service RAM",
+        "href": "/big_data_service/increase_big_data_service_ram.html"
+      },
+      {
+        "title": "Logging",
+        "href": "/big_data_service/logging.html"
+      },
+      {
+        "title": "Modify Big Data Storage Location",
+        "href": "/big_data_service/modify_data_storage_location.html"
+      },
+      {
+        "title": "Technical Advisory",
+        "href": "/big_data_service/ta-001.html"
+      },
+      {
+        "title": "Technical Advisory",
+        "href": "/big_data_service/ta-002.html"
+      },
+      {
+        "title": "Upgrade Java",
+        "href": "/big_data_service/upgrade_java.html"
+      }
+    ]
+  },
+  {
+    "key": "alarm_analysis",
+    "title": "Alarm Analysis",
+    "items": [
+      {
+        "title": "Alarm Analysis",
+        "href": "/alarm_analysis/alarm_analysis.html"
+      },
+      {
+        "title": "Alarm Analysis Data Retention",
+        "href": "/alarm_analysis/data_retention.html"
+      },
+      {
+        "title": "Alarm Analysis Meta Tags",
+        "href": "/alarm_analysis/meta_tags.html"
+      },
+      {
+        "title": "Alarm Analysis Network Architecture",
+        "href": "/alarm_analysis/alarm_analysis_network_architectures.html"
+      },
+      {
+        "title": "Alarm Analysis: Capturing Alarms & Events from Militarized Network Domains",
+        "href": "/alarm_analysis/resilient_data_transfer.html"
+      },
+      {
+        "title": "Cross Data Updates",
+        "href": "/alarm_analysis/cross_data_updates.html"
+      },
+      {
+        "title": "How to add a \"Meta Tag\" to an Alarm Analysis Tag Index",
+        "href": "/alarm_analysis/how_to_add_a_meta_tag_to_an_alarm_analysis_tag_index.html"
+      },
+      {
+        "title": "How to Import Alarm & Event Data",
+        "href": "/alarm_analysis/how_to_configure_an_alarm_event_import_stream.html"
+      },
+      {
+        "title": "Import Errors",
+        "href": "/alarm_analysis/import_errors.html"
+      },
+      {
+        "title": "Licensing",
+        "href": "/alarm_analysis/licensing.html"
+      },
+      {
+        "title": "Programmable mapping rule examples",
+        "href": "/alarm_analysis/programmable_mapping_rule_examples.html"
+      }
+    ]
+  },
+  {
+    "key": "alarm_analysis.reports",
+    "title": "Alarm Analysis Reports",
+    "items": [
+      {
+        "title": "Alarm Analysis Reports",
+        "href": "/alarm_analysis/reports/reports.html"
+      },
+      {
+        "title": "Average Alarms per 10 minutes in each hour of the day per Operator",
+        "href": "/alarm_analysis/reports/alarm_analysis.reports.average_alarms_per_10_minutes_in_each_hour_of_the_day_per_operator.html"
+      }
+    ]
+  },
+  {
+    "key": "alarm_analysis.reports.disabledalarms",
+    "title": "Disabled Alarms Report",
+    "items": [
+      {
+        "title": "Disabled Alarms Report",
+        "href": "/alarm_analysis/reports/disabledalarms/disabled_alarms.html"
+      }
+    ]
+  },
+  {
+    "key": "alarm_analysis.reports.stalealarms",
+    "title": "Stale Alarms Report",
+    "items": [
+      {
+        "title": "Stale Alarms Report",
+        "href": "/alarm_analysis/reports/stalealarms/stale_alarms.html"
+      }
+    ]
+  },
+  {
+    "key": "alarm_analysis.assettimezone",
+    "title": "Alarm Analysis Asset Time Zone",
+    "items": [
+      {
+        "title": "Alarm Analysis and Asset Timezone",
+        "href": "/alarm_analysis/assettimezone/asset_time_zone.html"
+      }
+    ]
+  },
+  {
+    "key": "azimuth",
+    "title": "Azimuth",
+    "items": [
+      {
+        "title": "Azimuth",
+        "href": "/azimuth/setting_up_azimuth.html"
+      }
+    ]
+  },
+  {
+    "key": "aperture",
+    "title": "Aperture",
+    "items": [
+      {
+        "title": "Aperture",
+        "href": "/aperture/aperture.html"
+      }
+    ]
+  },
+  {
+    "key": "facit",
+    "title": "Facit",
+    "items": [
+      {
+        "title": "Facit",
+        "href": "/facit/facit.html"
+      },
+      {
+        "title": "Preparing App Store Connect for Facit Monitoring",
+        "href": "/facit/preparefacitmonitoring.html"
+      }
+    ]
+  },
+  {
+    "key": "gestalttrend",
+    "title": "Gestalt Trend",
+    "items": [
+      {
+        "title": "Gestalt Trend",
+        "href": "/gestalttrend/gestalt_trend.html"
+      }
+    ]
+  },
+  {
+    "key": "gestaltpnid",
+    "title": "Gestalt PnID",
+    "items": [
+      {
+        "title": "Gestalt PnID",
+        "href": "/gestaltpnid/gestalt_pnid.html"
+      }
+    ]
+  },
+  {
+    "key": "opmode",
+    "title": "OpMode",
+    "items": [
+      {
+        "title": "Components And Workflow",
+        "href": "/opmode/components_and_workflow.html"
+      },
+      {
+        "title": "Historical import finishing and subscribing to new values",
+        "href": "/opmode/set_up_a_mode.html"
+      },
+      {
+        "title": "OpMode",
+        "href": "/opmode/setting_up_modes.html"
+      }
+    ]
+  },
+  {
+    "key": "seer",
+    "title": "SEER",
+    "items": [
+      {
+        "title": "SEER",
+        "href": "/seer/index.html"
+      }
+    ]
+  },
+  {
+    "key": "soe",
+    "title": "Sequence of Events Explorer",
+    "items": [
+      {
+        "title": "Sequence of Events Explorer",
+        "href": "/soe/index.html"
+      }
+    ]
+  },
+  {
+    "key": "taggle",
+    "title": "Taggle",
+    "items": [
+      {
+        "title": "Logical operators",
+        "href": "/taggle/querysyntax.html"
+      },
+      {
+        "title": "Taggle",
+        "href": "/taggle/index.html"
+      }
+    ]
+  },
+  {
+    "key": "power_bi_connector",
+    "title": "Power BI Connector",
+    "items": [
+      {
+        "title": "Frequently Asked Questions",
+        "href": "/power_bi_connector/faqs.html"
+      },
+      {
+        "title": "Getting started",
+        "href": "/power_bi_connector/getting_started.html"
+      },
+      {
+        "title": "Industrial Connector for Power BI",
+        "href": "/power_bi_connector/index.html"
+      },
+      {
+        "title": "Setting background data refresh using Personal Data Gateway",
+        "href": "/power_bi_connector/datarefreshgateway.html"
+      },
+      {
+        "title": "Updating Power BI Connection Configuration",
+        "href": "/power_bi_connector/updating_connection_configuration.html"
+      }
+    ]
+  },
+  {
+    "key": "excel",
+    "title": "Excel",
+    "items": [
+      {
+        "title": "Automating Excel Reports",
+        "href": "/excel/automation.html"
+      },
+      {
+        "title": "File Installation",
+        "href": "/excel/installation-files.html"
+      },
+      {
+        "title": "Setup",
+        "href": "/excel/getting-started.html"
+      },
+      {
+        "title": "The IP Data Query Tab",
+        "href": "/excel/ui.html"
+      },
+      {
+        "title": "Writing Data Query Formulas",
+        "href": "/excel/formulas.html"
+      }
+    ]
+  },
+  {
+    "key": "hydraulic_usage",
+    "title": "Hydraulic Usage",
+    "items": [
+      {
+        "title": "Hydraulic Usage",
+        "href": "/hydraulic_usage/hydraulic_usage.html"
+      }
+    ]
+  },
+  {
+    "key": "compressor_consultant",
+    "title": "Compressor Consultant",
+    "items": [
+      {
+        "title": "Compressor Consultant",
+        "href": "/compressor_consultant/compressor_consultant.html"
+      }
+    ]
+  },
+  {
+    "key": "contoller_consultant",
+    "title": "Controller Consultant",
+    "items": [
+      {
+        "title": "Controller Consultant",
+        "href": "/contoller_consultant/controller_consultant.html"
+      }
+    ]
+  },
+  {
+    "key": "surge",
+    "title": "Surge",
+    "items": [
+      {
+        "title": "Surge",
+        "href": "/surge/surge.html"
+      }
+    ]
+  },
+  {
+    "key": "valve_signature",
+    "title": "Valve Signature",
+    "items": [
+      {
+        "title": "Valve Signature",
+        "href": "/valve_signature/valve_signature.html"
+      }
+    ]
+  },
+  {
+    "key": "wax_intelligence",
+    "title": "Wax Intelligence",
+    "items": [
+      {
+        "title": "Wax Intelligence",
+        "href": "/wax_intelligence/wax_intelligence.html"
+      }
+    ]
+  },
+  {
+    "key": "well_intelligence",
+    "title": "Well Intelligence",
+    "items": [
+      {
+        "title": "Well Intelligence",
+        "href": "/well_intelligence/well_intelligence.html"
+      }
+    ]
+  },
+  {
+    "key": "iphist",
+    "title": "IP.Hist",
+    "items": [
+      {
+        "title": "IP Historian",
+        "href": "/iphist/index.html"
+      }
+    ]
+  },
+  {
+    "key": "jupyter_hub",
+    "title": "Jupyter Hub",
+    "items": [
+      {
+        "title": "Jupyter Hub",
+        "href": "/jupyter_hub/jupyter_hub.html"
+      }
+    ]
+  },
+  {
+    "key": "dashboarding",
+    "title": "Dashboarding",
+    "items": [
+      {
+        "title": "Dashboarding",
+        "href": "/dashboarding/dashboarding.html"
+      }
+    ]
+  },
+  {
+    "key": "dev",
+    "title": "Developers",
+    "items": [
+      {
+        "title": "App Authentication Example",
+        "href": "/dev/app_authentication_example.html"
+      },
+      {
+        "title": "App Store API Security Overview",
+        "href": "/dev/app_store_api_security_overview.html"
+      },
+      {
+        "title": "App Store Developers",
+        "href": "/dev/app_store_developers.html"
+      },
+      {
+        "title": "App Store Example using Postman",
+        "href": "/dev/app_store_example_with_postman.html"
+      },
+      {
+        "title": "Become an App Store Developer",
+        "href": "/dev/app_store_-_become_a_developer.html"
+      },
+      {
+        "title": "Create a COMING SOON App",
+        "href": "/dev/app_store_-_create_coming_soon_app.html"
+      },
+      {
+        "title": "Create a Service Hub App",
+        "href": "/dev/app_store_-_create_services.html"
+      },
+      {
+        "title": "Creating an ASP.NET Core App",
+        "href": "/dev/asp-net-core-app.html"
+      },
+      {
+        "title": "Data Functions",
+        "href": "/dev/data_functions.html"
+      },
+      {
+        "title": "Data Requests",
+        "href": "/dev/app_store_data_requests.html"
+      },
+      {
+        "title": "Register your App",
+        "href": "/dev/register_your_app.html"
+      },
+      {
+        "title": "Write an App in Visual Studio",
+        "href": "/dev/app_store_-_template_to_start_a_new_app_in_visual_studio.html"
+      }
+    ]
+  },
+  {
+    "key": "support",
+    "title": "Support",
+    "items": [
+      {
+        "title": "Support",
+        "href": "/support/support.html"
+      },
+      {
+        "title": "Connection Issues",
+        "href": "/support/connectionissues.html"
+      }
+    ]
+  },
+  {
+    "key": "playground",
+    "title": "Playground",
+    "items": [
+      {
+        "title": "PlayGround",
+        "href": "/playground/playground.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.alarmanalysis",
+    "title": "General.Apps.Alarmanalysis",
+    "items": [
+      {
+        "title": "Alarm Analysis Release Notes",
+        "href": "/general/apps/alarmanalysis/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.aperture",
+    "title": "General.Apps.Aperture",
+    "items": [
+      {
+        "title": "Aperture Release Notes",
+        "href": "/general/apps/aperture/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.appstore",
+    "title": "General.Apps.Appstore",
+    "items": [
+      {
+        "title": "IAS Portal - Release Notes",
+        "href": "/general/apps/appstore/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.appstoreconnect",
+    "title": "General.Apps.Appstoreconnect",
+    "items": [
+      {
+        "title": "App Store Connect Release Notes",
+        "href": "/general/apps/appstoreconnect/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.azimuth",
+    "title": "General.Apps.Azimuth",
+    "items": [
+      {
+        "title": "Azimuth Release Notes",
+        "href": "/general/apps/azimuth/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.compressorconsultant",
+    "title": "General.Apps.Compressorconsultant",
+    "items": [
+      {
+        "title": "Compressor Consultant Release Notes",
+        "href": "/general/apps/compressorconsultant/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.controllerconsultant",
+    "title": "General.Apps.Controllerconsultant",
+    "items": [
+      {
+        "title": "Controller Consultant Release Notes",
+        "href": "/general/apps/controllerconsultant/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.dataapi",
+    "title": "General.Apps.Dataapi",
+    "items": [
+      {
+        "title": "Industrial App Store Data API Release Notes",
+        "href": "/general/apps/dataapi/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.facit",
+    "title": "General.Apps.Facit",
+    "items": [
+      {
+        "title": "Facit Release Notes",
+        "href": "/general/apps/facit/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.gestaltpnid",
+    "title": "General.Apps.Gestaltpnid",
+    "items": [
+      {
+        "title": "Gestalt PnID Release Notes",
+        "href": "/general/apps/gestaltpnid/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.gestalttrend",
+    "title": "General.Apps.Gestalttrend",
+    "items": [
+      {
+        "title": "Gestalt Trend Release Notes",
+        "href": "/general/apps/gestalttrend/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.hydraulicusage",
+    "title": "General.Apps.Hydraulicusage",
+    "items": [
+      {
+        "title": "Hydraulic Usage Release Notes",
+        "href": "/general/apps/hydraulicusage/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.opmode",
+    "title": "General.Apps.Opmode",
+    "items": [
+      {
+        "title": "OpMode Release Notes",
+        "href": "/general/apps/opmode/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.powerautomate",
+    "title": "General.Apps.Powerautomate",
+    "items": [
+      {
+        "title": "Industrial Automator for Power BI - Connector Release Notes",
+        "href": "/general/apps/powerautomate/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.powerbi",
+    "title": "General.Apps.Powerbi",
+    "items": [
+      {
+        "title": "Industrial Connector for Power BI - Release Notes",
+        "href": "/general/apps/powerbi/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.soex",
+    "title": "General.Apps.Soex",
+    "items": [
+      {
+        "title": "Sequence of Events (SoE) Explorer Release Notes",
+        "href": "/general/apps/soex/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.valvesignature",
+    "title": "General.Apps.Valvesignature",
+    "items": [
+      {
+        "title": "Valve Signature Release Notes",
+        "href": "/general/apps/valvesignature/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.wax_intelligence",
+    "title": "General.Apps.Wax Intelligence",
+    "items": [
+      {
+        "title": "Wax Intelligence Release Notes",
+        "href": "/general/apps/wax_intelligence/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "general.apps.well_intelligence",
+    "title": "General.Apps.Well Intelligence",
+    "items": [
+      {
+        "title": "Well Intelligence Release Notes",
+        "href": "/general/apps/well_intelligence/releasenotes.html"
+      }
+    ]
+  },
+  {
+    "key": "gestaltpnid.gestalt_pnid",
+    "title": "Gestaltpnid.Gestalt Pnid",
+    "items": [
+      {
+        "title": "Event Manager",
+        "href": "/gestaltpnid/gestalt_pnid/event_manager_reference.html"
+      }
+    ]
+  },
+  {
+    "key": "gestaltpnid.gestalt_pnid.event_manager_reference",
+    "title": "Gestaltpnid.Gestalt Pnid.Event Manager Reference",
+    "items": [
+      {
+        "title": "Global and Local Scripts",
+        "href": "/gestaltpnid/gestalt_pnid/event_manager_reference/global_scripts_guide.html"
+      }
+    ]
+  }
+]
