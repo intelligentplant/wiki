@@ -189,19 +189,49 @@ const navPath = path.join(repoRoot, '_data', 'nav.json');
 if (!fs.existsSync(navPath)) fail('_data/nav.json is missing');
 else {
   const nav = JSON.parse(fs.readFileSync(navPath, 'utf8'));
-  const seen = new Set();
-  for (const section of nav) {
-    if (!section.key || !section.title || !Array.isArray(section.items)) {
-      fail(`nav.json: malformed section ${JSON.stringify(section).slice(0, 80)}`);
-      continue;
+  const seenKeys = new Set();
+  let sectionCount = 0;
+  let linkCount2 = 0;
+
+  // The tree is nested (families -> sections -> sub-sections) and each node
+  // carries the `hrefs` of everything below it, which the sidebar template uses
+  // to expand the branch holding the current page. Both are validated here.
+  const check = (nodes, depth) => {
+    for (const section of nodes) {
+      sectionCount++;
+      if (!section.key || !section.title) {
+        fail(`nav.json: malformed section ${JSON.stringify(section).slice(0, 80)}`);
+        continue;
+      }
+      if (seenKeys.has(section.key)) fail(`nav.json: duplicate section key ${section.key}`);
+      seenKeys.add(section.key);
+      if (section.depth !== depth) {
+        fail(`nav.json: ${section.key} has depth ${section.depth}, expected ${depth}`);
+      }
+      const hasContent =
+        (Array.isArray(section.items) && section.items.length) ||
+        (Array.isArray(section.children) && section.children.length);
+      if (!hasContent) fail(`nav.json: ${section.key} has neither items nor children`);
+      for (const item of section.items || []) {
+        linkCount2++;
+        if (!item.title) fail(`nav.json: item without title in ${section.key}`);
+        if (!permalinks.has(item.href)) fail(`nav.json: ${section.key} -> unknown href ${item.href}`);
+      }
+      if (Array.isArray(section.children)) check(section.children, depth + 1);
+      const expected = [];
+      (function collect(n) {
+        (n.items || []).forEach((i) => expected.push(i.href));
+        (n.children || []).forEach(collect);
+      })(section);
+      const actual = section.hrefs || [];
+      if (actual.length !== expected.length || expected.some((h) => !actual.includes(h))) {
+        fail(`nav.json: ${section.key} hrefs do not match its descendants`);
+      }
     }
-    if (seen.has(section.key)) fail(`nav.json: duplicate section key ${section.key}`);
-    seen.add(section.key);
-    for (const item of section.items) {
-      if (!item.title) fail(`nav.json: item without title in ${section.key}`);
-      if (!permalinks.has(item.href)) fail(`nav.json: ${section.key} -> unknown href ${item.href}`);
-    }
-  }
+  };
+  check(nav, 0);
+  console.log(`nav sections:     ${sectionCount}`);
+  console.log(`nav links:        ${linkCount2}`);
 }
 
 /* ------------------------------------------------------------- unused media */

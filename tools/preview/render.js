@@ -28,6 +28,10 @@ md.use(anchor, {
 const engine = new Liquid({
   root: [path.join(repo, '_includes'), path.join(repo, '_layouts')],
   dynamicPartials: false,
+  // Jekyll-style `{% include file.html key=value %}`. Without this, liquidjs
+  // parses the parameters but silently drops them, so nav-tree.html would render
+  // with an empty `node` locally while working fine on GitHub Pages.
+  jekyllInclude: true,
 });
 engine.registerFilter('relative_url', (u) => u);
 engine.registerFilter('strip_html', (s) => String(s).replace(/<[^>]*>/g, ''));

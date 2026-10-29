@@ -17,14 +17,20 @@ index.md                   Wiki landing page
 _layouts/default.html      App shell: toolbar, nav rail, page body, theme menu
 _layouts/wiki.html         Per-page layout (title, breadcrumbs, table of contents)
 _includes/nav.html         Left navigation built from _data/nav.json
-_data/nav.json             Navigation tree (generated)
+_includes/nav-tree.html     Recursive renderer for one nav node (calls itself for children)
+_includes/search.html       Sidebar search box
+_data/nav.json              Navigation tree (generated)
 wiki/                      Content pages, one per DokuWiki page (generated)
 assets/css/wiki.css        Wiki styling — UI Library tokens only
 assets/js/theme.js         Theme switcher (System / Light / Dark / Blue)
 assets/js/wiki.js          Nav toggle, table of contents, link handling
+assets/js/search.js        Client-side search over the static index
+assets/js/search-index.json Static search index (generated)
 assets/ui-library/         Vendored UI Library stylesheet + icon font
 assets/media/              Images copied from the DokuWiki (generated)
 tools/convert-dokuwiki.js  DokuWiki -> Markdown converter
+tools/build-nav.js         Groups the flat page list into the nested nav tree
+tools/build-search-index.js Builds assets/js/search-index.json from wiki/
 tools/verify.js            Structural validator for the generated output
 tools/preview/             Local preview (Node stand-in for `jekyll serve`)
 ```
@@ -46,13 +52,31 @@ git sparse-checkout set DokuWiki/data
 cd ../intelligentplant.github.io
 node tools/convert-dokuwiki.js "../_root_clone/DokuWiki/data" .
 
-# 3. Check the result
+# 3. Rebuild the search index from the generated pages
+node tools/build-search-index.js
+
+# 4. Check the result
 node tools/verify.js .
 ```
 
 `verify.js` reports the page count, duplicate permalinks, broken internal links, and media files
 that are referenced but missing (or present but unused). It must print
 `OK — no structural problems found.` before you commit.
+
+### Navigation tree
+
+The DokuWiki has no folder hierarchy, so the sidebar tree is built from the links between pages:
+`tools/build-nav.js` groups pages into families, collapses single-child chains, and writes the
+nested `_data/nav.json` that `_includes/nav-tree.html` renders. Every node carries its own `depth`
+and the `hrefs` of all its descendants, because the recursive include cannot compute either (Liquid
+`assign` inside a recursive include leaks between levels). `convert-dokuwiki.js` calls it for you;
+run it on its own only if you want to regroup pages without re-converting the content.
+
+### Search
+
+`tools/build-search-index.js` writes `assets/js/search-index.json` — page title, headings and a
+short excerpt for every page (~58 KB). `assets/js/search.js` fetches it on the first keystroke and
+filters it in the browser, so GitHub Pages stays a plain static host with no build step or plugin.
 
 ## Previewing locally
 

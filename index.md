@@ -42,6 +42,21 @@ Can't find what you're looking for? [Get in touch](https://www.intelligentplant.
 
 - [Support](/wiki/support/support.html) <br /> Contact Details and Self Help Guides
 
+#### More from the wiki
+
+Pages that are easy to miss because they sit outside the main guides:
+
+- [Intro to Data Core](/wiki/datacore/intro.html) <br /> Overview of Data Core before you start configuring connections.
+- [Data Functions](/wiki/dev/data_functions.html) <br /> Developer reference for Data Functions.
+- [Write an App in Visual Studio](/wiki/dev/app_store_-_template_to_start_a_new_app_in_visual_studio.html) <br /> Template for starting a new app in Visual Studio.
+- [Automating Excel Reports](/wiki/excel/automation.html) <br /> Running Excel Query Add-In reports unattended.
+- [Jupyter Hub](/wiki/jupyter_hub/jupyter_hub.html) <br /> Using the App Store Jupyter Hub environment.
+- [PlayGround](/wiki/playground/playground.html) <br /> Sandbox for trying App Store APIs.
+- [Customer Data](/wiki/general/customerdata.html) <br /> How customer data is held and managed.
+- [Big Data Service: Technical Advisories](/wiki/big_data_service/technical-advisories.html) <br /> Advisories affecting the Big Data Service.
+- [Honeywell Uniformance Phd](/wiki/app_store_connect/honeywell_uniformance_phd.html) <br /> Connecting Uniformance Phd through App Store Connect.
+- [IP Hist Migration Tool](/wiki/data_core/ip_hist_migration_tool.html) <br /> Migrating IP.Hist data into Data Core.
+
 #### Downloads
 
 - [Industrial App Store Digital Security Key Features](https://appstore.intelligentplant.com/nuget/downloads/IAS-Digital%20Security-Key%20Features.pdf)

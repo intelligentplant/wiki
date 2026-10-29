@@ -52,6 +52,7 @@
               type="button" title="Toggle contents"
               aria-controls="wikiNav" aria-expanded="true"></button>
       <aside class="wiki-sidebar scrollbar" id="wikiNav" aria-label="Wiki contents">
+        {% include search.html %}
         {% include nav.html %}
       </aside>
 
@@ -62,5 +63,6 @@
   </div>
 
   <script src="{{ '/assets/js/wiki.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
 </body>
 </html>

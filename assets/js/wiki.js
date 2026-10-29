@@ -20,6 +20,16 @@
   document.addEventListener('DOMContentLoaded', () => {
     setNavHidden(isNavHidden());
 
+    // Both the search box and the "Contents" title are pinned to the top of the
+    // scrolling panel; the title needs to know how tall the box above it is.
+    const search = document.getElementById('wikiSearch');
+    if (search) {
+      const measure = () =>
+        document.documentElement.style.setProperty('--wiki-search-height', search.offsetHeight + 'px');
+      measure();
+      window.addEventListener('resize', measure);
+    }
+
     // Enable the open/close transition only after the stored state has been
     // applied, so loading a page with the panel closed does not animate.
     requestAnimationFrame(() => {
@@ -34,11 +44,17 @@
     }
 
     // Open the contents section for the current page and scroll it into view.
+    // The sections on the path to the page are already `open` in the markup.
+    // Only the panel is scrolled — `scrollIntoView` would scroll the page too,
+    // which pushes the pinned search box out of sight.
     const current = document.querySelector('.wiki-nav-current');
-    if (current) {
-      const details = current.closest('details');
-      if (details) details.open = true;
-      current.scrollIntoView({ block: 'center' });
+    const panel = document.getElementById('wikiNav');
+    if (current && panel) {
+      const target =
+        current.getBoundingClientRect().top -
+        panel.getBoundingClientRect().top -
+        (panel.clientHeight - current.clientHeight) / 2;
+      panel.scrollTop = Math.max(0, panel.scrollTop + target);
     }
 
     // Links leaving the wiki open in a new tab.

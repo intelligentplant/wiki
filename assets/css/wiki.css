@@ -159,11 +159,85 @@ body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
               visibility 0s linear var(--wiki-nav-duration);
 }
 
+/* Search box, pinned to the top of the panel. The contents tree can be long and
+   is scrolled to the current page on load, so the box has to stay reachable.
+   `--wiki-search-height` is measured by assets/js/wiki.js and is what pins the
+   "Contents" title directly underneath it. */
+.wiki-search {
+ position: sticky;
+ top: 0;
+ z-index: 4;
+ padding: 10px var(--horizontalPadding);
+ background: var(--primaryDarkColour);
+ border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
+}
+
+.wiki-search-input {
+  width: 100%;
+  font-size: var(--fontSizeSmall);
+}
+
+/* Overlays the tree instead of pushing it down, so the pinned "Contents"
+  title stays put while you type. */
+.wiki-search-results {
+ position: absolute;
+ left: var(--horizontalPadding);
+ right: var(--horizontalPadding);
+ top: calc(100% - var(--borderWidth));
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ border: var(--borderWidth) solid var(--primaryOutlineColour);
+ border-radius: var(--borderRadius);
+ background: var(--primaryMidDarkColour);
+ box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+ max-height: 45vh;
+ overflow-y: auto;
+}
+
+.wiki-search-results li {
+  border-bottom: 1px solid var(--primaryOutlineColour);
+}
+
+.wiki-search-results li:last-child {
+  border-bottom: 0;
+}
+
+.wiki-search-results a,
+.wiki-search-results a:visited {
+  display: block;
+  padding: 6px 10px;
+  color: var(--fontColour);
+  font-size: var(--fontSizeSmall);
+  text-decoration: none;
+}
+
+.wiki-search-results a:hover {
+  color: var(--successColour);
+}
+
+.wiki-search-results .wiki-search-heading {
+  font-size: var(--fontSizeSmaller);
+  opacity: 0.8;
+}
+
+.wiki-search-results .wiki-search-empty {
+  padding: 6px 10px;
+  font-size: var(--fontSizeSmall);
+  opacity: 0.8;
+}
+
+.wiki-nav-title {
+  /* Sits directly under the pinned search box. */
+  top: var(--wiki-search-height, 0px);
+}
+
 /* Gestalt .menuTitle + .mp-menu h2: title in --titleColour, light weight,
-   2px bottom border. Sticky so it always sits beside the fixed burger. */
+   2px bottom border. Sticky so it always sits beside the fixed burger, pinned
+   just under the search box via --wiki-search-height. */
 .wiki-nav-title {
   position: sticky;
-  top: 0;
+  top: var(--wiki-search-height, 0px);
   z-index: 2;
   padding: 8px 10px 8px var(--horizontalPadding);
   border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
@@ -209,6 +283,23 @@ body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
 /* An expanded section must not look like the selected page. */
 .wiki-nav-section.active > details > summary {
   font-weight: bold;
+}
+
+/* Deeper levels are progressively dimmer so the branch you are in reads as a
+   trail. The family (depth 0) stays brightest. */
+.wiki-nav-depth-1 > details > summary {
+  padding-left: 8px;
+  opacity: 1;
+}
+
+.wiki-nav-depth-2 > details > summary {
+  padding-left: 14px;
+  opacity: 0.92;
+}
+
+.wiki-nav-depth-3 > details > summary {
+  padding-left: 20px;
+  opacity: 0.84;
 }
 
 /* Gestalt ul.subFolderMenu: indent the children behind a 1px rule. */

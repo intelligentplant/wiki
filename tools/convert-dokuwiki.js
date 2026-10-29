@@ -18,6 +18,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { buildTree } = require('./build-nav');
 
 const dataDir = process.argv[2];
 const repoRoot = process.argv[3] || path.resolve(__dirname, '..');
@@ -725,7 +726,21 @@ if (releaseNotes.length) {
   nav.push({ key: 'release_notes', title: 'Release Notes', items: releaseNotes });
 }
 
-fs.writeFileSync(path.join(outData, 'nav.json'), JSON.stringify(nav, null, 2), 'utf8');
+/* Nest the flat namespace list into the family tree the sidebar renders. The
+ * grouping lives in tools/build-nav.js so the shipped _data/nav.json can be
+ * regenerated from the flat file without re-running this converter. */
+const flatHrefs = nav.reduce((n, s) => n + s.items.length, 0);
+const tree = buildTree(nav);
+const treeHrefs = (function count(nodes) {
+  return nodes.reduce(
+    (n, s) => n + (s.items ? s.items.length : 0) + (s.children ? count(s.children) : 0),
+    0,
+  );
+})(tree);
+if (treeHrefs !== flatHrefs) {
+  throw new Error(`nav nesting lost links: ${flatHrefs} -> ${treeHrefs}`);
+}
+fs.writeFileSync(path.join(outData, 'nav.json'), JSON.stringify(tree, null, 2) + '\n', 'utf8');
 
 /* start page */
 const startPage = pages.get('start');
