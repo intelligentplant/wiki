@@ -5,7 +5,7 @@ permalink: /alarm_analysis/resilient_data_transfer.html
 ---
 ### Overview {: .title}
 
-Before reading this guide, you should be familiar with [Alarm Analysis Network Architecture](/alarm_analysis/alarm_analysis_network_architectures.html) document. This illustrates possible network installations including scenarios where Alarms & Events are collected from a militarized zone and transferred to another network for processing.
+Before reading this guide, you should be familiar with [Alarm Analysis Network Architecture](/wiki/alarm_analysis/alarm_analysis_network_architectures.html) document. This illustrates possible network installations including scenarios where Alarms & Events are collected from a militarized zone and transferred to another network for processing.
 
 In these scenarios, it is necessary to configure Data Core installations to act as a data relay. Moreover, if the connectivity between relays is unreliable, further configuration is required to guarantee resilient data transfer.
 
@@ -13,11 +13,11 @@ This guide focuses on such a scenario
 
 Data is gathered from serial feed and relayed via a Data Core Node from the Process Information Network to an App Store Connect on the Business Network. The relay is configured for Resilient Data Transfer.
 
-![alarmanalysisresilientdatatransfer](/assets/media/alarm_analysis/alarmanalysisresilientdatatransfer.png)
+![alarmanalysisresilientdatatransfer](/wiki/assets/media/alarm_analysis/alarmanalysisresilientdatatransfer.png)
 
 A two box installation is required, with the following Data Core configuration:
 
-![resilienttransfer_02](/assets/media/data_core/resilienttransfer_02.png)
+![resilienttransfer_02](/wiki/assets/media/data_core/resilienttransfer_02.png)
 
 - Data Core listens for events (TCP Printer Stream). Arriving events are parsed and sent...
   1. On an immediate data relay to App Store Connect (Fast TCP Out)
@@ -34,13 +34,13 @@ While connectivity between the PIN and BN is good, all events will reach the des
 
 <strong>1. Install Data Core Node on PIN</strong>
 
-For detailed instructions on how to deploy a Data Core node, see: [Data Core: Stand-Alone Installation](/data_core/stand-alone_installation.html).
+For detailed instructions on how to deploy a Data Core node, see: [Data Core: Stand-Alone Installation](/wiki/data_core/stand-alone_installation.html).
 
 <strong>2. Data Core Node Configuration</strong>
 
 Configure the following Data Core components (assume default settings unless otherwise stated).
 
-For detailed instructions on how to create an Event Source to Sink subscription, see: [Data Core: Create an Event Subscription](/data_core/event_subscription.html)
+For detailed instructions on how to create an Event Source to Sink subscription, see: [Data Core: Create an Event Subscription](/wiki/data_core/event_subscription.html)
 
 <table class="wiki-table">
 <tbody>
@@ -111,13 +111,13 @@ For detailed instructions on how to create an Event Source to Sink subscription,
 
 <strong>3. Install App Store Connect on BN</strong>
 
-For detailed instructions on how to deploy App Store Connect, see: [How to Connect your Data to the App Store](/data_core/how_to_connect_your_data_to_the_app_store.html)
+For detailed instructions on how to deploy App Store Connect, see: [How to Connect your Data to the App Store](/wiki/data_core/how_to_connect_your_data_to_the_app_store.html)
 
 <strong>4. App Store Connect Configuration</strong>
 
 Configure the following Data Core components (assume default settings unless otherwise stated).
 
-For detailed instructions on how to create an Event Source to Sink subscription, see: [Data Core: Create an Event Subscription](/data_core/event_subscription.html)
+For detailed instructions on how to create an Event Source to Sink subscription, see: [Data Core: Create an Event Subscription](/wiki/data_core/event_subscription.html)
 
 <table class="wiki-table">
 <tbody>
@@ -195,4 +195,4 @@ A "docs.deleted" greater than zero indicates events are arriving on both fast an
 
 So far, we've moved Alarm & Event data across a network. We are now ready to configure Alarm Analysis processing.
 
-For more info, see [How to configure an Alarm & Event Import Stream](/alarm_analysis/how_to_configure_an_alarm_event_import_stream.html).
+For more info, see [How to configure an Alarm & Event Import Stream](/wiki/alarm_analysis/how_to_configure_an_alarm_event_import_stream.html).

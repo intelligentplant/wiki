@@ -13,7 +13,7 @@ Rather than specify explicit credentials in the connection object, you may prefe
 
 If left blank the default behaviour is to use App Store Connect service account.
 
-<img src="/assets/media/data_core/serviceacct03.png" alt="serviceacct03" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/serviceacct03.png" alt="serviceacct03" style="max-width:500px" loading="lazy" />
 
 <strong>2. Service Account Security</strong>
 
@@ -26,8 +26,8 @@ As well as PI Access, the service account should have rights configured on the l
 
 3.1 In Windows Services, select: <strong>Intelligent Plant Data Core Service</strong>
 
-<img src="/assets/media/data_core/serviceacct01.png" alt="serviceacct01" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/serviceacct01.png" alt="serviceacct01" style="max-width:500px" loading="lazy" />
 
 3.2. Change default Local System account to preferred alternative.
 
-<img src="/assets/media/data_core/serviceacct02.png" alt="serviceacct02" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/serviceacct02.png" alt="serviceacct02" style="max-width:500px" loading="lazy" />

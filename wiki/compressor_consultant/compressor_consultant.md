@@ -19,4 +19,4 @@ In summary, Compressor Consultant represents a sophisticated solution for indust
 
 ### Index {: .title}
 
-- [Compressor Consultant](/compressor_consultant/compressor_consultant.html)
+- [Compressor Consultant](/wiki/compressor_consultant/compressor_consultant.html)

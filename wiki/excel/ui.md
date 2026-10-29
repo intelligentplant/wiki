@@ -6,7 +6,7 @@ permalink: /excel/ui.html
 [This video](https://www.youtube.com/watch?v=_Q_361HDaOE&list=PLsVwx5rtV9c0duV5jln2IX9BIMDCCEWrY&index=2) shows how to use the "IP Data Query" tab.
 
 #### Get Current Value
-<img src="/assets/media/excel/ip_query_-_current_value_icon.png" alt="ip_query_-_current_value_icon" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/excel/ip_query_-_current_value_icon.png" alt="ip_query_-_current_value_icon" style="max-width:400px" loading="lazy" />
 
 Clicking "Current Value" allows you to configure a request to get the current value for some tags.
 - Select the relevant data source
@@ -20,7 +20,7 @@ This will insert the result of the query you entered at the currently selected p
 If the data source you want to query isn't listed it may be because it's not authorized, it doesn't support tag read operations or you aren't authorized to read from the data source.
 
 #### Get Historical Values
-<img src="/assets/media/excel/ip_query_-_historical_values_icon.png" alt="ip_query_-_historical_values_icon" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/excel/ip_query_-_historical_values_icon.png" alt="ip_query_-_historical_values_icon" style="max-width:400px" loading="lazy" />
 
 Clicking "Historical Values" allows you to configure a request to get the historical values for some tags.
 - Select the relevant data source
@@ -37,19 +37,19 @@ If the data source you want to query isn't listed it may be because it's not aut
 
 #### Refresh Data
 
-<img src="/assets/media/excel/ip_query_-_refresh_data_icon.png" alt="ip_query_-_refresh_data_icon" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/excel/ip_query_-_refresh_data_icon.png" alt="ip_query_-_refresh_data_icon" style="max-width:400px" loading="lazy" />
 
 This button will reload all data query formulas in the currently opened sheet.
 
 #### Refresh Selection
 
-<img src="/assets/media/excel/ip_query_-_refresh_selection_icon.png" alt="ip_query_-_refresh_selection_icon" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/excel/ip_query_-_refresh_selection_icon.png" alt="ip_query_-_refresh_selection_icon" style="max-width:400px" loading="lazy" />
 
 This button will reload all data query formulas in the currently selected range.
 
 #### Write Data
 
-<img src="/assets/media/excel/ip_query_-_write_data_icon.png" alt="ip_query_-_write_data_icon" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/excel/ip_query_-_write_data_icon.png" alt="ip_query_-_write_data_icon" style="max-width:400px" loading="lazy" />
 
 Clicking "Write Data" allows you to write a value to a tag in a data source.
 
@@ -63,7 +63,7 @@ If you don't see the data source you want to write to listed it may be because i
 
 #### Write All
 
-<img src="/assets/media/excel/ip_query_-_write_all_icon.png" alt="ip_query_-_write_all_icon" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/excel/ip_query_-_write_all_icon.png" alt="ip_query_-_write_all_icon" style="max-width:400px" loading="lazy" />
 
 The write all button allows you to write multiple values to multiple tags instantly.
 
@@ -89,7 +89,7 @@ Each value in the Values range will be written to the corresponding tag in the T
 
 #### Wiki
 
-<img src="/assets/media/excel/ip_query_-_wiki_icon.png" alt="ip_query_-_wiki_icon" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/excel/ip_query_-_wiki_icon.png" alt="ip_query_-_wiki_icon" style="max-width:400px" loading="lazy" />
 
 This button will open the add-in wiki.
 

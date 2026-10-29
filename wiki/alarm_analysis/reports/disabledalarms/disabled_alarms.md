@@ -3,7 +3,7 @@ layout: wiki
 title: "Disabled Alarms Report"
 permalink: /alarm_analysis/reports/disabledalarms/disabled_alarms.html
 ---
-<img src="/assets/media/alarm_analysis.reports.disabledalarms/aa_disabledalarmreport_01.png" alt="aa_disabledalarmreport_01" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/alarm_analysis.reports.disabledalarms/aa_disabledalarmreport_01.png" alt="aa_disabledalarmreport_01" style="max-width:600px" loading="lazy" />
 
 The "Disabled Alarm Report" shows the top 20 disabled alarms along with KPIs:
 

@@ -88,4 +88,4 @@ An administrator can prepare a C# code file to perform data transformation, but 
 The default location for Script Files is in the
   <Data Core Application Root folder>/ImportScripts
 
-To use an alternative location, define the `dataCore:alarmAnalysis:baseDirectory` setting as per ["update-safe" configuration](/data_core/update_safe_configuration.html) guidance.
+To use an alternative location, define the `dataCore:alarmAnalysis:baseDirectory` setting as per ["update-safe" configuration](/wiki/data_core/update_safe_configuration.html) guidance.

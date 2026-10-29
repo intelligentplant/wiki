@@ -9,14 +9,14 @@ Like any database installation, managing upgrades requires planning for downtime
 
 ### Configuration {: .title}
 
-- [Elasticsearch Best Practice](/big_data_service/best_practice.html)
-- [Modify Big Data Storage Location](/big_data_service/modify_data_storage_location.html)
-- [Big Data Service: Use Alternative Instance](/big_data_service/use_an_alternative_instance.html)
-- [App Store Connect: Back Up and Restore](/app_store_connect/back_up_and_restore.html)
-- [Increase Big Data Service RAM](/big_data_service/increase_big_data_service_ram.html)
-- [Antivirus Exclusion](/big_data_service/antivirus_exclusion.html)
-- [Logging](/big_data_service/logging.html)
-- [Upgrade Java](/big_data_service/upgrade_java.html)
+- [Elasticsearch Best Practice](/wiki/big_data_service/best_practice.html)
+- [Modify Big Data Storage Location](/wiki/big_data_service/modify_data_storage_location.html)
+- [Big Data Service: Use Alternative Instance](/wiki/big_data_service/use_an_alternative_instance.html)
+- [App Store Connect: Back Up and Restore](/wiki/app_store_connect/back_up_and_restore.html)
+- [Increase Big Data Service RAM](/wiki/big_data_service/increase_big_data_service_ram.html)
+- [Antivirus Exclusion](/wiki/big_data_service/antivirus_exclusion.html)
+- [Logging](/wiki/big_data_service/logging.html)
+- [Upgrade Java](/wiki/big_data_service/upgrade_java.html)
 
 ### Technical Advisories {: .title}
 
@@ -25,8 +25,8 @@ The following technical advisories cover vulnerability findings that apply to th
 <table class="wiki-table">
 <tbody>
 <tr><th>Component</th><th>Advisory</th><th>Description</th></tr>
-<tr><td>Java Runtime Engine</td><td><a href="/big_data_service/ta-001.html">TA-001: Outdated JRE</a></td><td>The installer bundles a cut-down JRE that is not updated with product releases. Upgrade the JRE to address outdated scanner findings.</td></tr>
-<tr><td>Log4j 1.2.17</td><td><a href="/big_data_service/ta-002.html">TA-002: Log4j 1.2.17 in Elasticsearch 2.4</a></td><td>Remediation of Log4j 1.x vulnerability findings using the Reload4j drop-in replacement. Covers CVE-2022-23302, CVE-2022-23305, and CVE-2022-23307.</td></tr>
+<tr><td>Java Runtime Engine</td><td><a href="/wiki/big_data_service/ta-001.html">TA-001: Outdated JRE</a></td><td>The installer bundles a cut-down JRE that is not updated with product releases. Upgrade the JRE to address outdated scanner findings.</td></tr>
+<tr><td>Log4j 1.2.17</td><td><a href="/wiki/big_data_service/ta-002.html">TA-002: Log4j 1.2.17 in Elasticsearch 2.4</a></td><td>Remediation of Log4j 1.x vulnerability findings using the Reload4j drop-in replacement. Covers CVE-2022-23302, CVE-2022-23305, and CVE-2022-23307.</td></tr>
 </tbody>
 </table>
 

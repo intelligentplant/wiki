@@ -11,7 +11,7 @@ Cross Data checks run independently of the import flow. If enabled, the Cross Da
 
 Cross Data Updates include the following functions...
 
-<img src="/assets/media/alarm_analysis/crossdatachecks.png" alt="crossdatachecks" style="max-width:1000px" loading="lazy" />
+<img src="/wiki/assets/media/alarm_analysis/crossdatachecks.png" alt="crossdatachecks" style="max-width:1000px" loading="lazy" />
 
 NB. Cross Data Functions incur processing overhead and should only be enabled if required.
 

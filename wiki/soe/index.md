@@ -5,7 +5,7 @@ permalink: /soe/index.html
 ---
 A fast and flexible <em>Alarm & Event</em> viewer. With SoE Explorer, you can quickly investigate your Alarm & Event history - create, save and share filters with colleagues.
 
-![SOE Explorer app screenshot](/assets/media/soe/screenshot_2025-07-02_105330.png)
+![SOE Explorer app screenshot](/wiki/assets/media/soe/screenshot_2025-07-02_105330.png)
 
 ### Links {: .title}
 

@@ -9,8 +9,8 @@ permalink: /excel/installation-files.html
 
 Visit related pages for further details on installation, updating, and how to use Excel Query Add-in:
 
-- [Setup](/excel/getting-started.html)
+- [Setup](/wiki/excel/getting-started.html)
 
-- [The IP Data Query Tab](/excel/ui.html)
+- [The IP Data Query Tab](/wiki/excel/ui.html)
 
-- [Writing Data Query Formulas](/excel/formulas.html)
+- [Writing Data Query Formulas](/wiki/excel/formulas.html)

@@ -54,6 +54,6 @@ To provide some mitigation, the buffer-read “lag” on the downstream server c
 
 All data will arrive on the downstream buffer, but the "lag" period no longer provides protection against reading data mid-ingestion. This may result in skipping a events during a catch-up period.
 
-Therefore, we recommend employing an alternative buffer for cross server operations (e.g. [MSMQ](/data_core/msmqeventsourcesink.html) or [RabbitMQ](/data_core/rabbitmq.html)), or disabling the downstream buffer altogether.
+Therefore, we recommend employing an alternative buffer for cross server operations (e.g. [MSMQ](/wiki/data_core/msmqeventsourcesink.html) or [RabbitMQ](/wiki/data_core/rabbitmq.html)), or disabling the downstream buffer altogether.
 
 However, the case remains that Big Data / Elasticsearch buffer is still useful in that it's easy to configure and provides raw data storage - extremely important during a commissioning phase where Alarm Analysis Import Rules may undergo change and a re-import of history is required.

@@ -19,4 +19,4 @@ Bring your plant operations to life with visualisations created in PnID and prov
 
 [HMI Graphics Colour Standards](https://appstore.intelligentplant.com/NuGet/downloads/Gestalt/Intelligent-Plant-HMI-Graphics-Colour-Standards.pdf)
 
-[Event Manager Script Reference](/gestaltpnid/gestalt_pnid/event_manager_reference.html)
+[Event Manager Script Reference](/wiki/gestaltpnid/gestalt_pnid/event_manager_reference.html)

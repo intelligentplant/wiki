@@ -7,7 +7,7 @@ You can install project templates for Visual Studio 2022, Visual Studio 2019 and
 
 Once installed, you can create an app in Visual Studio by selecting "Industrial App Store" from the "Project Type" filter in the new project window:
 
-<img src="/assets/media/dev/vs_new_project_window.png" alt="vs_new_project_window" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/dev/vs_new_project_window.png" alt="vs_new_project_window" style="max-width:400px" loading="lazy" />
 
 You can also create an app from the command line using the .NET SDK:
 

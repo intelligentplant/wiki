@@ -62,7 +62,7 @@ Release date: 2026-10-30
 ##### New Features
 
 - Added an feature to mark multiple point on a Trend, PCP or Scatterplot view.
- <img src="/assets/media/general/apps/gestalttrend/screenshot_2026-04-16_084106.png" alt="screenshot_2026-04-16_084106" style="max-width:400px" loading="lazy" /><img src="/assets/media/general/apps/gestalttrend/screenshot_2026-04-16_084358.png" alt="screenshot_2026-04-16_084358" style="max-width:400px" loading="lazy" /><img src="/assets/media/general/apps/gestalttrend/screenshot_2026-04-16_084437.png" alt="screenshot_2026-04-16_084437" style="max-width:400px" loading="lazy" />
+ <img src="/wiki/assets/media/general/apps/gestalttrend/screenshot_2026-04-16_084106.png" alt="screenshot_2026-04-16_084106" style="max-width:400px" loading="lazy" /><img src="/wiki/assets/media/general/apps/gestalttrend/screenshot_2026-04-16_084358.png" alt="screenshot_2026-04-16_084358" style="max-width:400px" loading="lazy" /><img src="/wiki/assets/media/general/apps/gestalttrend/screenshot_2026-04-16_084437.png" alt="screenshot_2026-04-16_084437" style="max-width:400px" loading="lazy" />
 
 ##### Modifications and Improvements
 
@@ -77,7 +77,7 @@ Release date: 2026-10-30
 
 - Moved current time text from titlebar to create more space for menus on embedded or small windows.
 
-<img src="/assets/media/general/apps/gestalttrend/timemenutrend.gif" alt="timemenutrend" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestalttrend/timemenutrend.gif" alt="timemenutrend" style="max-width:600px" loading="lazy" />
 
 ### 2025-11-Minor {: .title}
 
@@ -252,13 +252,13 @@ Release date: 2025-06-27
 
 ##### New Features
 
-- <strong>New Demo Files</strong> - Moved the demo files to their own directory, separate from the user's personal files, and added a brand new set.<img src="/assets/media/general/apps/gestalttrend/screenshot_2024-07-24_095306.png" alt="screenshot_2024-07-24_095306" style="max-width:200px" loading="lazy" />
+- <strong>New Demo Files</strong> - Moved the demo files to their own directory, separate from the user's personal files, and added a brand new set.<img src="/wiki/assets/media/general/apps/gestalttrend/screenshot_2024-07-24_095306.png" alt="screenshot_2024-07-24_095306" style="max-width:200px" loading="lazy" />
 
 - <strong>File Audit Trail</strong> - Added an audit trail of who created and last modified a file on the share popup, and on hovering over a file in the left side panel.
-<img src="/assets/media/general/apps/gestalttrend/file_info.gif" alt="file_info" style="max-width:200px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestalttrend/file_info.gif" alt="file_info" style="max-width:200px" loading="lazy" />
 
 - <strong>Bulk Export</strong> - Added the ability to export files and folders via the left side panel context menu.
-<img src="/assets/media/general/apps/gestalttrend/screenshot_2024-07-24_102014.png" alt="screenshot_2024-07-24_102014" style="max-width:200px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestalttrend/screenshot_2024-07-24_102014.png" alt="screenshot_2024-07-24_102014" style="max-width:200px" loading="lazy" />
 ##### Modifications and Improvements
 - Modified the rendering of trends to skip any values that have a bad status.
 - Modified the value label to hide the unit of measure if the tag is a digital state tag.
@@ -285,7 +285,7 @@ Release date: 2025-06-27
 ##### New Features
 
 - <strong>Bulk File Delete:</strong> Added the ability to select multiple files in the left hand menu and delete them as one instead of deleting them individually.
-<img src="/assets/media/general/apps/gestalttrend/bulk-delete-trend.gif" alt="bulk-delete-trend" style="max-width:200px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestalttrend/bulk-delete-trend.gif" alt="bulk-delete-trend" style="max-width:200px" loading="lazy" />
 ##### Modifications and Improvements
 
 - Modified data source select to group data sources under the App Store Connect they belong to.
@@ -361,7 +361,7 @@ Release date: 2025-06-27
 - <strong>New Manual Tags</strong> - Added the ability to manually add tag names to a dashboard to allow adding of metatags and to also serve as placeholders.
 - <strong>New File Menu -</strong> Modified the file menu to work as an expandable tree to ease navigation between folders and make it more user-friendly.
 - <strong>New File Context Menu -</strong> Added a context menu to the file menu to make it simpler and easier to perform actions against specific files and folders and make the UI cleaner. You can right-click any file/folder to open it.
-<img src="/assets/media/general/apps/gestalttrend/contextmenu-trend.gif" alt="contextmenu-trend" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestalttrend/contextmenu-trend.gif" alt="contextmenu-trend" style="max-width:400px" loading="lazy" />
 ##### Modifications and Improvements
 
 - Added a select all tags button in the Trend Tag Manager.
@@ -455,13 +455,13 @@ Release date: 2025-06-27
 
 - <strong>Significant Figure Setting:</strong> Added significant figure setting that allows the user to configure how many significant figures to show for values. Defaults to 4 SF.
 
-<img src="/assets/media/general/apps/gestalttrend/trend_-_significant_figure.gif" alt="trend_-_significant_figure" style="max-width:200px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestalttrend/trend_-_significant_figure.gif" alt="trend_-_significant_figure" style="max-width:200px" loading="lazy" />
 - <strong>Tag Line Width Setting:</strong> Added line width property for tags to allow the user to customize the widths of individual tags in a window.
 
-<img src="/assets/media/general/apps/gestalttrend/trend_-_line_width.gif" alt="trend_-_line_width" style="max-width:200px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestalttrend/trend_-_line_width.gif" alt="trend_-_line_width" style="max-width:200px" loading="lazy" />
 - <strong>Limits Range:</strong> Added option to display the tag limits as range between the limits.
 
-<img src="/assets/media/general/apps/gestalttrend/trend_-_range_limits.gif" alt="trend_-_range_limits" style="max-width:200px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestalttrend/trend_-_range_limits.gif" alt="trend_-_range_limits" style="max-width:200px" loading="lazy" />
 ##### Modifications and Fixes
 - Added shortcut (ctrl + z) for restoring the previous query.
 - Added expresion evaluator buttong to the tag search window.

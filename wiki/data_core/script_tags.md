@@ -82,7 +82,7 @@ A number of pre-configured script tags exist to perform the following functions:
 
 The Data Core Admin UI shows information related to the processing of an individual Script Tag via the "Info" and "Additional Properties" icons.
 
-<img src="/assets/media/data_core/scripttags-00.png" alt="scripttags-00" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/scripttags-00.png" alt="scripttags-00" style="max-width:400px" loading="lazy" />
 
 The Data Core API also exposes information related to all Script Tags for a data source.
 

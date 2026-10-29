@@ -28,7 +28,7 @@ Download and run the [RabbitMQ 64bit Windows Installer](https://www.rabbitmq.com
 
 When prompted, untick the "Install RabbitMQ Service" option.
 
-<img src="/assets/media/data_core/rabbitmq_01.jpg" alt="rabbitmq_01" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/rabbitmq_01.jpg" alt="rabbitmq_01" style="max-width:400px" loading="lazy" />
 
 <strong>3. Configure RabbitMQ</strong>
 
@@ -58,7 +58,7 @@ The RabbitMQ Admin UI is accessible on
 
   http://localhost:15672/
 
-<img src="/assets/media/data_core/rabbitmq_02.png" alt="rabbitmq_02" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/rabbitmq_02.png" alt="rabbitmq_02" style="max-width:400px" loading="lazy" />
 
 <strong>Hint</strong> Bookmark this link.
 
@@ -87,6 +87,6 @@ The keys settings are:
 
 ### More RabbitMQ Resources {: .title}
 
-- [Enable Resilient Data Transfer with RabbitMQ](/datacore/enable_resilient_data_transfer_with_rabbitmq.html)
-- [Upgrading App Store Connect (ASC) to use TLS 1.2](/datacore/appstoreconnect_tls.html)
+- [Enable Resilient Data Transfer with RabbitMQ](/wiki/datacore/enable_resilient_data_transfer_with_rabbitmq.html)
+- [Upgrading App Store Connect (ASC) to use TLS 1.2](/wiki/datacore/appstoreconnect_tls.html)
 - [RabbitMQ: Change the Hostname](https://dennymichael.net/2014/06/16/rabbitmq-change-the-hostname)

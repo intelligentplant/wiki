@@ -13,11 +13,11 @@ The installer sets up the following artifacts:
 
 ### Windows Services {: .title}
 
-<img src="/assets/media/data_core/iasartifacts_01.png" alt="iasartifacts_01" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/iasartifacts_01.png" alt="iasartifacts_01" style="max-width:600px" loading="lazy" />
 
 Two services control the operation of:
 
-- <strong>Intelligent Plant Big Data Service</strong> <br /> Local data repository that can scaled up for high-performance high-volume data storage. Employed by [Alarm Analysis](/alarm_analysis/alarm_analysis.html) and the IP Historian.
+- <strong>Intelligent Plant Big Data Service</strong> <br /> Local data repository that can scaled up for high-performance high-volume data storage. Employed by [Alarm Analysis](/wiki/alarm_analysis/alarm_analysis.html) and the IP Historian.
 
 - <strong>Intelligent Plant Data Core Service</strong> <br /> Handles data connection, routing and security.
 
@@ -25,7 +25,7 @@ Two services control the operation of:
 
 The main folders are:
 
-- <strong>%Program Files%\Intelligent Plant\Big Data</strong> <br /> Default location of the Big Data run-time and storage files, though a common custom configuration is to [map the data storage location to a dedicated data drive](/big_data_service/modify_data_storage_location.html).
+- <strong>%Program Files%\Intelligent Plant\Big Data</strong> <br /> Default location of the Big Data run-time and storage files, though a common custom configuration is to [map the data storage location to a dedicated data drive](/wiki/big_data_service/modify_data_storage_location.html).
 
 - <strong>%Program Files%\Intelligent Plant\Data Core</strong> <br /> The Data Core Service host.
 

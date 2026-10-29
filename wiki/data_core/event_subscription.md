@@ -9,7 +9,7 @@ Event Sinks subscribe to Event Sources to process events. For example, save even
 
 The example below shows a subscription between a SQL Event Source (which collects data from SQL Server) and Big Data Event Sink (which stores data to Elasticsearch).
 
-For a full collection of Data Core components and configuration, see [Data Core Components](/data_core/data_sources.html)
+For a full collection of Data Core components and configuration, see [Data Core Components](/wiki/data_core/data_sources.html)
 
 ### Open Data Core {: .title}
 
@@ -19,14 +19,14 @@ For a full collection of Data Core components and configuration, see [Data Core 
 
 3. Select “Configure Data Core”
 
-<img src="/assets/media/data_core/datacorehome.png" alt="datacorehome" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/datacorehome.png" alt="datacorehome" style="max-width:500px" loading="lazy" />
 
-If the menu bar does not list the options above, check if you have [Data Core Administrator Privileges](/app_store_connect/data_core_administrator_privileges.html)
+If the menu bar does not list the options above, check if you have [Data Core Administrator Privileges](/wiki/app_store_connect/data_core_administrator_privileges.html)
 
 ### Create an Event Source {: .title}
 
-![createeventsrc](/assets/media/data_core/createeventsrc.gif)
+![createeventsrc](/wiki/assets/media/data_core/createeventsrc.gif)
 
 ### Create an Event Sink Subscription {: .title}
 
-![createeventsnk](/assets/media/data_core/createeventsnk.gif)
+![createeventsnk](/wiki/assets/media/data_core/createeventsnk.gif)

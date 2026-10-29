@@ -49,6 +49,6 @@ Consent for this scope is requested on behalf of your organization, which is why
 
 The Industrial App Store previously used Microsoft's [Azure AD Graph](https://docs.microsoft.com/en-us/graph/migrate-azure-ad-graph-overview) to retrieve user information. When registering your organization, you may see "Sign in and read user profile" listed twice in the requested permissions (once for the Microsoft Graph and once for the Azure AD Graph):
 
-<img src="/assets/media/general/orgs/ias_aad_permissions.png" alt="ias_aad_permissions" style="max-width:200px" loading="lazy" />
+<img src="/wiki/assets/media/general/orgs/ias_aad_permissions.png" alt="ias_aad_permissions" style="max-width:200px" loading="lazy" />
 
 Microsoft has announced that the Azure AD Graph is being retired in favour of the Microsoft Graph. Requesting the permission from both APIs allows the Industrial App Store to maintain backwards compatibility until support for the Azure AD Graph is removed.

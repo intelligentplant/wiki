@@ -22,7 +22,7 @@ Below is our policy for managing uptime.
 
 - <strong>Pilot / Beta / Canary</strong> <br /> Pre-production apps and services may be updated at any time without notice.
 
-- <strong>App Store Connects</strong> <br /> App Store Connect updates are distributed via NuGet package feeds. Although we prepare package feed updates for last Friday of every month, you can control <em>if</em> and <em>when</em> to collect them. For more detail, refer to [App Store Connect Updates](/data_core/app_store_connect_updates.html).
+- <strong>App Store Connects</strong> <br /> App Store Connect updates are distributed via NuGet package feeds. Although we prepare package feed updates for last Friday of every month, you can control <em>if</em> and <em>when</em> to collect them. For more detail, refer to [App Store Connect Updates](/wiki/data_core/app_store_connect_updates.html).
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
@@ -30,10 +30,10 @@ Below is our policy for managing uptime.
 
 <strong>Fri 30 Oct 2026, 10:00 - 12:00 GMT</strong>
 
-- [Gestalt Trend](/general/apps/gestalttrend/releasenotes.html)
-- [Gestalt PnID](/general/apps/gestaltpnid/releasenotes.html)
-- [Controller Consultant](/general/apps/controllerconsultant/releasenotes.html)
-- [App Store Connect](/general/apps/appstoreconnect/releasenotes.html)
+- [Gestalt Trend](/wiki/general/apps/gestalttrend/releasenotes.html)
+- [Gestalt PnID](/wiki/general/apps/gestaltpnid/releasenotes.html)
+- [Controller Consultant](/wiki/general/apps/controllerconsultant/releasenotes.html)
+- [App Store Connect](/wiki/general/apps/appstoreconnect/releasenotes.html)
 
 Apps may be unavailable for up to 15 mins during maintenance window.
 
@@ -43,25 +43,25 @@ Apps may be unavailable for up to 15 mins during maintenance window.
 
 Release notes for the Industrial App Store and various Intelligent Plant apps can be viewed using the links below:
 
-- [Industrial App Store Portal](/general/apps/appstore/releasenotes.html)
-- [App Store Connect](/general/apps/appstoreconnect/releasenotes.html)
-- [Data API](/general/apps/dataapi/releasenotes.html)
-- [Aperture](/general/apps/aperture/releasenotes.html)
-- [Alarm Analysis](/general/apps/alarmanalysis/releasenotes.html)
-- [Azimuth](/general/apps/azimuth/releasenotes.html)
-- [Compressor Consultant](/general/apps/compressorconsultant/releasenotes.html)
-- [Controller Consultant](/general/apps/controllerconsultant/releasenotes.html)
-- [Facit](/general/apps/facit/releasenotes.html)
-- [Gestalt PnID](/general/apps/gestaltpnid/releasenotes.html)
-- [Gestalt Trend](/general/apps/gestalttrend/releasenotes.html)
-- [Hydraulic Usage](/general/apps/hydraulicusage/releasenotes.html)
-- [OpMode](/general/apps/opmode/releasenotes.html)
-- [Sequence of Events Explorer (SOEx)](/general/apps/soex/releasenotes.html)
-- [Industrial Connector for Power BI](/general/apps/powerbi/releasenotes.html)
-- [Industrial Automator for Power Automate](/general/apps/powerautomate/releasenotes.html)
-- [Valve Signature](/general/apps/valvesignature/releasenotes.html)
-- [Wax Intelligence](/general/apps/wax_intelligence/releasenotes.html)
-- [Well Intelligence](/general/apps/well_intelligence/releasenotes.html)
+- [Industrial App Store Portal](/wiki/general/apps/appstore/releasenotes.html)
+- [App Store Connect](/wiki/general/apps/appstoreconnect/releasenotes.html)
+- [Data API](/wiki/general/apps/dataapi/releasenotes.html)
+- [Aperture](/wiki/general/apps/aperture/releasenotes.html)
+- [Alarm Analysis](/wiki/general/apps/alarmanalysis/releasenotes.html)
+- [Azimuth](/wiki/general/apps/azimuth/releasenotes.html)
+- [Compressor Consultant](/wiki/general/apps/compressorconsultant/releasenotes.html)
+- [Controller Consultant](/wiki/general/apps/controllerconsultant/releasenotes.html)
+- [Facit](/wiki/general/apps/facit/releasenotes.html)
+- [Gestalt PnID](/wiki/general/apps/gestaltpnid/releasenotes.html)
+- [Gestalt Trend](/wiki/general/apps/gestalttrend/releasenotes.html)
+- [Hydraulic Usage](/wiki/general/apps/hydraulicusage/releasenotes.html)
+- [OpMode](/wiki/general/apps/opmode/releasenotes.html)
+- [Sequence of Events Explorer (SOEx)](/wiki/general/apps/soex/releasenotes.html)
+- [Industrial Connector for Power BI](/wiki/general/apps/powerbi/releasenotes.html)
+- [Industrial Automator for Power Automate](/wiki/general/apps/powerautomate/releasenotes.html)
+- [Valve Signature](/wiki/general/apps/valvesignature/releasenotes.html)
+- [Wax Intelligence](/wiki/general/apps/wax_intelligence/releasenotes.html)
+- [Well Intelligence](/wiki/general/apps/well_intelligence/releasenotes.html)
 
 ### Uptime {: .title}
 

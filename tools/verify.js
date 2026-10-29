@@ -19,6 +19,13 @@ const repoRoot = process.argv[2] || path.resolve(__dirname, '..');
 const wikiDir = path.join(repoRoot, 'wiki');
 const mediaDir = path.join(repoRoot, 'assets', 'media');
 
+// Links in page bodies include the site baseurl (e.g. /wiki); permalinks do not.
+const baseUrl = (() => {
+  const cfg = fs.readFileSync(path.join(repoRoot, '_config.yml'), 'utf8');
+  const m = cfg.match(/^baseurl:\s*["']?([^"'\s#]*)["']?/m);
+  return m ? m[1].replace(/\/+$/, '') : '';
+})();
+
 const problems = [];
 const fail = (msg) => problems.push(msg);
 
@@ -139,13 +146,14 @@ for (const { file, rel } of allDocs) {
   for (const m of text.matchAll(/\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g)) {
     const raw = m[1];
     if (/^(https?:|mailto:|#)/i.test(raw)) continue;
-    const [target, anchor] = raw.split('#');
-    if (!target) continue;
+    const [prefixed, anchor] = raw.split('#');
+    if (!prefixed) continue;
     linkCount += 1;
-    if (!target.startsWith('/')) {
-      fail(`${rel}: relative link is not site-absolute: ${raw}`);
+    if (!prefixed.startsWith(baseUrl + '/')) {
+      fail(`${rel}: link does not start with '${baseUrl}/': ${raw}`);
       continue;
     }
+    const target = prefixed.slice(baseUrl.length);
     if (target.startsWith('/assets/')) {
       const disk = path.join(repoRoot, safeDecode(target.replace(/^\//, '')));
       if (!fs.existsSync(disk)) fail(`${rel}: missing asset ${target}`);
@@ -161,9 +169,14 @@ for (const { file, rel } of allDocs) {
   }
 
   for (const m of text.matchAll(/<img[^>]+src="([^"]+)"/g)) {
-    const target = safeDecode(m[1]);
-    if (!target.startsWith('/')) continue;
+    const src = safeDecode(m[1]);
+    if (!src.startsWith('/')) continue;
     mediaCount += 1;
+    if (!src.startsWith(baseUrl + '/')) {
+      fail(`${rel}: image does not start with '${baseUrl}/': ${src}`);
+      continue;
+    }
+    const target = src.slice(baseUrl.length);
     if (!fs.existsSync(path.join(repoRoot, target.replace(/^\//, '')))) {
       fail(`${rel}: missing image ${target}`);
     }

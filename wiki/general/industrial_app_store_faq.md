@@ -34,7 +34,7 @@ Once set-up, it acts as a data conduit routing queries from Industrial App Store
 
 ### What historians does App Store Connect support? {: .title}
 
-[Supported Data Sources](/data_core/data_sources.html)
+[Supported Data Sources](/wiki/data_core/data_sources.html)
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 ### Is App Store Connect safe? {: .title}
@@ -70,7 +70,7 @@ App Store Connect ships with connectors for most Industrial Data Historians. The
 1. Install App Store Connect
 1. Configure Real Time Data Source
 
-More information is available on: [How to Connect your data to the App Store](/data_core/how_to_connect_your_data_to_the_app_store.html).
+More information is available on: [How to Connect your data to the App Store](/wiki/data_core/how_to_connect_your_data_to_the_app_store.html).
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
@@ -82,7 +82,7 @@ The [Wood Review on UK offshore oil and gas recovery (2014)](https://www.ogautho
 
 With this in mind, we designed data collaboration at the heart of the Industrial App Store. Organizations can enable trusts that enable their employees to work together.
 
-For more information, see [Inter-organization Trust Management](/general/organization_user_and_data_management/trust_management.html).
+For more information, see [Inter-organization Trust Management](/wiki/general/organization_user_and_data_management/trust_management.html).
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
@@ -122,7 +122,7 @@ App Store Connect can be a good solution where data protection laws prohibit the
 We don't store user passwords. We advise organizations that use Microsoft Entra ID to register their organization with the Industrial App Store. This means Microsoft take care of user authentication.
 
 <em><strong>More Info</strong></em>
-- [How to register an organization with the App Store](/general/registering_an_organziation_with_the_app_store.html)
+- [How to register an organization with the App Store](/wiki/general/registering_an_organziation_with_the_app_store.html)
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
@@ -131,7 +131,7 @@ We don't store user passwords. We advise organizations that use Microsoft Entra 
 Yes. If you register your organization with the Industrial App Store, your Domain Administrator can enable multi-factor authentication on your Microsoft Entra ID.
 
 <em><strong>More Info</strong></em>
-- [How to register an organization with the App Store](/general/registering_an_organziation_with_the_app_store.html)
+- [How to register an organization with the App Store](/wiki/general/registering_an_organziation_with_the_app_store.html)
 - [What authentication and verification methods are available in Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)
 
 <div class="title wiki-divider" aria-hidden="true"></div>
@@ -144,7 +144,7 @@ All internet communication is encrypted via HTTPS.
 
 Intelligent Plant (who manage the Industrial App Store) are [ISO 9001](https://en.wikipedia.org/wiki/ISO_9000) and [ISO/IEC 27001](https://en.wikipedia.org/wiki/ISO/IEC_27001) accredited.
 
-![iso-27001-2013-badge-grey](/assets/media/general/iso-27001-2013-badge-grey.png)
+![iso-27001-2013-badge-grey](/wiki/assets/media/general/iso-27001-2013-badge-grey.png)
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
@@ -154,4 +154,4 @@ The Industrial App Store model means that apps are hosted in the cloud and there
 
 In these cases, refer to our guidance notes for more information.
 
-- [Preparing for a Server Upgrade](/general/preparing_for_a_server_upgrade.html)
+- [Preparing for a Server Upgrade](/wiki/general/preparing_for_a_server_upgrade.html)

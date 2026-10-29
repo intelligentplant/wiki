@@ -1,0 +1,10 @@
+# Copy this file to .npmrc (in this folder) and replace TOKEN.
+#
+# Create the token at:
+#   https://github.com/settings/tokens/new?scopes=read:packages&description=UI%20Library
+# GitHub Packages only accepts classic tokens, so a fine-grained token will 404.
+# The token is read-only for packages and must belong to an account that can see
+# the private IntelligentPlant organisation.
+
+@intelligentplant:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=TOKEN

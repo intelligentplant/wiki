@@ -5,7 +5,7 @@ permalink: /data_core/increase_service_timeout.html
 ---
 Data Core consists of two windows services:
 
-<img src="/assets/media/data_core/ip_dc_services.png" alt="ip_dc_services" style="max-width:700px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/ip_dc_services.png" alt="ip_dc_services" style="max-width:700px" loading="lazy" />
 
 We've observed that the Intelligent Plant Data Core Service does not always reliably start following an ungraceful shutdown of a VM Host (i.e. a power cut).
 

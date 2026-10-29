@@ -17,7 +17,7 @@ Creating a dedicated Entra ID tenant is recommended when:
 
 - You want to maintain control over who can access your organization's data via the Industrial App Store.
 
-Once you have set up your Entra ID tenant, you can [register your organization with the Industrial App Store](/general/registering_an_organziation_with_the_app_store.html) to enable Single Sign-On and centralized access management.
+Once you have set up your Entra ID tenant, you can [register your organization with the Industrial App Store](/wiki/general/registering_an_organziation_with_the_app_store.html) to enable Single Sign-On and centralized access management.
 
 ### What is Microsoft Entra ID? {: .title}
 
@@ -46,13 +46,13 @@ To create and configure an Entra ID tenant:
 
 #### Example: Wind Co
 
-An energy supplier "Wind Co" creates an Entra ID tenant named "IAS - Wind Co", adds employee accounts, configures security policies, then [registers with the Industrial App Store](/general/registering_an_organziation_with_the_app_store.html). Their employees can then sign in using Entra ID credentials, with access managed centrally by IT administrators.
+An energy supplier "Wind Co" creates an Entra ID tenant named "IAS - Wind Co", adds employee accounts, configures security policies, then [registers with the Industrial App Store](/wiki/general/registering_an_organziation_with_the_app_store.html). Their employees can then sign in using Entra ID credentials, with access managed centrally by IT administrators.
 
 ### Managing Your Entra ID Instance {: .title}
 
 <strong>Your organization maintains full control and responsibility</strong> for managing the Entra ID tenant, including user accounts, credentials, security policies, and sign-in monitoring. Sensitive employee information remains under your organization's direct control.
 
-<em>Intelligent Plant does not have access to your Entra ID tenant, user credentials, or directory information. The Industrial App Store only receives basic profile information when users sign in, as described in our [security documentation](/general/security.html).</em>
+<em>Intelligent Plant does not have access to your Entra ID tenant, user credentials, or directory information. The Industrial App Store only receives basic profile information when users sign in, as described in our [security documentation](/wiki/general/security.html).</em>
 
 ### Pricing and Licensing {: .title}
 
@@ -70,5 +70,5 @@ For detailed pricing information, refer to [Microsoft Entra pricing](https://www
 
 - [What is Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/fundamentals/whatis)
 - [Microsoft Entra documentation](https://learn.microsoft.com/en-us/entra/fundamentals/)
-- [Registering an Organization with the Industrial App Store](/general/registering_an_organziation_with_the_app_store.html)
-- [App Store Security Overview](/general/security.html)
+- [Registering an Organization with the Industrial App Store](/wiki/general/registering_an_organziation_with_the_app_store.html)
+- [App Store Security Overview](/wiki/general/security.html)

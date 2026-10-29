@@ -10,7 +10,7 @@ Key reports are listed below, along with (in some cases) information on they are
 ### Alarm Overview {: .title}
 
 - Alarms Over Time per Operator
-- [Average Alarms per 10 minutes in each hour of the day per Operator](/alarm_analysis/reports/alarm_analysis.reports.average_alarms_per_10_minutes_in_each_hour_of_the_day_per_operator.html)
+- [Average Alarms per 10 minutes in each hour of the day per Operator](/wiki/alarm_analysis/reports/alarm_analysis.reports.average_alarms_per_10_minutes_in_each_hour_of_the_day_per_operator.html)
 - Steady State Alarm System Performance
 - Upset State Alarm System Performance
 - Average v Peak Alarm Rate
@@ -21,9 +21,9 @@ Key reports are listed below, along with (in some cases) information on they are
 - Bad Actor Count
 - Bad Actor Contribution
 - Fleeting Alarms
-- [Stale Alarms Report](/alarm_analysis/reports/stalealarms/stale_alarms.html)
+- [Stale Alarms Report](/wiki/alarm_analysis/reports/stalealarms/stale_alarms.html)
 - Chattering Alarms
-- [Disabled Alarms Report](/alarm_analysis/reports/disabledalarms/disabled_alarms.html)
+- [Disabled Alarms Report](/wiki/alarm_analysis/reports/disabledalarms/disabled_alarms.html)
 
 ### Bad Actor Detail {: .title}
 

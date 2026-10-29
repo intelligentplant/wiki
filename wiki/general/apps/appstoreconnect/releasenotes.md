@@ -406,7 +406,7 @@ General:
 - <code>[Enhancement]</code> All event sources now support a `GetLatestEventMessage` custom function that returns the last message emitted by the driver.
 
 Alarm Analysis Driver:
-- The following changes help administrators adhere to [best practice](/big_data_service/best_practice.html) with regard to Elasticsearch index and shard management.
+- The following changes help administrators adhere to [best practice](/wiki/big_data_service/best_practice.html) with regard to Elasticsearch index and shard management.
   - <code>[Enhancement]</code> "Indexing Regime" configuration setting added to Alarm Analysis driver with "IndexPerMonth" (default) and "IndexPerYear" options. Setting can be changed safely at any point, but will only affect new indices.
   - <code>[Enhancement]</code> "Number of Shards" and "Refresh Interval" settings added to Alarm Analysis driver to allow more control over index creation. Settings can be changed safely at any point, but will only affect new indices.
 

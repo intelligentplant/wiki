@@ -9,7 +9,7 @@ In Gestalt PnID's Event Manager we provide several helper functions that help yo
 
 ### Global/Local Scripts {: .title}
 
-Functions and variables can be defined at the scope of a dashboard or at organisation level. See [Global and Local Scripts Guide](/gestaltpnid/gestalt_pnid/event_manager_reference/global_scripts_guide.html) for more information.
+Functions and variables can be defined at the scope of a dashboard or at organisation level. See [Global and Local Scripts Guide](/wiki/gestaltpnid/gestalt_pnid/event_manager_reference/global_scripts_guide.html) for more information.
 
 ### Script Reference {: .title}
 

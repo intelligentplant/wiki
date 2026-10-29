@@ -15,15 +15,15 @@ The secure connection allows App Store Connect to communicate with the App Store
 
 All App Store applications use industry-standard OAuth2 authentication when communicating with the App Store, to ensure that no application can access your data without your permission.  When you open an application, the application must prove to the App Store that it is a genuine application, and tell the App Store about what kind of information it requires (e.g. access to your user profile, access to App Store Connect data sources).  The App Store displays a consent screen where you can decide if the application is allowed to access the scope of information that it is requesting:
 
-<img src="/assets/media/general/authorize.png" alt="authorize" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/general/authorize.png" alt="authorize" style="max-width:600px" loading="lazy" />
 
 Furthermore, if an application wants to access your App Store Connect data sources, you must explicitly choose which data sources it can access:
 
-<img src="/assets/media/general/auth02.png" alt="auth02" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/general/auth02.png" alt="auth02" style="max-width:600px" loading="lazy" />
 
 An application cannot access a data source unless you explicitly allow it.  You can revoke access to a data source at any time from the [App Store settings](https://appstore.intelligentplant.com/Security/Apps) page:
 
-<img src="/assets/media/general/auth03.png" alt="auth03" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/general/auth03.png" alt="auth03" style="max-width:600px" loading="lazy" />
 
 Once you have given your consent to the application to access your information, the application is given a time-limited, encrypted token that it can use to authorize calls to the App Store (e.g. to perform a tag search, or to request tag values).  The token contains information about the application that it was issued to, and about the scope of App Store information that it is allowed to access.  The App Store verifies that the token is genuine, and will reject any request that uses an invalid or expired token.
 

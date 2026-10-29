@@ -27,7 +27,7 @@ Release date: 2025-06-27
 
 This release brings the following changes:
 
-- Changes to support [pre-assigning data sources to apps](/general/apps/appstore/releasenotes.html#section202506) in the Industrial App Store portal.
+- Changes to support [pre-assigning data sources to apps](/wiki/general/apps/appstore/releasenotes.html#section202506) in the Industrial App Store portal.
 
 ### 2025-05 {: .title}
 

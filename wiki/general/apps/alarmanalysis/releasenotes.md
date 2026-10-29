@@ -69,7 +69,7 @@ Release Date: 2024-09-27
 - Fixed and re-introduced link to Gestalt Trend;
 - Removed link to App Store Connect from the dropdown menu on the navigation bar;
 - Removed link to "New Datasources" from the dropdown menu on the navigation bar.
-- [Alarm Analysis Driver enhancements](/general/apps/appstoreconnect/releasenotes.html#section202409)
+- [Alarm Analysis Driver enhancements](/wiki/general/apps/appstoreconnect/releasenotes.html#section202409)
 
 #### 2024-08
 App Version: 3.3.39<br />
@@ -77,7 +77,7 @@ Release Date: 2024-08-30
 
 - Trend Link Removed: A direct link to Gestalt Trend to view Alarm State over time has been removed pending review of app licencing terms and conditions.
 - [Bug Fix]: Fix for "Manual Duration not displaying".
-- Alarm Analysis Driver updates (more info:[App Store Connect Release Notes](/general/apps/appstoreconnect/releasenotes.html#section202408))
+- Alarm Analysis Driver updates (more info:[App Store Connect Release Notes](/wiki/general/apps/appstoreconnect/releasenotes.html#section202408))
 - Data Navigation Control bug fix:<br /> Fix for issue where certain report date-ranges have the potential to break navigation controls.
 
 #### 2024-07
@@ -85,7 +85,7 @@ App Version: 3.3.14<br />
 Release Date: 2024-07-26
 
 - Security Updates
-- Alarm Analysis Driver updates (more info:[App Store Connect Release Notes](/general/apps/appstoreconnect/releasenotes.html#section202407))
+- Alarm Analysis Driver updates (more info:[App Store Connect Release Notes](/wiki/general/apps/appstoreconnect/releasenotes.html#section202407))
 
 #### 2024-01
 App Version: 3.2.19875<br />
@@ -149,12 +149,12 @@ Release Date: 2020-11-19
 App Version: 3.2.15372<br />
 Release Date: 2020-07-30
 
-- Route Import Errors to an Alarm Analysis Index [[more info](/alarm_analysis/import_errors.html)].
+- Route Import Errors to an Alarm Analysis Index [[more info](/wiki/alarm_analysis/import_errors.html)].
 - Document AA Event Sink Import "Historic Scan Limit" Settings.
 - Stale Alarm ordering.
 - Frequency distribution chart fails.
 - Frequency distribution chart colouring.
-- Asset Timezone handling [[more info](/alarm_analysis/assettimezone/asset_time_zone.html)].
+- Asset Timezone handling [[more info](/wiki/alarm_analysis/assettimezone/asset_time_zone.html)].
 - Ensure all KPI descriptors in full Title Case for consistency.
 - UI components for major new feature - SOEx like filtering.
 

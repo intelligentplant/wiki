@@ -5,7 +5,7 @@ permalink: /general/azure_ad_graph_retirement.html
 ---
 ### Outline {: .title}
 
-<strong>Azure AD Graph</strong> is an API gateway to Azure services, including authentication. This allows employees of organizations that have [registered with the Industrial App Store](/general/registering_an_organziation_with_the_app_store.html) to log in using their work credentials.
+<strong>Azure AD Graph</strong> is an API gateway to Azure services, including authentication. This allows employees of organizations that have [registered with the Industrial App Store](/wiki/general/registering_an_organziation_with_the_app_store.html) to log in using their work credentials.
 
 Microsoft have deprecated Azure AD Graph in favour of [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview). We expect Azure AD Graph to be discontinued some time in 2023.
 
@@ -19,7 +19,7 @@ An Azure AD administrator for your organization can check current Graph consents
 
  2. Navigate to Azure Active Direcory > Enterprise Applications > Intelligent Plant Industrial App Store > Security > Permissions
 
-<img src="/assets/media/general/msgraph01.png" alt="msgraph01" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/general/msgraph01.png" alt="msgraph01" style="max-width:600px" loading="lazy" />
 
 If Microsoft Graph User.Read claim is <strong>not</strong> listed, then action is required.
 
@@ -27,7 +27,7 @@ If Microsoft Graph User.Read claim is <strong>not</strong> listed, then action i
 
 The easiest method is to simply repeat the Organization Registration process:
 
-- [Registering an Organization with the Industrial App Store](/general/registering_an_organziation_with_the_app_store.html)
+- [Registering an Organization with the Industrial App Store](/wiki/general/registering_an_organziation_with_the_app_store.html)
 
 ### References {: .title}
 

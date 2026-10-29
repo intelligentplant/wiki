@@ -90,7 +90,7 @@ This tag represents the probability of precipitation at Intelligent Plant HQ, 6 
 
 ### Recording Forecast History {: .title}
 
-The Met Office API driver can be configured in conjunction with a historian and [data stream](/data_core/data_sources.html#data-streams) rule to record forecast history.
+The Met Office API driver can be configured in conjunction with a historian and [data stream](/wiki/data_core/data_sources.html#data-streams) rule to record forecast history.
 
 By setting up a data stream that maps Met Office API forecast tags to historian tags, you can:
 

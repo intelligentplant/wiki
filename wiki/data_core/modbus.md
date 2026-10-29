@@ -41,6 +41,6 @@ Device mappings are configured in a csv file that must be stored in
 
 <strong>File Format</strong>
 
-<img src="/assets/media/data_core/modbusfilemap.png" alt="modbusfilemap" style="max-width:800px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/modbusfilemap.png" alt="modbusfilemap" style="max-width:800px" loading="lazy" />
 
 The first row contains headers that define tag and timestamp columns.

@@ -13,7 +13,7 @@ The big data service uses the Java Runtime Engine 8. It installs with a local ve
 - Find "Intelligent Plant Big Data Service".
 - Right-click and select "Stop".
 
-<img src="/assets/media/big_data_service/bdcustom_02.png" alt="bdcustom_02" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/big_data_service/bdcustom_02.png" alt="bdcustom_02" style="max-width:500px" loading="lazy" />
 
 3. Launch the Big Data Service manager
 
@@ -21,7 +21,7 @@ The big data service uses the Java Runtime Engine 8. It installs with a local ve
 - Navigate to %ProgramFiles%\Intelligent Plant\Big Data\es\bin\
 - Enter: service.bat manager
 
-<img src="/assets/media/big_data_service/bdcustom_07.png" alt="bdcustom_07" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/big_data_service/bdcustom_07.png" alt="bdcustom_07" style="max-width:500px" loading="lazy" />
 
 4. Under the Java tab, update the Java Virtual Machine path to point to the newly installed system JRE.
 
@@ -30,14 +30,14 @@ The path should point to the <strong>jvm.dll</strong> file inside the <strong>bi
 
 Click Apply and close the properties window.
 
-<img src="/assets/media/big_data_service/bd-jre-01.png" alt="bd-jre-01" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/big_data_service/bd-jre-01.png" alt="bd-jre-01" style="max-width:500px" loading="lazy" />
 
 5. Restart the Big Data Service
 
 - Open Windows Services.
 - Find "Intelligent Plant Big Data Service". Right-click and select "Start".
 
-<img src="/assets/media/big_data_service/bdcustom_05.png" alt="bdcustom_05" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/big_data_service/bdcustom_05.png" alt="bdcustom_05" style="max-width:500px" loading="lazy" />
 
 6. Finally, when satisfied the Big Data Service is running correctly, the bundled version of JRE can be safely removed.
 

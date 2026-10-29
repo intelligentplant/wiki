@@ -21,7 +21,7 @@ The TCP Event Sink and Source provides a reliable and secure way to relay data a
 
 The diagram below illustrates such a configuration.
 
-![500](/assets/media/data_core/tcp_06.png)
+![500](/wiki/assets/media/data_core/tcp_06.png)
 
 Alarms & Events (A&E) arrive on a serial feed and are captured by Serial Port Listener, data is collected then relayed. Three distinct data core nodes act as stepping stones across network boundaries. Firewalls at each boundary only require a single rule to allow the downstream flow of secure TCP traffic.
 
@@ -42,29 +42,29 @@ The TCP Event Source and Sink supports resilient data transfer.
 
 The diagram below includes a <strong>relient flow</strong> where transmission is guaranteed.
 
-<img src="/assets/media/data_core/resilientflow.png" alt="resilientflow" style="max-width:800px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/resilientflow.png" alt="resilientflow" style="max-width:800px" loading="lazy" />
 
-Resilient flow uses [Microsoft Message Queue (MSMQ)](/data_core/msmqeventsourcesink.html) as a local collector (this is essential if data is arriving on an ephemeral flow). The TCP Event Sink component is then chained to the transactional MSMQ.
+Resilient flow uses [Microsoft Message Queue (MSMQ)](/wiki/data_core/msmqeventsourcesink.html) as a local collector (this is essential if data is arriving on an ephemeral flow). The TCP Event Sink component is then chained to the transactional MSMQ.
 
 The TCP Event Sink is configured with the "Check Response" property set to true. This acts as a guaranteed delivery mechanism - repeating attempts to relay data downstream until a positive acknowledgement is received.
 
-<img src="/assets/media/data_core/tcp_04.png" alt="tcp_04" style="max-width:700px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/tcp_04.png" alt="tcp_04" style="max-width:700px" loading="lazy" />
 
 ### Fire & Forget {: .title}
 
 The above "Resilient Data Transfer" method using TCP and MSMQ is not expected to introduce any overhead, however if a faster flow was required, paralel TCP components can be chained directly and configured to "fire-and-forget" by setting the "Check Reponse" property to false. Each event will pass through both fast and resilient flows and are consolidated at their final Alarm Analysis destination.
 
-<img src="/assets/media/data_core/tcp_05.png" alt="tcp_05" style="max-width:700px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/tcp_05.png" alt="tcp_05" style="max-width:700px" loading="lazy" />
 
 ### System Account Requirements {: .title}
 
 For TCP authentication, the TCP Client supplies credentials for the TCP server to verify. This could be a service account available on a common domain, or if the Data Core Nodes are on separate networks,  a local windows account defined on the computer hosting the TCP Event Source (as in the picture below).
 
-<img src="/assets/media/data_core/tcp_02.png" alt="tcp_02" style="max-width:300px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/tcp_02.png" alt="tcp_02" style="max-width:300px" loading="lazy" />
 
 The username and password is then supplied in the TCP Event Sink configuration.
 
-<img src="/assets/media/data_core/tcp_03.png" alt="tcp_03" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/tcp_03.png" alt="tcp_03" style="max-width:500px" loading="lazy" />
 
 NB. Sensitive Data Core configuration is encrypted.
 

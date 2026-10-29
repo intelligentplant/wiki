@@ -19,7 +19,7 @@ Open Windows Services <br />
 Select: Intelligent Plant Big Data Service > Properties <br />
 Change Startup type to “Disabled”
 
-<img src="/assets/media/big_data_service/bdcustom_01.png" alt="bdcustom_01" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/big_data_service/bdcustom_01.png" alt="bdcustom_01" style="max-width:400px" loading="lazy" />
 
 <strong>2. Modify Firewall</strong>
 

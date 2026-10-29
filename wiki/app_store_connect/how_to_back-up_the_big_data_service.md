@@ -11,7 +11,7 @@ If you have already downloaded, deployed and configured the Back-Up utility (or 
 
 <strong>1.1. Stop the Big Data Service</strong>
 
-<img src="/assets/media/app_store_connect/backup00.png" alt="backup00" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/backup00.png" alt="backup00" style="max-width:600px" loading="lazy" />
 
 Open Windows Services.
 
@@ -38,7 +38,7 @@ Uncomment the path.repo entry (remove hash) and enter a back up location (e.g. "
 
 <strong>1.3. Restart the Big Data Service</strong>
 
-<img src="/assets/media/app_store_connect/backup02.png" alt="backup02" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/backup02.png" alt="backup02" style="max-width:600px" loading="lazy" />
 
 Open Windows Services.
 Find “Intelligent Plant Big Data Service”.
@@ -58,7 +58,7 @@ We suggest deploying the back-up utility to the Intelligent Plant programs folde
 
 Open the BackupUtility folder and double click "Snapshot.bat" to run.
 
-<img src="/assets/media/app_store_connect/backup01.png" alt="backup01" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/backup01.png" alt="backup01" style="max-width:600px" loading="lazy" />
 
 This creates a database restore point protecting against data corruption or accidental loss.
 
@@ -68,7 +68,7 @@ The console window automatically closes after 10 seconds.
 
 For advanced Snapshot management (create/delete/list/restore) open the BackupUtility manager: double click "BackupUtility.exe".
 
-<img src="/assets/media/app_store_connect/backup04.png" alt="backup04" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/backup04.png" alt="backup04" style="max-width:600px" loading="lazy" />
 
 #### 3 Archive back-up files
 

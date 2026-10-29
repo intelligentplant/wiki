@@ -24,7 +24,7 @@ Before we can commence with configuring Data Core, we must prepare the servers a
 
 <strong>1. Install RabbitMQ</strong>
 
-Refer to [RabbitMQ](/data_core/rabbitmq.html)
+Refer to [RabbitMQ](/wiki/data_core/rabbitmq.html)
 
 <strong> 2. Configure Firewall Rules </strong>
 
@@ -32,7 +32,7 @@ Firewall rules must be configured on the destination/downstream server to allow 
 
 Open Windows Defender Firewall and configure two new <strong>Inbound Rules</strong>:
 
-<img src="/assets/media/data_core/rabbitmq_03.png" alt="rabbitmq_03" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/rabbitmq_03.png" alt="rabbitmq_03" style="max-width:600px" loading="lazy" />
 
 <table class="wiki-table">
 <tbody>
@@ -122,7 +122,7 @@ Complete the form as follows:
 
 <strong> 1. Install RabbitMQ </strong>
 
-Refer to [RabbitMQ](/data_core/rabbitmq.html)
+Refer to [RabbitMQ](/wiki/data_core/rabbitmq.html)
 
 NB. Include the <em>optional</em> "RabbitMQ Shovel plugin" step.
 
@@ -164,7 +164,7 @@ Select Admin > Shovel Management > Add a new shovel
 
 Complete the form as follows:
 
-<img src="/assets/media/data_core/rabbitmq_05.png" alt="rabbitmq_05" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/rabbitmq_05.png" alt="rabbitmq_05" style="max-width:600px" loading="lazy" />
 
 <table class="wiki-table">
 <tbody>
@@ -202,4 +202,4 @@ On the destination server we need to configure:
 
 As well as a resilient stream, it may be necessary to configure a fast (near-real-time) flow also. The difference is that whilst the resilient flow is responsible for guaranteed flow of history to the destination data archive, the fast flow will only ever attempt to relay current values.
 
-For more info, refer to [Enable Resilient Data Transfer with RabbitMQ - Fast Flow Variation](/datacore/enable_resilient_data_transfer_with_rabbitmq_-_fast_flow_variation.html)
+For more info, refer to [Enable Resilient Data Transfer with RabbitMQ - Fast Flow Variation](/wiki/datacore/enable_resilient_data_transfer_with_rabbitmq_-_fast_flow_variation.html)

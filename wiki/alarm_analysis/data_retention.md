@@ -46,16 +46,16 @@ Only remove unprocessed data if satisfied historic re-processing of historic is 
 1. On App Store Connect server, Open App Store Connect (http://localhost:2006/Service) <br />
 Then navigate to "Real-Time Data > Data Sources".
 
-<img src="/assets/media/app_store_connect/asc_01.png" alt="asc_01" style="max-width:300px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/asc_01.png" alt="asc_01" style="max-width:300px" loading="lazy" />
 
 2. Select the Alarm Analysis data source for which a Data Retention Policy is required. <br />
 Navigate to "Actions > Configure Data Source Settings".
 
-<img src="/assets/media/alarm_analysis/dataretention01.png" alt="dataretention01" style="max-width:300px" loading="lazy" />
+<img src="/wiki/assets/media/alarm_analysis/dataretention01.png" alt="dataretention01" style="max-width:300px" loading="lazy" />
 
 3. Scroll to "Data Retention" settings.
 
-<img src="/assets/media/alarm_analysis/dataretention02.png" alt="dataretention02" style="max-width:300px" loading="lazy" />
+<img src="/wiki/assets/media/alarm_analysis/dataretention02.png" alt="dataretention02" style="max-width:300px" loading="lazy" />
 
 The following settings are available:
 

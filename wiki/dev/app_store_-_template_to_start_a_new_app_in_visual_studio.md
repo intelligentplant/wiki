@@ -11,7 +11,7 @@ Here is a video that takes you through the whole process
 
 Once installed, you can create an App Store web application by selecting <em>File > New > Project</em> in Visual Studio, choosing .NET Framework 4.5.2 or greater, and navigating to <em>Visual C# > Web</em> from the project template browser:
 
-<img src="/assets/media/dev/image002.png" alt="image002" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/dev/image002.png" alt="image002" style="max-width:600px" loading="lazy" />
 
 Once Visual Studio creates the new project, you'll find a readme file in your new project that contains instructions for registering an application with the App Store.
 

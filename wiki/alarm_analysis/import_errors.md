@@ -5,7 +5,7 @@ permalink: /alarm_analysis/import_errors.html
 ---
 When configuring an Alarm import flow, there is a setting called <em>Transform<sup class="wiki-footnote" title="&quot;Transform&quot; describes the process of converting a &quot;raw&quot; source message to an Alarm Analysis record.">[1]</sup> Error Tolerance</em>.
 
-![aatransformerrortolerance](/assets/media/alarm_analysis/aatransformerrortolerance.png)
+![aatransformerrortolerance](/wiki/assets/media/alarm_analysis/aatransformerrortolerance.png)
 
 Depending on the Transform Error Tolerance a transform failure will either block import or be discarded to allow import to continue.
 
@@ -13,4 +13,4 @@ Depending on the Transform Error Tolerance a transform failure will either block
 
 If any records are discarded, they can be reviewed in Alarm Analysis by selecting the Import Errors folder in the asset drop down.
 
-<img src="/assets/media/alarm_analysis/aaimporterror01.png" alt="aaimporterror01" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/alarm_analysis/aaimporterror01.png" alt="aaimporterror01" style="max-width:400px" loading="lazy" />

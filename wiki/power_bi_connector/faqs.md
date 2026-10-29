@@ -8,7 +8,7 @@ permalink: /power_bi_connector/faqs.html
 <strong>Error message:</strong><br />
 <em>We're unable to connect. Please delete your credentials and try again later.</em>
 
-<img src="/assets/media/power_bi_connector/delete-credentials-symptom.png" alt="Delete credentials - symptom" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/power_bi_connector/delete-credentials-symptom.png" alt="Delete credentials - symptom" style="max-width:600px" loading="lazy" />
 
 <strong>Solution:</strong><br />
 One thing to try would be to remove the permission of the connector and try to log in again.<br />
@@ -16,7 +16,7 @@ One thing to try would be to remove the permission of the connector and try to l
 To do that you go to <strong>File > Option and Settings > Data source settings</strong>.<br />
 <br />
 You should then see the following:
-<img src="/assets/media/power_bi_connector/data-source-settings.png" alt="Data source settings" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/power_bi_connector/data-source-settings.png" alt="Data source settings" style="max-width:600px" loading="lazy" />
 
 Here you can then select the Industrial App Store and click "<strong>Clear Permissions</strong>".<br />
 <br />
@@ -30,19 +30,19 @@ Adding parameters to your Power BI dashboard can be an extremely useful way to c
 
 You can create parameters after adding data from IAS to your Power BI dashboard. To do this, click "Transform Data" which will open the Power Query Editor window. In there, go to the Home tab and select "Manage Parameters".
 
-<img src="/assets/media/power_bi_connector/power_bi_-_manage_parameters.png" alt="power_bi_-_manage_parameters" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/power_bi_connector/power_bi_-_manage_parameters.png" alt="power_bi_-_manage_parameters" style="max-width:400px" loading="lazy" />
 
 Click "New" to start a new parameter and begin filling out the parameters details.
 
-<img src="/assets/media/power_bi_connector/power_bi_-_editing_parameters.png" alt="power_bi_-_editing_parameters" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/power_bi_connector/power_bi_-_editing_parameters.png" alt="power_bi_-_editing_parameters" style="max-width:400px" loading="lazy" />
 
 Once you have made all of the parameters you need, insert them in to the original query like so:
 
-<img src="/assets/media/power_bi_connector/power_bi_-_modifying_query.png" alt="power_bi_-_modifying_query" style="max-width:800px" loading="lazy" />
+<img src="/wiki/assets/media/power_bi_connector/power_bi_-_modifying_query.png" alt="power_bi_-_modifying_query" style="max-width:800px" loading="lazy" />
 
 Apply and Close the editor to go back to your dashboard. Now the parameters can be edited by going to Transform Data -> Edit Parameters.
 
-<img src="/assets/media/power_bi_connector/power_bi_-_changing_parameters.png" alt="power_bi_-_changing_parameters" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/power_bi_connector/power_bi_-_changing_parameters.png" alt="power_bi_-_changing_parameters" style="max-width:400px" loading="lazy" />
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 

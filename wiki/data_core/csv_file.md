@@ -9,7 +9,7 @@ Enable the loop function to simulate live updating data.
 
 ### Data File Format {: .title}
 
-![csvformat](/assets/media/data_core/csvformat.png)
+![csvformat](/wiki/assets/media/data_core/csvformat.png)
 
 The first row contains headers that define tag and timestamp columns.
 
@@ -25,7 +25,7 @@ Subsequent rows contain time-series tag values.
 
 CSV specific settings are listed under "CSV Settings".
 
-![csvfile02](/assets/media/data_core/csvfile02.png)
+![csvfile02](/wiki/assets/media/data_core/csvfile02.png)
 
 #### Key Settings
 

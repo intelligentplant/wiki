@@ -5,7 +5,7 @@ permalink: /data_core/ip_hist_migration_tool.html
 ---
 The IP Hist migration tool is a command line program that allows you to effciently transfer historical data records from IP Hist v2 (Elastic Search 2) to IP Hist v3 (Elastic Search 7).
 
-See [IP Hist v3](/data_core/iphist_v3.html) for instructions on setting up IP Hist v3.
+See [IP Hist v3](/wiki/data_core/iphist_v3.html) for instructions on setting up IP Hist v3.
 
 #### Downloading and Installing the IP Hist Migration Tool
 

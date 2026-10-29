@@ -60,7 +60,7 @@ if ($existingPrinter -eq $null) {
 
 ### Testing {: .title}
 
-The ultimate aim may be to relay or import the data to Alarm Analysis, however preparing a [File System Event Sink](/data_core/filesystemeventsink.html) will be a quicker way to test events are being captured.
+The ultimate aim may be to relay or import the data to Alarm Analysis, however preparing a [File System Event Sink](/wiki/data_core/filesystemeventsink.html) will be a quicker way to test events are being captured.
 
 ### Troubleshooting {: .title}
 
@@ -146,6 +146,6 @@ First of all, make sure you have full administrator rights.
 
 Also note printer ports are "owned" by the printer server rather than the printer. Open the port configuration tool via Printer Server.
 
-<img src="/assets/media/data_core/tcpprinter002.png" alt="tcpprinter002" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/tcpprinter002.png" alt="tcpprinter002" style="max-width:400px" loading="lazy" />
 
 If issues persist, try restarting the <strong>Print Spooler</strong> service.

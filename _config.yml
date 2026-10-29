@@ -5,7 +5,7 @@ title: "Industrial App Store Wiki"
 description: >-
   Documentation for the Industrial App Store: user guides, administrator
   resources, data connection setup and app release notes.
-baseurl: ""
+baseurl: "/wiki"
 
 markdown: kramdown
 kramdown:

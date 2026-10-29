@@ -9,11 +9,11 @@ Alarm Analysis is a little different however, in that you can override this opti
 
 To specify an explicit Asset Timezone, select the "cog" configuration icon...
 
-<img src="/assets/media/alarm_analysis/aatimezone01.png" alt="aatimezone01" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/alarm_analysis/aatimezone01.png" alt="aatimezone01" style="max-width:400px" loading="lazy" />
 
 then select an Asset Timezone.
 
-<img src="/assets/media/alarm_analysis/aatimezone02.png" alt="aatimezone02" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/alarm_analysis/aatimezone02.png" alt="aatimezone02" style="max-width:400px" loading="lazy" />
 
 Now all dates are interpreted and presented for that timezone:
 

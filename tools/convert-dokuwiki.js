@@ -31,6 +31,15 @@ const outWiki = path.join(repoRoot, 'wiki');
 const outMedia = path.join(repoRoot, 'assets', 'media');
 const outData = path.join(repoRoot, '_data');
 
+// The site is served under `baseurl` (e.g. /wiki). Links written into page bodies
+// are plain Markdown, so they carry it themselves; permalinks and nav.json do not,
+// because Jekyll and the `relative_url` filter add it there.
+const baseUrl = (() => {
+  const cfg = fs.readFileSync(path.join(repoRoot, '_config.yml'), 'utf8');
+  const m = cfg.match(/^baseurl:\s*["']?([^"'\s#]*)["']?/m);
+  return m ? m[1].replace(/\/+$/, '') : '';
+})();
+
 /* ---------------------------------------------------------------- helpers */
 
 // Some DokuWiki pages were saved with UTF-8 bytes that had been double-encoded.
@@ -213,7 +222,7 @@ function convertMedia(inner, currentNs) {
   if (mediaPath.startsWith('wiki/')) return stripInlineNoise(title);
 
   const ext = path.extname(mediaPath).toLowerCase();
-  const url = `/assets/media/${mediaPath}`;
+  const url = `${baseUrl}/assets/media/${mediaPath}`;
   const alt = stripInlineNoise(title) || path.basename(mediaPath, ext);
   const flags = dims.split('&').map((p) => p.trim().toLowerCase());
 
@@ -286,9 +295,9 @@ function convertLink(body, currentNs) {
   const page = resolvePage(target, currentNs);
   if (!page) return title || stripInlineNoise(target);
   if (/^\{\{.*\}\}$/.test(title)) {
-    return `[${convertMedia(title, currentNs)}](${encodeUrl(hrefFor(page.ns, page.name))})`;
+    return `[${convertMedia(title, currentNs)}](${encodeUrl(baseUrl + hrefFor(page.ns, page.name))})`;
   }
-  return `[${title || page.title}](${encodeUrl(hrefFor(page.ns, page.name, slug(anchor)))})`;
+  return `[${title || page.title}](${encodeUrl(baseUrl + hrefFor(page.ns, page.name, slug(anchor)))})`;
 }
 
 // Inline markup is converted in one pass so that already-generated HTML and

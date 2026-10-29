@@ -13,7 +13,7 @@ We aim for the highest web security standards. Here's an overview of our policie
 
 Take a look at the address bar in your web browser.
 
-<img src="/assets/media/general/https.png" alt="https" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/general/https.png" alt="https" style="max-width:600px" loading="lazy" />
 
 Note the padlock and "https" prefix in our web address.
 
@@ -53,7 +53,7 @@ security architecture which forces applications to request explicit user authori
 
 When you log in to an App Store app, you'll receive an authorization prompt like the following:
 
-<img src="/assets/media/general/authorize.png" alt="authorize" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/general/authorize.png" alt="authorize" style="max-width:600px" loading="lazy" />
 
 - An app can only access your App Store profile if <strong><em>you</em></strong> authorize it.
 - An app can only charge your App Store account if <strong><em>you</em></strong> authorize it.

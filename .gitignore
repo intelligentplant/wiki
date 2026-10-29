@@ -4,9 +4,12 @@ _site/
 .jekyll-metadata
 vendor/
 
-# Node (the converter in tools/ uses only the Node standard library)
+# Node (tools/preview and tools/ui-library use npm)
 node_modules/
 npm-debug.log*
+
+# GitHub Packages token for tools/ui-library (see tools/ui-library/.npmrc.example)
+tools/ui-library/.npmrc
 
 # OS / editor cruft
 .DS_Store

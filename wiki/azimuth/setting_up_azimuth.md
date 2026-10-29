@@ -21,7 +21,7 @@ Azimuth helps ensure:
 
 Azimuth uses asset and equipment hierarchical structure. One or more pieces of equipment can be defined on an asset. For example:
 
-![https:azimuth.intelligentplant.com](/assets/media/azimuth/asseteqhier.png)
+![https:azimuth.intelligentplant.com](/wiki/assets/media/azimuth/asseteqhier.png)
 
 1. Adding an asset (subscription)
 1. Adding equipment

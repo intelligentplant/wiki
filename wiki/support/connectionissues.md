@@ -9,7 +9,7 @@ The guide below assumes you have working internet, are able to access the app on
 
 Have you access to the data source and have you authorized the app to connect to it?
 
-For instructions on how to check, see [Authorize Apps to connect to Data Sources](/app_store_connect/authorize_apps_to_connect_to_your_data.html)
+For instructions on how to check, see [Authorize Apps to connect to Data Sources](/wiki/app_store_connect/authorize_apps_to_connect_to_your_data.html)
 
 ### Clear Cookies {: .title}
 
@@ -20,16 +20,16 @@ To clear the web-browser cache...
 <strong>Chrome</strong>
 
 Click on the padlock in the address bar, then "Site settings" and then "Clear data":
-<img src="/assets/media/support/clear-cache-01.png" alt="clear-cache-01" style="max-width:300px" loading="lazy" />
+<img src="/wiki/assets/media/support/clear-cache-01.png" alt="clear-cache-01" style="max-width:300px" loading="lazy" />
 
 <strong>Firefox</strong>
 
 Click on the padlock in the address bar and then "Clear Cookies and Site Data..."
 
-<img src="/assets/media/support/clear-cache-02.png" alt="clear-cache-02" style="max-width:300px" loading="lazy" />
+<img src="/wiki/assets/media/support/clear-cache-02.png" alt="clear-cache-02" style="max-width:300px" loading="lazy" />
 
 <strong>Internet Explorer</strong>
 
 Click on Tools, then "Internet Options", then "Delete..." in the "Browsing history" section on the General tab, and then ensure that the following items are checked before clicking "Delete":
 
-<img src="/assets/media/support/clear-cache-03.png" alt="clear-cache-03" style="max-width:300px" loading="lazy" />
+<img src="/wiki/assets/media/support/clear-cache-03.png" alt="clear-cache-03" style="max-width:300px" loading="lazy" />

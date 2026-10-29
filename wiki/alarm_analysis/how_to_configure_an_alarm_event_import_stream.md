@@ -21,13 +21,13 @@ Event Source <em>to</em> Big Data Event Sink.
 
 5. Create and configure a Data Core Event Source (e.g. SQL Event Source)
 
-<em>For full list of supported event sources, see [Data Core Data Sources](/data_core/data_sources.html)</em>
+<em>For full list of supported event sources, see [Data Core Data Sources](/wiki/data_core/data_sources.html)</em>
 
 6. Navigate to: Alarm & Event > Event Sinks
 
 7. Create and configure a Big Data Event Sink
 
-- [Big Data Event Sink](/data_core/bigdataeventsourcesink.html)
+- [Big Data Event Sink](/wiki/data_core/bigdataeventsourcesink.html)
 
 8. Add subscription for above Event Sink for Event Source
 

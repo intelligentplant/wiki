@@ -11,11 +11,11 @@ Data Core is Intelligent Plant's data connectivity suite.
 
 System requirements are the same as App Store Connect.
 
-- [App Store Connect](/app_store_connect/app_store_connect.html)
+- [App Store Connect](/wiki/app_store_connect/app_store_connect.html)
 
 Alternatively, if your server has an outgoing internet connection, consider creating a new repo configured to connect to the App Store Nuget feed.
 
-<img src="/assets/media/data_core/datacoreinstall06.png" alt="datacoreinstall06" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/datacoreinstall06.png" alt="datacoreinstall06" style="max-width:500px" loading="lazy" />
 
 #### Installation
 
@@ -35,7 +35,7 @@ Alternatively, if your server has an outgoing internet connection, consider crea
 - http://localhost:2006/Service
 - Click "Create Application"
 
-<img src="/assets/media/data_core/datacoreinstall01.png" alt="datacoreinstall01" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/datacoreinstall01.png" alt="datacoreinstall01" style="max-width:500px" loading="lazy" />
 
 5. Configure the following properties:
 
@@ -45,21 +45,21 @@ Alternatively, if your server has an outgoing internet connection, consider crea
 - Enabled: checked
 - Click “Add Application”
 
-<img src="/assets/media/data_core/datacoreinstall02.png" alt="datacoreinstall02" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/datacoreinstall02.png" alt="datacoreinstall02" style="max-width:500px" loading="lazy" />
 
 6. The Data Core "Application" starts automatically. Now open the Application.
 
-<img src="/assets/media/data_core/datacoreinstall03.png" alt="datacoreinstall03" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/datacoreinstall03.png" alt="datacoreinstall03" style="max-width:500px" loading="lazy" />
 
 7. Select "Update License"
 
-<img src="/assets/media/data_core/datacoreinstall04.png" alt="datacoreinstall04" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/datacoreinstall04.png" alt="datacoreinstall04" style="max-width:500px" loading="lazy" />
 
 8. Request a Data Core license key from Intelligent Plant, specifying Machine Id.
 
 - Once supplied, enter then click “Update License”.
 
-<img src="/assets/media/data_core/datacoreinstall05.png" alt="datacoreinstall05" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/datacoreinstall05.png" alt="datacoreinstall05" style="max-width:500px" loading="lazy" />
 
 9. Finally, reboot the server.
 

@@ -15,4 +15,4 @@ If you have a support contract with Intelligent Plant, we can help monitor your 
 
 Contact us for more information.
 
-<img src="/assets/media/data_core/iasarchitecture2.png" alt="iasarchitecture2" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/data_core/iasarchitecture2.png" alt="iasarchitecture2" style="max-width:600px" loading="lazy" />

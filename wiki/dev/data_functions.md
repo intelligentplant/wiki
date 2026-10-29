@@ -48,20 +48,20 @@ In this example, we are looking at our office temperature over a week, with inte
 
 #### Plot
 
-<img src="/assets/media/dev/trend_-_plot.png" alt="trend_-_plot" style="max-width:900px" loading="lazy" />
+<img src="/wiki/assets/media/dev/trend_-_plot.png" alt="trend_-_plot" style="max-width:900px" loading="lazy" />
 
 #### Interp
 
-<img src="/assets/media/dev/trend_-_interp.png" alt="trend_-_interp" style="max-width:900px" loading="lazy" />
+<img src="/wiki/assets/media/dev/trend_-_interp.png" alt="trend_-_interp" style="max-width:900px" loading="lazy" />
 
 #### Min
 
-<img src="/assets/media/dev/trend_-_min.png" alt="trend_-_min" style="max-width:900px" loading="lazy" />
+<img src="/wiki/assets/media/dev/trend_-_min.png" alt="trend_-_min" style="max-width:900px" loading="lazy" />
 
 #### Max
 
-<img src="/assets/media/dev/trend_-_max.png" alt="trend_-_max" style="max-width:900px" loading="lazy" />
+<img src="/wiki/assets/media/dev/trend_-_max.png" alt="trend_-_max" style="max-width:900px" loading="lazy" />
 
 #### Avg
 
-<img src="/assets/media/dev/trend_-_avg.png" alt="trend_-_avg" style="max-width:900px" loading="lazy" />
+<img src="/wiki/assets/media/dev/trend_-_avg.png" alt="trend_-_avg" style="max-width:900px" loading="lazy" />

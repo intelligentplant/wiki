@@ -5,30 +5,15 @@
 :root {
     /* -- ststic variables -- */
     font-family: 'Verdana';
-    /* 108.333% of the browser's 16px default is 13pt (17.33px), the size the library is
-       designed at. A percentage (rather than pt or px) keeps the user's browser font size
-       setting working, so everything sized in rem scales with it. */
-    font-size: 108.333%;
+    font-size: 13pt;
     transition-delay: 1s;
-    /* -- font sizes --
-       All font sizes are in rem through these tokens. Use px only for borders and other
-       hairlines, and em only for spacing that should follow the element's own text size. */
-    --fontSizeXSmall: 0.6923rem; /* 12px at the default root size */
-    --fontSizeSmall: 0.875rem;
-    --fontSizeBase: 1rem;
-    --fontSizeMedium: 1.125rem;
-    --fontSizeTitle: 1.3rem;
-    --fontSizeLarge: 1.5rem;
-    --fontSizeXLarge: 1.875rem;
-    --fontSizeHeader: 2rem;
     --borderRadius: 6px;
     --borderWidth: 2px;
     --charcoalGrey: #4C4C4C;
     --dangerColour: #CC0000;
     --darkCharcoalGrey: #333333;
     --darkOrange: #FF6600;
-    /* kept for apps that already use it, prefer --fontSizeBase */
-    --font-size: var(--fontSizeBase);
+    --font-size: 13pt;
     --infoColour: #9C9B9D;
     --ipLogoGreen: #7AC143;
     --lightOrange: #FF9933;
@@ -45,19 +30,15 @@
     --primaryOutlineColour: #afabab;
     --successColour: #7AC143;
     --titleColour: #717073;
-    /* 100vw includes the scrollbar and causes a horizontal scroll. On mobile browsers 100vh
-       is taller than the visible area (address bar), so 100dvh is used where supported. */
     height: 100vh;
-    height: 100dvh;
-    width: 100%;
+    width: 100vw;
 }
 
 body {
     margin: 0px;
     list-style-type: none;
     height: 100vh;
-    height: 100dvh;
-    width: 100%;
+    width: 100vw;    
 }
 
 /**------------------------------------------------Base
@@ -351,26 +332,26 @@ button, [role="button"] {
 .header {
     background: var(--primaryDarkColour);
     color: var(--titleColour);
-    font-size: var(--fontSizeHeader);
+    font-size: 2em;
 }
 
-.title {
+.title { 
     background: var(--primaryMidDarkColour);
 
     color: var(--fontColour);
-    font-size: var(--fontSizeTitle);
+    font-size: 1.3em;
 }
 
-.subtitle {
+.subtitle {   
     background: var(--primaryLightColour);
     color: var(--fontColour);
-    font-size: var(--fontSizeBase);
+    font-size: 1em;
 }
 
 .item {
     background: var(--primaryColour);
     color: var(--fontColour);
-    font-size: var(--fontSizeBase);
+    font-size: 1em;
 }
 /**------------------------------------------------Margins*/
 .margin-top-14 {
@@ -415,15 +396,9 @@ button, [role="button"] {
     pointer-events: none;
 }
 
-.clickable {
-    cursor: pointer;
-}
-
-/* Hover colours only on devices that can hover, so they do not stick after a tap */
-@media (hover: hover) {
-    .clickable:hover {
-        color: var(--successColour);
-    }
+.clickable:hover {
+    color: var(--successColour);
+    cursor:pointer;
 }
 
 
@@ -648,17 +623,17 @@ button, [role="button"] {
 }
 
 .font-size-small {
-    font-size: var(--fontSizeSmall);
+    font-size: 0.875rem;
     line-height: 1.25rem;
 }
 
 .font-size-large {
-    font-size: var(--fontSizeLarge);
+    font-size: 1.5rem;
     line-height: 2rem;
 }
 
 .font-size-xlarge {
-    font-size: var(--fontSizeXLarge);
+    font-size: 1.875rem;
     line-height: 2.25rem;
 }
 
@@ -700,48 +675,11 @@ button, [role="button"] {
     background-color: var(--titleColour);
 }
 
-/**------------------------------------------------Responsive
- * Breakpoints: phone up to 640px, tablet up to 1024px.
- * CSS variables cannot be used in media queries, so these values are repeated in each
- * query. Keep them in sync with _PopUp.css and _TagSearch.css.
- */
-
-@media (max-width: 640px) {
-    .hide-mobile {
-        display: none !important;
-    }
-
-    .mobile-flex-column {
-        flex-direction: column;
-    }
-
-    .mobile-full-width {
-        width: 100%;
-    }
-
-    .mobile-wrap {
-        flex-wrap: wrap;
-    }
-}
-
-@media (min-width: 641px) {
-    .show-mobile {
-        display: none !important;
-    }
-}
-
-@media (max-width: 1024px) {
-    .hide-tablet {
-        display: none !important;
-    }
-}
-
 /*!************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./components/App/Modals/_PopUp.css ***!
   \************************************************************************************/
 .popUpWrapper {
-  /* fixed so the pop up stays over the visible area when the page is scrolled */
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -790,7 +728,6 @@ button, [role="button"] {
     margin:10px;
     opacity:0;
     width:200px;
-    max-width: calc(100vw - 20px);
 }
 .alert-hide {
     opacity: 0;
@@ -804,17 +741,6 @@ button, [role="button"] {
 @keyframes show {
     to {
         opacity: 1;
-    }
-}
-
-/* Phone breakpoint, see the Responsive section in style.css */
-@media (max-width: 640px) {
-    .popUpBox {
-        width: calc(100% - 2rem);
-        height: auto;
-        max-height: 90vh;
-        max-height: 90dvh;
-        overflow: auto;
     }
 }
 
@@ -874,23 +800,27 @@ button, [role="button"] {
     text-align: center;
     min-width: 12px;
     border-radius: var(--borderRadius);
-    font-size: var(--fontSizeSmall);
+    font-size: 0.875rem;
     line-height: 1.25rem;
     padding: 0.25rem 0.75rem;
 }
+.ipButton:hover{
+    box-shadow: 0 0 4px 0px var(--fontColour);
+    color: var(--fontColour);
+}
 .ipButton.small {
-    font-size: var(--fontSizeXSmall);
+    font-size: 12px;
     line-height: 1rem;
     padding: 0 0.25rem ;
     border-radius: 4px;
 }
 .ipButton.medium{   
-    font-size: var(--fontSizeSmall);
+    font-size: 0.875rem;
     line-height: 1.25rem;
     padding: 0.25rem 0.75rem;
 }
 .ipButton.big{
-    font-size: var(--fontSizeMedium);
+    font-size: 1.125rem;
     line-height: 1.75rem;
     padding: 0.25rem 0.75rem;
 }
@@ -906,6 +836,13 @@ button, [role="button"] {
     color: var(--successColour);
     background-color: var(--primaryMidColour);
 }
+.ipButton.success:hover{
+    color: var(--primaryOutlineColour);
+}
+.ipButton.danger:hover{
+    background-color: var(--dangerColour);
+    color: var(--primaryColour);
+}
 .ipButton.info{
     color: var(--primaryColour);
     background-color: var(--titleColour);
@@ -913,33 +850,12 @@ button, [role="button"] {
 .ipButton.warning{ background-color: var(--warningColour);
     border-color: var(--warningColour);
 }
-
-/* Hover styles only on devices that can hover, so they do not stick after a tap */
-@media (hover: hover) {
-    .ipButton:hover{
-        box-shadow: 0 0 4px 0px var(--fontColour);
-        color: var(--fontColour);
-    }
-    .ipButton.success:hover{
-        color: var(--primaryOutlineColour);
-    }
-    .ipButton.danger:hover{
-        background-color: var(--dangerColour);
-        color: var(--primaryColour);
-    }
-    .ipButton.warning:hover{
-        color: var(--titleColour);
-    }
-    .ipIconButton:hover{
-        color: var(--successColour);
-    }
-    .ipIconTextButton:hover {
-        color: var(--fontColour);
-    }
+.ipButton.warning:hover{
+    color: var(--titleColour);
 }
 
 .ipIconButton {
-    font-size: var(--fontSizeMedium);
+    font-size: 1.125rem;
     border: none;
     border-radius: none;
     cursor: pointer;
@@ -947,7 +863,7 @@ button, [role="button"] {
     color: var(--fontColour);
 }
 
-.ipIconButton.active{
+.ipIconButton.active, .ipIconButton:hover{
     color: var(--successColour);
 }
 
@@ -969,7 +885,11 @@ button, [role="button"] {
     padding-bottom: 0.25rem;
     background-color: transparent;
     color: var(--successColour);
-    font-size: var(--fontSizeMedium);
+    font-size: 1.125rem;
+}
+
+.ipIconTextButton:hover {
+    color: var(--fontColour);
 }
 
 .ipIconTextButton > * {
@@ -986,7 +906,7 @@ button, [role="button"] {
     border-color: var(--primaryOutlineColour);
     color: var(--fontColour);
     height: fit-content;
-    font-size: var(--fontSizeSmall);
+    font-size: 0.875rem;
     line-height: 1.25rem;
     padding: 0.25rem 0.75rem;
 }
@@ -1003,19 +923,19 @@ button, [role="button"] {
     border-color: var(--warningColour);
 }
 .ipTextInput.small {
-    font-size: var(--fontSizeXSmall);
+    font-size: 12px;
     line-height: 1rem;
     padding: 0 0.25rem 1px 0.25rem;
     border-radius: 4px;
 }
 .ipTextInput.medium {
-    font-size: var(--fontSizeSmall);
+    font-size: 0.875rem;
     line-height: 1.25rem;
     padding: 0.25rem 0.75rem;
 }
 
 .ipTextInput.big {
-    font-size: var(--fontSizeMedium);
+    font-size: 1.125rem;
     line-height: 1.75rem;
     padding: 0.25rem 0.75rem;
 }
@@ -1034,7 +954,7 @@ button, [role="button"] {
     border-style: solid;
     border-width: var(--borderWidth);
     border-color: var(--primaryOutlineColour);
-    font-size: var(--fontSizeSmall);
+    font-size: 0.875rem;
     line-height: 1.25rem;
     padding: 0.25rem 0.75rem;
 }
@@ -1044,20 +964,20 @@ button, [role="button"] {
     outline-offset: 2px;
 }
 .ipSelectBox.small {
-    font-size: var(--fontSizeXSmall);
+    font-size: 12px;
     line-height: 1rem;
     padding: 0 0.25rem 1px 0.25rem;
     border-radius: 4px;
 }
 
 .ipSelectBox.medium {
-    font-size: var(--fontSizeSmall);
+    font-size: 0.875rem;
     line-height: 1.25rem;
     padding: 0.25rem 0.75rem;
 }
 
 .ipSelectBox.big {
-    font-size: var(--fontSizeMedium);
+    font-size: 1.125rem;
     line-height: 1.75rem;
     padding: 0.25rem 0.75rem;
 }
@@ -1067,7 +987,7 @@ button, [role="button"] {
     -moz-appearance: none;
     color: var(--fontColour);
     background: var(--primaryMidDarkColour);
-    font-size: var(--fontSizeSmall);
+    font-size: 0.875rem;
     line-height: 1.25rem;
     padding: 0;
 }
@@ -1161,7 +1081,7 @@ button, [role="button"] {
     align-items: center;
     z-index: 20;
     cursor: pointer;
-    font-size: var(--fontSizeMedium);
+    font-size: 1.125rem;
 }
 
 .dropDownMenu.menuContainer {
@@ -1175,7 +1095,6 @@ button, [role="button"] {
     right: 0px;
     top: 2.25rem;
     width: max-content;
-    max-width: calc(100vw - 2rem);
 }
 
 .loader.tree {
@@ -1197,13 +1116,12 @@ button, [role="button"] {
     text-align: left;
     background: var(--primaryMidDarkColour);
     width: 24rem;
-    max-width: 100%;
     min-height: 13rem;
     margin: 0.25rem;
     border: var(--borderWidth) solid var(--primaryOutlineColour);
     border-radius: var(--borderRadius);
     color: var(--titleColour);
-    font-size: var(--fontSizeBase);
+    font-size: 1rem;
 }
 
 .card.wrapper.alert {
@@ -1225,39 +1143,6 @@ button, [role="button"] {
     margin-left: 1rem;
     margin: 0.5rem;
 
-}
-
-/**------------------------------------------------Touch screens*/
-@media (pointer: coarse) {
-    /* An invisible area of at least 44px around small controls so they are easy to tap,
-       without changing how they look. It is on the element that has the click handler
-       (the link inside .ipIconTextButton), so it never covers a clickable child. */
-    .ipButton, .ipIconButton, .ipIconTextButton a, .dropDownMenu.header {
-        position: relative;
-    }
-    .ipButton::after, .ipIconButton::after, .ipIconTextButton a::after,
-    .dropDownMenu.header::after, .ipToggle.background::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: max(100%, 44px);
-        height: max(100%, 44px);
-        transform: translate(-50%, -50%);
-    }
-
-    /* Pseudo-elements do not work on checkbox inputs in every browser, so the box itself is bigger */
-    .ipCheckBox {
-        height: 1.25rem;
-        width: 1.25rem;
-    }
-
-    /* iOS zooms the page when an input with text smaller than 16px is focused. That limit
-       is in px, so it is the one font size in px; max() still lets a larger user setting win. */
-    .ipTextInput, .ipTextInput.small, .ipTextInput.medium,
-    .ipSelectBox, .ipSelectBox.small, .ipSelectBox.medium {
-        font-size: max(16px, var(--fontSizeSmall));
-    }
 }
 /*!**********************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./ip_icons/style.css ***!
@@ -5312,17 +5197,8 @@ svg {
 .tagsBox {
     height: 500px;
     width: 500px;
-    max-width: 100%;
     background-color: var(--primaryDarkColour);
     color: var(--successColour);
-}
-
-/* Phone breakpoint, see the Responsive section in style.css */
-@media (max-width: 640px) {
-    .tagsBox {
-        height: min(500px, 70vh);
-        height: min(500px, 70dvh);
-    }
 }
 
 .tagBox > * {
@@ -5331,7 +5207,7 @@ svg {
 }
 
 .tagDetails {
-    font-size: var(--fontSizeXSmall);
+    font-size: 0.7em;
 }
 
 .tagName:hover {
@@ -5353,4 +5229,3 @@ svg {
 }
 
 
-/*# sourceMappingURL=index.css.map*/

@@ -16,11 +16,11 @@ Registering is as simple as logging in.
 
 - Open https://appstore.intelligentplant.com and select "Log in".
 
-<img src="/assets/media/general/apspstore_login_screen_00.png" alt="apspstore_login_screen_00" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/general/apspstore_login_screen_00.png" alt="apspstore_login_screen_00" style="max-width:500px" loading="lazy" />
 
 The Industrial App Store supports Microsoft login. If your organization has registered with the App Store, select <strong>Sign in with Microsoft</strong> and enter your work username <sup class="wiki-footnote" title="Microsoft &quot;User Principal Names&quot; have the format &quot;username@domain&quot;. In most cases, it will be the same as your work email address.">[1]</sup> and password.
 
-<img src="/assets/media/general/appstore_login.png" alt="appstore_login" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/general/appstore_login.png" alt="appstore_login" style="max-width:500px" loading="lazy" />
 
 ### 2. Request access to Apps and Data {: .title}
 
@@ -33,10 +33,10 @@ By default, you will only have access to demo data sources; but if your organiza
 
 The home page lists the apps currently available. To find out more about a specific app, click "More info" on the App Card and explore product descriptions and online resources.
 
-![industrial_app_store](/assets/media/general/industrial_app_store.gif)
+![industrial_app_store](/wiki/assets/media/general/industrial_app_store.gif)
 
 <em>Depending on your organizations arrangement with the Industrial App Store, app access may be restricted.</em>
 
 Select "Start" from the App Card to open an application.
 
-You'll be taken through an [Authorization Process](/app_store_connect/authorize_apps_to_connect_to_your_data.html) where the app will prompt you for data access. Demo data sources are available, but your own data is more interesting. This will only be available if step 2 (above) has been completed.
+You'll be taken through an [Authorization Process](/wiki/app_store_connect/authorize_apps_to_connect_to_your_data.html) where the app will prompt you for data access. Demo data sources are available, but your own data is more interesting. This will only be available if step 2 (above) has been completed.

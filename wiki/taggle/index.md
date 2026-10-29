@@ -9,4 +9,4 @@ It aligns terms like “PMP, Pump” and “TI-34892, Temperature, Instrument, T
 
 It requires access to raw tag names, NOT an asset structure and it may negate the need for an asset structure as it effectively and flexibly builds a structure on the fly, based on the user’s knowledge and needs.
 
-- [Taggle](/taggle/querysyntax.html): Query Syntax
+- [Taggle](/wiki/taggle/querysyntax.html): Query Syntax

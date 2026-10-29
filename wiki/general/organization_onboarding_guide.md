@@ -7,7 +7,7 @@ This guide provides an overview of the steps needed to onboard your organization
 
 ### What is the Industrial App Store? {: .title}
 
-The Industrial App Store is a marketplace of apps for industrial processes with an architecture that enables secure connectivity between cloud-based apps and your on-premises data sources. Through [App Store Connect](/app_store_connect/app_store_connect.html), apps can connect directly to  live data without time-consuming uploads, giving you immediate access to interactive analysis tools. All communication is encrypted via HTTPS, apps must request explicit user authorization to access data or resources, and [security](/general/security.html) is paramount.
+The Industrial App Store is a marketplace of apps for industrial processes with an architecture that enables secure connectivity between cloud-based apps and your on-premises data sources. Through [App Store Connect](/wiki/app_store_connect/app_store_connect.html), apps can connect directly to  live data without time-consuming uploads, giving you immediate access to interactive analysis tools. All communication is encrypted via HTTPS, apps must request explicit user authorization to access data or resources, and [security](/wiki/general/security.html) is paramount.
 
 The App Store uses Microsoft Entra ID for authentication, allowing organizations to leverage their existing identity infrastructure and security policies.
 
@@ -29,7 +29,7 @@ If your organization uses Microsoft 365 Enterprise or other Microsoft cloud serv
 - Control access via Entra ID groups
 - Monitor sign-in activity via Azure Portal
 
-➜ <strong>[Complete Registration Guide](/general/registering_an_organziation_with_the_app_store.html)</strong>
+➜ <strong>[Complete Registration Guide](/wiki/general/registering_an_organziation_with_the_app_store.html)</strong>
 
 #### If You Don't Have Microsoft Entra ID
 
@@ -50,7 +50,7 @@ Organizations without Microsoft Entra ID can create a dedicated Entra ID tenant 
 
 Your organization maintains full control over the tenant, including user accounts, credentials, and security policies.
 
-➜ <strong>[Detailed Setup Instructions](/general/creating_entra_id_for_app_store_access.html)</strong>
+➜ <strong>[Detailed Setup Instructions](/wiki/general/creating_entra_id_for_app_store_access.html)</strong>
 
 ### Step 2: Understand User Management {: .title}
 
@@ -62,15 +62,15 @@ Sign in to the App Store with your work account, then navigate to <strong>My Acc
 
 <strong>Administrator Capabilities:</strong>
 
-- <strong>[User Management](/general/organization_user_and_data_management/user_management.html)</strong> - View and manage organization users
-- <strong>[Group Management](/general/organization_user_and_data_management/group_management.html)</strong> - Create and manage user groups (including an Administrators group)
-- <strong>[App Security](/general/organization_user_and_data_management/app_access_management.html)</strong> - Control which apps users can access
-- <strong>[Trust Management](/general/organization_user_and_data_management/trust_management.html)</strong> - Manage trusted connections with other organizations
-- <strong>[Audit Logs](/general/organization_user_and_data_management/audit_logs.html)</strong> - Review organization activity and changes
+- <strong>[User Management](/wiki/general/organization_user_and_data_management/user_management.html)</strong> - View and manage organization users
+- <strong>[Group Management](/wiki/general/organization_user_and_data_management/group_management.html)</strong> - Create and manage user groups (including an Administrators group)
+- <strong>[App Security](/wiki/general/organization_user_and_data_management/app_access_management.html)</strong> - Control which apps users can access
+- <strong>[Trust Management](/wiki/general/organization_user_and_data_management/trust_management.html)</strong> - Manage trusted connections with other organizations
+- <strong>[Audit Logs](/wiki/general/organization_user_and_data_management/audit_logs.html)</strong> - Review organization activity and changes
 
-<strong>Groups are how you avoid per-user setup.</strong> Both app access and data source access can be granted to a <em>group</em> instead of to individual users, so a new joiner inherits everything the moment they are placed in the right group. If your organization uses Entra ID, membership can be managed in Active Directory and synced into the App Store - see [Entra ID Syncing](/general/organization_user_and_data_management/entraid_syncing.html).
+<strong>Groups are how you avoid per-user setup.</strong> Both app access and data source access can be granted to a <em>group</em> instead of to individual users, so a new joiner inherits everything the moment they are placed in the right group. If your organization uses Entra ID, membership can be managed in Active Directory and synced into the App Store - see [Entra ID Syncing](/wiki/general/organization_user_and_data_management/entraid_syncing.html).
 
-➜ <strong>[Organization Management Overview](/general/organization_user_and_data_management.html)</strong>
+➜ <strong>[Organization Management Overview](/wiki/general/organization_user_and_data_management.html)</strong>
 
 ### Step 3: Pre-approve Apps and Data Sources for your Teams {: .title}
 
@@ -84,17 +84,17 @@ The result for a new joiner: they sign in, the app is already available to them,
 
 <strong>Recommended sequence:</strong>
 
-1. Create App Store groups that match your real teams - see [Group Management](/general/organization_user_and_data_management/group_management.html).
-1. Link them to your Entra ID groups if membership is managed in Active Directory - see [Entra ID Syncing](/general/organization_user_and_data_management/entraid_syncing.html).
-1. In App Store Connect, authorize those groups on the data sources they need. Prefer authorizing groups over individual users - see [Share your data with other App Store users](/app_store_connect/share_your_data_with_other_app_store_users.html).
-1. Enable the approved apps list, add your apps, grant each app to the groups that need it, and pre-select their data components - see [App Security](/general/organization_user_and_data_management/app_access_management.html).
+1. Create App Store groups that match your real teams - see [Group Management](/wiki/general/organization_user_and_data_management/group_management.html).
+1. Link them to your Entra ID groups if membership is managed in Active Directory - see [Entra ID Syncing](/wiki/general/organization_user_and_data_management/entraid_syncing.html).
+1. In App Store Connect, authorize those groups on the data sources they need. Prefer authorizing groups over individual users - see [Share your data with other App Store users](/wiki/app_store_connect/share_your_data_with_other_app_store_users.html).
+1. Enable the approved apps list, add your apps, grant each app to the groups that need it, and pre-select their data components - see [App Security](/wiki/general/organization_user_and_data_management/app_access_management.html).
 1. Test with one account in each group before announcing it: sign in as that user and confirm the app appears, the pre-selected data source is locked in, and a query returns data.
 
 <strong>Important:</strong> pre-selection only offers data components that the user or group already has permission to access. Those permissions are granted on-premises in App Store Connect, so pre-selection will appear to offer nothing until the data source authorization rules are in place.
 
-One step always stays personal: the user still confirms once that the app may act on their behalf, as described in [App Store Security](/general/security.html). The App Store then remembers it, so they are not asked again.
+One step always stays personal: the user still confirms once that the app may act on their behalf, as described in [App Store Security](/wiki/general/security.html). The App Store then remembers it, so they are not asked again.
 
-➜ <strong>[App Security: approved apps, per-app permissions and pre-selected data components](/general/organization_user_and_data_management/app_access_management.html)</strong>
+➜ <strong>[App Security: approved apps, per-app permissions and pre-selected data components](/wiki/general/organization_user_and_data_management/app_access_management.html)</strong>
 
 ### Step 4: Create an Onboarding Page (Optional) {: .title}
 
@@ -114,13 +114,13 @@ Organization administrators can create a custom onboarding page that new users s
 
 Existing users can view the onboarding page at any time via <strong>My Account > My Organization</strong>, but only administrators can edit it.
 
-➜ <strong>[Onboarding Page Configuration Guide](/general/onboarding_page.html)</strong>
+➜ <strong>[Onboarding Page Configuration Guide](/wiki/general/onboarding_page.html)</strong>
 
 ### Additional Resources {: .title}
 
-- [App Store Security Overview](/general/security.html)
-- [App Security: approved apps, per-app permissions and pre-selected data sources](/general/organization_user_and_data_management/app_access_management.html)
-- [Entra ID Group Syncing](/general/organization_user_and_data_management/entraid_syncing.html)
+- [App Store Security Overview](/wiki/general/security.html)
+- [App Security: approved apps, per-app permissions and pre-selected data sources](/wiki/general/organization_user_and_data_management/app_access_management.html)
+- [Entra ID Group Syncing](/wiki/general/organization_user_and_data_management/entraid_syncing.html)
 - [Organization Registration Sign Up Page](https://appstore.intelligentplant.com/Onboarding/SignUp)
 - [Microsoft Entra ID Documentation](https://learn.microsoft.com/en-us/entra/fundamentals/)
 - [Industrial App Store Privacy Policy](https://appstore.intelligentplant.com/Content/assets/legal/IAS-PrivacyPolicy.html)

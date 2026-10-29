@@ -11,7 +11,7 @@ Before an application can interact with the <em><strong>App Store %%API%%</stron
 
 Any interaction between a user and the App Store must be authenticated. If the user is not authenticated, App Store will redirect your request to the log-in page.
 
-<img src="/assets/media/dev/apisecurity01.png" alt="apisecurity01" style="max-width:200px" loading="lazy" /> <img src="/assets/media/dev/apisecurity02.png" alt="apisecurity02" style="max-width:200px" loading="lazy" />
+<img src="/wiki/assets/media/dev/apisecurity01.png" alt="apisecurity01" style="max-width:200px" loading="lazy" /> <img src="/wiki/assets/media/dev/apisecurity02.png" alt="apisecurity02" style="max-width:200px" loading="lazy" />
 
 This means the App User must have a Microsoft account.
 
@@ -39,7 +39,7 @@ Each <em><strong>App Store %%API%%</strong></em> method has one or more security
 
 Thus, the App must tell the App Store which privileges it requires. The App Store then prompts the user to Authorize this request.
 
-<img src="/assets/media/dev/apisecurity03.png" alt="apisecurity03" style="max-width:200px" loading="lazy" />
+<img src="/wiki/assets/media/dev/apisecurity03.png" alt="apisecurity03" style="max-width:200px" loading="lazy" />
 
 #### Step 4. Access Token
 

@@ -9,7 +9,7 @@ permalink: /dev/app_store_-_become_a_developer.html
 
 <strong>2.</strong> Select "Get Developing" in the left hand side menu bar, under "My Account"
 
-<img src="/assets/media/dev/1_appdev.png" alt="1_appdev" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/dev/1_appdev.png" alt="1_appdev" style="max-width:500px" loading="lazy" />
 
 <strong>3.</strong> Once You agree with the developer agreement hit "Submit".
 
@@ -24,7 +24,7 @@ This means you will have to verify your logo to prevent this stamp being added w
 
 <strong>1.</strong> Navigate to your application list in developer view by selecting Developer and clicking the Applications option.
 
-![appstore_verified_selectapps](/assets/media/dev/appstore_verified_selectapps.gif)
+![appstore_verified_selectapps](/wiki/assets/media/dev/appstore_verified_selectapps.gif)
 
 <strong>2.</strong> Click "<em>Get verified here</em>" to start the verification process.
 
@@ -34,4 +34,4 @@ This means you will have to verify your logo to prevent this stamp being added w
 
 At this point, your verification status will change to "<em>Pending</em>". Once we have completed the verification process and contacted your organization to confirm the application is legitimate, the "<em>NOT VERIFIED</em>" banner will be removed from your apps.
 
-![appstore_verified_submit](/assets/media/dev/appstore_verified_submit.gif)
+![appstore_verified_submit](/wiki/assets/media/dev/appstore_verified_submit.gif)

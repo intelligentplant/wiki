@@ -3,7 +3,7 @@ layout: wiki
 title: "Enable Resilient Data Transfer with RabbitMQ - Fast Flow Variation"
 permalink: /datacore/enable_resilient_data_transfer_with_rabbitmq_-_fast_flow_variation.html
 ---
-As well as a resilient stream (see [Enable Resilient Data Transfer with RabbitMQ](/datacore/enable_resilient_data_transfer_with_rabbitmq.html)), it may be necessary to configure a fast (near-real-time) flow also. The difference is the resilient flow is responsible for guaranteed flow of history to the destination data archive, but the fast flow will only ever attempt to relay current values.
+As well as a resilient stream (see [Enable Resilient Data Transfer with RabbitMQ](/wiki/datacore/enable_resilient_data_transfer_with_rabbitmq.html)), it may be necessary to configure a fast (near-real-time) flow also. The difference is the resilient flow is responsible for guaranteed flow of history to the destination data archive, but the fast flow will only ever attempt to relay current values.
 
 In situations where a connection is unreliable, this means that dashboard displays will show the latest values as soon as connections are available, rather than be delayed with a catch-up lag.
 

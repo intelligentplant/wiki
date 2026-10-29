@@ -11,13 +11,13 @@ You can download a spreadsheet containing examples of all the formulas [here](ht
 
 ### Contents {: .title}
 
-- [Installation Files](/excel/installation-files.html): Download and install Excel Query Add-in 32 or 64 bit
+- [Installation Files](/wiki/excel/installation-files.html): Download and install Excel Query Add-in 32 or 64 bit
 
-- [Setup](/excel/getting-started.html): Help installing, running, updating and uninstalling the add-in.
+- [Setup](/wiki/excel/getting-started.html): Help installing, running, updating and uninstalling the add-in.
 
-- [The IP Data Query Tab](/excel/ui.html): Help using the data query tab.
+- [The IP Data Query Tab](/wiki/excel/ui.html): Help using the data query tab.
 
-- [Writing Data Query Formulas](/excel/formulas.html): Help writing data query formulas.
+- [Writing Data Query Formulas](/wiki/excel/formulas.html): Help writing data query formulas.
 
 ### Troubleshooting {: .title}
 

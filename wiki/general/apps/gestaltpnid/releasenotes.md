@@ -47,7 +47,7 @@ Release date: 2026-10-30 <br />
 - Updated browser tab to display "name" property of dashboard (File's name by default).
 - Updated script functions to include dashboard properties.
 - Added "margin" as a property available to update by the user.
-<img src="/assets/media/general/apps/gestaltpnid/marginpnid.gif" alt="marginpnid" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestaltpnid/marginpnid.gif" alt="marginpnid" style="max-width:600px" loading="lazy" />
 #### 2025-11-Minor
 
 - Fixed redirection to Home page if a new user goes directly to /Trend or /PnID urls.
@@ -74,7 +74,7 @@ Release date: 2026-10-30 <br />
 ##### Modifications and Improvements
 
 - Added functionality to search in a PnID dashboard
-<img src="/assets/media/general/apps/gestaltpnid/searchpnid.gif" alt="searchpnid" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestaltpnid/searchpnid.gif" alt="searchpnid" style="max-width:600px" loading="lazy" />
 
 #### 2025-07-Minor
 
@@ -209,7 +209,7 @@ Release date: 2025-06-27
 
 ##### New Features
 
-- <strong>Organisation Functions and Variables</strong> - Added the ability to specify global functions and variables that will be available to all PnIDs within an organisation. [Read the guide here.](/gestaltpnid/gestalt_pnid/event_manager_reference/global_scripts_guide.html)
+- <strong>Organisation Functions and Variables</strong> - Added the ability to specify global functions and variables that will be available to all PnIDs within an organisation. [Read the guide here.](/wiki/gestaltpnid/gestalt_pnid/event_manager_reference/global_scripts_guide.html)
 - <strong>Bulk Import</strong> - Added the ability to Import files and folders in bulk.
 - <strong>Engineering Notations</strong> - Added an option to text components to allow the display of numbers in engineering notations.
 
@@ -227,15 +227,15 @@ Release date: 2025-06-27
 
 ##### New Features
 - <strong>Global Scripting Functions and Variables</strong> - Improved the event manager to allow for the defining of functions and variables globally to a page that functional components can then reference in their own scripts, thus reducing the need to duplicate code across components.
-<img src="/assets/media/general/apps/gestaltpnid/global-vars.gif" alt="global-vars" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestaltpnid/global-vars.gif" alt="global-vars" style="max-width:400px" loading="lazy" />
 - <strong>Embedded Trending</strong> - Added a new "Embedded Window" when opening tags from PnID in Trend that will create a Trend window within PnID itself and allow the user to drag additional tags from the PnID into the window.
- <img src="/assets/media/general/apps/gestaltpnid/simple_trend.gif" alt="simple_trend" style="max-width:200px" loading="lazy" />
+ <img src="/wiki/assets/media/general/apps/gestaltpnid/simple_trend.gif" alt="simple_trend" style="max-width:200px" loading="lazy" />
 - <strong>New Demo Files</strong> - Moved the demo files to their own directory, separate from the user's personal files, and added a brand new set.
-<img src="/assets/media/general/apps/gestaltpnid/screenshot_2024-07-24_095306.png" alt="screenshot_2024-07-24_095306" style="max-width:200px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestaltpnid/screenshot_2024-07-24_095306.png" alt="screenshot_2024-07-24_095306" style="max-width:200px" loading="lazy" />
 - <strong>File Audit Trail</strong> - Added an audit trail of who created and last modified a file on the share popup, and on hovering over a file in the left side panel.
-- <img src="/assets/media/general/apps/gestaltpnid/file_info.gif" alt="file_info" style="max-width:200px" loading="lazy" />
+- <img src="/wiki/assets/media/general/apps/gestaltpnid/file_info.gif" alt="file_info" style="max-width:200px" loading="lazy" />
 - <strong>Bulk Export</strong> - Added the ability to export files and folders in bulk via the left side panel context menu.
-<img src="/assets/media/general/apps/gestaltpnid/screenshot_2024-07-24_102014.png" alt="screenshot_2024-07-24_102014" style="max-width:200px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestaltpnid/screenshot_2024-07-24_102014.png" alt="screenshot_2024-07-24_102014" style="max-width:200px" loading="lazy" />
 ##### Modifications and Improvements
 - Updated the Genie and Symbol libraries with new Genies and Symbols.
 - Increased the size of the hit area for the multiple selection checkbox.
@@ -257,7 +257,7 @@ Release date: 2025-06-27
 ##### New Features
 
 - <strong>Bulk File Delete:</strong> Added the ability to select multiple files in the left hand menu and delete them as one instead of deleting them individually.
-<img src="/assets/media/general/apps/gestaltpnid/bulk-delete.gif" alt="bulk-delete" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestaltpnid/bulk-delete.gif" alt="bulk-delete" style="max-width:400px" loading="lazy" />
 
 ##### Modifications and Improvements
 - Modified data source select to group data sources under the App Store Connect they belong to.
@@ -280,7 +280,7 @@ Release date: 2025-06-27
 ##### New Features
 
 - <strong>File Recovery -</strong> PnID will now periodically store a backup of the dashboard currently being worked on, so that in the event of a crash, any unsaved changes will not be lost. Backups can be restored via the left hand menu when clicking on a page.
-<img src="/assets/media/general/apps/gestaltpnid/restorepnid.gif" alt="restorepnid" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestaltpnid/restorepnid.gif" alt="restorepnid" style="max-width:400px" loading="lazy" />
 
 ##### Modifications and Improvements
 - Moved from bundling script files on demand to bundling files ahead of time to reduce the file size and improve load times.
@@ -343,7 +343,7 @@ Release date: 2025-06-27
 - <strong>New File Menu -</strong> Modified the file menu to work as an expandable tree to ease navigation between folders and make it more user-friendly.
 - <strong>New File Context Menu -</strong> Added a context menu to the file menu to make it simpler and easier to perform actions against specific files and folders and make the UI cleaner. You can right-click any file/folder to open it.
 
-  <img src="/assets/media/general/apps/gestaltpnid/contextmenu.gif" alt="contextmenu" style="max-width:400px" loading="lazy" />
+  <img src="/wiki/assets/media/general/apps/gestaltpnid/contextmenu.gif" alt="contextmenu" style="max-width:400px" loading="lazy" />
 - <strong>New Manual Tags</strong> - Added the ability to manually add tag names to a dashboard to allow the addition of metatags and to also serve as placeholders.
 
 ##### Modifications and Improvements
@@ -596,7 +596,7 @@ Release date: 2025-06-27
 
 - <strong>XY Scatterplot component:</strong> Users can now add a XY scatter plot component that will allow them compare tags against one another.
 
-<img src="/assets/media/general/apps/gestaltpnid/pnid_create_scatter_plot.gif" alt="pnid_create_scatter_plot" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/general/apps/gestaltpnid/pnid_create_scatter_plot.gif" alt="pnid_create_scatter_plot" style="max-width:400px" loading="lazy" />
 
 - <strong>Event Manager - Set query scripting action:</strong> Users can now create a "Set Query" action in the Event Manager that will alter the PnID's query settings and apply them.
 - <strong>Event Manger - Get Tag Data, Sum & Average functions</strong> - Users can now use the <em>getTagData(datasource, tag)</em> shortcut to retrieve all available data for a tag. The returned object also provides the <em>sum()</em> and <em>average()</em> helper methods to make doing these operations simpler.

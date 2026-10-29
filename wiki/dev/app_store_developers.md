@@ -42,10 +42,10 @@ The full <em>App Store %%API%%</em> is available here: https://api.intelligentpl
 
 More Info:
 
-- [App Store API Security Overview](/dev/app_store_api_security_overview.html)
-- [App Authentication Example](/dev/app_authentication_example.html)
-- [App Store Example using Postman](/dev/app_store_example_with_postman.html)
-- [Data Requests](/dev/app_store_data_requests.html)
+- [App Store API Security Overview](/wiki/dev/app_store_api_security_overview.html)
+- [App Authentication Example](/wiki/dev/app_authentication_example.html)
+- [App Store Example using Postman](/wiki/dev/app_store_example_with_postman.html)
+- [Data Requests](/wiki/dev/app_store_data_requests.html)
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
@@ -53,8 +53,8 @@ More Info:
 
 Get registered, create a holding card, download some code samples...
 
-- [Become an App Store Developer](/dev/app_store_-_become_a_developer.html)
-- [Create a COMING SOON App](/dev/app_store_-_create_coming_soon_app.html)
-- [Create a Service Hub App](/dev/app_store_-_create_services.html)
-- [ASP.NET Core quick start](/dev/asp-net-core-app.html)
+- [Become an App Store Developer](/wiki/dev/app_store_-_become_a_developer.html)
+- [Create a COMING SOON App](/wiki/dev/app_store_-_create_coming_soon_app.html)
+- [Create a Service Hub App](/wiki/dev/app_store_-_create_services.html)
+- [ASP.NET Core quick start](/wiki/dev/asp-net-core-app.html)
 - Visit Intelligent Plant on [GitHub](https://github.com/intelligentplant) to view templates, code samples and documentation.

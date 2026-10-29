@@ -94,7 +94,7 @@ Indexes can be backed up and restored on another IP Historian instance.
 
 ### System Requirements {: .title}
 
-See [See App Store Connect System Requirements](/app_store_connect/app_store_connect.html).
+See [See App Store Connect System Requirements](/wiki/app_store_connect/app_store_connect.html).
 
 However, note the system requirements should be adjusted for the particular use-case of the historian. If you intend to support historization of large data volumes and intensive data queries, a more powerful spec is required. Please consult with the Intelligent Plant support team for detailed guidance.
 
@@ -114,17 +114,17 @@ It is necessary to know the Machine ID of your system for licensing to be comple
 
 Go to your Data Sources and click "Details" on the historian that you wish to use.
 
-<img src="/assets/media/app_store_connect/data_core_-_data_sources_selection.png" alt="data_core_-_data_sources_selection" style="max-width:300px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/data_core_-_data_sources_selection.png" alt="data_core_-_data_sources_selection" style="max-width:300px" loading="lazy" />
 
-<img src="/assets/media/app_store_connect/data_core_-_details.png" alt="data_core_-_details" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/data_core_-_details.png" alt="data_core_-_details" style="max-width:500px" loading="lazy" />
 
 Under Action, click "Configure Data Source Settings"
 
-<img src="/assets/media/app_store_connect/data_core_-_configure_settings.png" alt="data_core_-_configure_settings" style="max-width:300px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/data_core_-_configure_settings.png" alt="data_core_-_configure_settings" style="max-width:300px" loading="lazy" />
 
 And at the bottom you will see the Machine ID for your system.
 
-<img src="/assets/media/app_store_connect/data_core_-_machine_id.png" alt="data_core_-_machine_id" style="max-width:800px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/data_core_-_machine_id.png" alt="data_core_-_machine_id" style="max-width:800px" loading="lazy" />
 ### IPHist - IPHist replication {: .title}
 
 Connections can be setup in datacore to provide reslient transfer of historical data between IPHist instances. this means that a loss in connectivity will not result in a permanent loss of data on the remote IPHist to the datasource. that data will be back filled, and consistent.

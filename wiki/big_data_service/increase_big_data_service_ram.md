@@ -10,7 +10,7 @@ Consider increasing memory allocation up to up to 1/3rd of a server’s availabl
 
 1. Check available server memory to determine available RAM
 
-<img src="/assets/media/big_data_service/bdcustom_06.png" alt="bdcustom_06" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/big_data_service/bdcustom_06.png" alt="bdcustom_06" style="max-width:500px" loading="lazy" />
 
 2.  Stop the Big Data Service
 
@@ -18,7 +18,7 @@ Consider increasing memory allocation up to up to 1/3rd of a server’s availabl
 - Find “Intelligent Plant Big Data Service”.
 - Right click, and select “Stop”.
 
-<img src="/assets/media/big_data_service/bdcustom_02.png" alt="bdcustom_02" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/big_data_service/bdcustom_02.png" alt="bdcustom_02" style="max-width:500px" loading="lazy" />
 
 3. Launch the Big Data Service manager
 
@@ -26,7 +26,7 @@ Consider increasing memory allocation up to up to 1/3rd of a server’s availabl
 - Navigate to %ProgramFiles%\Intelligent Plant\Big Data\es\bin\
 - Enter: service.bat manager
 
-<img src="/assets/media/big_data_service/bdcustom_07.png" alt="bdcustom_07" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/big_data_service/bdcustom_07.png" alt="bdcustom_07" style="max-width:500px" loading="lazy" />
 
 4. Under Java properties, increase the Initial and Maximum memory pools.
 
@@ -34,13 +34,13 @@ In this example, we’ve increased it from 1024MB to 2048MB.
 
 Click apply and close the properties window.
 
-<img src="/assets/media/big_data_service/bdcustom_08.png" alt="bdcustom_08" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/big_data_service/bdcustom_08.png" alt="bdcustom_08" style="max-width:500px" loading="lazy" />
 
 5. Restart the Big Data Service
 
 - Open Windows Services.
 - Find “Intelligent Plant Big Data Service”. Right click, then select “Start”.
 
-<img src="/assets/media/big_data_service/bdcustom_05.png" alt="bdcustom_05" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/big_data_service/bdcustom_05.png" alt="bdcustom_05" style="max-width:500px" loading="lazy" />
 
 <strong>Warning.</strong> These custom settings will be reset if software is re-installed/upgraded.

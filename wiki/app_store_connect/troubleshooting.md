@@ -23,7 +23,7 @@ You can view help on how to customise the report as follows:
 
 ### Issues with Drivers {: .title}
 
-For issues relating to individual data connections, refer to driver specific notes: [Supported Data Sources](/data_core/data_sources.html).
+For issues relating to individual data connections, refer to driver specific notes: [Supported Data Sources](/wiki/data_core/data_sources.html).
 
 ### App Store Connect Fails to Automatically Start {: .title}
 

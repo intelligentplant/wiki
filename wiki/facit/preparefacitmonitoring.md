@@ -15,7 +15,7 @@ Facit requires a number of Data Core components to be built and configured befor
 
 <strong>3.</strong> Enable the <strong>Facit Data Source</strong>.
 
-<img src="/assets/media/facit/facit_03.png" alt="facit_03" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/facit/facit_03.png" alt="facit_03" style="max-width:600px" loading="lazy" />
 
 <strong>3.1</strong> Navigate to <strong>Real-Time Data > Data Sources</strong>.
 
@@ -27,9 +27,9 @@ Facit requires a number of Data Core components to be built and configured befor
 
 <strong>4.1</strong> Request <strong>Alarm Analysis Licence Key</strong> from Intelligent Plant. We will require your Machine Id - this is listed under the Data Source properties.
 
-<img src="/assets/media/facit/facit_04.png" alt="facit_04" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/facit/facit_04.png" alt="facit_04" style="max-width:600px" loading="lazy" />
 
-<strong>4.2</strong> Set [Alarm Analysis Licence](/alarm_analysis/licensing.html)
+<strong>4.2</strong> Set [Alarm Analysis Licence](/wiki/alarm_analysis/licensing.html)
 
 <strong>5.</strong> Build required Data Core components.
 
@@ -41,7 +41,7 @@ Facit requires a number of Data Core components to be built and configured befor
   - name - A named instance of Facit (e.g. "WindCo Facit"). Alternatively, omit to use default name "Facit".
   - target - Any data source which Facit will monitor (e.g. My Historian).
 
-<img src="/assets/media/facit/setupfacitcustomfunction.png" alt="setupfacitcustomfunction" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/facit/setupfacitcustomfunction.png" alt="setupfacitcustomfunction" style="max-width:600px" loading="lazy" />
 
 This instantiates the following Data Core components along with the necessary event subscriptions and monitoring data access.
 
@@ -58,4 +58,4 @@ Create a "Facit Users Group", where members have access to the Facit app and eac
 - Facit Limit Historian - Read/Write
 - <em>Target</em> Data Sources - Read-Only
 
-See [Organization User and Data Management](/general/organization_user_and_data_management.html) for more info.
+See [Organization User and Data Management](/wiki/general/organization_user_and_data_management.html) for more info.

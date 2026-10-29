@@ -26,7 +26,7 @@ There are 3 ways to set up or update a AA license:
 
 1. Click <em>Run</em>. If all executed correctly you should see <em>HTTP Response Code: 200</em> as well as a <em>true</em> value below indicating that the new licence was set. Restart the data source.
 
-  <img src="/assets/media/alarm_analysis/aa-licensing-dc.jpg" alt="A&E licensing" style="max-width:600px" loading="lazy" />
+  <img src="/wiki/assets/media/alarm_analysis/aa-licensing-dc.jpg" alt="A&E licensing" style="max-width:600px" loading="lazy" />
 
 #### 2. Using Alarm Analysis app
 

@@ -87,19 +87,19 @@ Write-Host "Excel file has been successfully converted to PDF: $pdfFilePath"
 You can schedule the script to be run periodically (e.g. daily) using the Windows Task Scheduler.
 
 Use the start menu to search for "Task Scheduler"
-<img src="/assets/media/excel/search.png" alt="search" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/excel/search.png" alt="search" style="max-width:400px" loading="lazy" />
 
 Click "Create Task" in the right panel.
 
-<img src="/assets/media/excel/create-task.png" alt="create-task" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/excel/create-task.png" alt="create-task" style="max-width:400px" loading="lazy" />
 
 Enter a name for the task. Select the "Triggers" tab the click "New" to setup when the report will be run.
 
-<img src="/assets/media/excel/triggers.png" alt="triggers" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/excel/triggers.png" alt="triggers" style="max-width:400px" loading="lazy" />
 
 Then select the "Actions" tab.
 
-<img src="/assets/media/excel/example-action.png" alt="example-action" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/excel/example-action.png" alt="example-action" style="max-width:400px" loading="lazy" />
 
 Click "New". Make sure "Start a Program" is selected for "Action".
 In the Program/Script field enter the path to the Power shell exe on your system.

@@ -1,0 +1,12 @@
+{
+  "name": "wiki-ui-library-sync",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pulls the UI Library stylesheet and icon fonts into assets/ui-library/.",
+  "scripts": {
+    "sync": "node sync.js"
+  },
+  "dependencies": {
+    "@intelligentplant/react-ui-library": "2.2.0"
+  }
+}

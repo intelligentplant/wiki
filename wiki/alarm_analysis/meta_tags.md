@@ -17,4 +17,4 @@ For example,
 
 This above meta tag requests the priority of the 3rd most frequently occurring Alarm on the Oil Co Osprey asset. Clearly this is not a value you would expect to interrogate like a regular process data tag, however there may be cases where it is required.
 
-If explicit tag entry is not permitted in an app, and the meta-tag is not available in search, it can be manually added to the Alarm Analysis Tag Index. For more information, refer to: [Alarm Analysis](/alarm_analysis/alarm_analysis.html)
+If explicit tag entry is not permitted in an app, and the meta-tag is not available in search, it can be manually added to the Alarm Analysis Tag Index. For more information, refer to: [Alarm Analysis](/wiki/alarm_analysis/alarm_analysis.html)

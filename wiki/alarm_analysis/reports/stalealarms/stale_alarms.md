@@ -5,7 +5,7 @@ permalink: /alarm_analysis/reports/stalealarms/stale_alarms.html
 ---
 <strong>Definition:</strong> Stale alarms are alarms which are/were on for 24 hours or more.
 
-<img src="/assets/media/alarm_analysis/stalealarmreport_01.png" alt="stalealarmreport_01" style="max-width:800px" loading="lazy" />
+<img src="/wiki/assets/media/alarm_analysis/stalealarmreport_01.png" alt="stalealarmreport_01" style="max-width:800px" loading="lazy" />
 
 The picture above shows an example Stale Alarm Report.
 
@@ -21,7 +21,7 @@ The calculated metrics are:
 
 Alarm Analysis operates on <em>Reporting Periods</em>. That is, Alarm Analysis compiles metrics for a given date-range and will only detect a Stale Alarm if it transitions (annunciates or returns) within the reporting period.
 
-<img src="/assets/media/alarm_analysis.reports.stalealarms/aa_stalereport_01.png" alt="aa_stalereport_01" style="max-width:700px" loading="lazy" />
+<img src="/wiki/assets/media/alarm_analysis.reports.stalealarms/aa_stalereport_01.png" alt="aa_stalereport_01" style="max-width:700px" loading="lazy" />
 
 With reference to the above illustration, the Stale Alarm report <strong>includes</strong> alarms that...
 
@@ -39,7 +39,7 @@ Duration is always reported within the start and end boundaries of a report peri
 
 For example,
 
-<img src="/assets/media/alarm_analysis.reports.stalealarms/aa_stalereport_02.png" alt="aa_stalereport_02" style="max-width:700px" loading="lazy" />
+<img src="/wiki/assets/media/alarm_analysis.reports.stalealarms/aa_stalereport_02.png" alt="aa_stalereport_02" style="max-width:700px" loading="lazy" />
 
 With reference to the above illustration...
 

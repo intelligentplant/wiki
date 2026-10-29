@@ -37,7 +37,7 @@ Execute the BackupUtility batch file "Snapshot.bat" to run.
 
 - BackupUtility: c:\Program Files\Intelligent Plant\Big Data\BackupUtility\Snapshot.bat
 
-<img src="/assets/media/app_store_connect/backup01.png" alt="backup01" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/backup01.png" alt="backup01" style="max-width:600px" loading="lazy" />
 
 This creates a database restore point protecting against data corruption or accidental loss.
 
@@ -63,7 +63,7 @@ To protect against hardware failure, the contents of the back-up folder should b
 
 For advanced Snapshot management (create/delete/list/restore) open the BackupUtility manager: double click "BackupUtility.exe".
 
-<img src="/assets/media/app_store_connect/backup04.png" alt="backup04" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/backup04.png" alt="backup04" style="max-width:600px" loading="lazy" />
 
 List returns all available snapshots. Note the snapshot id is actually a time-stamp (format: YYYYMMddHHmmss).
 
@@ -145,7 +145,7 @@ Snapshots are saved to a backup folder. For a typical App Store Connect installa
 
 `C:\Program Files\Intelligent Plant\Big Data\es\backup`
 
-<em>For custom configuration, see [Big Data Service: Modify Data Storage Location](/big_data_service/modify_data_storage_location.html)</em>
+<em>For custom configuration, see [Big Data Service: Modify Data Storage Location](/wiki/big_data_service/modify_data_storage_location.html)</em>
 
 Providing a Snapshot is not actively being taken, it is safe to <strong>copy</strong> the entire "Snapshots" folder to an achive location.
 

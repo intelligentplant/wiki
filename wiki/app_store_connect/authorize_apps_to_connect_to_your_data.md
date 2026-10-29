@@ -9,11 +9,11 @@ The first time you log in to a new App (or if you haven't logged in for a while)
 
 If the App requires special privileges, you will receive an <strong>Application Authorization</strong> prompt.
 
-<img src="/assets/media/app_store_connect/login03.png" alt="login03" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/login03.png" alt="login03" style="max-width:400px" loading="lazy" />
 
 The <strong>Data Read</strong> privilege is granted for individual data-sources. Open <strong>Choose Data Sources</strong> and select the required data sources.
 
-<img src="/assets/media/app_store_connect/login04.png" alt="login04" style="max-width:400px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/login04.png" alt="login04" style="max-width:400px" loading="lazy" />
 
 #### Subsequent Log Ins
 
@@ -23,7 +23,7 @@ In order to approve an App to access a new Data Source:
 
 1. Open the App Store [https://appstore.intelligentplant.com](https://appstore.intelligentplant.com)
 
-<img src="/assets/media/app_store_connect/datasources.gif" alt="datasources" style="max-width:600px" loading="lazy" />
+<img src="/wiki/assets/media/app_store_connect/datasources.gif" alt="datasources" style="max-width:600px" loading="lazy" />
 
 2. Navigate to "My Account > Apps"
 
@@ -41,4 +41,4 @@ You have not authorized the App. Return to the App Store and open the App from t
 
 <strong>Data source is not listed</strong>
 
-The owner of the data source has not approved you to view it. Contact the data owner directly and request they share their data source (see: [Share your data with other App Store Users](/app_store_connect/share_your_data_with_other_app_store_users.html))
+The owner of the data source has not approved you to view it. Contact the data owner directly and request they share their data source (see: [Share your data with other App Store Users](/wiki/app_store_connect/share_your_data_with_other_app_store_users.html))

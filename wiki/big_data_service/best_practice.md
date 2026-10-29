@@ -67,7 +67,7 @@ NB. Modifying these settings on a live system is not advised.
 
 By default, the big data service assumes a modest RAM allowance. However, this can be increased for better performance.
 
-For more info, refer to: [Increase Big Data Service RAM](/big_data_service/increase_big_data_service_ram.html).
+For more info, refer to: [Increase Big Data Service RAM](/wiki/big_data_service/increase_big_data_service_ram.html).
 
 #### Scale Out
 
@@ -97,4 +97,4 @@ To mitigate these risks:
 - Mark single-shard indices as read-only
 - Create backups of single-shard indices
 
-For more info on Elasticsearch backup, refer to: [App Store Connect: Back Up and Restore](/app_store_connect/back_up_and_restore.html).
+For more info on Elasticsearch backup, refer to: [App Store Connect: Back Up and Restore](/wiki/app_store_connect/back_up_and_restore.html).

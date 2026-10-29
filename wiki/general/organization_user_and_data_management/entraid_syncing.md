@@ -43,23 +43,23 @@ To register an Entra ID group and link it with IAS groups follow these steps:
 
 2. In the Actions panel at the bottom of the page click on the link to manage external groups:
 
-<img src="/assets/media/general/organization_user_and_data_management/entraid_001.png" alt="entraid_001" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/general/organization_user_and_data_management/entraid_001.png" alt="entraid_001" style="max-width:500px" loading="lazy" />
 
 3. Click on the "Register External Group" button at the bottom of the table of registered groups:
 image.png4. Paste in the Object ID and display name for the Entra ID group. You can copy and paste these from the Azure portal if required:
 
-<img src="/assets/media/general/organization_user_and_data_management/entraid_002.png" alt="entraid_002" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/general/organization_user_and_data_management/entraid_002.png" alt="entraid_002" style="max-width:500px" loading="lazy" />
 
 4. Paste in the Object ID and display name for the Entra ID group. You can copy and paste these from the Azure portal if required:
 
-<img src="/assets/media/general/organization_user_and_data_management/entraid_003.png" alt="entraid_003" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/general/organization_user_and_data_management/entraid_003.png" alt="entraid_003" style="max-width:500px" loading="lazy" />
 
 5. Once the Entra ID group has been registered, click on the "Link to Industrial App Store Groups" button on its details page:
 
-<img src="/assets/media/general/organization_user_and_data_management/entraid_004.png" alt="entraid_004" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/general/organization_user_and_data_management/entraid_004.png" alt="entraid_004" style="max-width:500px" loading="lazy" />
 
 6. Select the IAS groups that you want to link the Entra ID group with in the dialog that appears and then click Save Changes:
 
-<img src="/assets/media/general/organization_user_and_data_management/entraid_005.png" alt="entraid_005" style="max-width:500px" loading="lazy" />
+<img src="/wiki/assets/media/general/organization_user_and_data_management/entraid_005.png" alt="entraid_005" style="max-width:500px" loading="lazy" />
 
 7. Add users to the Entra ID group and then make the users sign out of IAS and then sign in again. They will automatically be added to the linked IAS groups.
