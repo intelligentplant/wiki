@@ -7,7 +7,7 @@ A fast and flexible <em>Alarm & Event</em> viewer. With SoE Explorer, you can qu
 
 ![SOE Explorer app screenshot](/wiki/assets/media/soe/screenshot_2025-07-02_105330.png)
 
-### Links {: .title}
+### Links
 
 - [Sequence of Events Explorer - App](http://soex.intelligentplant.com)
 - [Sequence of Events Explorer - User Guide](https://soex.intelligentplant.com/Docs/SoEX_Manual.pdf)

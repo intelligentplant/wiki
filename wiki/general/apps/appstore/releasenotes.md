@@ -5,28 +5,28 @@ permalink: /general/apps/appstore/releasenotes.html
 ---
 This page describes the release notes for the [Industrial App Store](https://appstore.intelligentplant.com) portal.
 
-### 2026-04 {: .title}
+### 2026-04
 
 App version: v3.2.21660 <br />
 Release date: 2026-05-29
 
 - <code>[Bug Fix]</code>: Fixed an issue where adding one or multiple users to an IAS group could result in an error.
 
-### 2025-10 {: .title}
+### 2025-10
 
 App version: v3.2.21648<br />
 Release date: 2025-10-31
 
 - Under-the-hood updates.
 
-### 2025-08 {: .title}
+### 2025-08
 
 App version: v3.2.21639<br />
 Release date: 2025-08-29
 
 - Under-the-hood changes to support our new Model Context Protocol (MCP) server, for connecting generative AI applications to your Industrial App Store data.
 
-### 2025-06 {: .title}
+### 2025-06
 
 App version: v3.2.21557<br />
 Release date: 2025-06-27
@@ -49,13 +49,13 @@ Configuring organisation-level app data source assignments is the latest onboard
 
 By implementing these steps, all your users have to do is sign into an app such as Gestalt Trend and the Industrial App Store will take care of the rest of the onboarding process!
 
-### 2025-05 {: .title}
+### 2025-05
 
 Release date: 2025-05-30
 
 - Under-the-hood changes in preparation for future enhancements.
 
-### 2025-03 {: .title}
+### 2025-03
 
 Release date: 2025-03-28
 
@@ -64,7 +64,7 @@ Release date: 2025-03-28
 - The organisation management pages now use a more compact layout and now provides a button to easily copy the organisation ID when configuring trusts with other organisations.
 - The <code>AccountDebit</code> app scope is now obsolete and cannot be added to new app registrations or re-added to existing registrations if it is removed.
 
-### 2025-02 {: .title}
+### 2025-02
 
 Release date: 2025-02-28
 
@@ -72,7 +72,7 @@ Release date: 2025-02-28
 - You can now link Microsoft Entra ID roles to Industrial App Store groups. Previously it was only possible to link Entra ID groups to IAS groups.
   - Links are now automatically created to link the <em>Global Administrators</em>, <em>Cloud Application Administrators</em> and <em>Application Administrators</em> roles in Entra ID to the Industrial App Store <em>Administrators</em> group for your organisation.
 
-### 2025-01 {: .title}
+### 2025-01
 
 Release date: 2025-01-31
 
@@ -81,7 +81,7 @@ Release date: 2025-01-31
 - Improvements to scenarios where IAS is being displayed in an iframe in an authorised 3rd party origin (such as FutureOn FieldTwin).
 - Removal of some legacy features.
 
-### 2024-11 {: .title}
+### 2024-11
 
 Release date: 2024-11-29
 
@@ -91,7 +91,7 @@ Release date: 2024-11-29
   - App developers must explicitly enable the Device Authorization Grant on an app's registration page before it can be used.
 - Fixes an issue that prevented images from being uploaded to app profiles in some scenarios.
 
-### 2024-10 {: .title}
+### 2024-10
 
 Release date: 2024-10-25
 
@@ -99,32 +99,32 @@ Release date: 2024-10-25
 - Miscellaneous under-the-hood improvements.
 - Mitigations for security advisories in 3rd party libraries that we use.
 
-### 2024-09 {: .title}
+### 2024-09
 
 Release date: 2024-09-27
 
 - When performing changes that affect user or data source authorisations (such modifying group memberships or allowing an app to access a data source), the changes will now take effect immediately instead of taking up to 5 minutes to propagate through the Industrial App Store services.
 
-### 2024-08 {: .title}
+### 2024-08
 
 Release date: 2024-08-30
 
 - Some under-the-hood changes to support custom logon experiences for trusted partners.
 
-### 2024-07 {: .title}
+### 2024-07
 
 Release date: 2024-07-26
 
 - Fixes an issue that prevented users from signing in using personal Google accounts.
 - When viewing members for an organisation group, an indicator is now shown next to the user's name if they were added to the Industrial App Store group because they are a member of a linked Entra ID group.
 
-### 2024-05 {: .title}
+### 2024-05
 
 Release date: 2024-05-31
 
 - Under-the-hood improvements and updates to 3rd party components.
 
-### 2024-04 {: .title}
+### 2024-04
 
 Release date: 2024-05-03
 
@@ -133,7 +133,7 @@ Release date: 2024-05-03
 - Microsoft Transact landing page improvements
 - Miscellaneous under-the-hood bug fixes and improvements
 
-### 2024-01 {: .title}
+### 2024-01
 - Fixes login page welcome logo not adjusting size correctly on mobile.
 - Adds initial support for Entra ID group syncing.
 
@@ -141,7 +141,7 @@ Entra ID group syncing is a new feature that allows your administrator to link E
 
 This feature can be used to quickly onboard new users to give them access to data sources, PnID dashboards and so on as soon as they sign into the Industrial App Store for the first time.
 
-### 2023-08 {: .title}
+### 2023-08
 - Fixes a notification management issue that occurs when you do not have an email address configured in your Azure Active Directory profile.
 - Introduces a new Organization Welcome Pages feature.
   - Allows an organization to define a custom page to display to their users the first time they sign into the Industrial App Store or every time they visit unless they have been assigned to an IAS user group.
@@ -150,23 +150,23 @@ This feature can be used to quickly onboard new users to give them access to dat
   - Welcome pages can be edited by anyone who is in the Administrators group for your organization.
 - Miscellaneous security updates.
 
-### 2023-07 {: .title}
+### 2023-07
 - Security updates and bug fixes.
 
-### 2023-04 {: .title}
+### 2023-04
 - Added functionality for users to manage notification settings.
 - The [Industrial App Store privacy policy](https://appstore.intelligentplant.com/Content/assets/legal/IAS-PrivacyPolicy.html) has been updated to clarify how and when we will contact you.
 - Provided integration for purchasing applications through the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=Intelligent%20Plant%20Ltd&page=1).
 
-### 2022-12 {: .title}
+### 2022-12
 
 - Integration with Freshsales for new user emails.
 
-### 2022-09 {: .title}
+### 2022-09
 
 - TLS 1.0 and 1.1 no longer supported <br /> In adherance with Microsoft Cybersecurity guidelines, the Industrial App Store will only support secure communication using the latest cyphers. All App Store Connects should be updated to version 3.2.16245 or above by this date.
 
-### 2022-04 {: .title}
+### 2022-04
 
 - New content security policy.
 - App card ordering has changed.
@@ -175,23 +175,23 @@ This feature can be used to quickly onboard new users to give them access to dat
 - Under-the-hood changes to prepare for transition to Microsoft Graph when logging into the Industrial App Store with a Work or School (Azure Active Directory) account.
 - Removal of live chat. Don't worry - a new live chat feature will be available soon!
 
-### 2022-01 {: .title}
+### 2022-01
 
 - Updates on the feel and look for the Industrial App Store home page.
 - Addition of a quick start option.
 - When selecting data sources for an app, your available data sources are now grouped by App Store Connect.
 
-### 2021-04 {: .title}
+### 2021-04
 
 - Digital Security Policy document link corrected.
 - An alternative "App Store Connect" installer link added.
 
-### 2021-01 {: .title}
+### 2021-01
 
 - Quick view feature. You can now preview the app without navigating to the profile page.
 - General improvements and UI fixes.
 
-### 2020-11 {: .title}
+### 2020-11
 
 - Fixes on how videos are displayed in the portal
 - Refresh token lifespan reduced
@@ -200,13 +200,13 @@ This feature can be used to quickly onboard new users to give them access to dat
 - Fixed an issue when developers are trying to change app status from the quick access table
 - Minor UI and usability updates
 
-### 2020-10 {: .title}
+### 2020-10
 
 - Fixed cancel button on application authorization page giving 500 error
 - Allow apps to be owned by organisations instead of individuals
 - Able to revoke app consent
 
-### 2020-07 {: .title}
+### 2020-07
 
 - Allow IP address-based security for internal API routes
 - Error while creating new apps due to expected files/folders being missing
@@ -219,7 +219,7 @@ This release contains the following changes:
 - Minor fixes for the new app publishing process.
 - Functionality to remove app profile media.
 
-### 2020-05 {: .title}
+### 2020-05
 
 This release contains the following changes:
 
@@ -228,7 +228,7 @@ This release contains the following changes:
 - Minor fixes for the new app publishing process.
 - Functionality to remove app profile media.
 
-### 2020-04 {: .title}
+### 2020-04
 
 This release contains the following changes:
 
@@ -237,7 +237,7 @@ This release contains the following changes:
 - We have fixed an issue that prevented JavaScript applications from being able to query the user info API endpoint.
 - We have fixed some issues related to updating app settings, including editing or cropping the icon and banner image for an app.
 
-### 2020-03 {: .title}
+### 2020-03
 
 This release contains the following changes:
 
@@ -248,6 +248,6 @@ This release contains the following changes:
 - You can pre-select all scopes required by your app from the app settings screen, and you can also pre-specify whether or not your app requests offline access (i.e. refresh tokens) by default. This simplifies the creation of the redirect URL your app uses when logging a user in. These options can still be specified in the redirect URL if preferred.
 - We've fixed a few other under-the-hood bugs.
 
-### 2020-02 {: .title}
+### 2020-02
 
 This release contains a high-priority fix related to changes in the way Google Chrome handles cookies. The change affected the way organisation users signed in using their Azure Active Directory credentials.

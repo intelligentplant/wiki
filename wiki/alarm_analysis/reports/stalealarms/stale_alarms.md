@@ -17,7 +17,7 @@ The calculated metrics are:
 
 - <strong>Total on Time (days):</strong>  The accumulated on-time of stale alarms.
 
-### Stale Alarm Detection {: .title}
+### Stale Alarm Detection
 
 Alarm Analysis operates on <em>Reporting Periods</em>. That is, Alarm Analysis compiles metrics for a given date-range and will only detect a Stale Alarm if it transitions (annunciates or returns) within the reporting period.
 
@@ -33,7 +33,7 @@ Example 5 has no associated Alarm, therefore no on-time can be calculated and th
 
 Examples 6 and 7 transition outside the reporting period and are therefore <strong>omitted</strong>
 
-### Stale Alarm Duration {: .title}
+### Stale Alarm Duration
 
 Duration is always reported within the start and end boundaries of a report period. <sup class="wiki-footnote" title="Clipping calculated duration to the report boundaries is planned functionality, estimated for release 2026 Q1">[1]</sup>. This provides an accurate metric for assessing an alarm was stale for a given month.
 
@@ -51,7 +51,7 @@ Example 5 has no associated alarm, therefore no on-time can be calculated and th
 
 Examples 6 and 7 transition outside the reporting period and are therefore omitted
 
-### Gestalt PnID Support {: .title}
+### Gestalt PnID Support
 
 Individual values from the Stale Alarm report can be displayed in Gestalt PnID dashboards via Alarm Analysis meta tags:
 
@@ -65,11 +65,11 @@ Individual values from the Stale Alarm report can be displayed in Gestalt PnID d
 
 For example, referencing <code>Oil Co/Osprey/Stale report/1.tag</code> will return the tag name from row 1 of the Stale Alarm report.
 
-### Gestalt Trend Support {: .title}
+### Gestalt Trend Support
 
 The numeric values of the Stale Alarm report are not suitable for Trend display as they intended to only ever return single values for the full report period.
 
-### Power BI Support {: .title}
+### Power BI Support
 
 All values from the Stale Alarm report can be displayed in Power BI dashboards via Alarm Analysis meta tags:
 

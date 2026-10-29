@@ -12,7 +12,7 @@ This requires
   2. Defining data tags on an historian.
   3. Configuring a Data Stream rule to relay data from performance counter to historian.
 
-### Registering Performance Counters {: .title}
+### Registering Performance Counters
 
 To register data core performance counters
 

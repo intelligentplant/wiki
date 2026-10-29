@@ -17,6 +17,6 @@ Accessible through an intuitive interface, Compressor Consultant ensures that op
 
 In summary, Compressor Consultant represents a sophisticated solution for industrial compressor monitoring, combining advanced analytics with proactive fault detection to optimize performance and mitigate risks. With its focus on data-driven insights and operational reliability, Compressor Consultant empowers organizations to maintain efficient and resilient compressor operations in demanding industrial environments.
 
-### Index {: .title}
+### Index
 
 - [Compressor Consultant](/wiki/compressor_consultant/compressor_consultant.html)

@@ -15,13 +15,13 @@ To play around with Facit, go to the [Industrial App Store](https://appstore.int
 
 For more information, contact our sales team at info@intelligentplant.com
 
-### Getting Started {: .title}
+### Getting Started
 
 Facit uses [App Store Connect](/wiki/app_store_connect/app_store_connect.html) - a query-routing and data-access software service that connects on-site data sources to off-the-shelf apps available on the <em>Industrial App Store</em>. Many companies already have App Store Connections - to check, contact your IT team or [Intelligent Plant](https://www.intelligentplant.com/contact-us). (Note we will only respond to organization queries from verified organization email domains).
 
 Assuming that you have an App Store Connection available, you will need to contact your App Store Connect administrator to [Prepare Facit Monitoring](/wiki/facit/preparefacitmonitoring.html).
 
-### Facit Data Sources {: .title}
+### Facit Data Sources
 
 A typical Facit deployment will consist of four data sources:
 
@@ -40,11 +40,11 @@ A typical Facit deployment will consist of four data sources:
 - IP Historian instance whare results of monitoring calculations are stored.
 - This historian has a "monthly indexing" configuration, best suited for data the updates regularly.
 
-### Facit Monitors {: .title}
+### Facit Monitors
 
 The Facit application includes an administration UI for the configuration of monitors (coming soon).
 
-### Data Core Script Tags {: .title}
+### Data Core Script Tags
 
 For low level administration of Facit Monitors, App Store Connect administrators can configure [Script Tags](/wiki/data_core/script_tags.html) on the Facit data source via the App Store Connect UI.
 
@@ -54,11 +54,11 @@ For low level administration of Facit Monitors, App Store Connect administrators
 </span>
 &nbsp;<br/>
 
-### Notifications {: .title}
+### Notifications
 
 For advance notification services, Facit can be used in conjunction with Microsoft Power Automate to trigger workflows, emails, text messages, status updates, reports, etc...
 
-### Quick Links {: .title}
+### Quick Links
 
 - <strong>[Prepare Facit Monitoring](/wiki/facit/preparefacitmonitoring.html)</strong> <br /> Instructions for App Store Connect administrators on preparing App Store Connect for Facit Monitoring.
 

@@ -7,7 +7,7 @@ By default, Alarm Analysis retains all data. The Alarm Analysis application is d
 
 The article below provides guidance on configuring a data retention policy.
 
-### How Alarm Analysis stores data {: .title}
+### How Alarm Analysis stores data
 
 Alarm Analysis Import flow can be considered in two stages:
 
@@ -33,7 +33,7 @@ Data is stored in monthly indices determined by the A&E event date. The index na
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### The case for keeping unprocessed data {: .title}
+### The case for keeping unprocessed data
 
 Once data has been processed, it <em>could</em> be removed from the collection store. However, this would prevent  re-processing of historic data. This can be pertinent in the early days of configuring an Alarm Analysis Import Flow, where rules are often revised.
 
@@ -41,7 +41,7 @@ Only remove unprocessed data if satisfied historic re-processing of historic is 
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Configuring a Data Retention Policy {: .title}
+### Configuring a Data Retention Policy
 
 1. On App Store Connect server, Open App Store Connect (http://localhost:2006/Service) <br />
 Then navigate to "Real-Time Data > Data Sources".
@@ -70,6 +70,6 @@ The following settings are available:
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Schedule {: .title}
+### Schedule
 
 The Data Retention Policy (once enabled) is executed daily at 1am.

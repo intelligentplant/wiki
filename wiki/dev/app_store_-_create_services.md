@@ -25,7 +25,7 @@ permalink: /dev/app_store_-_create_services.html
 
 <img src="/wiki/assets/media/dev/1.png" alt="1" style="max-width:300px" loading="lazy" />
 
-## Modify Service Project {: .title}
+## Modify Service Project
 
 1. Open web.config file and update <em><strong>ServiceAppId</strong></em> and <em><strong>ServiceAppSecret</strong></em> with the service app hub which you have created in the steps above.
 
@@ -37,7 +37,7 @@ permalink: /dev/app_store_-_create_services.html
 
 4. Modify the UI to fit your theme.
 
-## Create service app {: .title}
+## Create service app
 
 1.Follow steps 2 to 4 above to create a service application.
 

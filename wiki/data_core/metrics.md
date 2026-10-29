@@ -5,7 +5,7 @@ permalink: /data_core/metrics.html
 ---
 The Data Core OpenTelemetry Metrics Driver allows Data Core to observe and collect metrics from applications and services that use the OpenTelemetry standard. It automatically discovers and tracks metric streams, such as performance counters and custom application metrics, and makes these available for monitoring and analysis within Data Core.
 
-### Key Features {: .title}
+### Key Features
 
 - Automatic Metric Discovery: Observes metrics from specified OpenTelemetry meters
 - Performance Counter Integration: Collects Windows performance counters for host process monitoring.
@@ -14,7 +14,7 @@ The Data Core OpenTelemetry Metrics Driver allows Data Core to observe and colle
 - Customizable Limits: Allows configuration of how many metric streams and data points are tracked to optimize driver performance.
 - Configurable Export Interval: Lets you set how frequently metrics are updated and exported for analysis.
 
-### Key Settings {: .title}
+### Key Settings
 
 <img src="/wiki/assets/media/data_core/metricsdriver001.png" alt="metricsdriver001" style="max-width:600px" loading="lazy" />
 
@@ -23,7 +23,7 @@ The Data Core OpenTelemetry Metrics Driver allows Data Core to observe and colle
 
 This driver is ideal for users who want to centralize and analyze telemetry data from multiple sources in a consistent, standards-based way.
 
-## Data Core Telemetry {: .title}
+## Data Core Telemetry
 
 A preconfigured instance  of the Metrics driver (entitled "Telemetry") ships with App Store Connect. This can be used to observe real-time Data Core metrics (e.g. Data Source IO operations) and System Performance Counters (e.g. <em>% Processor Time</em> and <em>Available Memory</em>).
 

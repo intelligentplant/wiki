@@ -7,13 +7,13 @@ This page describes the release notes for the [Alarm Analysis](https://appstore.
 
 If you experience issues following an update, we recommend that you clear your browser's cache and try reloading the app.
 
-### 2026-06 {: .title}
+### 2026-06
 App Version: v3.3.182 <br />
 Release date: 2026-06-26 <br />
 
 - Security administration: routine package updates
 
-### 2025-11 {: .title}
+### 2025-11
 App Version: v3.3.181 <br />
 Release date: 2025-11-09 <br />
 

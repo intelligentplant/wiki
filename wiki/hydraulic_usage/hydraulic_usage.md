@@ -9,7 +9,7 @@ Hydraulic Usage monitors subsea hydraulic control systems by calculating and rec
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Page Descriptions {: .title}
+### Page Descriptions
 
 #### Hydraulic Usage Overview Page
 <img src="/wiki/assets/media/hydraulic_usage/hydraulicusage-overview.png" alt="hydraulicusage-overview" style="max-width:900px" loading="lazy" />
@@ -52,7 +52,7 @@ The Valve Movement calculation uses valve status tags which show when the valves
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### How to configure an asset {: .title}
+### How to configure an asset
 
 Firstly, select "Add New" on the left menu
 
@@ -62,7 +62,7 @@ This gives the user a blank asset in which they can configure.
 
 <img src="/wiki/assets/media/hydraulic_usage/hydraulicusage-createanewasset.png" alt="hydraulicusage-createanewasset" style="max-width:400px" loading="lazy" />
 
-### Asset Settings {: .title}
+### Asset Settings
 For further asset configuration, select "Asset Settings" at the top right of your page. This will take you to the Asset Settings page that contains four tabs:
 
 #### General
@@ -120,7 +120,7 @@ Mainly to be used by developers, this tab provides information about whether the
 
 <img src="/wiki/assets/media/hydraulic_usage/hydraulicusage-adminassetsettings.png" alt="hydraulicusage-adminassetsettings" style="max-width:600px" loading="lazy" />
 
-### Output tags {: .title}
+### Output tags
 
 The following output tags are supplied from the Hydraulic Usage app:
 

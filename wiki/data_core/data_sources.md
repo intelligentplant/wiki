@@ -30,7 +30,7 @@ permalink: /data_core/data_sources.html
 - Windows Performance Counters
 - [Custom Drivers](https://github.com/intelligentplant/AppStoreConnect.Adapters)
 
-### Data Streams {: .title}
+### Data Streams
 
 Data streams are used to map a flow of data from one data source to another.
 
@@ -40,7 +40,7 @@ Data streams are used to map a flow of data from one data source to another.
 - IP Historian/Edge Historian: Create mappings via the source properties of IP Historian tags.
 - Pattern: Match source tags using a search filter an map them to destination tags.
 
-### Event Source Drivers {: .title}
+### Event Source Drivers
 
 <em>Event Sources push events to subscribed Event Sinks.</em>
 
@@ -57,7 +57,7 @@ Data streams are used to map a flow of data from one data source to another.
 - [Windows Event Log](/wiki/data_core/windowseventlog.html)
 - [Custom Drivers](https://github.com/intelligentplant/AppStoreConnect.Adapters)
 
-### Event Sink Drivers {: .title}
+### Event Sink Drivers
 
 <em>Event Sinks subscribe to Event Sources to process events. For example, save event to a log or database, send an email, etc...</em>
 

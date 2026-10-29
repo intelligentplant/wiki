@@ -7,7 +7,7 @@ The Big Data Service ships with App Store Connect. It is composed of a stand-alo
 
 Like any database installation, managing upgrades requires planning for downtime, data migration, software upgrades and rollback. As a consequence, Big Data Service upgrades are infrequent, meaning a dependency on legacy software is inevitable. The Big Data Service mitigates this by running on an isolated Elasticsearch instance accessible only to local processes, significantly reducing the potential attack surface.
 
-### Configuration {: .title}
+### Configuration
 
 - [Elasticsearch Best Practice](/wiki/big_data_service/best_practice.html)
 - [Modify Big Data Storage Location](/wiki/big_data_service/modify_data_storage_location.html)
@@ -18,7 +18,7 @@ Like any database installation, managing upgrades requires planning for downtime
 - [Logging](/wiki/big_data_service/logging.html)
 - [Upgrade Java](/wiki/big_data_service/upgrade_java.html)
 
-### Technical Advisories {: .title}
+### Technical Advisories
 
 The following technical advisories cover vulnerability findings that apply to the incumbent Big Data Service and the mitigations available. Whilst running end-of-life components is not ideal, practical risk is considerably lower in this architecture than in a regular internet-facing database deployment.
 

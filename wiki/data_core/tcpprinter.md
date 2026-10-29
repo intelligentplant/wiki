@@ -7,7 +7,7 @@ Data Core can be configured to receive events via a printer flow (TCP or COM).
 
 Older assets may have once reported Alarms & Events directly to a printer in the control room. This provided a visual and historical record for the operator. Impersonating a printer allows us to integrate with such legacy systems, but the protocol also remains popular for the security benefits of one-way communication.
 
-### Getting Started {: .title}
+### Getting Started
 
 #### 1. Data Core Configuration
 
@@ -58,11 +58,11 @@ if ($existingPrinter -eq $null) {
 }
 ```
 
-### Testing {: .title}
+### Testing
 
 The ultimate aim may be to relay or import the data to Alarm Analysis, however preparing a [File System Event Sink](/wiki/data_core/filesystemeventsink.html) will be a quicker way to test events are being captured.
 
-### Troubleshooting {: .title}
+### Troubleshooting
 
 #### Data Core Logs
 

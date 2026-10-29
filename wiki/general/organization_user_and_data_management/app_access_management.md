@@ -25,7 +25,7 @@ To enable the approved list, click on <em>Enable Approved Apps List</em>:
 
 When the approved apps list is enabled, it can be disabled by clicking on <em>Disable Approved Apps List</em>.
 
-### Managing the Approved Apps List {: .title}
+### Managing the Approved Apps List
 
 When the safe list is enabled, click on <em>Manage Approved Apps</em> on the app security overview to open the approved list management page:
 
@@ -73,7 +73,7 @@ When signing into an app or viewing the My Apps page, pre-selected data componen
 
 If multiple access control list entries apply to the same user, all pre-selected data components will be automatically available to the user when they sign into the app. For example, if you pre-select data components for your "All Users" group and then add a separate access control list entry for a specific user and assign additional data components to the user, the user will have access to pre-selected data components from both entries.
 
-### Managing the Block List {: .title}
+### Managing the Block List
 
 From the app access overview page, click on <em>Manage Blocked Apps</em> to open the block list management page:
 

@@ -11,7 +11,7 @@ The example below shows a subscription between a SQL Event Source (which collect
 
 For a full collection of Data Core components and configuration, see [Data Core Components](/wiki/data_core/data_sources.html)
 
-### Open Data Core {: .title}
+### Open Data Core
 
 1. Log onto application server hosting App Store Connect
 
@@ -23,10 +23,10 @@ For a full collection of Data Core components and configuration, see [Data Core 
 
 If the menu bar does not list the options above, check if you have [Data Core Administrator Privileges](/wiki/app_store_connect/data_core_administrator_privileges.html)
 
-### Create an Event Source {: .title}
+### Create an Event Source
 
 ![createeventsrc](/wiki/assets/media/data_core/createeventsrc.gif)
 
-### Create an Event Sink Subscription {: .title}
+### Create an Event Sink Subscription
 
 ![createeventsnk](/wiki/assets/media/data_core/createeventsnk.gif)

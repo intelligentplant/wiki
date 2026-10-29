@@ -5,7 +5,7 @@ permalink: /general/apps/controllerconsultant/releasenotes.html
 ---
 This page describes the release notes for [Controller Consultant](https://appstore.intelligentplant.com/Home/AppProfile?appId=0d298598590348dea1bc84b36945a9dc).
 
-### 2026-10 {: .title}
+### 2026-10
 
 Release date: 2026-10-30 <br />
 Version: (v4.3.45)

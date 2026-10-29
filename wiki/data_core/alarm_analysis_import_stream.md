@@ -11,12 +11,12 @@ Alarm Analysis requires an import stream of Alarm & Event data. The process of i
 
 The instructions below cover the first (more general) stage and describe a use-case where the data is imported from a Process Vue Alarm & Event database on SQL Server.
 
-### 1. Configure Event Source {: .title}
+### 1. Configure Event Source
 
 Process Vue persists Alarm & Event data to SQL Server. We can set up SQL Event Source to monitor the Process Vue data base and collect any new records.
 
 - [https://appstore.intelligentplant.com/wiki/doku.php?id=data_core:sqleventsource|SQL Event Source]
 
-### 2. Configure Alarm Analysis Event Sink {: .title}
+### 2. Configure Alarm Analysis Event Sink
 
 work in progress...

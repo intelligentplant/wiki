@@ -3,7 +3,7 @@ layout: wiki
 title: "Become an App Store Developer"
 permalink: /dev/app_store_-_become_a_developer.html
 ---
-### Step 1: Register your Account {: .title}
+### Step 1: Register your Account
 
 <strong>1.</strong> Log in into your account on [Intelligent Plant Industrial App Store](https://appstore.intelligentplant.com/)
 
@@ -15,7 +15,7 @@ permalink: /dev/app_store_-_become_a_developer.html
 
 Congratulations - you are now registered as a developer with Intelligent Plant Industrial App Store.
 
-### Step 2: Get Verified {: .title}
+### Step 2: Get Verified
 In order to increase confidence in the apps that are published, and at the request of clients, we have a verification process which allows you as an app developer to prove that you represent the company whose logo is used on your app cards.
 
 Any publisher who is not verified will have a 'not verified' stamp on their logo to ensure that customers are aware where the technology is coming from.

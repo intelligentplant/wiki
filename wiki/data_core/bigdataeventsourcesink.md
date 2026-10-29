@@ -3,7 +3,7 @@ layout: wiki
 title: "Big Data Event Source/Sink"
 permalink: /data_core/bigdataeventsourcesink.html
 ---
-### Overview {: .title}
+### Overview
 
 Intelligent Plant's <strong>Big Data Service</strong> (part of the App Store Connect installation) is employed by Data Core as an event source and sink. Using it as a sink can be useful if we wish to define a local collecting area.
 
@@ -13,7 +13,7 @@ However, it is not suitable for multi-server event flow - <em>see <strong>Data L
 
 Data is stored to Big Data in monthly indices. The index name is derived automatically from event source.
 
-### Requirements {: .title}
+### Requirements
 
 - Big Data Windows Service must be running
 

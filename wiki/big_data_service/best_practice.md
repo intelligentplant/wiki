@@ -5,7 +5,7 @@ permalink: /big_data_service/best_practice.html
 ---
 The App Store Connect installer deploys the Big Data Service: a single node elasticsearch cluster that is employed by the App Store Connection for local data storage. The main use-cases are when the App Store Connection is configured to record process data to IP Historian, and/or record Alarm & Event data to Alarm Analysis. If significant volumes of data are stored, the server administrator should be prepared to monitor and reconfigure the Elasticseach installation to maintain performance and availability.
 
-### Elasticsearch Terminology {: .title}
+### Elasticsearch Terminology
 
 <table class="wiki-table">
 <tbody>
@@ -17,7 +17,7 @@ The App Store Connect installer deploys the Big Data Service: a single node elas
 </tbody>
 </table>
 
-### Factors affecting elasticsearch performance... {: .title}
+### Factors affecting elasticsearch performance...
 
 #### Server Constraints
 
@@ -54,7 +54,7 @@ A default installation of App Store Connect allocates only 1GB of RAM to Elastic
 
 Exceeding these limits may lead to issues index corruption. For Alarm Analysis, this could manifest in the loss of monthly blocks of data.
 
-### What to do if you are approaching advised limits? {: .title}
+### What to do if you are approaching advised limits?
 Most of the options below require specialist knowledge of Elasticsearch. Consult with the Intelligent Plant team if unsure how to proceed.
 
 #### Data Source Configuration

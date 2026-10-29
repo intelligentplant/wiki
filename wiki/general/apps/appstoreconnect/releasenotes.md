@@ -5,18 +5,18 @@ permalink: /general/apps/appstoreconnect/releasenotes.html
 ---
 This page describes the release notes for [App Store Connect](https://appstore.intelligentplant.com/Home/AppProfile?appId=a73c453df5f447a6aa8a08d2019037a5). Your App Store Connect will automatically download the update. You can configure the update schedule for your App Store Connect by following the instructions available [here](https://appstore.intelligentplant.com/wiki/doku.php?id=data_core:app_store_connect_updates).
 
-### App Store Connect Update Manager {: .title}
+### App Store Connect Update Manager
 
 We have released a new command-line tool to simplify App Store Connect administrative operations such as enabling and disabling automatic updates, setting the update schedule, switching between release channels and so on.
 
 You can download the tool from https://downloads.intelligentplant.com/data-core-update-manager
 
-### 2026-10 {: .title}
+### 2026-10
 
 Release date: 2026-10-30 <br />
 Version: <em>Details pending</em>
 
-### 2026-08 {: .title}
+### 2026-08
 Release date: 2026-08-28 <br />
 Version: 4.1.202
 
@@ -37,7 +37,7 @@ CSV Driver:
 TCP Event Sink:
 - <code>[Bug Fix]</code>: Fixes a credential check in the TCP Event Sink.
 
-### 2026-06 {: .title}
+### 2026-06
 Release date: 2026-06-26 <br />
 Version: 4.1.193 <br />
 
@@ -51,7 +51,7 @@ AVEVA PI Driver
 
 Alarm Analysis Driver:
 - <code>[Enhancement]</code>: Introduced more support for selective exposure of Alarm & Event data from multiple assets.
-### 2026-05 {: .title}
+### 2026-05
 Release date: 2026-05-29 <br />
 Version: 4.1.190
 
@@ -105,7 +105,7 @@ DNP3 Driver (Preview): <br />
 Home assistant Driver (Preview): <br />
 - <code>[Enhancement]</code> New preview driver for Home assistant. <br />
 
-### 2025-10 {: .title}
+### 2025-10
 
 Release date: 2025-10-31 <br />
 Version: 4.0.33 <br />
@@ -124,7 +124,7 @@ Alarm Analysis Driver:
 AVEVA OSIsoft PI Driver:
 - <code>[Enhancement]</code> Improved handling when PI bulk query limits are hit.
 
-### 2025-08 {: .title}
+### 2025-08
 
 Release date: 2025-08-29 <br />
 Version: 3.2.21643
@@ -140,7 +140,7 @@ OPC UA Driver:
 Siemens S7 Driver:
 - <code>[Enhancement]</code> Miscellanous functional improvements.
 
-### 2025-06 {: .title}
+### 2025-06
 
 Release date: 2025-06-27 <br />
 Version: 3.2.21562
@@ -159,7 +159,7 @@ IP Historian v3 Driver:
 OPC Classic Driver:
 - <code>[Bug Fix]</code> Fixes an issue where initialising a connection to an OPC AE server could fail.
 
-### 2025-05 {: .title}
+### 2025-05
 
 Release Date: 2025-05-30 <br />
 Version: 3.2.21515
@@ -181,7 +181,7 @@ IP Historian v2 Driver:
 IP Historian v3 Driver:
 - <code>[Enhancement]</code> UI enhancements to provide better guidance when setting exception/compression deviation for tags.
 
-### 2025-04 {: .title}
+### 2025-04
 
 Release Date: 2025-04-25 <br />
 Version: 3.2.21435
@@ -200,7 +200,7 @@ IP Historian v2 Driver:
 IP Historian v3 Driver:
 - <code>[Enhancement]</code> When performing a snapshot write, IP Historian will now ignore all samples older than the snapshot timestamp for the destination tag. The behaviour of history writes has not changed.
 
-### 2025-03 {: .title}
+### 2025-03
 
 Release Date: 2025-03-28 <br />
 Version: 3.2.21416
@@ -234,7 +234,7 @@ MQTT Driver:
 RabbitMQ Driver:
 - <code>[Enhancement]</code> Reduced memory usage when parsing custom JSON payloads.
 
-### 2025-02 {: .title}
+### 2025-02
 
 Release Date: 2025-02-28 <br />
 Version: 3.2.21309
@@ -259,7 +259,7 @@ IP Historian v3 Driver:
 OPC Classic Driver:
 - <code>[Enhancement]</code> When connecting to an OPC AE server, an idle timeout can now be specified to automatically reconnect to the server if no event messages are received for a specified period of time.
 
-### 2025-01 {: .title}
+### 2025-01
 
 Release Date: 2025-01-31 <br />
 Version: 3.2.21266
@@ -282,7 +282,7 @@ IP Historian v3 Driver:
 OPC UA Driver:
 - <code>[Enhancement]</code> Improved documentation for various driver settings.
 
-### 2024-11 {: .title}
+### 2024-11
 
 Release Date: 2024-11-29
 
@@ -302,7 +302,7 @@ IP Historian v2 Driver:
 IP Historian v3 Driver:
 - <code>[Bug Fix]</code> Fixes an issue where interpolated queries did not include the final raw sample before the query end time when computing results.
 
-### 2024-10 {: .title}
+### 2024-10
 
 Release Date: 2024-10-25 <br />
 Version: 3.2.21057
@@ -337,7 +337,7 @@ IP Historian v2 Driver:
 IP Historian v3 Driver:
 - <code>[Bug Fix]</code> Fixes an issue where requesting aggregated data for a tag where the time range lies entirely before the first sample in the historian could result in a large memory spike.
 
-### 2024-08 {: .title}
+### 2024-08
 
 Release Date: 2024-08-30 <br />
 Version: 3.2.20671
@@ -388,7 +388,7 @@ You may wish to copy and paste the above script into a local <em>.ps1</em> file 
 
 If you find that a non-good health status is still being reported please contact us as this may have a different root cause.
 
-### 2024-07 {: .title}
+### 2024-07
 
 Release Date: 2024-07-26 <br />
 Version: 3.2.20537
@@ -430,7 +430,7 @@ OPC UA Driver:
 TCP Printer Event Source Driver:
 - <code>[Bug Fix]</code> Better handling for when closing a TCP session raises an error.
 
-### 2024-05 {: .title}
+### 2024-05
 
 Release Date: 2024-05-31 <br />
 Version: 3.2.20385
@@ -474,7 +474,7 @@ Text File Stream Event Source:
 - <code>[Enhancement]</code> The method of determining if a monitored text file has been modified is now more robust.
 - <code>[Enhancement]</code> The sleep period between file system checks has been exposed as a configurable setting. The default check is every 5 seconds. If files are infrequently modified this can be extended to a longer period to reduce processing overhead.
 
-### 2024-04 {: .title}
+### 2024-04
 
 Release Date: 2024-05-03 <br />
 Version: 3.2.20238
@@ -511,7 +511,7 @@ Met Office Driver:
 RabbitMQ Driver:
 - <code>[Enhancement]</code> Improvements to JSON payload parsing to support MQTT-style wildcards when including or excluding properties from the JSON document.
 
-### 2024-03 {: .title}
+### 2024-03
 
 Release Date: 2024-03-22 <br />
 Version: 3.2.20136
@@ -556,7 +556,7 @@ OPC UA Driver:
 RabbitMQ Driver:
 - <code>[Enhancement]</code> When parsing ad hoc JSON payloads, the consumer driver now supports parsing the payload using custom JavaScript. The script is invoked for every incoming message, but can opt to pass the payload onto the default parser. This allows for more complex parsing scenarios than the default parser can handle.
 
-### 2024-01 {: .title}
+### 2024-01
 
 Release Date: 2024-01-26 <br />
 Version: 3.2.19859
@@ -597,7 +597,7 @@ Microsoft Azure Event Hub/IoT Hub Driver:
 Remapper Driver:
 - Tag searches for script tags now work correctly.
 
-### 2023-09 Hotfix 1 {: .title}
+### 2023-09 Hotfix 1
 
 Release Date: 2023-10-02 <br />
 Version: 3.2.19629
@@ -610,7 +610,7 @@ AVEVA OSIsoft PI/AF Drivers:
 RabbitMQ Consumer Driver:
 - Fixes an issue in the Rabbit MQ consumer driver where messages that were sent without any custom headers could not be processed.
 
-### 2023-09 {: .title}
+### 2023-09
 
 Release Date: 2023-09-29 <br />
 Version: 3.2.19623
@@ -653,7 +653,7 @@ RabbitMQ Driver:
 - Significant performance and memory usage improvements.
 - Adds the ability to batch multiple observations together into a single RabbitMQ message, and to compress the message payload.
 
-### 2023-04 {: .title}
+### 2023-04
 
 Release Date: 2023-04-28 <br />
 Version: 3.2.19254
@@ -694,7 +694,7 @@ RabbitMQ Drivers:
 Wonderware Driver:
 - Add driver setting to allow the Wonderware `wwTimeStampRule` query parameter to be explicitly specified when querying the SQL interface.
 
-### 2022-09 {: .title}
+### 2022-09
 
 Release Date: 2022-09-23 <br />
 Version: 3.2.18489
@@ -741,7 +741,7 @@ Serial Printer Event Source:
 - Driver extended to expose "handshake" control protocol properties used in establishing a serial port communication.
 - "Intelligent Response" implemented. This allows the driver to detect and respond to control messages written to the serial port.
 
-### 2022-04 {: .title}
+### 2022-04
 
 Release Date: 2022-04-29 <br />
 Version: 17828
@@ -775,7 +775,7 @@ Azure Event Hubs:
 Taggle:
 - Fixed some tag indexing bugs.
 
-### 2022-01 {: .title}
+### 2022-01
 
 <strong>NOTE: </strong> Roll-out of this release was paused due to issues where some clients did not have .NET Framework 4.8 installed. Roll-out will resume on 11 March.
 
@@ -806,7 +806,7 @@ Azure Event Hub:
 Metrics:
 - New preview driver for collecting readings from OpenTelemetry-compatible metric instruments and publishing them as tag values.
 
-### 2021-09 {: .title}
+### 2021-09
 
 This release brings the following changes:
 
@@ -854,7 +854,7 @@ OPC UA:
 - Non-fatal connection issues no longer cause the OPC UA driver to stop processing a subscription. Previously, an intermittent issue such as a timeout when polling the OPC UA server to check for new subscription items would cause the driver to treat the subscription as completed with a failure.
 - Self-signed X.509 client certificates can now be loaded from the Windows certificate store as well as from the file system.
 
-### 2021-05 {: .title}
+### 2021-05
 
 This release brings the following changes:
 
@@ -878,7 +878,7 @@ OPC UA:
 MT Connect:
 - New driver for MTConnect (https://www.mtconnect.org/) <code>[PREVIEW]</code>.
 
-### 2021-02 {: .title}
+### 2021-02
 <span style="color:grey;font-weight:bold;">App Store Connect <i>Service</i> update available.</span>
 
 The App Store Connect Service is the host that supports the running App Store Connect <em>process</em>. Unlike the App Store Connect process, it requires manual intervention to update. The service can be updated by downloading and running the [App Store Connect Installer](https://appstore.intelligentplant.com/Home/AppProfile?appId=a73c453df5f447a6aa8a08d2019037a5).
@@ -890,7 +890,7 @@ Changes include:
 - Improved shut-down and restart control
 - Requires .Net 4.8 (included in installer)
 
-### 2021-01 {: .title}
+### 2021-01
 
 This release contains the following changes:
 
@@ -899,17 +899,17 @@ This release contains the following changes:
 - Improvements to the Alarm Analysis programmable transform.
 - The Modbus driver can now be used to host a virtual Modbus TCP device.
 
-### 2020-10 {: .title}
+### 2020-10
 
   - Alarm Analysis licensing. Unlicensed AA (Alarm Analysis) data sources will respond with '<em>Subscription not found or expired</em>' message which indicates that the data source needs to be licensed. For details on how to apply a licence please check the steps [here](https://appstore.intelligentplant.com/wiki/doku.php?id=alarm_analysis:licensing) or contact support@intelligentplant.com.
 
-### 2020-07 {: .title}
+### 2020-07
 
 - Alarm Analysis Data Source Driver
   - Day count aggregations simplified to use a 24hr period. Previously, the Alarm Analysis driver would accommodate time-zone logic. Now however, it is the responsibility of the calling app (e.g. Alarm Analysis, SoE Explorer, Facit, etc...) to handle timezone.
   - Foundations for Alarm Analysis licensing.
 
-### 2020-05 {: .title}
+### 2020-05
 
 This release contains the following changes:
 
@@ -922,7 +922,7 @@ This release contains the following changes:
 - Improvements to the App Store Connect trending UI.
 - Miscellaneous small improvements.
 
-### 2020-03 {: .title}
+### 2020-03
 
 This release contains the following changes:
 

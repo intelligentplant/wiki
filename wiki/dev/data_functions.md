@@ -5,7 +5,7 @@ permalink: /dev/data_functions.html
 ---
 We support a number of different data functions for retrieving process data from Industrial App Store data sources, and the parameters specified can vary a little bit depending on the type of query, and in some cases, the data source(s) you will be querying. You should ensure that you have using IntelligentPlant.DataCore.Client; in your namespace imports, because there are a number of extension methods available to simplify some of the queries depending on whether you want to e.g. query a single data source or multiple data sources in one call. When you use an overload that allows multiple data sources to be queried, the return type will be a dictionary where the key is the data source name and the value is the result from that data source.
 
-### General Notes {: .title}
+### General Notes
 
 There should be XML documentation included with every package, so Visual Studio should be able to display Intellisense information about all of the methods, parameters, and response types, which you may find helpful.
 
@@ -42,7 +42,7 @@ The available data functions vary by historian, but most drivers will typically 
 
 Some historians (such as our own, and OSIsoft PI) also support functions to compute e.g. the number of raw samples that were recorded in a given time interval, the percentage of recorded values that have good-quality status, and so on. Our current driver model does not provide a way of discovering which functions are available on a given data source, but we hope to add this in the future to make requesting processed data a little bit easier.
 
-### Example of function differences on Trend {: .title}
+### Example of function differences on Trend
 
 In this example, we are looking at our office temperature over a week, with interval set to a 1 hour period.
 

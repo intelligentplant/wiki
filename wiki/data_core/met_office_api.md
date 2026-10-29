@@ -7,7 +7,7 @@ The <strong>Met Office API</strong> data source driver provides a means to integ
 
 An independent subscription to the Met Office Data Hub is required to use this driver.
 
-### Supported Forecasts {: .title}
+### Supported Forecasts
 
 The driver integrates with Met Office site-specific forecasts:
 
@@ -15,7 +15,7 @@ The driver integrates with Met Office site-specific forecasts:
 - Global three hourly spot data
 - Global daily spot data
 
-### Configuration {: .title}
+### Configuration
 
 #### API Key
 
@@ -45,7 +45,7 @@ Select your Met Office API subscription plan from the available site-specific fo
 - Global three hourly spot data
 - Global daily spot data
 
-### Forecast Parameters {: .title}
+### Forecast Parameters
 
 The following forecast parameters are available:
 
@@ -68,7 +68,7 @@ The following forecast parameters are available:
 - <code>windGustSpeed10m</code>
 - <code>windSpeed10m</code>
 
-### Tag Format {: .title}
+### Tag Format
 
 Forecast parameters are presented as tags with the following format:
 
@@ -88,7 +88,7 @@ Intelligent Plant HQ/hourly/probOfPrecipitation/006Hrs
 
 This tag represents the probability of precipitation at Intelligent Plant HQ, 6 hours from when the forecast was generated.
 
-### Recording Forecast History {: .title}
+### Recording Forecast History
 
 The Met Office API driver can be configured in conjunction with a historian and [data stream](/wiki/data_core/data_sources.html#data-streams) rule to record forecast history.
 

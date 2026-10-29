@@ -3,7 +3,7 @@ layout: wiki
 title: "Upgrading App Store Connect (ASC) to use TLS 1.2"
 permalink: /datacore/appstoreconnect_tls.html
 ---
-### Outline {: .title}
+### Outline
 
 The Transport Layer Security (TLS) protocol is an industry standard designed to help protect the privacy of information communicated over the Internet. All communication between an App Store Connect and the Industrial App Store is encrypted using TLS.
 
@@ -11,7 +11,7 @@ The latest version of App Store Connect uses TLS 1.2 (as recommended by Microsof
 
 To check if your App Store Connect requires upgrading, read on...
 
-### Is my App Store Connect affected? {: .title}
+### Is my App Store Connect affected?
 
  1. Log on to server hosting App Store Connect software
 
@@ -22,7 +22,7 @@ To check if your App Store Connect requires upgrading, read on...
 
 3. If version is less than <strong>3.2.16245 (8 Feb 2021)</strong> action is required. Either upgrade App Store Connect to the latest version or configure security via windows registry.
 
-### How to upgrade App Store Connect {: .title}
+### How to upgrade App Store Connect
 
 #### 1. Before you upgrade
 
@@ -57,7 +57,7 @@ The latest version of App Store Connect is available for download from the [Indu
 - Select "Configure Data Core"
 - Verify all configured components under "Real-Time Data" and "Alarms & Events" are reporting a healthy status.
 
-### How to configure security via Windows Registry {: .title}
+### How to configure security via Windows Registry
 
 If you are unable to upgrade App Store Connect, refer to the following Microsoft article for an alternative method of configuring TLS.
 

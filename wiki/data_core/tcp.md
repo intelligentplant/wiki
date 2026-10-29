@@ -15,7 +15,7 @@ and firewalls.
    App Store Connect is a type of Data Core Node pre-configured
    to work with the App Store.
 
-### When to use TCP Event Sink and Source {: .title}
+### When to use TCP Event Sink and Source
 
 The TCP Event Sink and Source provides a reliable and secure way to relay data across network boundaries and firewalls. Message data is signed, encrypted and relayed on a strictly one-way data-only channel. Minimal firewall configuration is required. This makes it particulary suitable for moving data across high-security militarized networks: for example, from a <strong>Process Control Network</strong> to a <strong>Process Information Network</strong> to a <strong>Business Network</strong>.
 
@@ -25,7 +25,7 @@ The diagram below illustrates such a configuration.
 
 Alarms & Events (A&E) arrive on a serial feed and are captured by Serial Port Listener, data is collected then relayed. Three distinct data core nodes act as stepping stones across network boundaries. Firewalls at each boundary only require a single rule to allow the downstream flow of secure TCP traffic.
 
-### Secure TCP Connection {: .title}
+### Secure TCP Connection
 
 Connections between the TCP Event Sink and Source are only permitted
 if an <em><strong>autheticated</strong></em>, <em><strong>encrypted</strong></em> and <em><strong>signed</strong></em> communication is established.
@@ -36,7 +36,7 @@ if an <em><strong>autheticated</strong></em>, <em><strong>encrypted</strong></em
 
   *Encryption protects the privacy of the data. It helps to ensure that while data is in transit it cannot be deciphered by third parties.
 
-### Resilient Data Transfer {: .title}
+### Resilient Data Transfer
 
 The TCP Event Source and Sink supports resilient data transfer.
 
@@ -50,13 +50,13 @@ The TCP Event Sink is configured with the "Check Response" property set to true.
 
 <img src="/wiki/assets/media/data_core/tcp_04.png" alt="tcp_04" style="max-width:700px" loading="lazy" />
 
-### Fire & Forget {: .title}
+### Fire & Forget
 
 The above "Resilient Data Transfer" method using TCP and MSMQ is not expected to introduce any overhead, however if a faster flow was required, paralel TCP components can be chained directly and configured to "fire-and-forget" by setting the "Check Reponse" property to false. Each event will pass through both fast and resilient flows and are consolidated at their final Alarm Analysis destination.
 
 <img src="/wiki/assets/media/data_core/tcp_05.png" alt="tcp_05" style="max-width:700px" loading="lazy" />
 
-### System Account Requirements {: .title}
+### System Account Requirements
 
 For TCP authentication, the TCP Client supplies credentials for the TCP server to verify. This could be a service account available on a common domain, or if the Data Core Nodes are on separate networks,  a local windows account defined on the computer hosting the TCP Event Source (as in the picture below).
 

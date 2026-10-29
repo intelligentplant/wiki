@@ -11,7 +11,7 @@ An installer is available on the [App Store](https://appstore.intelligentplant.c
 
 The installer sets up the following artifacts:
 
-### Windows Services {: .title}
+### Windows Services
 
 <img src="/wiki/assets/media/data_core/iasartifacts_01.png" alt="iasartifacts_01" style="max-width:600px" loading="lazy" />
 
@@ -21,7 +21,7 @@ Two services control the operation of:
 
 - <strong>Intelligent Plant Data Core Service</strong> <br /> Handles data connection, routing and security.
 
-### File-System {: .title}
+### File-System
 
 The main folders are:
 

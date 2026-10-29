@@ -7,7 +7,7 @@ In simple terms, a data core node is a connection management portal.
 
 A connection may be to a time-series data-source such as a PI historian, or an Alarm & Events subscription streaming data to Alarm Analysis.
 
-### Advanced Topics {: .title}
+### Advanced Topics
 
 - [Data Core Components](/wiki/data_core/data_sources.html): Complete list of drivers for connecting data sources, mapping data and event flows.
 - [App Store Connect Artifacts](/wiki/data_core/app_store_connect_artifacts.html)

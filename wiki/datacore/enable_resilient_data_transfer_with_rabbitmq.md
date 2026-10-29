@@ -16,7 +16,7 @@ In the following example we consider a network architecture consisting of a sour
   1. The upstream RabbitMQ server will only dequeue the message on receipt of an ack. <em>This provides resilience to network outage.</em>
   1. App Store Connect on the destinations server reads the message from the queue and archives the tag value to IP Historian
 
-### Getting Started {: .title}
+### Getting Started
 
 Before we can commence with configuring Data Core, we must prepare the servers and Rabbit MQ for secure communication.
 
@@ -198,7 +198,7 @@ On the destination server we need to configure:
 1. an archive (e.g. IPHist)
 1. a data stream reading messages from the queue to the archive.
 
-### Fast Data Flow {: .title}
+### Fast Data Flow
 
 As well as a resilient stream, it may be necessary to configure a fast (near-real-time) flow also. The difference is that whilst the resilient flow is responsible for guaranteed flow of history to the destination data archive, the fast flow will only ever attempt to relay current values.
 

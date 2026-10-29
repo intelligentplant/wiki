@@ -11,7 +11,7 @@ The Modbus driver for Data Core supports TCP and Serial settings, and can be con
 
 For a good introduction to Modbus, refer to https://simplymodbus.ca/FAQ.htm
 
-### Key Settings {: .title}
+### Key Settings
 
 #### Connection Type
 

@@ -10,7 +10,7 @@ Data Core supports this with two components:
 - <strong>Rabbit MQ Producer</strong> - Writes process data to a queue
 - <strong>Rabbit MQ Consumer</strong> - Reads process data from a queue
 
-### Getting Started {: .title}
+### Getting Started
 
 #### Enable RabbitMQ on Windows
 
@@ -65,7 +65,7 @@ The RabbitMQ Admin UI is accessible on
 The default login is Guest/Guest.
 <br /> This account account is only permitted for localhost login. Also note port 15672 is closed by default.
 
-### RabbitMQ Producer {: .title}
+### RabbitMQ Producer
 
 RabbitMQ Producer writes tag-value data to a queue.
 
@@ -75,7 +75,7 @@ The keys settings are:
 
 - <strong>Routing Key</strong> <br /> The routing key to set on messages containing snapshot/historical tag values.
 
-### RabbitMQ Consumer {: .title}
+### RabbitMQ Consumer
 
 <em>RabbitMQ Consumer reads tag-value data from a queue.</em>
 
@@ -85,7 +85,7 @@ The keys settings are:
 
 - <strong>Queue Names</strong> <br /> A comma-delimited list of RabbitMQ queues to read tag values and/or event messages from.
 
-### More RabbitMQ Resources {: .title}
+### More RabbitMQ Resources
 
 - [Enable Resilient Data Transfer with RabbitMQ](/wiki/datacore/enable_resilient_data_transfer_with_rabbitmq.html)
 - [Upgrading App Store Connect (ASC) to use TLS 1.2](/wiki/datacore/appstoreconnect_tls.html)

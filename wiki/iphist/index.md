@@ -5,7 +5,7 @@ permalink: /iphist/index.html
 ---
 <em>The Process Data Historian from Intelligent Plant</em>
 
-### Introduction {: .title}
+### Introduction
 
 Intelligent Plant's data historian is integrated as a part of Data Core. As such, it can take advantage of Data Core's data streaming capabilities to observe and record incoming tag values from any other supported data source.
 
@@ -13,13 +13,13 @@ For many data sources (such as Modbus, MQTT, and more), it is possible to automa
 
 Additionally, IP Historian tags can be configured up-front to define a source data source and tag name, allowing new source-to-destination tag mappings to be configured automatically as you create new historian tags.
 
-### How Historians Work - Exception and Compression {: .title}
+### How Historians Work - Exception and Compression
 
 During a hackathon that Intelligent Plant helped host in 2020, we noticed that many of the participants instinctively went for raw data when trying to identify periods of interest within the data. The following video explains why that isn't always the best option, and how exception and compression can be used to make the data more manageable.
 
 [How Historians Work - Exception and Compression](https://www.youtube.com/embed/k0wTxhzDyBM)
 
-### Data Query Types {: .title}
+### Data Query Types
 
 IP Historian supports a number of different types of data queries.
 
@@ -79,7 +79,7 @@ IP Historian allows annotations to be recorded against tags at specific points i
 
 As part of the Data Core data connectivity layer, IP Historian can accept query time ranges specified as both absolute timestamps (using standard ISO 8601 formatting), or as relative timestamps (e.g. 30 minutes before the current time).
 
-### Archiving Model {: .title}
+### Archiving Model
 
 IP Historian supports multiple indexing models depending on the requirements of the data being recorded:
 
@@ -88,21 +88,21 @@ IP Historian supports multiple indexing models depending on the requirements of 
 
 When recording process data, we normally recommend "Index per Month" as the optimal indexing period.
 
-### Backing Up {: .title}
+### Backing Up
 
 Indexes can be backed up and restored on another IP Historian instance.
 
-### System Requirements {: .title}
+### System Requirements
 
 See [See App Store Connect System Requirements](/wiki/app_store_connect/app_store_connect.html).
 
 However, note the system requirements should be adjusted for the particular use-case of the historian. If you intend to support historization of large data volumes and intensive data queries, a more powerful spec is required. Please consult with the Intelligent Plant support team for detailed guidance.
 
-### Configuration Best Practice {: .title}
+### Configuration Best Practice
 
 Details to follow.
 
-### Licensing {: .title}
+### Licensing
 
 When connecting IP Historian to the Industrial App Store, there is no licensing cost. An initial 1000 tag licence is supplied, but can be increased free of charge by client request.
 
@@ -125,10 +125,10 @@ Under Action, click "Configure Data Source Settings"
 And at the bottom you will see the Machine ID for your system.
 
 <img src="/wiki/assets/media/app_store_connect/data_core_-_machine_id.png" alt="data_core_-_machine_id" style="max-width:800px" loading="lazy" />
-### IPHist - IPHist replication {: .title}
+### IPHist - IPHist replication
 
 Connections can be setup in datacore to provide reslient transfer of historical data between IPHist instances. this means that a loss in connectivity will not result in a permanent loss of data on the remote IPHist to the datasource. that data will be back filled, and consistent.
 
 For further information regarding replication and data resilience, contact support@intelligentplant.com.
 
-### Other historian - IPHist replication, or vice-versa {: .title}
+### Other historian - IPHist replication, or vice-versa

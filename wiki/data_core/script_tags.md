@@ -10,7 +10,7 @@ Script tags can be written in:
 - C#
 - FLEE (Fast Lightweight Expression Evaluation) - [more info](https://github.com/mparlak/Flee/wiki/Examples)
 
-### Script Tag Templates {: .title}
+### Script Tag Templates
 
 A number of pre-configured script tags exist to perform the following functions:
 

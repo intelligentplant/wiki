@@ -3,7 +3,7 @@ layout: wiki
 title: "App Store Connect: Connection Security"
 permalink: /app_store_connect/connection_security.html
 ---
-### Encrypted Connection {: .title}
+### Encrypted Connection
 
 App Store Connect connects to the App Store using Microsoft's SignalR technology, which allows for secure, 2-way communication between App Store Connect and the App Store.
 
@@ -11,7 +11,7 @@ The exact communication protocol is determined by the capabilities of the comput
 
 The secure connection allows App Store Connect to communicate with the App Store, and vice versa, but prevents any application from accessing your data unless it meets several layers of security requirements.
 
-### Security That Puts You In Control {: .title}
+### Security That Puts You In Control
 
 All App Store applications use industry-standard OAuth2 authentication when communicating with the App Store, to ensure that no application can access your data without your permission.  When you open an application, the application must prove to the App Store that it is a genuine application, and tell the App Store about what kind of information it requires (e.g. access to your user profile, access to App Store Connect data sources).  The App Store displays a consent screen where you can decide if the application is allowed to access the scope of information that it is requesting:
 

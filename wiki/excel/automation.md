@@ -12,7 +12,7 @@ You will need:
 
 The Excel file you use should use relative time ranges (e.g. "*", "*-10d") or use excel functions like TODAY() ad inputs to data requests. If you were to use absolute time stamps the resulting report would always be the same.
 
-### Script {: .title}
+### Script
 
 You can see and example script below. This script expects the Excel add-in XLL (add-in.xll) and Excel file (Report.xlsx) to be in the scripts working directory. The PDF otuput will be saved as "output/Exported_{current_time}.pdf"
 
@@ -82,7 +82,7 @@ finally {
 Write-Host "Excel file has been successfully converted to PDF: $pdfFilePath"
 ```
 
-### Scheduled Task {: .title}
+### Scheduled Task
 
 You can schedule the script to be run periodically (e.g. daily) using the Windows Task Scheduler.
 

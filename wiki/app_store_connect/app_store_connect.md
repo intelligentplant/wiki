@@ -11,11 +11,11 @@ With an App Store Connection apps connect directly to your data. No need for tim
 
 <em><strong>Download the [App Store Connect Quick Reference](http://appstore.intelligentplant.com/nuget/downloads/App%20Store%20Connect%20Quick%20Reference.pdf)</strong></em>
 
-### How does App Store Connect work? {: .title}
+### How does App Store Connect work?
 
 <iframe width="598" height="336" src="https://www.youtube.com/embed/84X7k1sS_tU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Get Connected {: .title}
+### Get Connected
 
 - [How to Connect your Data to the App Store](/wiki/data_core/how_to_connect_your_data_to_the_app_store.html)
 - [App Store Connect: Connection Security](/wiki/app_store_connect/connection_security.html)
@@ -27,7 +27,7 @@ With an App Store Connection apps connect directly to your data. No need for tim
 - [App Store Connect - Troubleshooting](/wiki/app_store_connect/troubleshooting.html)
 - For System Requirements, see [App Store Connect Quick Reference](http://appstore.intelligentplant.com/nuget/downloads/App%20Store%20Connect%20Quick%20Reference.pdf)
 
-### More Info {: .title}
+### More Info
 
 App Store Connect is built on Intelligent Plant's Data Core framework. For information on the Data Core, see
 
@@ -37,7 +37,7 @@ App Store Connect data storage drivers (Alarm Analysis and Edge Historian) is bu
 
 - [Big Data Service Advanced Configuration](/wiki/big_data_service/big_data_service_advanced_configuration.html)
 
-### Custom Data Connections {: .title}
+### Custom Data Connections
 
 If you want to connect to a data source that we don't have a driver for, you can write your own custom driver. See here for more details:
 

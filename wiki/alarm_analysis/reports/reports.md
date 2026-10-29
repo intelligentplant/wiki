@@ -7,7 +7,7 @@ Alarm Analysis provides detailed Alarm & Event reports.
 
 Key reports are listed below, along with (in some cases) information on they are calculated and how they should be interpreted.
 
-### Alarm Overview {: .title}
+### Alarm Overview
 
 - Alarms Over Time per Operator
 - [Average Alarms per 10 minutes in each hour of the day per Operator](/wiki/alarm_analysis/reports/alarm_analysis.reports.average_alarms_per_10_minutes_in_each_hour_of_the_day_per_operator.html)
@@ -16,7 +16,7 @@ Key reports are listed below, along with (in some cases) information on they are
 - Average v Peak Alarm Rate
 - Average v % Upset
 
-### Bad Actor Overview {: .title}
+### Bad Actor Overview
 
 - Bad Actor Count
 - Bad Actor Contribution
@@ -25,7 +25,7 @@ Key reports are listed below, along with (in some cases) information on they are
 - Chattering Alarms
 - [Disabled Alarms Report](/wiki/alarm_analysis/reports/disabledalarms/disabled_alarms.html)
 
-### Bad Actor Detail {: .title}
+### Bad Actor Detail
 
 - Alarms in each Hour of each Day
 - Alarms per Hour of Day
@@ -37,7 +37,7 @@ Key reports are listed below, along with (in some cases) information on they are
 - Off to On (OI)
 - On to On (II)
 
-### Interventions Overview {: .title}
+### Interventions Overview
 
 - Interventions Over Time
 - Avg Interventions per Hour of Day

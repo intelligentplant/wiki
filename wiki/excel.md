@@ -9,7 +9,7 @@ There are some instructional videos demonstrating how to use the Excel Add-In in
 
 You can download a spreadsheet containing examples of all the formulas [here](https://appstore.intelligentplant.com/nuget/downloads/IP%20Excel%20Addin%20example.xlsx).
 
-### Contents {: .title}
+### Contents
 
 - [Installation Files](/wiki/excel/installation-files.html): Download and install Excel Query Add-in 32 or 64 bit
 
@@ -19,7 +19,7 @@ You can download a spreadsheet containing examples of all the formulas [here](ht
 
 - [Writing Data Query Formulas](/wiki/excel/formulas.html): Help writing data query formulas.
 
-### Troubleshooting {: .title}
+### Troubleshooting
 
 Local logs are available in:
 

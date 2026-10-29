@@ -5,7 +5,7 @@ permalink: /general/apps/gestalttrend/releasenotes.html
 ---
 This page describes the release notes for [Gestalt Trend](https://appstore.intelligentplant.com/Home/AppProfile?appId=3fbd54df59964243aa9cf4b3f04823f6).
 
-### 2026-10-Minor {: .title}
+### 2026-10-Minor
 
 ##### New Features
 
@@ -16,12 +16,12 @@ This page describes the release notes for [Gestalt Trend](https://appstore.intel
 
 Release date: 2026-10-30
 
-### 2026-09-Minor {: .title}
+### 2026-09-Minor
 
 ##### New Features
 - Implemented new functionality to fully lock axes.
 
-### 2026-08-Minor {: .title}
+### 2026-08-Minor
 
 ##### Modifications and Improvements
 
@@ -29,7 +29,7 @@ Release date: 2026-10-30
 - Updated Trend limits colours to better work on dark modes.
 - Fixed user access to file from a group path.
 
-### 2026-07-Minor {: .title}
+### 2026-07-Minor
 
 ##### New Features
 - Add option to display multi axes transparent with a max/min value.
@@ -44,7 +44,7 @@ Release date: 2026-10-30
 - Improved security on file access within organization's groups.
 - Refactored cached groups to separate all groups or only user ones.
 
-### 2026-06-Minor {: .title}
+### 2026-06-Minor
 
 ##### New Features
 - Added functionallity to download a screenshot of a trend
@@ -57,7 +57,7 @@ Release date: 2026-10-30
 - Updated packages
 - Updated libraries
 
-### 2026-04-Minor {: .title}
+### 2026-04-Minor
 
 ##### New Features
 
@@ -73,25 +73,25 @@ Release date: 2026-10-30
 - Fixed metrics table not being selectable to copy values.
 - Fixed Trend interpolating Bad values with Good status.
 
-### 2026-03-Minor {: .title}
+### 2026-03-Minor
 
 - Moved current time text from titlebar to create more space for menus on embedded or small windows.
 
 <img src="/wiki/assets/media/general/apps/gestalttrend/timemenutrend.gif" alt="timemenutrend" style="max-width:600px" loading="lazy" />
 
-### 2025-11-Minor {: .title}
+### 2025-11-Minor
 
 - Fixed redirection to Home page if a new user goes directly to /Trend or /PnID urls.
 - Fixed the tag search dialog closing when clicking on an error message.
 
-### 2025-08-Minor {: .title}
+### 2025-08-Minor
 
 ##### Modifications and Improvements
 
 - Fixed FFT view not loading correctly on a saved file.
 - Fixes on Metric Menu.
 
-### 2025-07-Minor {: .title}
+### 2025-07-Minor
 
 ##### New Features
 - Refactor the Metrics view as a window menu.

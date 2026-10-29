@@ -13,7 +13,7 @@ To get up and running, you need to undertake the following tasks:
 
 Each step is explained in detail below:
 
-### Install App Store Connect {: .title}
+### Install App Store Connect
 
 The first step in connecting your data to the App Store is downloading and installing App Store Connect.
 
@@ -25,7 +25,7 @@ The installer takes you through the following steps. We recommend you choose the
 
 <img src="/wiki/assets/media/data_core/installdatacore01.png" alt="installdatacore01" style="max-width:300px" loading="lazy" /> <img src="/wiki/assets/media/data_core/installdatacore02.png" alt="installdatacore02" style="max-width:300px" loading="lazy" /> <img src="/wiki/assets/media/data_core/installdatacore04.png" alt="installdatacore04" style="max-width:300px" loading="lazy" />
 
-### Configure App Store Connect {: .title}
+### Configure App Store Connect
 
 Once installed, open the configuration page (http://localhost:2006/Service)
 
@@ -41,7 +41,7 @@ Typically, the person in charge of the App Store Connect performs the initial lo
 
 <img src="/wiki/assets/media/data_core/configureasc03.png" alt="configureasc03" style="max-width:300px" loading="lazy" />
 
-### Connect Data Sources {: .title}
+### Connect Data Sources
 
 To connect Data Sources, we need to configure Data Core.
 

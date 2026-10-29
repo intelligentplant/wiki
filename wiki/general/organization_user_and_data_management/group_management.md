@@ -16,7 +16,7 @@ When your organization is registered with the App Store, two groups are automati
 
 Intelligent Plant will contact you once your organization has registered to identify which users should be added to the Administrators group. Members of this group can then add or remove other members as required.
 
-### Viewing Group Details {: .title}
+### Viewing Group Details
 
 Click on the <em>Details</em> button to view the details for the group, including group memberships:
 
@@ -24,7 +24,7 @@ Click on the <em>Details</em> button to view the details for the group, includin
 
 Note that non-administrator users cannot view group memberships.
 
-### Viewing Assigned Apps {: .title}
+### Viewing Assigned Apps
 
 Click on <em>View Assigned Apps</em> to see the apps that members of the group are allowed to sign in to:
 
@@ -32,7 +32,7 @@ Click on <em>View Assigned Apps</em> to see the apps that members of the group a
 
 App access is controlled via [app safe- and block-list management](/wiki/general/organization_user_and_data_management/app_access_management.html). You can also pre-select the data components that members of this group get with each approved app - see [pre-selecting app data components](/wiki/general/organization_user_and_data_management/app_access_management.html#pre-selecting-app-data-components).
 
-### Creating a New Group {: .title}
+### Creating a New Group
 
 From the Group Management page, click on <em>Create a new group</em> to open the group editor:
 
@@ -44,11 +44,11 @@ Enter the group details and click on <em>Create Group</em> to create the group.
 
 The primary reason for creating externally-visible groups is to allow 3rd parties to grant data source access to your users e.g. to assist with app troubleshooting.
 
-### Keeping Group Membership Up to Date {: .title}
+### Keeping Group Membership Up to Date
 
 Groups can be linked to Microsoft Entra ID groups so that membership is managed in Active Directory rather than by hand on this page. Syncing is strictly one-way (Entra ID to App Store) and only occurs when a user signs in to the App Store portal, so removing a user from an Entra ID group is not reflected immediately. See [Entra ID Syncing](/wiki/general/organization_user_and_data_management/entraid_syncing.html).
 
-### Adding Users to Groups {: .title}
+### Adding Users to Groups
 
 From the group details page, an administrator can add users to a group by clicking on <em>Add Users</em> on the group details page. This will open a user browser where you can search for the users to add to the group:
 
@@ -58,6 +58,6 @@ Select the users to add by clicking on the <em>Select</em> button next to the us
 
 <img src="/wiki/assets/media/general/orgs/admin/groups/admin-new-group.png" alt="Updated group members" style="max-width:1000px" loading="lazy" />
 
-### Removing Users from Groups {: .title}
+### Removing Users from Groups
 
 To remove a user from a group, click on the <em>Remove</em> button next to the user in the group details page. Users cannot be removed from the <em>All Users</em> group.

@@ -5,13 +5,13 @@ permalink: /support/connectionissues.html
 ---
 The guide below assumes you have working internet, are able to access the app on the Industrial App Store, but the app is not showing any data and/or reports data is not available.
 
-### Authorization {: .title}
+### Authorization
 
 Have you access to the data source and have you authorized the app to connect to it?
 
 For instructions on how to check, see [Authorize Apps to connect to Data Sources](/wiki/app_store_connect/authorize_apps_to_connect_to_your_data.html)
 
-### Clear Cookies {: .title}
+### Clear Cookies
 
 Web browser caching of cookies and site data can occasionally cause problems. This may happen following an application update, where cached files become out-of-date and incompatible with the new app release.
 

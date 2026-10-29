@@ -14,7 +14,7 @@ Once you have written (or edited) a formula press <strong>Ctrl + Shift + Enter</
 If a cell contains "#VALUE" that means that the query has been sent but hasn't completed yet. "#N/A" means that there is no result for that cell (i.e. the range you selected is larger than the number of returned data points).
 
 If no data sources are available you will get a "#N/A" error. You can authorize data sources by visiting [Authorized Applications](https://appstore.intelligentplant.com/Security/Apps), select "Excel Query Add-In" and ensure that the correct data sources are selected
-### Get Available Data Sources {: .title}
+### Get Available Data Sources
 
 [This video](https://www.youtube.com/watch?v=Qip6u7J4sfA&list=PLsVwx5rtV9c0duV5jln2IX9BIMDCCEWrY&index=3) shows how to do data source and tag searches.
 
@@ -31,7 +31,7 @@ This will get a list of data sources. The left column is the human readable data
 
 For some data sources the human readable and fully qualified names may be the same.
 
-### Tag Search {: .title}
+### Tag Search
 
 [This video](https://www.youtube.com/watch?v=Qip6u7J4sfA&list=PLsVwx5rtV9c0duV5jln2IX9BIMDCCEWrY&index=3) shows how to do data source and tag searches.
 
@@ -55,7 +55,7 @@ This will return a list of tag names, descriptions and units on the specified da
 
 If the data source name is in cell B1 and filter in C1. This would select the first data source if you had a "GetDataSources()" query in columns A and B.
 
-### Get Snapshot Data {: .title}
+### Get Snapshot Data
 
 [This video](https://www.youtube.com/watch?v=9ST_1PZ4Iz4&list=PLsVwx5rtV9c0duV5jln2IX9BIMDCCEWrY&index=4) shows how to use the "GetNowValue(...)" formula.
 
@@ -86,7 +86,7 @@ Would get the current value of "Example Tag".
 
 Would get the current value of "Example Tag" with a header row and timestamp.
 
-### Get Historical Data {: .title}
+### Get Historical Data
 
 [This video](https://www.youtube.com/watch?v=GTZDaH9phew&list=PLsVwx5rtV9c0duV5jln2IX9BIMDCCEWrY&index=5) shows how to use the "GetHistoricalValues(...)" formula.
 
@@ -123,7 +123,7 @@ Both of these would get the historical value of "Example Tag" each day for the p
 <em>=GetHistoricalValues("My Data Source", "Example Tag", "01/01/2018", "01/02/2018", "1d", "Plot", false, false)</em>
 Both of these would get the historical value of "Example Tag" for each day in January 2018, without timestamps or a header row.
 
-### JSON Parsing {: .title}
+### JSON Parsing
 
 Some tags return JSON objects when queried. In order to make these more useful in Excel the add-in provide the "ParseJson(...)" formula this can be used to retrieve individual properties from JSON objects.
 
@@ -139,9 +139,9 @@ This will return the value of the specified property in the provided JSON. If th
 To get nested properties apply the ParseJson(...) formula multiple times. If the value of a property is a nested object then the ParseJson formula returns the JSON from the inner object, this can then be passed to the parse JSON object again to get the properties of the object.
 
 If the property being selected is an array then the formula will return the result as an Excel array and the formula acts like an array formula (i.e. you must select an area the size of the array horizotally and then press Ctrl + Shift + Enter to enter it). Therefore, if the root object is an arra you can parse it by not providing a property name parameter.
-## Tips and Tricks {: .title}
+## Tips and Tricks
 
-### Defined Names {: .title}
+### Defined Names
 
 You can define a name to make it easier to use the formulas.
 1. Copy the fully qualified name of the data source (see the "Get Available Data Sources" section for details) e.g. "My Data Source"
@@ -154,7 +154,7 @@ You can now use the name you set in place of the data source name in formulas, e
 
 You can also use this for any other parameters in the UI or in fomrulas.
 
-### Formula Wizard {: .title}
+### Formula Wizard
 
 You can more easily enter formulas by using Excel's built in formula wizard.
 

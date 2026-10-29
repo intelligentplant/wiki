@@ -7,7 +7,7 @@ The outgoing trusts page for the organization shows the list of outgoing trusts 
 
 <img src="/wiki/assets/media/general/orgs/admin/trusts/outgoing/outgoing-trusts-1.png" alt="Outgoing trusts list" style="max-width:1000px" loading="lazy" />
 
-### Creating an Outgoing Trust {: .title}
+### Creating an Outgoing Trust
 
 <strong>Important:</strong> Before you can create an outgoing trust, you need the App Store ID of the organization that you want to trust. You can contact the organization directly to request this ID from them. To request your own organization ID, please [contact Intelligent Plant](http://www.intelligentplant.com/contact.html).
 

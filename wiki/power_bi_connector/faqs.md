@@ -3,7 +3,7 @@ layout: wiki
 title: "Frequently Asked Questions"
 permalink: /power_bi_connector/faqs.html
 ---
-### How do I fix the "Delete credentials" error? {: .title}
+### How do I fix the "Delete credentials" error?
 
 <strong>Error message:</strong><br />
 <em>We're unable to connect. Please delete your credentials and try again later.</em>
@@ -24,7 +24,7 @@ This should remove any existing credentials and allow you to log in again.
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### How do I modify my query to use parameters? {: .title}
+### How do I modify my query to use parameters?
 
 Adding parameters to your Power BI dashboard can be an extremely useful way to change the data query, and is quick and easy to do.
 
@@ -46,7 +46,7 @@ Apply and Close the editor to go back to your dashboard. Now the parameters can 
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### How do I fill out the "Get" queries? {: .title}
+### How do I fill out the "Get" queries?
 
 <strong>Get Processed</strong>
 
@@ -128,16 +128,16 @@ Apply and Close the editor to go back to your dashboard. Now the parameters can 
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### What is the difference between using "Get Raw" compared to "Get Data" - Function = "Raw"? {: .title}
+### What is the difference between using "Get Raw" compared to "Get Data" - Function = "Raw"?
 There is no difference between these two approaches in terms of the data it returns. "Get Raw" is part of our newer API where we have separated out the types of queries as they each have different inputs. The "Get Data" is our legacy API which contains them all in a single endpoint.
 
 <div class="title wiki-divider" aria-hidden="true"></div>
-### How do time zones work with the Industrial Connector? {: .title}
+### How do time zones work with the Industrial Connector?
 The Industrial Connector requires that the user specify UTC timestamps when absolute query timestamps (such as a start date of 2023-04-12T00:00, for example) are used.
 
 Time zones can be ignored when using relative times (e.g. "*-20m", "*-7d")
 
 <div class="title wiki-divider" aria-hidden="true"></div>
-### Contact support {: .title}
+### Contact support
 
 If any of the aforementioned issues persist, feel free to [get in touch with us](https://www.intelligentplant.com/contact-us).

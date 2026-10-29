@@ -7,7 +7,7 @@ Click on <em>View App Store users for the organization</em> in the organization 
 
 ![User list (administrator view)](/wiki/assets/media/general/orgs/admin/users/admin-users-list.png)
 
-### Viewing User Details {: .title}
+### Viewing User Details
 
 Click on the <em>Details</em> button next to any user to view the full details for that user, including their group memberships and the apps that they have been assigned. For example:
 
@@ -15,7 +15,7 @@ Click on the <em>Details</em> button next to any user to view the full details f
 
 <strong>Important:</strong> Regular users cannot see group membership information or assigned apps, except when viewing their own user accounts.
 
-### Viewing Assigned Apps {: .title}
+### Viewing Assigned Apps
 
 Click on <em>View Assigned Apps</em> to see the apps that the user is allowed to sign in to:
 
@@ -23,6 +23,6 @@ Click on <em>View Assigned Apps</em> to see the apps that the user is allowed to
 
 App access is controlled via [app safe- and block-list management](/wiki/general/organization_user_and_data_management/app_access_management.html).
 
-### Locking and Unlocking User Accounts {: .title}
+### Locking and Unlocking User Accounts
 
 Administrators can prevent users from signing into the App Store by locking their account. The do this, click on <em>Lock the user account</em> at the bottom of the user details page. A locked account can be unlocked in a similar way. An administrator cannot lock or unlock their own account.

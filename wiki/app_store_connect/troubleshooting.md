@@ -3,7 +3,7 @@ layout: wiki
 title: "App Store Connect - Troubleshooting"
 permalink: /app_store_connect/troubleshooting.html
 ---
-### Collecting Diagnostic Information {: .title}
+### Collecting Diagnostic Information
 
 You can create a diagnostics report file as follows:
 
@@ -21,11 +21,11 @@ You can view help on how to customise the report as follows:
 
 `.\ipdc-update diagnostics collect --help`
 
-### Issues with Drivers {: .title}
+### Issues with Drivers
 
 For issues relating to individual data connections, refer to driver specific notes: [Supported Data Sources](/wiki/data_core/data_sources.html).
 
-### App Store Connect Fails to Automatically Start {: .title}
+### App Store Connect Fails to Automatically Start
 
 We have seen incidents where the Intelligent Plant Data Core windows service fails to start. This is more likely to occur in resource heavy configurations and/or on shared servers with multiple processes competing for limited resources.
 
@@ -41,7 +41,7 @@ There are two options:
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control" -Name ServicesPipeTimeout -Value 180000 -Type DWord
 ```
 
-### Data Core License has expired {: .title}
+### Data Core License has expired
 
 For non-standalone instances of App Store Connect (ASC), if your ASC has not been connected to the Data API for over 60 days, you will see a message that reads "Your Data Core licence expired at [Date]".
 

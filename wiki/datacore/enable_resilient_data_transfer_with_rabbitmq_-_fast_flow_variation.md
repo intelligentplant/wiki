@@ -9,7 +9,7 @@ In situations where a connection is unreliable, this means that dashboard displa
 
 To implement a fast flow, a parallel stream is configured but with "ephemeral" settings.
 
-### RabbitMQ Settings {: .title}
+### RabbitMQ Settings
 
 #### Fast Flow Queue
 
@@ -53,6 +53,6 @@ To implement a fast flow, a parallel stream is configured but with "ephemeral" s
 </tbody>
 </table>
 
-### Data Core Settings {: .title}
+### Data Core Settings
 
 Besides configured RabbitMQ Producer and Consumer drivers, and the Data Stream Rules that manage the routing of data within a Data Core instance, a new component is required - the In-Memory Data Source. The <em>resilient</em> stream is routed to an archive (e.g. IP Hist) whilst the fast flow is configured to an In-Memory data source. The In-Memory data source can then be configured to route historical queries to the archive.

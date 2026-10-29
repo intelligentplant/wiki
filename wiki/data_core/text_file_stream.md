@@ -11,7 +11,7 @@ Under the hood, the event source keeps a record of files in the directory, their
 
 The complete row is passed to a Data Core event's "Message" property. That is, there is no parsing of the text file row other than where it starts and ends.
 
-### Key Settings {: .title}
+### Key Settings
 
 - <strong>Import Folder</strong> <br /> Path to import folder.
 
@@ -19,6 +19,6 @@ The complete row is passed to a Data Core event's "Message" property. That is, t
 
 - <strong>EOLn Terminator</strong> <br /> The EOLn termintor signifies the end of the message.
 
-### Tips {: .title}
+### Tips
 
 <strong>Archiving</strong> <br /> To keep the event source lean, an independent process should archive files that no longer receive updates.

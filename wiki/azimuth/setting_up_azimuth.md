@@ -10,14 +10,14 @@ Azimuth helps ensure:
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Prerequisites {: .title}
+### Prerequisites
 
 - <strong>Alarm Analysis</strong> (<em>type</em>) data source. Source data source, will be used to define equipment events. Azimuth will use these event definitions to monitor equipment.
 - <strong>Edge Historian</strong> data source. Target data source, Azimuth will use this datasource to store analysis results.
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Getting started {: .title}
+### Getting started
 
 Azimuth uses asset and equipment hierarchical structure. One or more pieces of equipment can be defined on an asset. For example:
 
@@ -28,5 +28,5 @@ Azimuth uses asset and equipment hierarchical structure. One or more pieces of e
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Known issues {: .title}
+### Known issues
 - Creating a piece of equipment with a duplicate name on the same target datasource will cause to override previous equipment totaliser tag data.

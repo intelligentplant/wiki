@@ -479,14 +479,14 @@ function convertPage(raw, page) {
   // 6. headings: DokuWiki ====== is level 1 .. == is level 5 (authors sometimes
   //    write seven equals, and the trailing run need not match the leading one).
   //    The layout renders the page title as <h1>, so body headings start at <h2>.
-  //    Section headings carry the library typography classes (guide §3.3):
-  //    <h2> and <h3> are both `.title`; deeper levels stay plain.
-  const headingClass = { 2: 'title', 3: 'title' };
+  //    Headings are emitted bare: GitHub Pages parses with `kramdown-parser-gfm`,
+  //    which ignores `{: .class}` inline attribute lists (the marker would show up
+  //    as literal text and pollute the auto-generated anchor id). The library
+  //    `.title` look for h2/h3 is applied by `assets/css/wiki.css` instead.
   lines = lines.map((l) =>
     l.replace(/^(={2,7})[ \t]*([^=].*?)[ \t]*={2,}[ \t]*$/, (_m, eq, body) => {
       const level = Math.max(2, Math.min(6, 8 - eq.length));
-      const cls = headingClass[level];
-      return '#'.repeat(level) + ' ' + stripInlineNoise(body) + (cls ? ` {: .${cls}}` : '');
+      return '#'.repeat(level) + ' ' + stripInlineNoise(body);
     })
   );
 

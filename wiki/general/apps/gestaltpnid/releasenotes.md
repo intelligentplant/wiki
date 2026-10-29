@@ -5,7 +5,7 @@ permalink: /general/apps/gestaltpnid/releasenotes.html
 ---
 This page describes the release notes for [Gestalt PnID](https://appstore.intelligentplant.com/Home/AppProfile?appId=2a59ca294ce2464cb14694b682294de5).
 
-### 2026-10-Minor {: .title}
+### 2026-10-Minor
 
 Release date: 2026-10-30 <br />
 
@@ -19,13 +19,13 @@ Release date: 2026-10-30 <br />
 - Fixed Scatterplot range not being consistent among pair of tags
 - Fixed DOM components not working after copying them, due the copy pointing to the wrong ID
 
-### 2026-09-Minor {: .title}
+### 2026-09-Minor
 
 ##### New Features
 
 - Implemented a new feature to get data from events manager, regardless of the dashboard data.
 
-### 2026-08-Minor {: .title}
+### 2026-08-Minor
 
 ##### Modifications and Improvements
 

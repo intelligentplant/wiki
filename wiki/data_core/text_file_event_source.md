@@ -3,7 +3,7 @@ layout: wiki
 title: "Text File Parser"
 permalink: /data_core/text_file_event_source.html
 ---
-### Overview {: .title}
+### Overview
 
 Text File Parser event source is a data core import object for flat text files of delimited or fixed width formats.
 
@@ -17,7 +17,7 @@ The process is as follows:
 1. Event Messages sent to subscribers
 1. Once file has been processed, it is archived to the Archive Directory
 
-### Event Message Structure {: .title}
+### Event Message Structure
 
 Text file fields are assigned to the Event message Event Property collection.
 
@@ -25,7 +25,7 @@ All data is treated as text.
 
 Event Property names are derived from the text file column names (if available), or default to "Field00, Field01, Field02..." if no explicit name is available.
 
-### Configuration {: .title}
+### Configuration
 
 Configuration options exists for:
 
@@ -38,7 +38,7 @@ Configuration options exists for:
 - Delimiter: Defines the delimitor for a text file
 - Field Widths: or fixed width format only. Example, "5, 10, 11, -1", the first is 5 characters wide, the second   10, the third 11, and the fourth is of variable width.
 
-### Tips {: .title}
+### Tips
 
 The process which drops the file in the Import Directory should protect against Data Core collecting the file prematurely. Consider employing the Filename filter.
 

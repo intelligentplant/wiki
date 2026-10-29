@@ -7,7 +7,7 @@ The Industrial App Store (IAS) is a marketplace of apps for industrial processes
 
 We aim for the highest web security standards. Here's an overview of our policies.
 
-### Secure Web Requests and HTTPS {: .title}
+### Secure Web Requests and HTTPS
 
 `Can information you send and request be intercepted over the internet?`
 
@@ -23,7 +23,7 @@ Encryption does not prevent message interception, but it does mean the informati
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Logging in to the App Store and User Authentication {: .title}
+### Logging in to the App Store and User Authentication
 
 `Is a user who they claim to be?`
 
@@ -44,7 +44,7 @@ This is managed via Microsoft Entra ID:
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Application Security {: .title}
+### Application Security
 
 `Can I trust the Apps in the App Store?`
 

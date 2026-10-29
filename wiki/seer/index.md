@@ -5,7 +5,7 @@ permalink: /seer/index.html
 ---
 SEER Production is the latest stable release which customers should be using. SEER Stage is used for new feature testing/preview.
 
-### What is SEER? {: .title}
+### What is SEER?
 
 Alarm and Event archives on process plants contain an untapped resource of process information. What the plant does in every type of trip and shutdown has been meticulously recorded by the alarm system, and that information is ready and waiting to be analysed and interpreted.
 

@@ -5,7 +5,7 @@ permalink: /power_bi_connector/getting_started.html
 ---
 This is a quick guide on how to connect and get easy access to your data within Power BI dashboards, reports and datasets.
 
-### What is the Industrial Connector for Power BI? {: .title}
+### What is the Industrial Connector for Power BI?
 
 The Industrial Connector solves a common industry problem - getting operational data into Power BI.
 
@@ -15,7 +15,7 @@ Users commonly use our Industrial Connector to import process data. However, you
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Getting the Industrial Connector {: .title}
+### Getting the Industrial Connector
 
 Intelligent Plant's Industrial Connector for Power BI is Microsoft Certified and distributed with Power BI Desktop as of the [(May 2019)](https://powerbi.microsoft.com/en-us/blog/tag/intelligent-plants-industrial-app-store/) update.
 
@@ -23,7 +23,7 @@ Intelligent Plant's Industrial Connector for Power BI is Microsoft Certified and
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### How to Access the Industrial Connector and Connect to your data {: .title}
+### How to Access the Industrial Connector and Connect to your data
 
 Intelligent Plant's Industrial Connector is accessible via Power BI Desktop.
 
@@ -45,7 +45,7 @@ Before going through the steps, please make sure you have Power BI Desktop insta
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Video Walkthrough {: .title}
+### Video Walkthrough
 
 For more information, you can check our [Industrial Connector YouTube walkthrough](https://youtu.be/b0c59MeByRU?si=ikmEQ7iJ5Q1s5d1s).
 
@@ -53,7 +53,7 @@ Feel free to [get in touch with us](https://www.intelligentplant.com/contact.htm
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Licensing {: .title}
+### Licensing
 
 Customers need to purchase a subscription in order to retrieve data using the Industrial Connector. Please[contact Intelligent Plant](https://www.intelligentplant.com/contactus) or ping us an email at info@intelligentplant.com if you have questions.
 
@@ -68,7 +68,7 @@ Customers need to purchase a subscription in order to retrieve data using the In
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### How do I fill out the "Get" queries? {: .title}
+### How do I fill out the "Get" queries?
 
 <strong>Get Processed</strong>
 
@@ -150,7 +150,7 @@ Customers need to purchase a subscription in order to retrieve data using the In
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Setting background data refresh {: .title}
+### Setting background data refresh
 
 - Using the web app.
 - Using personal data gateway - instructions available [here](/wiki/power_bi_connector/datarefreshgateway.html).

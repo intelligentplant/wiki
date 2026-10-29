@@ -9,7 +9,7 @@ If you sign into the App Store using your work account, you can access the organ
 
 If you have been assigned to the [Administrators group](/wiki/general/organization_user_and_data_management/group_management.html) for your organization, you can perform various management actions, described in the following sections.
 
-### Organization Portal {: .title}
+### Organization Portal
 
 The organization portal shows the current status of your organization:
 

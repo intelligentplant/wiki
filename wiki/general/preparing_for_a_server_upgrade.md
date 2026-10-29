@@ -12,7 +12,7 @@ A server upgrade may include:
 
 Any change to the host environment may have an unexpected impact on the software running in that environment, <em>including Intelligent Plant software</em>.
 
-### What Intelligent Plant Software is Hosted On-premises? {: .title}
+### What Intelligent Plant Software is Hosted On-premises?
 
 The majority of Intelligent Plant software is accessed via the Industrial App Store cloud service and is therefore not in scope. However, an organization may have some on-premises Intelligent Plant software installed, for example:
 
@@ -20,7 +20,7 @@ The majority of Intelligent Plant software is accessed via the Industrial App St
 - Data Core Node - A data connectivity service that can be used to route and/or store data on isolated networks.
 - On-premises editions of apps - A number of Intelligent Plant apps are available for stand-alone/offline installation.
 
-### Preparing for a Server Upgrade {: .title}
+### Preparing for a Server Upgrade
 
 <strong>1. Is Intelligent Plant software compliant with the target OS?</strong>
 

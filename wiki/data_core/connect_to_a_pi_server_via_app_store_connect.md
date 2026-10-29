@@ -8,7 +8,7 @@ Before you can configure an PI Server connection, App Store Connect must be runn
 App Store Connect also requires <strong>OSIsoft PI Data Source Driver</strong>. To make this available, we suggest installing
 <strong>PI AF Client 2014 or above (64bit)</strong>.
 
-### To configure a PI Server connection {: .title}
+### To configure a PI Server connection
 
 1. Open you App Store Connection and select "Data Sources".
 
@@ -28,7 +28,7 @@ App Store Connect also requires <strong>OSIsoft PI Data Source Driver</strong>. 
 
 <em>Your PI App Store Connection is now available.</em>
 
-### Test your PI Server connection {: .title}
+### Test your PI Server connection
 
 A quick test of your connection is available from the above administration pages. Return to the "Data Sources" page (step 2 above) and choose "Tags".
 

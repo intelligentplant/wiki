@@ -23,7 +23,7 @@ Registering allows the Industrial App Store to delegate the responsibility of us
 
 <em>For more information about how Entra ID supports user sign-in, refer to Microsoft's notes on [Understanding Entra ID application consent experiences](https://learn.microsoft.com/en-us/entra/identity-platform/application-consent-experience).</em>
 
-### Who can Register an Organization? {: .title}
+### Who can Register an Organization?
 
 To register with the Industrial App Store, your organization must use Microsoft Entra ID. If your organization uses Microsoft 365 Enterprise, (formerly Office 365) you are already using Microsoft Entra ID!
 
@@ -35,13 +35,13 @@ To be able to register your organization, you must be assigned to one of the fol
 
 If you are unsure if you have the required permissions, contact your IT administrator.
 
-### How does Organization Registration Work? {: .title}
+### How does Organization Registration Work?
 
 On successful registration, <strong>Intelligent Plant Industrial App Store</strong> is added to your organization's Entra ID Enterprise Applications list.
 
 IT administrators can view registered applications and configure or review user access via Azure Portal.
 
-### What Permissions are Requested? {: .title}
+### What Permissions are Requested?
 
 The Industrial App Store requests the ["Sign in and read user profile"](https://docs.microsoft.com/en-us/graph/permissions-reference#user-permissions) permission for the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/). This permission (also known as <code>User.Read</code>) allows the Industrial App Store to retrieve basic information about your organization's users when they sign in to personalise their experience. For more info on how this data is used, refer to our [Privacy Policy](https://appstore.intelligentplant.com/Content/assets/legal/IAS-PrivacyPolicy.html).
 

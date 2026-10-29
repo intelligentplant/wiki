@@ -7,7 +7,7 @@ Use the <strong>CSV File</strong> data source driver to mount static process dat
 
 Enable the loop function to simulate live updating data.
 
-### Data File Format {: .title}
+### Data File Format
 
 ![csvformat](/wiki/assets/media/data_core/csvformat.png)
 
@@ -21,7 +21,7 @@ tag-name||tag-description||unit
 
 Subsequent rows contain time-series tag values.
 
-### Settings {: .title}
+### Settings
 
 CSV specific settings are listed under "CSV Settings".
 
@@ -39,7 +39,7 @@ CSV specific settings are listed under "CSV Settings".
 
 - <strong>Skip Duplicate Values</strong> <br />  Enabling this setting filters out samples that duplicate the same value on contiguous rows. This is useful when running demo data sets with large numbers of tags and rows.
 
-### System Requirements {: .title}
+### System Requirements
 
 The CSV driver is RAM intensive. Use the following formulas to calculate the <strong>additional</strong> RAM requirement of a CSV data source.
 
@@ -49,11 +49,11 @@ The CSV driver is RAM intensive. Use the following formulas to calculate the <st
 
   [Allowance for User Queries] is driven by factors such as number of parallel requests, data function, data volume processed in gernerating query, etc. Query performance monitoring is recommended, but 0.5GB can be used a starting point.
 
-### Licence Requirements {: .title}
+### Licence Requirements
 
 None.
 
-### Troubleshooting {: .title}
+### Troubleshooting
 
 Refer to logs:
 

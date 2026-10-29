@@ -3,7 +3,7 @@ layout: wiki
 title: "Licensing"
 permalink: /alarm_analysis/licensing.html
 ---
-### Alarm Analysis Licensing {: .title}
+### Alarm Analysis Licensing
 
 Alarm Analysis is licensed at the data source level.
 

@@ -280,27 +280,37 @@ body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
 
 /* ------------------------------------------------------- document content */
 
-/* Heading hierarchy follows guide §3.3 and uses the library text classes as they
-   are defined, without restyling them (guide §0.2):
+/* Heading hierarchy follows guide §3.3 and the library text classes:
      h1 = .header --primaryDarkColour / --titleColour / --fontSizeHeader
      h2, h3 = .title --primaryMidDarkColour / --fontColour / --fontSizeTitle
-   The converter emits `## Heading {: .title}` / `### Heading {: .title}` so
-   kramdown puts those classes on the heading elements. Only layout is added
-   here: the library classes carry no padding, margin, weight or radius. */
+
+   h2/h3 carry the library `.title` declaration by element rather than by class,
+   because GitHub Pages parses the markdown with `kramdown-parser-gfm`, which
+   ignores the inline attribute lists the DokuWiki source used
+   (`## Heading {: .title}`): the marker survives as literal text and kramdown
+   folds it into the auto-generated anchor id. So the converter emits plain
+   headings and the treatment lives here. Only tokens already defined by the
+   library / ui-overrides.css are used. */
 
 .wiki-article h1.header {
   padding: 8px var(--horizontalPadding);
   margin-bottom: 16px;
 }
 
-.wiki-article h2.title {
+.wiki-article h2 {
+  background: var(--primaryMidDarkColour);
+  color: var(--fontColour);
+  font-size: var(--fontSizeTitle);
   font-weight: bold;
   border-radius: var(--borderRadius);
   padding: 4px var(--horizontalPadding);
   margin: 24px 0 8px;
 }
 
-.wiki-article h3.title {
+.wiki-article h3 {
+  background: var(--primaryMidDarkColour);
+  color: var(--fontColour);
+  font-size: var(--fontSizeTitle);
   font-weight: bold;
   border-radius: var(--borderRadius);
   padding: 3px var(--horizontalPadding);

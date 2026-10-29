@@ -5,13 +5,13 @@ permalink: /general/organization_onboarding_guide.html
 ---
 This guide provides an overview of the steps needed to onboard your organization to the Industrial App Store (IAS), from initial registration through to managing users and creating a customized onboarding experience for your employees.
 
-### What is the Industrial App Store? {: .title}
+### What is the Industrial App Store?
 
 The Industrial App Store is a marketplace of apps for industrial processes with an architecture that enables secure connectivity between cloud-based apps and your on-premises data sources. Through [App Store Connect](/wiki/app_store_connect/app_store_connect.html), apps can connect directly to  live data without time-consuming uploads, giving you immediate access to interactive analysis tools. All communication is encrypted via HTTPS, apps must request explicit user authorization to access data or resources, and [security](/wiki/general/security.html) is paramount.
 
 The App Store uses Microsoft Entra ID for authentication, allowing organizations to leverage their existing identity infrastructure and security policies.
 
-### Step 1: Register Your Organization {: .title}
+### Step 1: Register Your Organization
 
 Before your employees can use the Industrial App Store, your organization needs to be registered. The registration process depends on whether you already use Microsoft Entra ID.
 
@@ -52,7 +52,7 @@ Your organization maintains full control over the tenant, including user account
 
 ➜ <strong>[Detailed Setup Instructions](/wiki/general/creating_entra_id_for_app_store_access.html)</strong>
 
-### Step 2: Understand User Management {: .title}
+### Step 2: Understand User Management
 
 Once your organization is registered, administrators can manage users, groups, and access through the organization portal.
 
@@ -72,7 +72,7 @@ Sign in to the App Store with your work account, then navigate to <strong>My Acc
 
 ➜ <strong>[Organization Management Overview](/wiki/general/organization_user_and_data_management.html)</strong>
 
-### Step 3: Pre-approve Apps and Data Sources for your Teams {: .title}
+### Step 3: Pre-approve Apps and Data Sources for your Teams
 
 Make sure users have access to the correct apps and relevant data sources.
 
@@ -96,7 +96,7 @@ One step always stays personal: the user still confirms once that the app may ac
 
 ➜ <strong>[App Security: approved apps, per-app permissions and pre-selected data components](/wiki/general/organization_user_and_data_management/app_access_management.html)</strong>
 
-### Step 4: Create an Onboarding Page (Optional) {: .title}
+### Step 4: Create an Onboarding Page (Optional)
 
 Organization administrators can create a custom onboarding page that new users see when they first log in to the Industrial App Store.
 
@@ -116,7 +116,7 @@ Existing users can view the onboarding page at any time via <strong>My Account >
 
 ➜ <strong>[Onboarding Page Configuration Guide](/wiki/general/onboarding_page.html)</strong>
 
-### Additional Resources {: .title}
+### Additional Resources
 
 - [App Store Security Overview](/wiki/general/security.html)
 - [App Security: approved apps, per-app permissions and pre-selected data sources](/wiki/general/organization_user_and_data_management/app_access_management.html)
@@ -125,6 +125,6 @@ Existing users can view the onboarding page at any time via <strong>My Account >
 - [Microsoft Entra ID Documentation](https://learn.microsoft.com/en-us/entra/fundamentals/)
 - [Industrial App Store Privacy Policy](https://appstore.intelligentplant.com/Content/assets/legal/IAS-PrivacyPolicy.html)
 
-### Need Help? {: .title}
+### Need Help?
 
 If you need assistance with onboarding your organization or have questions about the process, contact Intelligent Plant support for guidance.

@@ -15,7 +15,7 @@ Data points belonging to a data source can then be queried by tag names.
 
 A change in the name of an App Store Connection, a data source and/or a tag, will require updates to be made to the Power BI report.
 
-### Where to make changes {: .title}
+### Where to make changes
 
 1. Open the PowerBI Report
 

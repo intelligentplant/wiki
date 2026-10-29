@@ -93,7 +93,7 @@ Each value in the Values range will be written to the corresponding tag in the T
 
 This button will open the add-in wiki.
 
-### Advanced {: .title}
+### Advanced
 
 All text boxes can be evaluated as a formula if they begin with "="
 

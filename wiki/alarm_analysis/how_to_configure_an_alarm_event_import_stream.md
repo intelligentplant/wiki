@@ -5,7 +5,7 @@ permalink: /alarm_analysis/how_to_configure_an_alarm_event_import_stream.html
 ---
 Importing Alarm & Event Data requires advanced data core configuration. Contact Intelligent Plant if assistance is required.
 
-### Stage 1: Collect Data {: .title}
+### Stage 1: Collect Data
 
 Event Source <em>to</em> Big Data Event Sink.
 
@@ -39,7 +39,7 @@ If no indices exist, refer to App Store Connect log and review for errors.
 
 - C:\ProgramData\Intelligent Plant\Data Core Application Host\Service\Applications\App Store Connect\Logs\App Store ConnectRuntime.log
 
-### Stage 2: Prepare Alarm Analysis Import Stream {: .title}
+### Stage 2: Prepare Alarm Analysis Import Stream
 
 Big Data Event Source <em>to</em> Alarm Analysis Event Sink
 
@@ -61,7 +61,7 @@ Event source should be enabled but paused. This will let us peek at the data and
 
 No data is imported yet. But it is ready for review in the Alarm Analysis Import Manager.
 
-### Stage 3: Configure Alarm Analysis Import Stream {: .title}
+### Stage 3: Configure Alarm Analysis Import Stream
 
 Configure and test transformation rules using Alarm Analysis Import Manager.
 
@@ -77,7 +77,7 @@ Configure and test transformation rules using Alarm Analysis Import Manager.
 
 Import stream not visible? Make sure application is authorized to access both event source and sink. (This may require Intelligent Plant intervention as no UI exists for explicit Event Sink authorization).
 
-### Stage 4: Activate Alarm Analysis Import Stream {: .title}
+### Stage 4: Activate Alarm Analysis Import Stream
 
 Activate import flow (unpause Big Data Event Source)
 
@@ -95,7 +95,7 @@ Activate import flow (unpause Big Data Event Source)
 
 Data should now be actively importing to Alarm Analysis.
 
-### Stage 5: Alarm Analysis Data Source {: .title}
+### Stage 5: Alarm Analysis Data Source
 
 To view and share Alarm Analysis data, define an Alarm Analysis Data Source
 

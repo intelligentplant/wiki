@@ -27,7 +27,7 @@ Apps can include anything from websites, desktop programs, spreadsheets, service
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-## The App Store API {: .title}
+## The App Store API
 
 The App Store %%API%% allows apps to:
 
@@ -49,7 +49,7 @@ More Info:
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-## Next Steps {: .title}
+## Next Steps
 
 Get registered, create a holding card, download some code samples...
 

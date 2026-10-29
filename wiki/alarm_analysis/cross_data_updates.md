@@ -15,7 +15,7 @@ Cross Data Updates include the following functions...
 
 NB. Cross Data Functions incur processing overhead and should only be enabled if required.
 
-### Dupe Check {: .title}
+### Dupe Check
 
 An event is considered a dupe if it shares the following properties with another event:
 
@@ -27,7 +27,7 @@ An event is considered a dupe if it shares the following properties with another
 
 If a dupe is identified, the Event Type is updated with a “_Dupe” suffix. The event remains in the Sequence of Events, but is removed from any KPIs.
 
-### Compile Alarm Properties {: .title}
+### Compile Alarm Properties
 
 This process matches up ALMs and RTNs and calculates alarm duration, on-to-on duration, off-to-on duration, and flags if chattering. An alarm is considered chattering if it annunciates 3 or more times within a calendar minute.
 
@@ -35,7 +35,7 @@ This process matches up ALMs and RTNs and calculates alarm duration, on-to-on du
 - Off to On (OI): Time from alarm going off to it next coming on (how long it is off)
 - On to On (II): Time from the alarm coming on to it next coming on (time between alarms)
 
-### Calculate Alarm Disabled Properties {: .title}
+### Calculate Alarm Disabled Properties
 
 Alarm Disabled properties include Alarm Disabled Duration.
 
@@ -44,7 +44,7 @@ This can only be calculated if the Alarm Analysis record has properties:
 - EventType: INT (intervention)
 - OpAction: DISABLE_ON or DISABLE_OFF
 
-### Calculate Manual Mode Properties {: .title}
+### Calculate Manual Mode Properties
 
 Manual Mode properties include Manual Mode Duration.
 

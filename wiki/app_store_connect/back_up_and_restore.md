@@ -7,11 +7,11 @@ App Store Connect is quick to install, but at some point you may wish to conside
 
 Depending on your circumstances, the following options are available:
 
-### Virtual Machine Snapshot {: .title}
+### Virtual Machine Snapshot
 
 If App Store Connect is installed on a Virtual Machine, snapshot is a reliable way to back-up an entire server. However, we also recommend backing up "Big Data" as well (see below).  Refer to VM documentation for information on how to create, schedule and restore snapshots.
 
-### Manual Backup {: .title}
+### Manual Backup
 
 If snapshot is not an option, configuration and data files can be manually backed up and restored. Instructions are provided below.
 
@@ -49,7 +49,7 @@ To protect against hardware failure, the contents of the back-up folder should b
 
 - BackUp Folder: C:\Program Files\Intelligent Plant\Big Data\es\backup
 
-### Manual Restore {: .title}
+### Manual Restore
 
 <strong>1. To recover App Store Connect configuration</strong>
 
@@ -70,7 +70,7 @@ List returns all available snapshots. Note the snapshot id is actually a time-st
 Enter: Restore <em>SnapshotID</em>
 (e.g. Restore 20170131093011)
 
-### Scheduled Backup {: .title}
+### Scheduled Backup
 
 To configure a regular scheduled backup, create a Windows Scheduled Task to execute one of following batch files:
 
@@ -135,11 +135,11 @@ NB. Remember to specify a valid account and adjust schedule to your own preferen
 </Task>
 ```
 
-### Data Retention Policy {: .title}
+### Data Retention Policy
 
 Snapshot takes an incremental backup of the Big Data state. Incremental means each snapshot is dependent on the others that have gone before it, and thus may become inefficient if too many snapshots are maintained. Therefore, it is advised to have an archiving and data retention policy in place.
 
-### Archiving Snapshots {: .title}
+### Archiving Snapshots
 
 Snapshots are saved to a backup folder. For a typical App Store Connect installation, the location is:
 
@@ -151,7 +151,7 @@ Providing a Snapshot is not actively being taken, it is safe to <strong>copy</st
 
 <strong>Do not cut or delete files from Snapshots</strong> as this will break the incremental integrity of the files contained.
 
-### Safely Removing Snapshots / Purge Command {: .title}
+### Safely Removing Snapshots / Purge Command
 
 Snapshots can be removed using the Backup Utility and executing the <strong>Purge</strong> command. This will delete old snapshots according to the retention policy defined in the config file.
 

@@ -47,7 +47,7 @@ Click Apply and close the properties window.
 
 <strong>Warning.</strong> These custom settings will be reset if software is re-installed/upgraded.
 
-### Rollback {: .title}
+### Rollback
 
 If an issue is encountered after switching to the system JRE:
 

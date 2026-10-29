@@ -18,26 +18,12 @@ md.use(anchor, {
   slugify: (s) => String(s).trim().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-'),
 });
 
-// kramdown honours `## Heading {: .title}` by putting the class on the heading
-// element (and wrapping the text in a span). markdown-it has no equivalent, so
-// emulate it here, before the anchor rule computes the slug from the text.
-md.core.ruler.before('anchor', 'kramdown_heading_class', (state) => {
-  for (let i = 0; i < state.tokens.length; i++) {
-    const open = state.tokens[i];
-    if (open.type !== 'heading_open') continue;
-    const inline = state.tokens[i + 1];
-    if (!inline || inline.type !== 'inline') continue;
-    const last = [...inline.children].reverse().find((c) => c.type === 'text' || c.type === 'code_inline');
-    if (!last) continue;
-    const m = last.content.match(/\s*\{:\s*([^}]*)\}\s*$/);
-    if (!m) continue;
-    // kramdown writes `.name` for a class, `#name` for an id; only classes are used here.
-    const classes = m[1].trim().split(/\s+/).filter(Boolean).map((c) => c.replace(/^\.+/, ''));
-    last.content = last.content.slice(0, m.index).replace(/\s+$/, '');
-    inline.content = inline.children.map((c) => c.content).join('');
-    if (classes.length) open.attrJoin('class', classes.join(' '));
-  }
-});
+// NOTE: no `{: .class}` handling here on purpose. GitHub Pages uses
+// `kramdown-parser-gfm`, which does NOT apply block-level inline attribute lists,
+// so a trailing `{: .title}` stays literal text and leaks into the anchor id. The
+// converter emits plain headings and wiki.css styles h2/h3 directly; emulating
+// kramdown's class handling here would only make the local render disagree with
+// the published site.
 
 const engine = new Liquid({
   root: [path.join(repo, '_includes'), path.join(repo, '_layouts')],

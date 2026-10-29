@@ -5,7 +5,7 @@ permalink: /big_data_service/logging.html
 ---
 On a default installation of the Big Data Service, Elasticsearch is configured to only log errors. This can be amended however...
 
-### Logging Level {: .title}
+### Logging Level
 
 Logging level is defined in the log configuration file:
 
@@ -29,7 +29,7 @@ Valid logging levels are:
 
 <strong>NB.</strong> When setting a log level, note that logging can introduce a performance overhead. Also, log files are not automatically recycled and can soon generate a significant footprint.
 
-### Log Files {: .title}
+### Log Files
 
 By default, log files are written to:
   %ProgramFiles/Intelligent Plant\Big Data\es\logs

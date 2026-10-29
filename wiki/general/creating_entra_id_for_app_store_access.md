@@ -5,7 +5,7 @@ permalink: /general/creating_entra_id_for_app_store_access.html
 ---
 If your organization does not currently use Microsoft Entra ID (formerly Azure AD), you can create a dedicated Entra ID tenant specifically for managing user access to the Industrial App Store.
 
-### When this approach is recommended {: .title}
+### When this approach is recommended
 
 Creating a dedicated Entra ID tenant is recommended when:
 
@@ -19,11 +19,11 @@ Creating a dedicated Entra ID tenant is recommended when:
 
 Once you have set up your Entra ID tenant, you can [register your organization with the Industrial App Store](/wiki/general/registering_an_organziation_with_the_app_store.html) to enable Single Sign-On and centralized access management.
 
-### What is Microsoft Entra ID? {: .title}
+### What is Microsoft Entra ID?
 
 Microsoft Entra ID is Microsoft's cloud-based identity and access management service. For the Industrial App Store, it handles user authentication and allows your organization to control which employees can access the platform and your data.
 
-### Setting Up a Dedicated Entra ID Tenant {: .title}
+### Setting Up a Dedicated Entra ID Tenant
 
 #### Basic Configuration
 
@@ -48,13 +48,13 @@ To create and configure an Entra ID tenant:
 
 An energy supplier "Wind Co" creates an Entra ID tenant named "IAS - Wind Co", adds employee accounts, configures security policies, then [registers with the Industrial App Store](/wiki/general/registering_an_organziation_with_the_app_store.html). Their employees can then sign in using Entra ID credentials, with access managed centrally by IT administrators.
 
-### Managing Your Entra ID Instance {: .title}
+### Managing Your Entra ID Instance
 
 <strong>Your organization maintains full control and responsibility</strong> for managing the Entra ID tenant, including user accounts, credentials, security policies, and sign-in monitoring. Sensitive employee information remains under your organization's direct control.
 
 <em>Intelligent Plant does not have access to your Entra ID tenant, user credentials, or directory information. The Industrial App Store only receives basic profile information when users sign in, as described in our [security documentation](/wiki/general/security.html).</em>
 
-### Pricing and Licensing {: .title}
+### Pricing and Licensing
 
 Microsoft Entra ID is available in multiple tiers:
 
@@ -66,7 +66,7 @@ For most organizations using the Industrial App Store, the free tier provides al
 
 For detailed pricing information, refer to [Microsoft Entra pricing](https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing).
 
-### Additional Resources {: .title}
+### Additional Resources
 
 - [What is Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/fundamentals/whatis)
 - [Microsoft Entra documentation](https://learn.microsoft.com/en-us/entra/fundamentals/)

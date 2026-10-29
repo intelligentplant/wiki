@@ -3,15 +3,15 @@ layout: wiki
 title: "SQL Event Source"
 permalink: /data_core/sqleventsource.html
 ---
-### Overview {: .title}
+### Overview
 
 <strong>SQL Event Source</strong> is a datacore event source for databases. It provides low-level support to define a database connection and query that polls for data. It supports SQL Server, OLE DB, ODBC, Oracle, EntityClient and SQL Server Compact 4.0.
 
-### Event Message Structure {: .title}
+### Event Message Structure
 
 Records from the SQL source are converted to the Data Core Event Message structure, with columns becoming Event Properties.
 
-### Requirements {: .title}
+### Requirements
 
 #### DB Providers
 DB Providers must be installed on the server hosting App Store Connect. <br /> (The .Net framework includes most key providers. [More info...](https://msdn.microsoft.com/en-us/library/a6cd7c08(v=vs.110).aspx))
@@ -19,7 +19,7 @@ DB Providers must be installed on the server hosting App Store Connect. <br /> (
 #### Read-Only Data Access
 The Event Source can connect to a database using windows impersonation or with credentials explicitly specified in the connection string (encrypted). However, in both cases, you should only provide an account with read-only access to the subset of data you are prepared to share.
 
-### Configuration {: .title}
+### Configuration
 
 - SQL Provider: DB drivers installed on server
 - Connection String: The connection string for the remote database.

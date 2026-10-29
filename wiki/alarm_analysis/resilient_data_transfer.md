@@ -3,7 +3,7 @@ layout: wiki
 title: "Alarm Analysis: Capturing Alarms & Events from Militarized Network Domains"
 permalink: /alarm_analysis/resilient_data_transfer.html
 ---
-### Overview {: .title}
+### Overview
 
 Before reading this guide, you should be familiar with [Alarm Analysis Network Architecture](/wiki/alarm_analysis/alarm_analysis_network_architectures.html) document. This illustrates possible network installations including scenarios where Alarms & Events are collected from a militarized zone and transferred to another network for processing.
 
@@ -30,7 +30,7 @@ A two box installation is required, with the following Data Core configuration:
 
 While connectivity between the PIN and BN is good, all events will reach the destination twice. The fast stream means data arrives quickly, the second stream guarantees resilience. App Store Connect consolidates the two streams  to avoid duplication.
 
-## Step by Step Install and Configuration {: .title}
+## Step by Step Install and Configuration
 
 <strong>1. Install Data Core Node on PIN</strong>
 

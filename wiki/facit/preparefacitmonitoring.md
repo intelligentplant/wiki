@@ -5,7 +5,7 @@ permalink: /facit/preparefacitmonitoring.html
 ---
 The following document provides instructions on how to configure App Store Connect for Facit Monitoring. It is intended for App Store Connect administrators (IT Professionals with access to on-site App Store Connect software services).
 
-### Introduction {: .title}
+### Introduction
 
 Facit requires a number of Data Core components to be built and configured before end-users can employ the online app for surveillance monitoring. Fortunately, App Store Connect takes care of most of the heavy lifting.
 

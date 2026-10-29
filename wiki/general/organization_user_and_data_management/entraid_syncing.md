@@ -3,13 +3,13 @@ layout: wiki
 title: "Entra ID Syncing"
 permalink: /general/organization_user_and_data_management/entraid_syncing.html
 ---
-### Overview {: .title}
+### Overview
 
 Entra ID (formerly known as Azure AD) is a representation of a Microsoft Active Directory on the cloud.
 
 It is possible to sync Entra ID group members with Industrial App Store Groups (IAS). This allows organization IT departments to manage IAS users through the familiar tools of Active Directory.
 
-### Key Points {: .title}
+### Key Points
 
 <strong>Group syncing only occurs when a user signs into the IAS portal.</strong>
 
@@ -31,7 +31,7 @@ If a user is added directly to an IAS group, or were added before an Entra ID gr
 
 Consider removing all historic IAS group memberships, then advise users to log-out and back in again. This time the membership will be tied to the EntraID group.
 
-### Quick Start {: .title}
+### Quick Start
 
 You must explicitly register the Entra ID groups that you want to sync with IAS groups. Once registered, an Entra ID group can be linked to zero, one or more IAS groups. An organisation can currently register up to 1000 Entra ID groups, and can create up to 1000 links in total between all registered Entra ID groups and IAS groups.
 

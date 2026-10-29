@@ -5,7 +5,7 @@ permalink: /general/apps/powerautomate/releasenotes.html
 ---
 This page describes the release notes for the[Industrial Automator](https://appstore.intelligentplant.com/Home/AppProfile?appId=18e880e61fe84e9485fda4eb41462554). No action is required from Power Automate users: updates are made available automatically by Microsoft.
 
-### 2022-08 (August) Update {: .title}
+### 2022-08 (August) Update
 
 A new set of methods ('Read Snapshot Value', 'Read Plot Values', etc), replace the original methods ('Get Snapshot', 'Get Plot Data', etc).
 

@@ -3,13 +3,13 @@ layout: wiki
 title: "MSMQ Event Source/Sink"
 permalink: /data_core/msmqeventsourcesink.html
 ---
-### Overview {: .title}
+### Overview
 
 Data Core can read and write Alarm & Event (A&E) data from Microsoft message queues. This can be used for temporary data caching when configuring resilient data flows.
 
 For example, imagine a Data Core Node is responsible for subscribing to A&E data from an ephemeral data source such as a serial printer feed, then sending it to a downstream server. Introducing an intermediate message queue will protect us from data loss if the downstream network connection is interupted.
 
-### Getting Started {: .title}
+### Getting Started
 
 #### 1. Enable MSMQ on Windows Server
 
@@ -49,7 +49,7 @@ The key settings are listed under <em>Message Queue Settings</em>. Configure the
 
 <img src="/wiki/assets/media/data_core/msmq05.png" alt="msmq05" style="max-width:600px" loading="lazy" />
 
-### Optional Settings {: .title}
+### Optional Settings
 
 #### Set MSMQ to use custom storage location
 
@@ -69,6 +69,6 @@ After copying to new location.
 - Open "Computer Manager" and expand "Services and Applications"
 - Right click on "Message Queuing" mouse over "All Task" then click "Bring Message Queuing Online"
 
-### Further Notes {: .title}
+### Further Notes
 
 - [Administer Security for Message Queuing](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc738047(v=ws.10)?redirectedfrom=MSDN)

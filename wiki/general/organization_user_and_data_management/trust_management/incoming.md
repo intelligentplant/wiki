@@ -9,7 +9,7 @@ The incoming trusts page for the organization shows the accepted and pending inc
 
 Rejected trusts are not shown by default, but can be included by updating the search filters on the page.
 
-### Updating an Incoming Trust {: .title}
+### Updating an Incoming Trust
 
 To update an incoming trust request from a 3rd party organization, click on the <em>Edit</em> button next to the entry. This will display the incoming trust editor:
 

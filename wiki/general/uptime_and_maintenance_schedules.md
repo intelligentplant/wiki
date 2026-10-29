@@ -10,11 +10,11 @@ Our general policy is to roll out updates on the final Friday of the month, thou
 
 Subscribe to notifications for updates and/or refer to calendar below.
 
-### Notifications {: .title}
+### Notifications
 
 <strong>[Click here to sign up for scheduled maintenance email notifications.](https://intelligentplant.myfreshworks.com/crm/sales/web_forms/82c81e78b85c203f28acb774814c628abfd54f8443f808fbfec017ffa10b47d1/form.html)</strong>
 
-### Maintenance Policy {: .title}
+### Maintenance Policy
 
 Below is our policy for managing uptime.
 
@@ -26,7 +26,7 @@ Below is our policy for managing uptime.
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Maintenance Calendar {: .title}
+### Maintenance Calendar
 
 <strong>Fri 30 Oct 2026, 10:00 - 12:00 GMT</strong>
 
@@ -39,7 +39,7 @@ Apps may be unavailable for up to 15 mins during maintenance window.
 
 <div class="title wiki-divider" aria-hidden="true"></div>
 
-### Release Notes {: .title}
+### Release Notes
 
 Release notes for the Industrial App Store and various Intelligent Plant apps can be viewed using the links below:
 
@@ -63,6 +63,6 @@ Release notes for the Industrial App Store and various Intelligent Plant apps ca
 - [Wax Intelligence](/wiki/general/apps/wax_intelligence/releasenotes.html)
 - [Well Intelligence](/wiki/general/apps/well_intelligence/releasenotes.html)
 
-### Uptime {: .title}
+### Uptime
 
 To view the availability of our apps over the last 90 days, [visit our status page.](https://stats.uptimerobot.com/ZDN9lu7lvy)

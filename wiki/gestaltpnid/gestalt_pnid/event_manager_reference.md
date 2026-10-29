@@ -3,15 +3,15 @@ layout: wiki
 title: "Event Manager"
 permalink: /gestaltpnid/gestalt_pnid/event_manager_reference.html
 ---
-### Introduction {: .title}
+### Introduction
 
 In Gestalt PnID's Event Manager we provide several helper functions that help you perform specific actions within your dashboard. This page outlines what each of these functions are, what they do, and information on how they can be used within the event manager.
 
-### Global/Local Scripts {: .title}
+### Global/Local Scripts
 
 Functions and variables can be defined at the scope of a dashboard or at organisation level. See [Global and Local Scripts Guide](/wiki/gestaltpnid/gestalt_pnid/event_manager_reference/global_scripts_guide.html) for more information.
 
-### Script Reference {: .title}
+### Script Reference
 
 #### Change Property
 
