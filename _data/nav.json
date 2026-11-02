@@ -1563,20 +1563,7 @@
       "/dev/app_store_-_template_to_start_a_new_app_in_visual_studio.html"
     ]
   },
-  {
-    "key": "playground",
-    "title": "Playground",
-    "items": [
-      {
-        "title": "PlayGround",
-        "href": "/playground/playground.html"
-      }
-    ],
-    "depth": 0,
-    "hrefs": [
-      "/playground/playground.html"
-    ]
-  },
+ 
   {
     "key": "support",
     "title": "Support",
