@@ -29,6 +29,10 @@ const baseUrl = (() => {
 const problems = [];
 const fail = (msg) => problems.push(msg);
 
+// `nav:` declarations collected from the pages, used by the nav.json checks below
+const declaredNav = [];
+const hiddenNav = new Set();
+
 function safeDecode(s) {
   try {
     return decodeURIComponent(s);
@@ -65,7 +69,7 @@ function slugify(s) {
 
 for (const rel of pages) {
   const full = path.join(wikiDir, rel);
-  const text = fs.readFileSync(full, 'utf8');
+  const text = fs.readFileSync(full, 'utf8').replace(/^\uFEFF/, '');
   const m = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
   if (!m) {
     fail(`${rel}: missing front matter`);
@@ -73,7 +77,7 @@ for (const rel of pages) {
   }
   const fm = {};
   for (const line of m[1].split(/\r?\n/)) {
-    const kv = line.match(/^([A-Za-z0-9_]+):\s*(.*)$/);
+    const kv = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
     if (!kv) {
       if (line.trim()) fail(`${rel}: unparsable front matter line: ${line}`);
       continue;
@@ -82,6 +86,13 @@ for (const rel of pages) {
   }
   for (const key of ['layout', 'title', 'permalink']) {
     if (!fm[key]) fail(`${rel}: front matter missing '${key}'`);
+  }
+  // `nav:` says where a page that is not in the DokuWiki belongs in the sidebar;
+  // `nav: none` says it is deliberately absent. tools/build-nav.js --apply turns
+  // these into the tree; here they are only checked for consistency.
+  if (fm.nav) {
+    if (fm.nav === 'none') hiddenNav.add(fm.permalink);
+    else declaredNav.push({ rel, key: fm.nav, href: fm.permalink });
   }
   if (fm.permalink && !fm.permalink.startsWith('/')) {
     fail(`${rel}: permalink must start with '/': ${fm.permalink}`);
@@ -230,6 +241,39 @@ else {
     }
   };
   check(nav, 0);
+
+  // Every page must be reachable from the sidebar unless it opts out with
+  // `nav: none`. Without this a page missing from nav.json is silently invisible:
+  // it still builds and still appears in search, but nothing links to it.
+  const navHrefs = new Map();
+  (function collect(nodes) {
+    for (const s of nodes) {
+      for (const i of s.items || []) navHrefs.set(i.href, s.key);
+      if (s.children) collect(s.children);
+    }
+  })(nav);
+
+  for (const href of hiddenNav) {
+    if (navHrefs.has(href)) {
+      fail(`nav.json: ${href} declares 'nav: none' but is still in the sidebar — run 'node tools/build-nav.js --apply'`);
+    }
+  }
+
+  const declaredHrefs = new Set(declaredNav.map((d) => d.href));
+  for (const [href, rel] of permalinks) {
+    if (navHrefs.has(href) || hiddenNav.has(href) || declaredHrefs.has(href)) continue;
+    fail(`${rel}: not reachable from the sidebar — add 'nav: <section>' to its front matter and run 'node tools/build-nav.js --apply', or 'nav: none' to hide it`);
+  }
+
+  // A `nav:` declaration must name a real section, and must already be reflected
+  // in nav.json — i.e. --apply has been run since the page was edited.
+  for (const { rel, key, href } of declaredNav) {
+    if (!seenKeys.has(key)) {
+      fail(`${rel}: 'nav: ${key}' is not a section key (see 'node tools/build-nav.js --list-sections')`);
+    } else if (navHrefs.get(href) !== key) {
+      fail(`${rel}: declares 'nav: ${key}' but nav.json places it in '${navHrefs.get(href)}' — run 'node tools/build-nav.js --apply'`);
+    }
+  }
   console.log(`nav sections:     ${sectionCount}`);
   console.log(`nav links:        ${linkCount2}`);
 }

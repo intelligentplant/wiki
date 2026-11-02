@@ -9,11 +9,24 @@
  * output is byte-identical to one in the input.
  *
  * Usage:
- *   node tools/build-nav.js            # rewrite _data/nav.json in place
- *   node tools/build-nav.js --check    # report what would change, write nothing
+ *   node tools/build-nav.js --apply          # place hand-authored pages declared
+ *                                           # with `nav:` in their front matter
+ *                                           # into _data/nav.json (in place)
+ *   node tools/build-nav.js --list-sections  # valid section keys for `nav:`
+ *   node tools/build-nav.js --check          # --apply without writing
+ *   node tools/build-nav.js                  # rebuild from a FLAT nav.json
  *
- * tools/convert-dokuwiki.js requires buildTree() from here so both paths
- * produce the same shape.
+ * `--apply` is the mode to run after re-converting the DokuWiki: the converter
+ * regenerates _data/nav.json from the DokuWiki alone, which drops every page that
+ * only lives in this repository. Those pages declare their own place in the tree
+ * in their front matter instead, so their position survives every re-sync:
+ *
+ *   nav: excel                      # key of the section that owns this page
+ *   nav-title: "Short label"        # optional, defaults to `title`
+ *   nav: none                       # keep the page out of the sidebar
+ *
+ * tools/convert-dokuwiki.js requires buildTree() and applyDeclaredNav() from
+ * here so both paths produce the same shape.
  */
 
 const fs = require('fs');
@@ -144,6 +157,158 @@ function applyExtras(section) {
   });
   section.items.sort((a, b) => a.title.localeCompare(b.title));
 }
+
+/* ------------------------------------------------- front-matter nav declarations
+ *
+ * A page that only lives in this repository (it has no DokuWiki counterpart) has
+ * no namespace to inherit a position from, and _data/nav.json is regenerated
+ * from the DokuWiki alone. So such a page declares its own place in the tree:
+ *
+ *   nav: excel                  # key of the section that owns it
+ *   nav-title: "Short label"    # optional sidebar label, defaults to `title`
+ *   nav: none                   # deliberately absent from the sidebar
+ *
+ * Keeping the position next to the content is what makes it survive a re-sync,
+ * and it means an author only has to know one section key, not the whole tree.
+ */
+
+/** Minimal front-matter reader: the pages only use flat `key: "value"` lines. */
+function readFrontMatter(text) {
+  // A leading BOM (editors on Windows add one) would stop the `---` matching.
+  const m = text.replace(/^\uFEFF/, '').match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+  if (!m) return null;
+  const fm = {};
+  for (const line of m[1].split(/\r?\n/)) {
+    if (!line.trim() || /^\s/.test(line)) continue;
+    const kv = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
+    if (!kv) continue;
+    fm[kv[1]] = kv[2].trim().replace(/^["']|["']$/g, '');
+  }
+  return fm;
+}
+
+function walkMarkdown(dir, base = dir, out = []) {
+  if (!fs.existsSync(dir)) return out;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) walkMarkdown(full, base, out);
+    else if (entry.name.endsWith('.md')) out.push(path.relative(base, full).replace(/\\/g, '/'));
+  }
+  return out;
+}
+
+/**
+ * Read every `nav:` declaration under wiki/.
+ * @returns {{declared: Array<{key: string, item: object, rel: string}>,
+ *            hidden: Array<{href: string, rel: string}>,
+ *            errors: string[]}}
+ */
+function collectDeclaredNav(repoRoot = REPO) {
+  const wikiDir = path.join(repoRoot, 'wiki');
+  const declared = [];
+  const hidden = [];
+  const errors = [];
+
+  for (const rel of walkMarkdown(wikiDir)) {
+    const text = fs.readFileSync(path.join(wikiDir, rel), 'utf8');
+    const fm = readFrontMatter(text);
+    if (!fm) continue;
+    if (!fm.nav) continue;
+
+    const key = fm.nav.trim();
+    if (key === 'none') {
+      if (fm.permalink) hidden.push({ href: fm.permalink, rel });
+      continue;
+    }
+    if (!fm.permalink) {
+      errors.push(`${rel}: declares 'nav: ${key}' but has no permalink`);
+      continue;
+    }
+    const title = (fm['nav-title'] || fm.title || '').trim();
+    if (!title) {
+      errors.push(`${rel}: declares 'nav: ${key}' but has neither nav-title nor title`);
+      continue;
+    }
+    declared.push({ key, item: { title, href: fm.permalink }, rel });
+  }
+
+  return { declared, hidden, errors };
+}
+
+/** Depth-first walk over every node of a nested tree. */
+function eachNode(nodes, fn, depth = 0) {
+  for (const node of nodes) {
+    fn(node, depth);
+    if (node.children) eachNode(node.children, fn, depth + 1);
+  }
+}
+
+/** Every section key present in a nested tree, in display order. */
+function listSectionKeys(nodes) {
+  const out = [];
+  eachNode(nodes, (n, depth) => out.push({ key: n.key, title: n.title, depth }));
+  return out;
+}
+
+/**
+ * Apply the front-matter declarations to a nested tree: insert each declared page
+ * into its section, remove the pages declared `nav: none`, then recompute the
+ * `depth`/`hrefs` bookkeeping the sidebar template needs.
+ *
+ * Returns the errors for unknown section keys; the tree is still returned so the
+ * caller can report every problem at once instead of one per run.
+ */
+function applyDeclaredNav(tree, repoRoot = REPO) {
+  const { declared, hidden, errors } = collectDeclaredNav(repoRoot);
+  if (!declared.length && !hidden.length) return errors;
+
+  const byKey = new Map();
+  eachNode(tree, (n) => byKey.set(n.key, n));
+
+  const unknown = new Set();
+  for (const { key, item, rel } of declared) {
+    const section = byKey.get(key);
+    if (!section) {
+      unknown.add(key);
+      errors.push(`${rel}: 'nav: ${key}' is not a section key (run: node tools/build-nav.js --list-sections)`);
+      continue;
+    }
+    section.items = section.items || [];
+    const existing = section.items.find((i) => i.href === item.href);
+    if (existing) existing.title = item.title;
+    else section.items.push({ ...item });
+    section.items.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
+  if (hidden.length) {
+    const drop = new Set(hidden.map((h) => h.href));
+    eachNode(tree, (n) => {
+      if (!n.items) return;
+      n.items = n.items.filter((i) => !drop.has(i.href));
+    });
+  }
+
+  // A section emptied by `nav: none` would render an empty group button.
+  const prune = (nodes) =>
+    nodes.filter((n) => {
+      if (n.children) {
+        n.children = prune(n.children);
+        if (!n.children.length) delete n.children;
+      }
+      return (n.items && n.items.length) || (n.children && n.children.length);
+    });
+  const kept = prune(tree);
+  kept.length && tree.splice(0, tree.length, ...kept);
+
+  // The template cannot look ahead, so depth and descendant hrefs are data.
+  indexHrefs(tree, 0);
+
+  if (unknown.size) {
+    errors.push(`unknown section keys: ${[...unknown].sort().join(', ')}`);
+  }
+  return errors;
+}
+
 
 /** Nest sections whose key is a dotted extension of another section's key. */
 function nestByKey(list) {
@@ -294,8 +459,56 @@ function depthOf(nodes, depth) {
   );
 }
 
-function main() {
-  const check = process.argv.includes('--check');
+/** Re-read the nested tree and re-apply the front-matter declarations. */
+function runApply(check) {
+  const navPath = path.join(REPO, '_data', 'nav.json');
+  const tree = JSON.parse(fs.readFileSync(navPath, 'utf8'));
+  if (!tree.some((s) => s.children || s.depth !== undefined)) {
+    console.error('nav.json looks flat; run the converter first, or use no flags to nest it.');
+    process.exit(1);
+  }
+
+  const before = collectHrefs(tree).length;
+  const errors = applyDeclaredNav(tree);
+  const after = collectHrefs(tree).length;
+
+  console.log('sections: ' + countSections(tree) + ' (depth ' + depthOf(tree, 1) + ')');
+  console.log('links:    ' + before + ' -> ' + after);
+  if (errors.length) {
+    console.log(`\n${errors.length} PROBLEM(S):`);
+    for (const e of errors) console.log('  - ' + e);
+    process.exit(1);
+  }
+
+  const json = JSON.stringify(tree, null, 2) + '\n';
+  if (check) {
+    const same = json === fs.readFileSync(navPath, 'utf8');
+    console.log(same ? '--check: nav.json is up to date' : '--check: nav.json would change');
+    return;
+  }
+  fs.writeFileSync(navPath, json);
+  console.log('wrote ' + path.relative(REPO, navPath));
+}
+
+/** Print the section keys a page may point its `nav:` at. */
+function runListSections() {
+  const navPath = path.join(REPO, '_data', 'nav.json');
+  const tree = JSON.parse(fs.readFileSync(navPath, 'utf8'));
+  const rows = listSectionKeys(tree);
+  console.log('section keys for the `nav:` front matter (use `nav: none` to hide a page):\n');
+  const width = Math.min(70, Math.max(...rows.map((r) => r.key.length)) + 2);
+  for (const r of rows) {
+    console.log('  ' + '  '.repeat(r.depth) + r.key.padEnd(width) + r.title);
+  }
+  console.log(`\n${rows.length} sections.`);
+}
+
+/**
+ * Rebuild the nested tree from a FLAT nav.json. This is the historical mode, used
+ * by nothing except a manual regrouping of the DokuWiki namespaces; the converter
+ * calls buildTree() directly instead.
+ */
+function runNest(check) {
   const navPath = path.join(REPO, '_data', 'nav.json');
   const flat = JSON.parse(fs.readFileSync(navPath, 'utf8'));
   if (flat.some((s) => s.children)) {
@@ -314,6 +527,7 @@ function main() {
 
   console.log('sections: ' + flat.length + ' -> ' + countSections(tree) + ' (depth ' + depthOf(tree, 1) + ')');
   console.log('links:    ' + before.length + ' -> ' + after.length);
+
   if (missing.length) console.log('DROPPED:', missing);
   if (added.length) console.log('UNEXPECTED ADDED:', added);
   if (missing.length || added.length) {
@@ -329,6 +543,28 @@ function main() {
   console.log('wrote ' + path.relative(REPO, navPath));
 }
 
+function main() {
+  const argv = process.argv.slice(2);
+  const check = argv.includes('--check');
+  if (argv.includes('--list-sections')) return runListSections();
+  if (argv.includes('--apply')) return runApply(check);
+  if (argv.length && !check) {
+    console.error('Unknown argument: ' + argv[0]);
+    console.error('Usage: node tools/build-nav.js [--apply|--check|--list-sections]');
+    process.exit(1);
+  }
+  return runNest(check);
+}
+
 if (require.main === module) main();
 
-module.exports = { buildTree, FAMILIES, EXTRA_ITEMS };
+module.exports = {
+  buildTree,
+  FAMILIES,
+  EXTRA_ITEMS,
+  applyDeclaredNav,
+  collectDeclaredNav,
+  listSectionKeys,
+  readFrontMatter,
+};
+

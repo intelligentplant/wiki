@@ -40,11 +40,13 @@ engine.registerFilter('truncate', (s, n) => (String(s).length > n ? String(s).sl
 engine.registerFilter('escape', (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
 
 function readFrontMatter(text) {
+  // A leading BOM (editors on Windows add one) would stop the `---` matching.
+  text = text.replace(/^\uFEFF/, '');
   const m = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
   if (!m) throw new Error('no front matter');
   const fm = {};
   for (const line of m[1].split(/\r?\n/)) {
-    const kv = line.match(/^([A-Za-z0-9_]+):\s*(.*)$/);
+    const kv = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
     if (!kv) continue;
     let v = kv[2].trim();
     if (/^".*"$/.test(v)) v = v.slice(1, -1);

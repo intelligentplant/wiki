@@ -18,7 +18,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { buildTree } = require('./build-nav');
+const { buildTree, applyDeclaredNav } = require('./build-nav');
 
 const dataDir = process.argv[2];
 const repoRoot = process.argv[3] || path.resolve(__dirname, '..');
@@ -739,6 +739,15 @@ const treeHrefs = (function count(nodes) {
 })(tree);
 if (treeHrefs !== flatHrefs) {
   throw new Error(`nav nesting lost links: ${flatHrefs} -> ${treeHrefs}`);
+}
+
+/* Hand-authored pages declare their position with `nav:` front matter. The
+ * converter only knows the DokuWiki, so re-applying the declarations here is
+ * what keeps them in the sidebar across a re-sync. */
+const navErrors = applyDeclaredNav(tree);
+if (navErrors.length) {
+  for (const e of navErrors) console.error(`nav: ${e}`);
+  throw new Error(`${navErrors.length} problem(s) in 'nav:' front matter.`);
 }
 fs.writeFileSync(path.join(outData, 'nav.json'), JSON.stringify(tree, null, 2) + '\n', 'utf8');
 

@@ -51,7 +51,6 @@ Pages that are easy to miss because they sit outside the main guides:
 - [Write an App in Visual Studio](/wiki/dev/app_store_-_template_to_start_a_new_app_in_visual_studio.html) <br /> Template for starting a new app in Visual Studio.
 - [Automating Excel Reports](/wiki/excel/automation.html) <br /> Running Excel Query Add-In reports unattended.
 - [Jupyter Hub](/wiki/jupyter_hub/jupyter_hub.html) <br /> Using the App Store Jupyter Hub environment.
-- [PlayGround](/wiki/playground/playground.html) <br /> Sandbox for trying App Store APIs.
 - [Customer Data](/wiki/general/customerdata.html) <br /> How customer data is held and managed.
 - [Big Data Service: Technical Advisories](/wiki/big_data_service/technical-advisories.html) <br /> Advisories affecting the Big Data Service.
 - [Honeywell Uniformance Phd](/wiki/app_store_connect/honeywell_uniformance_phd.html) <br /> Connecting Uniformance Phd through App Store Connect.

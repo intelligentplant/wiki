@@ -3,10 +3,8 @@
 Source of [https://intelligentplant.github.io/](https://intelligentplant.github.io/), the
 knowledge base for the Industrial App Store.
 
-The site is a Jekyll static site published with GitHub Pages. Content is generated from the
-DokuWiki data in
-[`intelligentplant/root`](https://github.com/intelligentplant/root/tree/main/DokuWiki) and the
-styling follows
+The site is a Jekyll static site published with GitHub Pages. Content is plain Markdown under
+`wiki/`, and the styling follows
 [`IntelligentPlant-UI-Library`](https://github.com/intelligentplant/IntelligentPlant-UI-Library/tree/main/Guides).
 
 ## Layout
@@ -20,57 +18,78 @@ _includes/nav.html         Left navigation built from _data/nav.json
 _includes/nav-tree.html     Recursive renderer for one nav node (calls itself for children)
 _includes/search.html       Sidebar search box
 _data/nav.json              Navigation tree (generated)
-wiki/                      Content pages, one per DokuWiki page (generated)
+wiki/                      Content pages (converted + hand-authored)
 assets/css/wiki.css        Wiki styling — UI Library tokens only
 assets/js/theme.js         Theme switcher (System / Light / Dark / Blue)
 assets/js/wiki.js          Nav toggle, table of contents, link handling
 assets/js/search.js        Client-side search over the static index
 assets/js/search-index.json Static search index (generated)
 assets/ui-library/         Vendored UI Library stylesheet + icon font
-assets/media/              Images copied from the DokuWiki (generated)
-tools/convert-dokuwiki.js  DokuWiki -> Markdown converter
-tools/build-nav.js         Groups the flat page list into the nested nav tree
+assets/media/              Images referenced by the pages
+tools/build-nav.js         Builds the nested nav tree; --apply reads each page's
+                           `nav:` front matter into _data/nav.json
 tools/build-search-index.js Builds assets/js/search-index.json from wiki/
 tools/verify.js            Structural validator for the generated output
 tools/preview/             Local preview (Node stand-in for `jekyll serve`)
+tools/convert-dokuwiki.js  Legacy DokuWiki -> Markdown converter (not in use)
 ```
 
-Everything under `wiki/`, `_data/`, and `assets/media/` is **generated** — change the converter or
-the DokuWiki source instead of editing those files by hand.
+`_data/nav.json` and `assets/js/search-index.json` are **generated** — regenerate them with the
+commands below instead of editing them by hand. Everything in `wiki/` is ordinary Markdown you can
+edit directly; see [Adding or updating a page](#adding-or-updating-a-page).
 
-## Regenerating the content
+## Adding or updating a page
+
+Every page is a Markdown file under `wiki/` with front matter. Say where it belongs in the sidebar
+with `nav:`:
+
+```markdown
+---
+layout: wiki
+title: "Troubleshooting Excel"
+nav: excel
+nav-title: "Troubleshooting"
+permalink: /excel/troubleshooting.html
+---
+
+Open with `##` headings — they build the "On this page" contents. Do not add your own
+`# heading`; the layout prints the `title` for you.
+
+## Common errors
+
+...
+```
+
+- `nav:` is the **section key** the page should appear under. Run `node tools/build-nav.js --list-sections`
+  to see the current keys and their hierarchy. A key that does not exist is an error.
+- `nav-title:` is the label shown in the sidebar; omit it to use `title`.
+- `nav: none` keeps the page out of the sidebar on purpose (it stays reachable by link and search).
+- `permalink` starts with `/` and must be unique. Internal links must be written with the site
+  baseurl, e.g. `[Excel](/wiki/excel.html)`.
+
+After editing, regenerate the derived files and check them:
+
+```powershell
+node tools/build-nav.js --apply   # reads every page's nav: and rewrites _data/nav.json
+node tools/build-search-index.js  # so the new page is searchable
+node tools/verify.js .            # must print OK before you commit
+```
 
 You need Node.js only; the scripts use the standard library.
 
-```powershell
-# 1. Get the DokuWiki source
-git clone --depth 1 --filter=blob:none --sparse https://github.com/intelligentplant/root ../_root_clone
-cd ../_root_clone
-git sparse-checkout set DokuWiki/data
-
-# 2. Convert it into wiki/, _data/nav.json and assets/media/
-cd ../intelligentplant.github.io
-node tools/convert-dokuwiki.js "../_root_clone/DokuWiki/data" .
-
-# 3. Rebuild the search index from the generated pages
-node tools/build-search-index.js
-
-# 4. Check the result
-node tools/verify.js .
-```
-
 `verify.js` reports the page count, duplicate permalinks, broken internal links, and media files
-that are referenced but missing (or present but unused). It must print
+that are referenced but missing (or present but unused). It also fails if a page is not reachable
+from the sidebar, if `nav:` names an unknown section, or if `nav.json` is out of date with the
+front matter — so a forgotten `--apply` cannot slip through. It must print
 `OK — no structural problems found.` before you commit.
 
 ### Navigation tree
 
-The DokuWiki has no folder hierarchy, so the sidebar tree is built from the links between pages:
-`tools/build-nav.js` groups pages into families, collapses single-child chains, and writes the
-nested `_data/nav.json` that `_includes/nav-tree.html` renders. Every node carries its own `depth`
-and the `hrefs` of all its descendants, because the recursive include cannot compute either (Liquid
-`assign` inside a recursive include leaks between levels). `convert-dokuwiki.js` calls it for you;
-run it on its own only if you want to regroup pages without re-converting the content.
+`tools/build-nav.js` writes the nested `_data/nav.json` that `_includes/nav-tree.html` renders.
+Pages declare their own position with `nav:` front matter, so the tree is rebuilt from the pages
+themselves and there is nothing to keep in sync by hand. Every node carries its own `depth` and the
+`hrefs` of all its descendants, because the recursive include cannot compute either (Liquid
+`assign` inside a recursive include leaks between levels).
 
 ### Search
 
@@ -163,3 +182,41 @@ dependencies of the sync step only.
 
 Push to the `wiki-2026` branch. GitHub Pages builds it with the built-in Jekyll engine (no custom
 build step), so the generated Markdown, data and media must be committed.
+
+---
+
+## Legacy: the DokuWiki converter (not in use)
+
+> [!WARNING]
+> `tools/convert-dokuwiki.js` is kept for reference only and is **no longer part of the workflow**.
+> Do not run it without reading this section first — a re-sync **overwrites `_data/nav.json` and
+> `index.md` completely**, so anything you changed in those two files by hand is lost. It also
+> copies media into `assets/media/` and can overwrite a page or an image that has the same name as
+> one in the DokuWiki. Pages you added yourself under `wiki/` are left alone (the converter only
+> writes files, it never deletes them), but a page deleted upstream will stay here forever.
+
+The site started as a conversion of the DokuWiki data in
+[`intelligentplant/root`](https://github.com/intelligentplant/root/tree/main/DokuWiki). That
+content is now the Markdown in `wiki/` and the images in `assets/media/`, and it is edited in
+place like any other page.
+
+If you ever do need to pull in more of the DokuWiki:
+
+```powershell
+# 1. Get the DokuWiki source
+git clone --depth 1 --filter=blob:none --sparse https://github.com/intelligentplant/root ../_root_clone
+cd ../_root_clone
+git sparse-checkout set DokuWiki/data
+
+# 2. Convert it into wiki/, _data/nav.json and assets/media/
+cd ../intelligentplant.github.io
+node tools/convert-dokuwiki.js "../_root_clone/DokuWiki/data" .
+
+# 3. Rebuild the derived files and check the result
+node tools/build-search-index.js
+node tools/verify.js .
+```
+
+The converter calls `build-nav.js` to rebuild the tree and then re-applies every `nav:` front
+matter declaration, so hand-authored pages keep their place in the sidebar. Commit before running
+it, and review `git diff` afterwards — that is your only safety net for `nav.json` and `index.md`.
