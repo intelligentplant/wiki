@@ -1,0 +1,4 @@
+# tools/ui-library/sync.js copies byte-exact files out of the npm package, and
+# `sync.js --check` compares bytes, so they must not be line-ending converted on
+# checkout. The rest of the repo keeps the default behaviour.
+assets/ui-library/** text eol=lf

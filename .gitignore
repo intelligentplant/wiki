@@ -1,0 +1,17 @@
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+
+# Node (tools/preview and tools/ui-library use npm)
+node_modules/
+npm-debug.log*
+
+# GitHub Packages token for tools/ui-library (see tools/ui-library/.npmrc.example)
+tools/ui-library/.npmrc
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vs/

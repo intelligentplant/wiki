@@ -1,0 +1,477 @@
+﻿/* Industrial App Store Wiki
+   Only UI Library tokens are used for colour â€” no hex values (guide Â§4.1).
+   The library's base reset strips list markers, link underlines, heading styles
+   and margins, so document content has to opt back in here. */
+
+/* ------------------------------------------------------------------ shell */
+
+:root {
+  /* Height of the contents panel's sticky header, measured by assets/js/wiki.js
+     so the search box can pin itself directly underneath it. */
+  --wiki-nav-header-height: 2.5rem;
+}
+
+.wiki-body {
+  background: var(--primaryColour);
+  color: var(--fontColour);
+  min-height: 100vh;
+}
+
+.wiki-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Top toolbar: 36px, --primaryDarkColour, 2px bottom border (guide Â§4.7). */
+.wiki-toolbar {
+  flex: none;
+  height: 36px;
+  padding: 0 var(--horizontalPadding);
+  background: var(--primaryDarkColour);
+  border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
+}
+
+.wiki-logo {
+  height: 26px;
+  width: auto;
+}
+
+/* "Beta" marker beside the logo. The library has no badge component, so this is
+   built from tokens only (guide §0.2): --warningColour reads as "not final" and
+   stays legible on the toolbar in every theme, light or dark. */
+.wiki-beta {
+  margin-left: 8px;
+  padding: 1px 6px;
+  font-size: var(--fontSizeXSmall);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--successColour);
+  border: 1px solid var(--successColour);
+}
+
+.wiki-app-name {
+  font-size: var(--fontSizeSmall);
+  color: var(--titleColour);
+}
+
+/* The contents toggle is the menu's own `ipLeftMenu toggle` button, inside the
+   menu header, so it needs no styling here (guide Â§0.2). */
+
+.wiki-theme-label {
+  color: var(--titleColour);
+}
+
+/* Layout only (guide Â§0.2): the library dropDownMenu supplies all colour, border
+   and radius. The library header is --fontSizeMedium; the toolbar is 36px high,
+   so the compact size from Â§4.3 is used instead. */
+.wiki-toolbar .dropDownMenu.header {
+  font-size: var(--fontSizeXSmall);
+  color: var(--titleColour);
+}
+
+#ipThemeList a {
+  display: block;
+  padding: 4px 10px;
+  font-size: var(--fontSizeSmall);
+  white-space: nowrap;
+}
+
+#ipThemeList > div {
+  padding: 2px 10px 4px;
+  color: var(--titleColour);
+}
+
+.wiki-main {
+  min-height: 0;
+  /* Clip the contents panel while it slides out of view. */
+  overflow: hidden;
+}
+
+/* Contents panel.
+   The panel is the UI Library left text menu (`ipLeftMenu`, guide Â§3.3 / Â§4.8)
+   and the library supplies everything about it: the 14rem panel, the slide to
+   2.5rem when closed, the sticky header with the burger, the group/item rows and
+   their states, the separators, the nested indentation and the mobile
+   full-screen overlay. Nothing below restyles it (guide Â§0.2); the rules here
+   only cover the wiki's own search box, which lives inside the panel. */
+
+/* Search box, pinned under the menu's sticky header. The contents tree can be
+   long and is scrolled to the current page on load, so the box has to stay
+   reachable. The library header is `min-height: 2.5rem` plus its bottom border,
+   so the offset is known without measuring. */
+.wiki-search {
+  position: sticky;
+  top: var(--wiki-nav-header-height);
+  z-index: 2;
+  padding: 10px var(--horizontalPadding);
+  background: var(--primaryDarkColour);
+  border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
+}
+
+/* When the menu slides shut the library fades out its own list; the search box
+   is the wiki's, so it needs the same treatment or it would be squeezed into the
+   2.5rem strip left behind. */
+.ipLeftMenu.wrapper > .wiki-search {
+  min-width: calc(14rem - var(--borderWidth));
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 0.5s ease;
+}
+
+.ipLeftMenu.wrapper.closed > .wiki-search {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.3s ease;
+}
+
+@media (max-width: 767.98px) {
+  .ipLeftMenu.wrapper.collapsible > .wiki-search {
+    min-width: 100vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ipLeftMenu.wrapper > .wiki-search,
+  .ipLeftMenu.wrapper.closed > .wiki-search {
+    transition: none;
+  }
+}
+
+.wiki-search-field {
+  position: relative;
+}
+
+.wiki-search-input {
+  width: 100%;
+  font-size: var(--fontSizeSmall);
+  /* Keep the text clear of the clear button. */
+  padding-right: 30px;
+}
+
+/* The native cross of `input[type=search]` is drawn in a fixed mid-grey and is
+   invisible on the dark themes, so it is replaced by an icon-font button using
+   the library's own icon colours (--fontColour, --successColour on hover). */
+.wiki-search-input::-webkit-search-cancel-button,
+.wiki-search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.wiki-search-clear {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: var(--fontColour);
+  font-size: 14px;
+  line-height: 1;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.wiki-search-clear:hover {
+  color: var(--successColour);
+}
+
+/* Overlays the tree instead of pushing it down, so the pinned "Contents"
+  title stays put while you type. */
+.wiki-search-results {
+ position: absolute;
+ left: var(--horizontalPadding);
+ right: var(--horizontalPadding);
+ top: calc(100% - var(--borderWidth));
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ border: var(--borderWidth) solid var(--primaryOutlineColour);
+ border-radius: var(--borderRadius);
+ background: var(--primaryMidDarkColour);
+ box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+ max-height: 45vh;
+ overflow-y: auto;
+}
+
+.wiki-search-results li {
+  border-bottom: 1px solid var(--primaryOutlineColour);
+}
+
+.wiki-search-results li:last-child {
+  border-bottom: 0;
+}
+
+.wiki-search-results a,
+.wiki-search-results a:visited {
+  display: block;
+  padding: 6px 10px;
+  color: var(--fontColour);
+  font-size: var(--fontSizeSmall);
+  text-decoration: none;
+}
+
+.wiki-search-results a:hover {
+  color: var(--successColour);
+}
+
+.wiki-search-results .wiki-search-heading {
+  font-size: var(--fontSizeSmaller);
+  opacity: 0.8;
+}
+
+.wiki-search-results .wiki-search-empty {
+  padding: 6px 10px;
+  font-size: var(--fontSizeSmall);
+  opacity: 0.8;
+}
+
+/* The contents rows themselves — section groups, page links, separators and
+   nested indentation — are all the library's `ipLeftMenu` and are not restyled
+   here (guide §0.2). The "On this page" sub-menu built by wiki.js uses the same
+   group / submenu / item markup, so it needs no rules of its own either. */
+
+/* Content column */
+.wiki-content {
+  overflow-y: auto;
+  background: var(--primaryColour);
+  padding: 20px 32px 64px;
+  min-width: 0;
+}
+
+.wiki-article {
+  max-width: 1080px;
+  /* Centred in the available width, so closing the contents panel keeps the
+     reading column in the middle of the page instead of snapping to the left. */
+  margin-inline: auto;
+  /* Gestalt card: single rounded outline around the whole article
+     (PnIDSite.css `.component-table-container` / `.card`). */
+  border: 1px solid var(--primaryOutlineColour);
+  border-radius: var(--borderRadius);
+  background: var(--primaryColour);
+  overflow: hidden;
+  padding: 0 0 16px;
+}
+
+.wiki-article > *:last-child {
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------- document content */
+
+/* Heading hierarchy follows guide Â§3.3 and the library text classes:
+     h1 = .header --primaryDarkColour / --titleColour / --fontSizeHeader
+     h2, h3 = .title --primaryMidDarkColour / --fontColour / --fontSizeTitle
+
+   h2/h3 carry the library `.title` declaration by element rather than by class,
+   because GitHub Pages parses the markdown with `kramdown-parser-gfm`, which
+   ignores the inline attribute lists the DokuWiki source used
+   (`## Heading {: .title}`): the marker survives as literal text and kramdown
+   folds it into the auto-generated anchor id. So the converter emits plain
+   headings and the treatment lives here. Only tokens already defined by the
+   library / ui-overrides.css are used. */
+
+.wiki-article h1.header {
+  padding: 8px var(--horizontalPadding);
+  margin-bottom: 16px;
+}
+
+.wiki-article h2 {
+  background: var(--primaryMidDarkColour);
+  color: var(--fontColour);
+  font-size: var(--fontSizeTitle);
+  font-weight: bold;
+  border-radius: var(--borderRadius);
+  padding: 4px var(--horizontalPadding);
+  margin: 24px 0 8px;
+}
+
+.wiki-article h3 {
+  background: var(--primaryMidDarkColour);
+  color: var(--fontColour);
+  font-size: var(--fontSizeTitle);
+  font-weight: bold;
+  border-radius: var(--borderRadius);
+  padding: 3px var(--horizontalPadding);
+  margin: 20px 0 6px;
+}
+
+/* Deeper levels have no library class; they stay plain bold text. */
+.wiki-article h4,
+.wiki-article h5,
+.wiki-article h6 {
+  color: var(--fontColour);
+  font-size: var(--fontSizeBase);
+  font-weight: bold;
+  margin: 16px 0 4px;
+}
+
+.wiki-article p {
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+
+.wiki-article li {
+  margin: 0 0 4px;
+}
+
+.wiki-article ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin: 0 0 10px;
+}
+
+.wiki-article ol {
+  list-style: decimal;
+  padding-left: 24px;
+  margin: 0 0 10px;
+}
+
+.wiki-article ul ul,
+.wiki-article ol ol,
+.wiki-article ul ol,
+.wiki-article ol ul {
+  margin: 4px 0 0;
+}
+
+/* Links follow the library affordance (guide Â§3.3 `clickable`): they inherit the
+   text colour and turn --successColour on hover. The underline stays so links
+   are still recognisable inside long documentation prose. */
+.wiki-article a,
+.wiki-article a:visited {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.wiki-article a:hover {
+  color: var(--successColour);
+}
+
+/* Dividers use the library `.title` band (the converter emits
+   `<div class="title wiki-divider">`), so only the size and spacing are added
+   here â€” the band colour comes from the class (guide Â§0.2). */
+.wiki-article .wiki-divider {
+  height: 6px;
+  border-radius: var(--borderRadius);
+  margin: 20px var(--horizontalPadding);
+}
+
+.wiki-article hr {
+  border-top: var(--borderWidth) solid var(--primaryOutlineColour);
+  margin: 20px 0;
+}
+
+.wiki-article blockquote {
+  border-left: var(--borderWidth) solid var(--successColour);
+  background: var(--primaryLightColour);
+  padding: 8px 12px;
+  margin: 0 0 12px;
+}
+
+.wiki-article img {
+  max-width: 100%;
+  height: auto;
+  border: var(--borderWidth) solid var(--primaryOutlineColour);
+  border-radius: var(--borderRadius);
+  margin: 8px 0;
+}
+
+.wiki-article code,
+.wiki-article pre {
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 0.8rem;
+  background: var(--primaryMidDarkColour);
+  color: var(--fontColour);
+  border-radius: var(--borderRadius);
+}
+
+.wiki-article code {
+  padding: 1px 4px;
+}
+
+.wiki-article pre {
+  padding: 10px 12px;
+  overflow-x: auto;
+  margin: 0 0 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.wiki-article pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.wiki-centre {
+  text-align: center;
+  margin: 12px 0;
+}
+
+/* Footnote markers are informational, not a selected/positive state, so they
+   use --infoColour (muted) rather than --successColour (guide Â§4.1). */
+.wiki-footnote {
+  color: var(--infoColour);
+  cursor: help;
+  font-weight: bold;
+}
+
+/* Tables produced by the converter.
+   The UI Library does not define a data table, so this copies the Gestalt table
+   UI (PnIDSite.css `.component-table-container` + `.bound_tagsTable`): one
+   1px --primaryOutlineColour border with 6px radius around the whole table,
+   a header row on --primaryDarkColour in bold, no vertical cell rules, 1px row
+   separators, small text, and --primaryOutlineColour on row hover. */
+.wiki-table {
+  border: 1px solid var(--primaryOutlineColour);
+  border-radius: var(--borderRadius);
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 0 0 16px;
+  background: var(--primaryColour);
+  color: var(--fontColour);
+  font-size: var(--fontSizeSmall);
+  text-align: left;
+  overflow: hidden;
+}
+
+.wiki-table th,
+.wiki-table td {
+  border: none;
+  border-bottom: 1px solid var(--primaryOutlineColour);
+  padding: 5px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.wiki-table tr:last-child th,
+.wiki-table tr:last-child td {
+  border-bottom: none;
+}
+
+.wiki-table th {
+  background: var(--primaryMidDarkColour);
+  color: var(--fontColour);
+  font-weight: bold;
+}
+
+.wiki-table tbody tr:hover td,
+.wiki-table tbody tr:hover th {
+  background: var(--primaryOutlineColour);
+}
+
+/* Home page */
+.wiki-home {
+  max-width: 900px;
+}
+
+/* ------------------------------------------------------------- responsive */
+
+/* The contents menu is fully handled by the library at its own 768px breakpoint
+   (it becomes a full-screen overlay), so only the content column changes here. */
+@media (max-width: 767.98px) {
+  .wiki-content {
+    padding: 16px;
+  }
+}

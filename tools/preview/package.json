@@ -1,0 +1,18 @@
+{
+  "name": "wiki-preview",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local preview for the wiki: renders the Jekyll site with liquidjs + markdown-it, then serves it.",
+  "scripts": {
+    "render": "node render.js",
+    "serve": "node serve.js",
+    "preview": "node render.js && node serve.js"
+  },
+  "type": "commonjs",
+  "license": "ISC",
+  "dependencies": {
+    "liquidjs": "^10.30.0",
+    "markdown-it": "^15.0.3",
+    "markdown-it-anchor": "^10.0.0"
+  }
+}
