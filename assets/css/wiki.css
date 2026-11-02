@@ -37,6 +37,20 @@
   width: auto;
 }
 
+/* "Beta" marker beside the logo. The library has no badge component, so this is
+   built from tokens only (guide §0.2): --warningColour reads as "not final" and
+   stays legible on the toolbar in every theme, light or dark. */
+.wiki-beta {
+  margin-left: 8px;
+  padding: 1px 6px;
+  font-size: var(--fontSizeXSmall);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--warningColour);
+  border: 1px solid var(--warningColour);
+}
+
 .wiki-app-name {
   font-size: var(--fontSizeSmall);
   color: var(--titleColour);
