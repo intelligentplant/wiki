@@ -47,8 +47,8 @@
   line-height: 1.2;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--warningColour);
-  border: 1px solid var(--warningColour);
+  color: var(--successColour);
+  border: 1px solid var(--successColour);
 }
 
 .wiki-app-name {
