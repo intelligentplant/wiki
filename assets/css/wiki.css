@@ -251,7 +251,7 @@
   border-radius: var(--borderRadius);
   background: var(--primaryColour);
   overflow: hidden;
-  padding: 0 0 16px;
+  padding: 0 var(--horizontalPadding) 16px;
 }
 
 .wiki-article > *:last-child {
@@ -273,8 +273,8 @@
    library / ui-overrides.css are used. */
 
 .wiki-article h1.header {
-  padding: 8px var(--horizontalPadding);
-  margin-bottom: 16px;
+ padding: 8px 0;
+  margin: 0 calc(var(--horizontalPadding) * -1) 16px;
 }
 
 .wiki-article h2 {
@@ -283,8 +283,8 @@
   font-size: var(--fontSizeTitle);
   font-weight: bold;
   border-radius: var(--borderRadius);
-  padding: 4px var(--horizontalPadding);
-  margin: 24px 0 8px;
+   padding: 4px 0;
+  margin: 24px calc(var(--horizontalPadding) * -1) 8px;
 }
 
 .wiki-article h3 {
@@ -293,8 +293,8 @@
   font-size: var(--fontSizeTitle);
   font-weight: bold;
   border-radius: var(--borderRadius);
-  padding: 3px var(--horizontalPadding);
-  margin: 20px 0 6px;
+  padding: 3px 0;
+  margin: 20px calc(var(--horizontalPadding) * -1) 6px;
 }
 
 /* Deeper levels have no library class; they stay plain bold text. */
@@ -354,12 +354,12 @@
 .wiki-article .wiki-divider {
   height: 6px;
   border-radius: var(--borderRadius);
-  margin: 20px var(--horizontalPadding);
+  margin: 20px calc(var(--horizontalPadding) * -1);
 }
 
 .wiki-article hr {
   border-top: var(--borderWidth) solid var(--primaryOutlineColour);
-  margin: 20px 0;
+  margin: 20px calc(var(--horizontalPadding) * -1);
 }
 
 .wiki-article blockquote {
@@ -473,5 +473,17 @@
 @media (max-width: 767.98px) {
   .wiki-content {
     padding: 16px;
+  }
+
+  .wiki-article {
+    padding-inline: 12px;
+  }
+
+  .wiki-article h1.header,
+  .wiki-article h2,
+  .wiki-article h3,
+  .wiki-article .wiki-divider,
+  .wiki-article hr {
+    margin-inline: -12px;
   }
 }
