@@ -1144,6 +1144,224 @@ button, [role="button"] {
     margin: 0.5rem;
 
 }
+
+/* Left text menu. Collapsible groups (items with a submenu) sit on --primaryDarkColour,
+   end-of-menu items on --primaryMidDarkColour, the selected end item on --primaryOutlineColour.
+   Text is --fontColour and turns --successColour on hover. A group's submenu is shown while
+   the group has the "open" class, so non-React apps only need to toggle that one class. */
+.ipLeftMenu.wrapper {
+    width: 14rem;
+    /* keeps its width next to full-width content in a flex row (Layout) */
+    flex-shrink: 0;
+    height: 100%;
+    overflow-y: auto;
+    /* no sideways scrollbar while the panel is narrower than its 14rem list (sliding) */
+    overflow-x: hidden;
+    background-color: var(--primaryDarkColour);
+    border-right: var(--borderWidth) solid var(--primaryOutlineColour);
+    color: var(--fontColour);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    /* slides open and closed: the width changes while the content keeps its own width and is
+       clipped, and the panel fades out to leave only the toggle button */
+    transition: width 0.5s ease, background-color 0.7s ease, border-color 0.3s ease;
+}
+
+/* Closed: only the header's toggle button is visible, so the menu can be opened again. The
+   panel, header and their lines turn transparent. */
+.ipLeftMenu.wrapper.closed {
+    width: 2.5rem;
+    overflow-y: hidden;
+    background-color: transparent;
+    border-right-color: transparent;
+}
+
+/* Header: the menu title and the toggle button. It sticks to the top while the items scroll.
+   It also carries the global .header class (style.css): the same --primaryDarkColour as the
+   menu panel and --titleColour text. Background and colour are repeated here so the menu does
+   not depend on style.css. */
+.ipLeftMenu.header {
+    color: var(--titleColour);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 2.5rem;
+    /* the right padding centres the toggle in the 2.5rem closed panel, so it does not move */
+    padding: 0.5rem 0.4375rem 0.5rem 0.75rem;
+    background-color: var(--primaryDarkColour);
+    border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
+    transition: padding 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.ipLeftMenu.heading {
+    flex-grow: 1;
+    min-width: 0;
+    margin-right: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: opacity 0.5s ease, margin 0.5s ease;
+}
+
+.ipLeftMenu.toggle {
+    flex-shrink: 0;
+    margin: 0 0 0 auto;
+    padding: 0.25rem;
+    line-height: 1;
+}
+
+.ipLeftMenu.toggle:focus-visible {
+    box-shadow: 0 0 4px 0px var(--fontColour);
+}
+
+.ipLeftMenu.wrapper.closed .ipLeftMenu.header {
+    padding-left: 0.4375rem;
+    background-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.ipLeftMenu.wrapper.closed .ipLeftMenu.heading {
+    opacity: 0;
+    margin-right: 0;
+    visibility: hidden;
+    transition: visibility 0s linear 0.5s, opacity 0.5s ease, margin 0.5s ease;
+}
+
+/* The list keeps the open width so it slides out of view instead of squeezing its labels.
+   It also fades with the panel: the rows have their own backgrounds, so without the fade they
+   would stay solid while the panel turns transparent, leaving cut-off rows under the toggle.
+   Closing fades them out faster than the slide so they are gone before the panel is narrow.
+   When closed it is hidden once the slide has finished (visibility is switched at the end of
+   the transition), which also takes its items out of the tab order and the screen reader;
+   when opening it is shown straight away and fades in as it slides. */
+.ipLeftMenu.wrapper > .ipLeftMenu.list {
+    min-width: calc(14rem - var(--borderWidth));
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 0.5s ease;
+}
+.ipLeftMenu.wrapper.closed > .ipLeftMenu.list {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.5s, opacity 0.3s ease;
+}
+
+/* Mobile (under 768px): the open menu covers the whole width of the screen, on top of the
+   page. The negative right margin cancels the extra width, so in the layout the menu still
+   takes only the 2.5rem of the toggle and the page content does not move or get squeezed.
+   Width and margin change together with the same timing, so that stays true while sliding.
+   Only for a collapsible menu: one without a toggle could never be closed again, so it stays
+   a normal panel. */
+@media (max-width: 767.98px) {
+    .ipLeftMenu.wrapper.collapsible {
+        position: relative;
+        z-index: 10;
+        width: 100vw;
+        margin-right: calc(2.5rem - 100vw);
+        transition: width 0.5s ease, margin-right 0.5s ease, background-color 0.7s ease, border-color 0.3s ease;
+    }
+    .ipLeftMenu.wrapper.collapsible.closed {
+        width: 2.5rem;
+        margin-right: 0;
+    }
+    .ipLeftMenu.wrapper.collapsible > .ipLeftMenu.list {
+        min-width: 100vw;
+    }
+}
+
+/* .ipLeftMenu.wrapper.collapsible is listed because the mobile rule above is more specific than
+   .ipLeftMenu.wrapper and would otherwise keep its transition */
+@media (prefers-reduced-motion: reduce) {
+    .ipLeftMenu.wrapper, .ipLeftMenu.wrapper.collapsible, .ipLeftMenu.header, .ipLeftMenu.heading,
+    .ipLeftMenu.wrapper > .ipLeftMenu.list, .ipLeftMenu.wrapper.closed > .ipLeftMenu.list,
+    .ipLeftMenu.wrapper.closed .ipLeftMenu.heading {
+        transition: none;
+    }
+}
+
+.ipLeftMenu.list, .ipLeftMenu.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ipLeftMenu.group, .ipLeftMenu.item {
+    font: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    /* The line is on the row, not the <li>: a group's <li> also holds its submenu, so a line
+       there would sit under the whole submenu instead of under the group's own row. */
+    border-bottom: 1px solid var(--primaryOutlineColour);
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--fontColour);
+}
+
+.ipLeftMenu.group {
+    background-color: var(--primaryDarkColour);
+}
+
+.ipLeftMenu.item {
+    background-color: var(--primaryMidDarkColour);
+}
+
+.ipLeftMenu.item.selected {
+    background-color: var(--primaryOutlineColour);
+}
+
+.ipLeftMenu.group:hover, .ipLeftMenu.item:hover,
+.ipLeftMenu.group:focus-visible, .ipLeftMenu.item:focus-visible {
+    color: var(--successColour);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+/* The text tint alone is too weak to see on these flat rows (green on white is 2.2:1), so
+   focused rows also get the glow used by .ipButton:focus-visible. */
+.ipLeftMenu.group:focus-visible, .ipLeftMenu.item:focus-visible {
+    box-shadow: 0 0 4px 0px var(--fontColour);
+}
+
+/* The selected item keeps its text colour on hover and on keyboard focus: green text on the
+   selected background is invisible (1.0:1 in Light and Dark). */
+.ipLeftMenu.item.selected:hover, .ipLeftMenu.item.selected:focus-visible {
+    color: var(--fontColour);
+}
+
+.ipLeftMenu.label {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ipLeftMenu.group:not(.open) + .ipLeftMenu.submenu {
+    display: none;
+}
+
+/* Each submenu is indented under its group's label, and its own rows get a left line, so
+   nested levels read as a tree. The line is on the rows, not the <ul>: a line on the <ul>
+   would keep running down beside any inner submenu, which has its own line. */
+.ipLeftMenu.submenu {
+    /* padding rather than margin so the indent is inside the submenu background, not outside it */
+    padding-left: 0.75rem;
+    background-color: var(--primaryColour);
+}
+.ipLeftMenu.submenu > li > .ipLeftMenu.group, .ipLeftMenu.submenu > li > .ipLeftMenu.item {
+    border-left: 1px solid var(--primaryOutlineColour);
+}
+
 /*!**********************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./ip_icons/style.css ***!
   \**********************************************************************/

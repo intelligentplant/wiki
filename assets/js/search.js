@@ -20,6 +20,7 @@
 
   var input = document.getElementById('wikiSearchInput');
   var list = document.getElementById('wikiSearchResults');
+  var clearBtn = document.getElementById('wikiSearchClear');
   if (!input || !list) return;
 
   var pages = null;
@@ -87,6 +88,18 @@
     input.setAttribute('aria-expanded', 'false');
   }
 
+  // The clear button mirrors the content of the field.
+  function syncClear() {
+    if (clearBtn) clearBtn.hidden = input.value.length === 0;
+  }
+
+  function clearInput() {
+    input.value = '';
+    syncClear();
+    hide();
+    input.focus();
+  }
+
   function search(raw) {
     var query = raw.trim();
     if (query.length < MIN_QUERY) { hide(); return; }
@@ -123,17 +136,22 @@
   var timer = null;
   input.addEventListener('input', function () {
     var value = input.value;
+    syncClear();
     if (timer) clearTimeout(timer);
     timer = setTimeout(function () { load().then(function () { search(value); }); }, 120);
   });
 
-  input.addEventListener('search', function () { if (!input.value) hide(); });
+  input.addEventListener('search', function () { syncClear(); if (!input.value) hide(); });
+
+  if (clearBtn) clearBtn.addEventListener('click', clearInput);
 
   input.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') { input.value = ''; hide(); }
+    if (e.key === 'Escape') clearInput();
   });
 
   document.addEventListener('click', function (e) {
     if (!e.target.closest('#wikiSearch')) hide();
   });
+
+  syncClear();
 })();

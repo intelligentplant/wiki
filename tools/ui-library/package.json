@@ -7,6 +7,6 @@
     "sync": "node sync.js"
   },
   "dependencies": {
-    "@intelligentplant/react-ui-library": "2.2.0"
+    "@intelligentplant/react-ui-library": "2.3.0"
   }
 }

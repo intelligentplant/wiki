@@ -1,16 +1,14 @@
-/* Industrial App Store Wiki
-   Only UI Library tokens are used for colour — no hex values (guide §4.1).
+﻿/* Industrial App Store Wiki
+   Only UI Library tokens are used for colour â€” no hex values (guide Â§4.1).
    The library's base reset strips list markers, link underlines, heading styles
    and margins, so document content has to opt back in here. */
 
 /* ------------------------------------------------------------------ shell */
 
 :root {
-  --wiki-sidebar-width: 300px;
-  /* Shared by the burger and the contents panel so they slide in lockstep,
-     the way Gestalt puts the same `transition: all .5s` on #trigger and the
-     pushed panel. */
-  --wiki-nav-duration: 0.3s;
+  /* Height of the contents panel's sticky header, measured by assets/js/wiki.js
+     so the search box can pin itself directly underneath it. */
+  --wiki-nav-header-height: 2.5rem;
 }
 
 .wiki-body {
@@ -25,7 +23,7 @@
   height: 100vh;
 }
 
-/* Top toolbar: 36px, --primaryDarkColour, 2px bottom border (guide §4.7). */
+/* Top toolbar: 36px, --primaryDarkColour, 2px bottom border (guide Â§4.7). */
 .wiki-toolbar {
   flex: none;
   height: 36px;
@@ -44,57 +42,16 @@
   color: var(--titleColour);
 }
 
-/* Contents toggle. Copied from Gestalt: the burger is a fixed element at the
-   left edge of the viewport (component.css `.menu-trigger`: position fixed,
-   top 10px, left 0) and mlpushmenu.js slides it with the panel
-   (`_setTransform('translateX(' + (menuWidth - 60) + 'px)', trigger)` when
-   opening, `translateX(0)` when closing). So it never moves vertically, it only
-   travels horizontally with the contents panel, and it ends up on the same row
-   as the "Contents" title. */
-.wiki-nav-toggle {
-  position: fixed;
-  /* 36px toolbar + 2px border + the vertical centre of the "Contents" row. */
-  top: 49px;
-  left: 0;
-  z-index: 50;
-  flex: none;
-  width: 34px;
-  height: 26px;
-  font-size: 18px;
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--titleColour);
-  background: transparent;
-  border: none;
-  border-radius: var(--borderRadius);
-  cursor: pointer;
-  transform: translateX(6px);
-  transition: color 0.15s ease;
-}
-
-body:not(.wiki-nav-hidden) .wiki-nav-toggle {
-  transform: translateX(calc(var(--wiki-sidebar-width) - 44px));
-}
-
-/* The slide is only enabled once the page is ready (see `wiki-nav-ready` in
-   wiki.js) so that a stored "closed" state does not animate on page load. */
-body.wiki-nav-ready .wiki-nav-toggle {
-  transition: transform var(--wiki-nav-duration) ease, color 0.15s ease;
-}
-
-.wiki-nav-toggle:hover {
-  color: var(--successColour);
-}
+/* The contents toggle is the menu's own `ipLeftMenu toggle` button, inside the
+   menu header, so it needs no styling here (guide Â§0.2). */
 
 .wiki-theme-label {
   color: var(--titleColour);
 }
 
-/* Layout only (guide §0.2): the library dropDownMenu supplies all colour, border
+/* Layout only (guide Â§0.2): the library dropDownMenu supplies all colour, border
    and radius. The library header is --fontSizeMedium; the toolbar is 36px high,
-   so the compact size from §4.3 is used instead. */
+   so the compact size from Â§4.3 is used instead. */
 .wiki-toolbar .dropDownMenu.header {
   font-size: var(--fontSizeXSmall);
   color: var(--titleColour);
@@ -118,63 +75,92 @@ body.wiki-nav-ready .wiki-nav-toggle {
   overflow: hidden;
 }
 
-/* Left icon rail removed: the contents panel is toggled from its own header. */
-
 /* Contents panel.
-   The UI Library has no tree/accordion component, so this panel copies the
-   Gestalt file tree (Gestalt.Web/Content/component.css `.mp-menu`,
-   `.menuTitle`, `ul.subFolderMenu` and PnIDSite.css `.multiaccordion`).
-   Row rules:
-   - collapsible rows (sections, "On this page"): --primaryDarkColour
-     background, --fontColour text, --successColour on hover;
-   - leaf rows (pages, headings): --primaryMidDarkColour background,
-     --fontColour text, --successColour on hover;
-   - the selected leaf row: --primaryOutlineColour background.
-   Rows are separated by a full-width 1px --primaryOutlineColour rule and
-   nested lists are indented behind a 1px guide. */
-.wiki-sidebar {
-  flex: none;
-  width: var(--wiki-sidebar-width);
-  overflow-y: auto;
-  background: var(--primaryDarkColour);
-  border-right: var(--borderWidth) solid var(--primaryOutlineColour);
-  cursor: default;
-  /* Slides out to the left in step with the burger, instead of disappearing. */
-}
+   The panel is the UI Library left text menu (`ipLeftMenu`, guide Â§3.3 / Â§4.8)
+   and the library supplies everything about it: the 14rem panel, the slide to
+   2.5rem when closed, the sticky header with the burger, the group/item rows and
+   their states, the separators, the nested indentation and the mobile
+   full-screen overlay. Nothing below restyles it (guide Â§0.2); the rules here
+   only cover the wiki's own search box, which lives inside the panel. */
 
-/* Gestalt pushes the panel off-screen (`transform: translateX(-100%)` on
-   `.mp-level`); here the panel is a flex item, so an equal negative margin
-   makes it slide out and lets the content re-centre as it goes. */
-body.wiki-nav-hidden .wiki-sidebar {
-  margin-left: calc(-1 * (var(--wiki-sidebar-width) + var(--borderWidth)));
-  visibility: hidden;
-}
-
-body.wiki-nav-ready .wiki-sidebar {
-  transition: margin-left var(--wiki-nav-duration) ease;
-}
-
-body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
-  transition: margin-left var(--wiki-nav-duration) ease,
-              visibility 0s linear var(--wiki-nav-duration);
-}
-
-/* Search box, pinned to the top of the panel. The contents tree can be long and
-   is scrolled to the current page on load, so the box has to stay reachable.
-   `--wiki-search-height` is measured by assets/js/wiki.js and is what pins the
-   "Contents" title directly underneath it. */
+/* Search box, pinned under the menu's sticky header. The contents tree can be
+   long and is scrolled to the current page on load, so the box has to stay
+   reachable. The library header is `min-height: 2.5rem` plus its bottom border,
+   so the offset is known without measuring. */
 .wiki-search {
- position: sticky;
- top: 0;
- z-index: 4;
- padding: 10px var(--horizontalPadding);
- background: var(--primaryDarkColour);
- border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
+  position: sticky;
+  top: var(--wiki-nav-header-height);
+  z-index: 2;
+  padding: 10px var(--horizontalPadding);
+  background: var(--primaryDarkColour);
+  border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
+}
+
+/* When the menu slides shut the library fades out its own list; the search box
+   is the wiki's, so it needs the same treatment or it would be squeezed into the
+   2.5rem strip left behind. */
+.ipLeftMenu.wrapper > .wiki-search {
+  min-width: calc(14rem - var(--borderWidth));
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 0.5s ease;
+}
+
+.ipLeftMenu.wrapper.closed > .wiki-search {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.3s ease;
+}
+
+@media (max-width: 767.98px) {
+  .ipLeftMenu.wrapper.collapsible > .wiki-search {
+    min-width: 100vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ipLeftMenu.wrapper > .wiki-search,
+  .ipLeftMenu.wrapper.closed > .wiki-search {
+    transition: none;
+  }
+}
+
+.wiki-search-field {
+  position: relative;
 }
 
 .wiki-search-input {
   width: 100%;
   font-size: var(--fontSizeSmall);
+  /* Keep the text clear of the clear button. */
+  padding-right: 30px;
+}
+
+/* The native cross of `input[type=search]` is drawn in a fixed mid-grey and is
+   invisible on the dark themes, so it is replaced by an icon-font button using
+   the library's own icon colours (--fontColour, --successColour on hover). */
+.wiki-search-input::-webkit-search-cancel-button,
+.wiki-search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.wiki-search-clear {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: var(--fontColour);
+  font-size: 14px;
+  line-height: 1;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.wiki-search-clear:hover {
+  color: var(--successColour);
 }
 
 /* Overlays the tree instead of pushing it down, so the pinned "Contents"
@@ -227,121 +213,10 @@ body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
   opacity: 0.8;
 }
 
-.wiki-nav-title {
-  /* Sits directly under the pinned search box. */
-  top: var(--wiki-search-height, 0px);
-}
-
-/* Gestalt .menuTitle + .mp-menu h2: title in --titleColour, light weight,
-   2px bottom border. Sticky so it always sits beside the fixed burger, pinned
-   just under the search box via --wiki-search-height. */
-.wiki-nav-title {
-  position: sticky;
-  top: var(--wiki-search-height, 0px);
-  z-index: 2;
-  padding: 8px 10px 8px var(--horizontalPadding);
-  border-bottom: var(--borderWidth) solid var(--primaryOutlineColour);
-  background: var(--primaryDarkColour);
-  color: var(--titleColour);
-  font-weight: 300;
-  font-size: var(--fontSizeTitle);
-}
-
-.wiki-nav,
-.wiki-nav-items {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Gestalt .multiaccordion > li / .mp-menu ul li.folder */
-.wiki-nav-section > details > summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  min-height: 40px;
-  padding: 6px 10px 6px 5px;
-  border-bottom: 1px solid var(--primaryOutlineColour);
-  background: var(--primaryDarkColour);
-  color: var(--fontColour);
-  font-size: var(--fontSizeSmall);
-  cursor: pointer;
-  list-style: none;
-}
-
-.wiki-nav-section > details > summary::-webkit-details-marker {
-  display: none;
-}
-
-/* The expander has no icon: an open section is shown by its bold title and the
-   list revealed underneath it. */
-.wiki-nav-section > details > summary:hover {
-  color: var(--successColour);
-}
-
-/* An expanded section must not look like the selected page. */
-.wiki-nav-section.active > details > summary {
-  font-weight: bold;
-}
-
-/* Deeper levels are progressively dimmer so the branch you are in reads as a
-   trail. The family (depth 0) stays brightest. */
-.wiki-nav-depth-1 > details > summary {
-  padding-left: 8px;
-  opacity: 1;
-}
-
-.wiki-nav-depth-2 > details > summary {
-  padding-left: 14px;
-  opacity: 0.92;
-}
-
-.wiki-nav-depth-3 > details > summary {
-  padding-left: 20px;
-  opacity: 0.84;
-}
-
-/* Gestalt ul.subFolderMenu: indent the children behind a 1px rule. */
-.wiki-nav-items {
-  margin-left: 8px;
-  border-left: 1px solid var(--titleColour);
-}
-
-/* Gestalt .mp-menu ul li.file: --primaryMidDarkColour row, 1px separator,
-   0.93em label, --successColour on hover. */
-.wiki-nav-items li {
-  border-bottom: 1px solid var(--primaryOutlineColour);
-}
-
-.wiki-nav-items a,
-.wiki-nav-items a:visited {
-  display: flex;
-  align-items: center;
-  min-height: 34px;
-  padding: 4px 10px 4px 5px;
-  background: var(--primaryMidDarkColour);
-  color: var(--fontColour);
-  font-size: var(--fontSizeSmall);
-  text-decoration: none;
-}
-
-.wiki-nav-items a:hover {
-  color: var(--successColour);
-}
-
-/* Selected leaf row: --primaryOutlineColour fill, bold, text stays --fontColour. */
-.wiki-nav-items a.wiki-nav-current,
-.wiki-nav-items a.wiki-nav-current:visited {
-  background: var(--primaryOutlineColour);
-  font-weight: bold;
-}
-
-/* The selected row is already highlighted, so hovering it must not turn it
-   green — it keeps its --primaryOutlineColour fill and --fontColour text. */
-.wiki-nav-items a.wiki-nav-current:hover {
-  color: var(--fontColour);
-}
+/* The contents rows themselves — section groups, page links, separators and
+   nested indentation — are all the library's `ipLeftMenu` and are not restyled
+   here (guide §0.2). The "On this page" sub-menu built by wiki.js uses the same
+   group / submenu / item markup, so it needs no rules of its own either. */
 
 /* Content column */
 .wiki-content {
@@ -371,7 +246,7 @@ body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
 
 /* ------------------------------------------------------- document content */
 
-/* Heading hierarchy follows guide §3.3 and the library text classes:
+/* Heading hierarchy follows guide Â§3.3 and the library text classes:
      h1 = .header --primaryDarkColour / --titleColour / --fontSizeHeader
      h2, h3 = .title --primaryMidDarkColour / --fontColour / --fontSizeTitle
 
@@ -446,7 +321,7 @@ body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
   margin: 4px 0 0;
 }
 
-/* Links follow the library affordance (guide §3.3 `clickable`): they inherit the
+/* Links follow the library affordance (guide Â§3.3 `clickable`): they inherit the
    text colour and turn --successColour on hover. The underline stays so links
    are still recognisable inside long documentation prose. */
 .wiki-article a,
@@ -461,7 +336,7 @@ body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
 
 /* Dividers use the library `.title` band (the converter emits
    `<div class="title wiki-divider">`), so only the size and spacing are added
-   here — the band colour comes from the class (guide §0.2). */
+   here â€” the band colour comes from the class (guide Â§0.2). */
 .wiki-article .wiki-divider {
   height: 6px;
   border-radius: var(--borderRadius);
@@ -520,7 +395,7 @@ body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
 }
 
 /* Footnote markers are informational, not a selected/positive state, so they
-   use --infoColour (muted) rather than --successColour (guide §4.1). */
+   use --infoColour (muted) rather than --successColour (guide Â§4.1). */
 .wiki-footnote {
   color: var(--infoColour);
   cursor: help;
@@ -572,88 +447,6 @@ body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
   background: var(--primaryOutlineColour);
 }
 
-/* "On this page" sub-menu, nested inside the current page's entry in the
-   contents panel. Same Gestalt disclosure language as the section rows, one
-   indent deeper and slightly smaller. */
-.wiki-page-toc {
-  /* Gestalt ul.subFolderMenu: indent the children behind a 1px rule, so the
-     sub-menu reads as nested under the selected page row. */
-  margin-left: 8px;
-  border-left: 1px solid var(--titleColour);
-}
-
-/* "On this page" is a collapsible row, so it follows the collapsible rule:
-   --primaryDarkColour background, --fontColour text, --successColour on hover. */
-.wiki-page-toc > summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  min-height: 30px;
-  padding: 4px 10px 4px 5px;
-  background: var(--primaryDarkColour);
-  color: var(--fontColour);
-  font-size: var(--fontSizeXSmall);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  list-style: none;
-}
-
-.wiki-page-toc > summary::-webkit-details-marker {
-  display: none;
-}
-
-.wiki-page-toc > summary:hover {
-  color: var(--successColour);
-}
-
-.wiki-page-toc-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.wiki-page-toc-list li {
-  overflow: hidden;
-}
-
-/* Leaf rows (headings): --primaryMidDarkColour background, --fontColour text,
-   --successColour on hover. */
-.wiki-page-toc-list a,
-.wiki-page-toc-list a:visited {
-  display: block;
-  padding: 4px 8px;
-  background: var(--primaryMidDarkColour);
-  color: var(--fontColour);
-  font-size: var(--fontSizeXSmall);
-  text-decoration: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.wiki-page-toc-list a:hover {
-  color: var(--successColour);
-}
-
-/* The heading in view follows the selected-leaf rule: --primaryOutlineColour
-   fill, bold, text stays --fontColour. */
-.wiki-page-toc-list li.active > a,
-.wiki-page-toc-list li.active > a:visited {
-  background: var(--primaryOutlineColour);
-  font-weight: bold;
-}
-
-.wiki-page-toc-list li.active > a:hover {
-  color: var(--fontColour);
-}
-
-.wiki-page-toc-sub {
-  padding-left: 12px;
-}
-
 /* Home page */
 .wiki-home {
   max-width: 900px;
@@ -661,10 +454,9 @@ body.wiki-nav-ready.wiki-nav-hidden .wiki-sidebar {
 
 /* ------------------------------------------------------------- responsive */
 
-@media (max-width: 900px) {
-  :root {
-    --wiki-sidebar-width: 240px;
-  }
+/* The contents menu is fully handled by the library at its own 768px breakpoint
+   (it becomes a full-screen overlay), so only the content column changes here. */
+@media (max-width: 767.98px) {
   .wiki-content {
     padding: 16px;
   }

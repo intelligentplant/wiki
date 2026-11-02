@@ -45,16 +45,11 @@
     </header>
 
     <div class="wiki-main flex-row grow-1">
-      <!-- Contents toggle. Like Gestalt's #trigger it lives outside the panel it
-           controls (component.css `.menu-trigger`, before `<nav id="mp-menu">`)
-           so it stays visible when the panel is hidden. -->
-      <button class="wiki-nav-toggle icon-ip-Burger" id="wikiNavToggle"
-              type="button" title="Toggle contents"
-              aria-controls="wikiNav" aria-expanded="true"></button>
-      <aside class="wiki-sidebar scrollbar" id="wikiNav" aria-label="Wiki contents">
-        {% include search.html %}
-        {% include nav.html %}
-      </aside>
+      <!-- Contents panel: the UI Library left text menu (guide §3.3 / §4.8).
+           The burger lives in the menu's own header and slides the panel shut
+           until only the burger is visible, so nothing else has to be placed
+           outside the panel. -->
+      {% include nav.html %}
 
       <main class="wiki-content scrollbar grow-1" id="main-content">
         {{ content }}
