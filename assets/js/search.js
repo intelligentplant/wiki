@@ -40,6 +40,7 @@
   function score(entry, terms) {
     var title = entry.t.toLowerCase();
     var excerpt = (entry.e || '').toLowerCase();
+    var body = (entry.x || '').toLowerCase();
     var total = 0;
     for (var i = 0; i < terms.length; i++) {
       var term = terms[i];
@@ -48,11 +49,32 @@
       for (var h = 0; h < entry.h.length; h++) {
         if (entry.h[h].t.toLowerCase().indexOf(term) !== -1) { best = Math.max(best, 3); break; }
       }
-      if (!best && excerpt.indexOf(term) !== -1) best = 1;
+      if (!best && excerpt.indexOf(term) !== -1) best = 2;
+      // Page text is the weakest signal: it matches far more often than a title
+      // or heading does, so it must not outrank them.
+      if (!best && body.indexOf(term) !== -1) best = 1;
       if (!best) return 0; // every term must appear somewhere
       total += best;
     }
     return total;
+  }
+
+  // A short window of page text around the first term that appears in it, so a
+  // body match shows the visitor why the page was found.
+  function snippet(entry, terms) {
+    var body = entry.x || '';
+    var lower = body.toLowerCase();
+    var at = -1;
+    for (var i = 0; i < terms.length; i++) {
+      at = lower.indexOf(terms[i]);
+      if (at !== -1) break;
+    }
+    if (at === -1) return '';
+    var from = Math.max(0, at - 40);
+    var to = Math.min(body.length, at + 120);
+    return (from > 0 ? '…' : '') +
+      body.slice(from, to).trim() +
+      (to < body.length ? '…' : '');
   }
 
   function render(query, hits) {
@@ -73,6 +95,12 @@
           sub.className = 'wiki-search-heading';
           sub.textContent = hit.heading;
           a.appendChild(sub);
+        }
+        if (hit.snippet) {
+          var ctx = document.createElement('div');
+          ctx.className = 'wiki-search-snippet';
+          ctx.textContent = hit.snippet;
+          a.appendChild(ctx);
         }
         li.appendChild(a);
         list.appendChild(li);
@@ -120,9 +148,16 @@
           }
           if (heading) break;
         }
+        var inTitle = false;
+        for (var i = 0; i < terms.length; i++) {
+          if (e.t.toLowerCase().indexOf(terms[i]) !== -1) { inTitle = true; break; }
+        }
         return {
           title: e.t,
           heading: heading,
+          // Show the page-text snippet only when neither the title nor a heading
+          // matched — otherwise that text already explains the hit.
+          snippet: heading || inTitle ? '' : snippet(e, terms),
           url: SITE_ROOT + e.u.replace(/^\//, '') + (heading ? '#' + slug(heading) : ''),
         };
       });

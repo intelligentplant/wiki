@@ -508,7 +508,40 @@ function convertPage(raw, page) {
 
   // 7. horizontal rules — the library `.title` band is the divider style, so the
   // rule is a `<div class="title">` rather than a bare <hr>.
-  lines = lines.map((l) => (/^\s*-{4,}\s*$/.test(l) ? '<div class="title wiki-divider" aria-hidden="true"></div>' : l));
+  //
+  // A divider directly above a heading is dropped: h2/h3 already render a full-width
+  // colour band, so the extra rule is just a duplicate stripe. Dividers before body
+  // text are kept.
+  //
+  // A blank line is kept after any divider that survives: without it, CommonMark
+  // treats the following lines as part of the open HTML block, so a `###` heading
+  // right after a divider renders as literal text.
+  const DIVIDER = '<div class="title wiki-divider" aria-hidden="true"></div>';
+  lines = lines.map((l) => (/^\s*-{4,}\s*$/.test(l) ? DIVIDER : l));
+  {
+    const kept = [];
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i] === DIVIDER) {
+        let j = i + 1;
+        while (j < lines.length && lines[j].trim() === '') j++;
+        if (j < lines.length && /^\s*#{1,6}\s/.test(lines[j])) continue;
+      }
+      kept.push(lines[i]);
+    }
+    lines = kept;
+  }
+  {
+    const fixed = [];
+    for (let i = 0; i < lines.length; i++) {
+      fixed.push(lines[i]);
+      const next = lines[i + 1] || '';
+      if (/^\s*<(div|details|summary|table|figure|img|p|br)\b/i.test(lines[i]) &&
+        /^\s*(#{1,6}\s|[-*]\s|\d+\.\s)/.test(next) && lines[i].trim() !== '') {
+        fixed.push('');
+      }
+    }
+    lines = fixed;
+  }
 
   // 8. lists: DokuWiki indents 2 spaces per level; bullets and numbers alternate
   // In DokuWiki `*` is an unordered item and `-` an ordered one; two spaces per level.

@@ -125,6 +125,7 @@ Under Action, click "Configure Data Source Settings"
 And at the bottom you will see the Machine ID for your system.
 
 <img src="/wiki/assets/media/app_store_connect/data_core_-_machine_id.png" alt="data_core_-_machine_id" style="max-width:800px" loading="lazy" />
+
 ### IPHist - IPHist replication
 
 Connections can be setup in datacore to provide reslient transfer of historical data between IPHist instances. this means that a loss in connectivity will not result in a permanent loss of data on the remote IPHist to the datasource. that data will be back filled, and consistent.

@@ -8,14 +8,10 @@ Azimuth helps ensure:
   *reliability
   *downtime tracking (planned/unplanned)
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### Prerequisites
 
 - <strong>Alarm Analysis</strong> (<em>type</em>) data source. Source data source, will be used to define equipment events. Azimuth will use these event definitions to monitor equipment.
 - <strong>Edge Historian</strong> data source. Target data source, Azimuth will use this datasource to store analysis results.
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Getting started
 
@@ -25,8 +21,6 @@ Azimuth uses asset and equipment hierarchical structure. One or more pieces of e
 
 1. Adding an asset (subscription)
 1. Adding equipment
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Known issues
 - Creating a piece of equipment with a duplicate name on the same target datasource will cause to override previous equipment totaliser tag data.

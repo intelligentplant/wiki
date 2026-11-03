@@ -259,6 +259,7 @@ Release date: 2025-06-27
 
 - <strong>Bulk Export</strong> - Added the ability to export files and folders via the left side panel context menu.
 <img src="/wiki/assets/media/general/apps/gestalttrend/screenshot_2024-07-24_102014.png" alt="screenshot_2024-07-24_102014" style="max-width:200px" loading="lazy" />
+
 ##### Modifications and Improvements
 - Modified the rendering of trends to skip any values that have a bad status.
 - Modified the value label to hide the unit of measure if the tag is a digital state tag.
@@ -286,6 +287,7 @@ Release date: 2025-06-27
 
 - <strong>Bulk File Delete:</strong> Added the ability to select multiple files in the left hand menu and delete them as one instead of deleting them individually.
 <img src="/wiki/assets/media/general/apps/gestalttrend/bulk-delete-trend.gif" alt="bulk-delete-trend" style="max-width:200px" loading="lazy" />
+
 ##### Modifications and Improvements
 
 - Modified data source select to group data sources under the App Store Connect they belong to.
@@ -362,6 +364,7 @@ Release date: 2025-06-27
 - <strong>New File Menu -</strong> Modified the file menu to work as an expandable tree to ease navigation between folders and make it more user-friendly.
 - <strong>New File Context Menu -</strong> Added a context menu to the file menu to make it simpler and easier to perform actions against specific files and folders and make the UI cleaner. You can right-click any file/folder to open it.
 <img src="/wiki/assets/media/general/apps/gestalttrend/contextmenu-trend.gif" alt="contextmenu-trend" style="max-width:400px" loading="lazy" />
+
 ##### Modifications and Improvements
 
 - Added a select all tags button in the Trend Tag Manager.
@@ -462,6 +465,7 @@ Release date: 2025-06-27
 - <strong>Limits Range:</strong> Added option to display the tag limits as range between the limits.
 
 <img src="/wiki/assets/media/general/apps/gestalttrend/trend_-_range_limits.gif" alt="trend_-_range_limits" style="max-width:200px" loading="lazy" />
+
 ##### Modifications and Fixes
 - Added shortcut (ctrl + z) for restoring the previous query.
 - Added expresion evaluator buttong to the tag search window.

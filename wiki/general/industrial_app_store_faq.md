@@ -12,15 +12,12 @@ The Industrial App Store is an online marketplace for industrial applications. I
 <em><strong>More Info</strong></em>
 - [https://appstore.intelligentplant.com](https://appstore.intelligentplant.com)
 
-<div class="title wiki-divider" aria-hidden="true"></div>
 ### What is App Store Connect?
 
 App Store Connect is Intelligent Plant's data-routing and data-access software. It is installed to a customer network and enables connectivity between customer data sources and cloud based applications available on the Industrial App Store.
 
 <em><strong>More Info</strong></em>
 - [App Store Connect on the Industrial App Store](https://appstore.intelligentplant.com/Home/AppProfile?appId=a73c453df5f447a6aa8a08d2019037a5)
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### How does App Store Connect work?
 
@@ -30,38 +27,27 @@ Once set-up, it acts as a data conduit routing queries from Industrial App Store
 
 - [App Store Connect Explanation Video](https://youtu.be/84X7k1sS_tU)
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### What historians does App Store Connect support?
 
 [Supported Data Sources](/wiki/data_core/data_sources.html)
 
-<div class="title wiki-divider" aria-hidden="true"></div>
 ### Is App Store Connect safe?
 
 App Store Connect has already been approved for use by a number of blue chip clients and we're ready to work with your Digital Security Team.
 
 For starters, here's an overview of our [Digital Security Key Features](https://appstore.intelligentplant.com/nuget/downloads/IAS-Digital%20Security-Key%20Features.pdf).
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### Where is data stored?
 
 Client data remains on client infrastructure. App Store Connect is not a data transfer tool, it is a connection tool.
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Have you a privacy policy?
 
 Yes, read it [here](https://appstore.intelligentplant.com/Content/assets/legal/IAS-PrivacyPolicy.html).
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### I'm new to the App Store, where do I start?
 
 Take a [look around](https://appstore.intelligentplant.com). Click on the app cards for more information and video links. Get in touch with us for more information.
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### How do I connect an historian to the Industrial App Store?
 
@@ -71,8 +57,6 @@ App Store Connect ships with connectors for most Industrial Data Historians. The
 1. Configure Real Time Data Source
 
 More information is available on: [How to Connect your data to the App Store](/wiki/data_core/how_to_connect_your_data_to_the_app_store.html).
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Can I use the Industrial App Store to collaborate with colleagues in other companies?
 
@@ -84,12 +68,9 @@ With this in mind, we designed data collaboration at the heart of the Industrial
 
 For more information, see [Inter-organization Trust Management](/wiki/general/organization_user_and_data_management/trust_management.html).
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### How can I find out if my organization is using the Industrial App Store?
 
 Contact <support@intelligentplant.com> and we'll you know.
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Do I need to install App Store Connect?
 
@@ -97,25 +78,17 @@ You only need to install App Store Connect if you want to connect data to applic
 
 If you do not know who your App Store Connect administrator is, contact <support@intelligentplant.com>.
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### How do Microsoft Power Tools (Power BI, Flow Automate, Power Apps) integrate with the Industrial App Store?
 
 In March 2019 Microsoft announced that Power BI Desktop would ship with [Intelligent Plant’s Industrial App Store connector](https://powerbi.microsoft.com/en-us/blog/power-bi-desktop-march-2019-feature-summary/#IntelligentPlantsIndustrialAppStore). This means you can now connect your Industrial Data Historians directly Power BI reports (no need to export to excel or SQL first).
 
 Connectors for Microsoft Power Apps and Automate soon followed.
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### How does the Industrial App Store fit with the Industrial Internet of Things (IIOT)?
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### My country/company has strict data protection laws. Can I still use the Industrial App Store?
 
 App Store Connect can be a good solution where data protection laws prohibit the migration of data across borders. App Store Connect enables access to existing data sources rather than moving data to alternative repositories in other countries.
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### How do you protect passwords and other authentication related information ?
 
@@ -123,8 +96,6 @@ We don't store user passwords. We advise organizations that use Microsoft Entra 
 
 <em><strong>More Info</strong></em>
 - [How to register an organization with the App Store](/wiki/general/registering_an_organziation_with_the_app_store.html)
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Do you support multi-factor authentication?
 
@@ -134,19 +105,18 @@ Yes. If you register your organization with the Industrial App Store, your Domai
 - [How to register an organization with the App Store](/wiki/general/registering_an_organziation_with_the_app_store.html)
 - [What authentication and verification methods are available in Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods)
 
-<div class="title wiki-divider" aria-hidden="true"></div>
 ### How do you protect transmitted data?
 
 All internet communication is encrypted via HTTPS.
 
-<div class="title wiki-divider" aria-hidden="true"></div>
 ### Do you perform security audits?
 
 Intelligent Plant (who manage the Industrial App Store) are [ISO 9001](https://en.wikipedia.org/wiki/ISO_9000) and [ISO/IEC 27001](https://en.wikipedia.org/wiki/ISO/IEC_27001) accredited.
 
-![iso-27001-2013-badge-grey](/wiki/assets/media/general/iso-27001-2013-badge-grey.png)
-
-<div class="title wiki-divider" aria-hidden="true"></div>
+<div class="wiki-image-row">
+<img src="/wiki/assets/media/general/27001-RGB-White.jpg" alt="ISO/IEC 27001 accreditation badge">
+<img src="/wiki/assets/media/general/9001-RGB-White.jpg" alt="ISO 9001 accreditation badge">
+</div>
 
 ### Will upgrading Windows OS impact Intelligent Plant software?
 

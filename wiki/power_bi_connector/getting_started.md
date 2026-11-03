@@ -13,15 +13,11 @@ Historian data does not come in the tabular format that Power BI desires. Our co
 
 Users commonly use our Industrial Connector to import process data. However, you can also import Alarm & Event data, along with.[calculated alarm KPIs](https://github.com/intelligentplant/IAS-Power-BI-connector#using-alarm--event-meta-tags-alarm_clock)
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### Getting the Industrial Connector
 
 Intelligent Plant's Industrial Connector for Power BI is Microsoft Certified and distributed with Power BI Desktop as of the [(May 2019)](https://powerbi.microsoft.com/en-us/blog/tag/intelligent-plants-industrial-app-store/) update.
 
 <img src="/wiki/assets/media/power_bi_connector/power-bi-solution-overview-approach.png" alt="Solution Overview/Approach" style="max-width:750px" loading="lazy" />
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### How to Access the Industrial Connector and Connect to your data
 
@@ -43,15 +39,11 @@ Before going through the steps, please make sure you have Power BI Desktop insta
 
 <img src="/wiki/assets/media/power_bi_connector/navigator-plot.png" alt="Connect to your data" style="max-width:600px" loading="lazy" />
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### Video Walkthrough
 
 For more information, you can check our [Industrial Connector YouTube walkthrough](https://youtu.be/b0c59MeByRU?si=ikmEQ7iJ5Q1s5d1s).
 
 Feel free to [get in touch with us](https://www.intelligentplant.com/contact.html) if you need assistance setting up the connector or if you have any questions.
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Licensing
 
@@ -65,8 +57,6 @@ Customers need to purchase a subscription in order to retrieve data using the In
 
 - And of course, a full license will just display the data as is:
 <img src="/wiki/assets/media/power_bi_connector/licensed_request_-_full.png" alt="Licensed request - full" style="max-width:600px" loading="lazy" />
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### How do I fill out the "Get" queries?
 
@@ -147,8 +137,6 @@ Customers need to purchase a subscription in order to retrieve data using the In
 <tr><td>Tag Value Field</td><td>false</td><td>option</td><td>Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g. OFF, representation than a numerical value, e.g. 0.</td><td>Numeric</td><td></td></tr>
 </tbody>
 </table>
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Setting background data refresh
 

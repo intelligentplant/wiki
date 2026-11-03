@@ -24,8 +24,6 @@ Below is our policy for managing uptime.
 
 - <strong>App Store Connects</strong> <br /> App Store Connect updates are distributed via NuGet package feeds. Although we prepare package feed updates for last Friday of every month, you can control <em>if</em> and <em>when</em> to collect them. For more detail, refer to [App Store Connect Updates](/wiki/data_core/app_store_connect_updates.html).
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### Maintenance Calendar
 
 <strong>Fri 30 Oct 2026, 10:00 - 12:00 GMT</strong>
@@ -36,8 +34,6 @@ Below is our policy for managing uptime.
 - [App Store Connect](/wiki/general/apps/appstoreconnect/releasenotes.html)
 
 Apps may be unavailable for up to 15 mins during maintenance window.
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Release Notes
 

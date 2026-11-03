@@ -31,15 +31,11 @@ Data is stored in monthly indices determined by the A&E event date. The index na
 
 - [Company].[Asset].msg_YYYYMM <br /> e.g. oilco.osprey.msg_201908
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### The case for keeping unprocessed data
 
 Once data has been processed, it <em>could</em> be removed from the collection store. However, this would prevent  re-processing of historic data. This can be pertinent in the early days of configuring an Alarm Analysis Import Flow, where rules are often revised.
 
 Only remove unprocessed data if satisfied historic re-processing of historic is not a requirement.
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Configuring a Data Retention Policy
 
@@ -67,8 +63,6 @@ The following settings are available:
 <tr><td>Retention Period</td><td>Specify data retention period in months. <br /> <br /> Do not modify when Data Retention is enabled. <br /> <br /></td><td>6</td></tr>
 </tbody>
 </table>
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Schedule
 

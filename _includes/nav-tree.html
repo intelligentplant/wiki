@@ -12,20 +12,23 @@
   include, so nothing here may use `assign`.
 
   Rows carry only their label: the library supplies the separators, the
-  indentation and the tree lines, and §4.8 forbids icons in the rows.
+  indentation and the tree lines, and §4.8 forbids icons in the rows. Each label
+  also carries its full text as a `title`, because the library truncates long
+  labels with an ellipsis (`.ipLeftMenu.label` is `nowrap` + `text-overflow`).
 {%- endcomment -%}
 <li>
   <button type="button"
           class="ipLeftMenu group{% if include.node.hrefs contains page.url %} open{% endif %}"
           aria-expanded="{% if include.node.hrefs contains page.url %}true{% else %}false{% endif %}">
-    <span class="ipLeftMenu label">{{ include.node.title }}</span>
+    <span class="ipLeftMenu label" title="{{ include.node.title | strip_html }}">{{ include.node.title }}</span>
   </button>
   <ul class="ipLeftMenu submenu">
     {%- for item in include.node.items -%}
       {%- if item.href == page.url -%}
         <li>
           <a class="ipLeftMenu item selected" aria-current="page"
-             href="{{ item.href | relative_url }}"{% if item.app %} title="{{ item.app }} release notes"{% endif %}><span class="ipLeftMenu label">{{ item.title }}</span></a>
+             href="{{ item.href | relative_url }}"
+             title="{% if item.app %}{{ item.app }} release notes{% else %}{{ item.title }}{% endif %}"><span class="ipLeftMenu label">{{ item.title }}</span></a>
         </li>
         <!-- Filled by assets/js/wiki.js with the "On this page" sub-menu built
              from the article headings. Its own <li> so that it can be a normal
@@ -34,7 +37,8 @@
       {%- else -%}
         <li>
           <a class="ipLeftMenu item"
-             href="{{ item.href | relative_url }}"{% if item.app %} title="{{ item.app }} release notes"{% endif %}><span class="ipLeftMenu label">{{ item.title }}</span></a>
+             href="{{ item.href | relative_url }}"
+             title="{% if item.app %}{{ item.app }} release notes{% else %}{{ item.title }}{% endif %}"><span class="ipLeftMenu label">{{ item.title }}</span></a>
         </li>
       {%- endif -%}
     {%- endfor -%}

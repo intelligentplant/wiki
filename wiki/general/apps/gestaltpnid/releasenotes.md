@@ -48,6 +48,7 @@ Release date: 2026-10-30 <br />
 - Updated script functions to include dashboard properties.
 - Added "margin" as a property available to update by the user.
 <img src="/wiki/assets/media/general/apps/gestaltpnid/marginpnid.gif" alt="marginpnid" style="max-width:600px" loading="lazy" />
+
 #### 2025-11-Minor
 
 - Fixed redirection to Home page if a new user goes directly to /Trend or /PnID urls.
@@ -236,6 +237,7 @@ Release date: 2025-06-27
 - <img src="/wiki/assets/media/general/apps/gestaltpnid/file_info.gif" alt="file_info" style="max-width:200px" loading="lazy" />
 - <strong>Bulk Export</strong> - Added the ability to export files and folders in bulk via the left side panel context menu.
 <img src="/wiki/assets/media/general/apps/gestaltpnid/screenshot_2024-07-24_102014.png" alt="screenshot_2024-07-24_102014" style="max-width:200px" loading="lazy" />
+
 ##### Modifications and Improvements
 - Updated the Genie and Symbol libraries with new Genies and Symbols.
 - Increased the size of the hit area for the multiple selection checkbox.
