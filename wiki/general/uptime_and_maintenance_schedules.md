@@ -26,11 +26,10 @@ Below is our policy for managing uptime.
 
 ### Maintenance Calendar
 
-<strong>Fri 30 Oct 2026, 10:00 - 12:00 GMT</strong>
+<strong>Fri 27 Nov 2026, 10:00 - 12:00 GMT</strong>
 
 - [Gestalt Trend](/wiki/general/apps/gestalttrend/releasenotes.html)
 - [Gestalt PnID](/wiki/general/apps/gestaltpnid/releasenotes.html)
-- [Controller Consultant](/wiki/general/apps/controllerconsultant/releasenotes.html)
 - [App Store Connect](/wiki/general/apps/appstoreconnect/releasenotes.html)
 
 Apps may be unavailable for up to 15 mins during maintenance window.
