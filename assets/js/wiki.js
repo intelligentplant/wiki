@@ -136,12 +136,14 @@
   }
 
   // One `ipLeftMenu` row: a group button or a link, always just a label
-  // (guide §4.8 — no icons and no arrows in the rows).
+  // (guide §4.8 — no icons and no arrows in the rows). The `title` carries the
+  // whole text, because the library truncates long labels with an ellipsis.
   function menuRow(className, text, href) {
     const row = document.createElement(href ? 'a' : 'button');
     if (href) row.href = href;
     else row.type = 'button';
     row.className = 'ipLeftMenu ' + className;
+    row.title = text;
     const label = document.createElement('span');
     label.className = 'ipLeftMenu label';
     label.textContent = text;
@@ -203,20 +205,52 @@
     trackActiveHeading(list, outline);
   }
 
-  // Highlight the sub-menu entry for the heading currently in view.
+  // Highlight the sub-menu entry for the heading currently being read.
   function trackActiveHeading(list, headings) {
     const items = Array.from(list.querySelectorAll('a.ipLeftMenu.item'));
     if (!items.length) return;
+    // The article scrolls inside `.wiki-content`, not the window, so that is the
+    // scroll host whose geometry matters.
     const root = document.querySelector('.wiki-content') || window;
-    const offset = 100;
+    const isElement = root !== window;
+    // A heading counts as "reached" once it passes this far below the top of the
+    // scroll area, which keeps the highlight on a heading while you read it.
+    const OFFSET = 100;
+
+    const topOf = (el) => el.getBoundingClientRect().top;
+
+    function currentHeading() {
+      const viewTop = isElement ? topOf(root) : 0;
+      const viewBottom = viewTop + (isElement ? root.clientHeight : window.innerHeight);
+      const line = viewTop + OFFSET;
+      const max = isElement
+        ? root.scrollHeight - root.clientHeight
+        : document.documentElement.scrollHeight - window.innerHeight;
+      const pos = isElement ? root.scrollTop : window.scrollY;
+
+      // The last headings of a page can sit in the final screenful and never
+      // rise above the line, so the plain rule would freeze the highlight on an
+      // earlier one. Once the scroll is at the end, take the last heading that
+      // has come into view instead.
+      //
+      // Only when there is something to scroll: on a short page that fits on one
+      // screen every heading is in view, and this rule would mark the last one
+      // while the reader is still at the top. The plain rule below is correct there.
+      if (max > 0 && pos >= max - 2) {
+        let last = null;
+        headings.forEach((h) => { if (topOf(h) < viewBottom) last = h; });
+        return last || headings[headings.length - 1];
+      }
+
+      let current = headings[0];
+      headings.forEach((h) => { if (topOf(h) <= line) current = h; });
+      return current;
+    }
+
     let frame = 0;
     const update = () => {
       frame = 0;
-      const top = root.getBoundingClientRect ? root.getBoundingClientRect().top + offset : offset;
-      let current = headings[0];
-      headings.forEach((h) => {
-        if (h.getBoundingClientRect().top <= top) current = h;
-      });
+      const current = currentHeading();
       items.forEach((a) => {
         const active = a.hash === '#' + current.id;
         a.classList.toggle('selected', active);
@@ -227,7 +261,7 @@
     const onScroll = () => {
       if (!frame) frame = window.requestAnimationFrame(update);
     };
-    (root.addEventListener ? root : window).addEventListener('scroll', onScroll, { passive: true });
+    root.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     update();
   }

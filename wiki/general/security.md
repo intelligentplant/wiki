@@ -21,8 +21,6 @@ Note the padlock and "https" prefix in our web address.
 
 Encryption does not prevent message interception, but it does mean the information content is secure.
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### Logging in to the App Store and User Authentication
 
 `Is a user who they claim to be?`
@@ -41,8 +39,6 @@ This is managed via Microsoft Entra ID:
 //
 
 [Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/fundamentals/whatis)
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### Application Security
 
