@@ -7,8 +7,6 @@ Hydraulic Usage monitors subsea hydraulic control systems by calculating and rec
 
 [Try out the Hydraulic Usage app on the Industrial App Store](https://appstore.intelligentplant.com/Home/AppProfile?appId=6e7f863503fe4984aca1d55006b9709e)
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ### Page Descriptions
 
 #### Hydraulic Usage Overview Page
@@ -49,8 +47,6 @@ Finally, Time Between Runs shows the On to On time for the pumps. In the above f
 #### Valve Movement
 
 The Valve Movement calculation uses valve status tags which show when the valves are moving, along with valve swept volume to determine fluid usage. This is the most accurate of the three calculations as valve actuation will require specific amounts of hydraulic fluid to operate, thus less noise is associated with this method.
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ### How to configure an asset
 

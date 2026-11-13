@@ -508,7 +508,31 @@ function convertPage(raw, page) {
 
   // 7. horizontal rules — the library `.title` band is the divider style, so the
   // rule is a `<div class="title">` rather than a bare <hr>.
-  lines = lines.map((l) => (/^\s*-{4,}\s*$/.test(l) ? '<div class="title wiki-divider" aria-hidden="true"></div>' : l));
+  //
+  // A divider directly above an h2 or h3 is dropped: those two levels already render
+  // a full-width colour band (see assets/css/wiki.css), so the extra rule is just a
+  // duplicate stripe. h4-h6 are plain bold text, so a divider above one is the only
+  // thing marking the section break and has to stay. Dividers before body text are
+  // kept for the same reason.
+  const DIVIDER = '<div class="title wiki-divider" aria-hidden="true"></div>';
+  lines = lines.map((l) => (/^\s*-{4,}\s*$/.test(l) ? DIVIDER : l));
+  {
+    const kept = [];
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i] === DIVIDER) {
+        let j = i + 1;
+        while (j < lines.length && lines[j].trim() === '') j++;
+        if (j < lines.length && /^\s*#{2,3}\s/.test(lines[j])) continue;
+        // A divider is a complete empty element, so whatever follows it must start a
+        // new block: without the blank line CommonMark folds the next line into the
+        // open HTML block and a heading renders as literal text.
+        kept.push('');
+      } else {
+        kept.push(lines[i]);
+      }
+    }
+    lines = kept;
+  }
 
   // 8. lists: DokuWiki indents 2 spaces per level; bullets and numbers alternate
   // In DokuWiki `*` is an unordered item and `-` an ordered one; two spaces per level.
@@ -529,6 +553,38 @@ function convertPage(raw, page) {
   lines = lines.map((l) =>
     l.includes('\u0000CODE') || l.includes('\u0000TABLE') ? l : convertInline(l, ns, state)
   );
+
+  // 10b. keep a blank line between a standalone HTML line and whatever follows it.
+  //
+  // This has to run *after* step 10: media and emphasis only become `<img>` /
+  // `<strong>` tags there, so checking for HTML tags earlier would never see them.
+  // It also has to run before the code fences and tables are restored, so that HTML
+  // inside a code sample is left alone.
+  //
+  // Without the blank line, CommonMark keeps the following lines inside the open
+  // HTML block: a `#####` heading then renders as literal text, and prose after a
+  // block-level tag loses its own paragraph so its links and bold markup stay raw.
+  // Inline tags (`<strong>`, `<code>`, `<br />`) mixed with text are deliberately
+  // left alone — there the run-on is the intent.
+  {
+    const BLOCK_TAG = /^(?:div|table|figure|figcaption|details|summary|p|hr|br|center|blockquote|ul|ol|pre|iframe|video|h[1-6])$/i;
+    const OPEN_TAG = /^<(\/?)([a-zA-Z][a-zA-Z0-9-]*)/;
+    // A line made only of tags, e.g. `<img ... />`, `<br />` or `</div>`. CommonMark
+    // treats such a line as an HTML block regardless of the tag name.
+    const ONLY_TAGS = /^\s*(?:<\/?[a-zA-Z][a-zA-Z0-9-]*(?:\s[^<>]*)?\/?>\s*)+$/;
+    const fixed = [];
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      fixed.push(line);
+      if (line.trim() === '' || !/^\s*</.test(line)) continue;
+      const tag = (line.match(OPEN_TAG) || [])[2];
+      if (!tag) continue;
+      const next = lines[i + 1] || '';
+      if (next.trim() === '' || /^\s*</.test(next)) continue;
+      if (ONLY_TAGS.test(line) || BLOCK_TAG.test(tag)) fixed.push('');
+    }
+    lines = fixed;
+  }
 
   text = lines.join('\n');
 

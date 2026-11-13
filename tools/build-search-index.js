@@ -8,9 +8,11 @@
  * generated markdown and writes a static JSON file that assets/js/search.js
  * fetches once and filters in the browser.
  *
- * The index deliberately holds titles, headings and a short excerpt rather than
- * full page text: the corpus is ~670 KB of markdown, which would be a heavy
- * download for a sidebar search box.
+ * The index holds titles, headings, a short excerpt and the page text, capped
+ * per page so the download stays reasonable: the corpus is ~670 KB of markdown,
+ * far too much for a sidebar search box, while a 4000-character body per page is
+ * ~300 KB raw / ~95 KB gzipped and covers 144 of the 172 pages in full. The file
+ * is fetched lazily, only once the visitor actually types something.
  */
 
 const fs = require('fs');
@@ -20,6 +22,9 @@ const repoRoot = process.argv[2] || path.resolve(__dirname, '..');
 const wikiDir = path.join(repoRoot, 'wiki');
 const outPath = path.join(repoRoot, 'assets', 'js', 'search-index.json');
 const EXCERPT_LENGTH = 160;
+// Most body text kept per page for full-text matching. Chosen so the index stays
+// under ~100 KB gzipped while covering the whole text of most pages.
+const BODY_LENGTH = 4000;
 
 function walk(dir, base = dir, out = []) {
   if (!fs.existsSync(dir)) return out;
@@ -62,6 +67,8 @@ function plain(text) {
     .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
     .replace(/\[\[([^\]|]*\|)?([^\]]+)\]\]/g, '$2')
     .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    // ATX heading markers, so "### Safety" indexes as "Safety".
+    .replace(/^#{1,6}[ \t]+/gm, '')
     .replace(/[*_`>]+/g, '')
     .replace(/\s+/g, ' ')
     .trim();
@@ -90,11 +97,15 @@ function buildEntry(file) {
   }
   if (excerpt.length > EXCERPT_LENGTH) excerpt = excerpt.slice(0, EXCERPT_LENGTH).trimEnd() + '…';
 
+  // Whole-page text for full-text matching, capped so the index stays small.
+  const bodyText = plain(body);
+
   return {
     u: fm.permalink,
     t: plain(fm.title || ''),
     h: headings,
     e: excerpt,
+    x: bodyText.length > BODY_LENGTH ? bodyText.slice(0, BODY_LENGTH) : bodyText,
   };
 }
 
@@ -104,8 +115,10 @@ function main() {
   entries.sort((a, b) => a.u.localeCompare(b.u));
   const json = JSON.stringify(entries) + '\n';
   fs.writeFileSync(outPath, json);
+  const full = entries.filter((e) => e.x.length < BODY_LENGTH).length;
   console.log(`pages:  ${entries.length}`);
   console.log(`headings: ${entries.reduce((n, e) => n + e.h.length, 0)}`);
+  console.log(`body:   ${full}/${entries.length} pages indexed in full (cap ${BODY_LENGTH} chars)`);
   console.log(`size:   ${(json.length / 1024).toFixed(1)} KB -> ${path.relative(repoRoot, outPath)}`);
 }
 

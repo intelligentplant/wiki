@@ -6,8 +6,10 @@
   and that page is marked selected.
 
   The burger is the menu's own toggle and the only icon allowed in the panel: it
-  slides the panel shut until only the burger is left, and the content moves
-  across to take the space. assets/js/wiki.js wires it and remembers the choice.
+  slides the panel shut until only the burger is left. The article keeps its
+  width and slides across to stay centred (see the `.closed + .wiki-content` rule
+  in assets/css/wiki.css), so the text never re-wraps. assets/js/wiki.js wires the
+  toggle and remembers the choice.
 
   The search box sits under the sticky header, inside the panel, so it slides
   away with it. The "On this page" sub-menu for the selected page is filled in by

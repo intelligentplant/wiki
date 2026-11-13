@@ -25,8 +25,6 @@ The Industrial App Store is not
 
 Apps can include anything from websites, desktop programs, spreadsheets, services, models, etc… Apps can be built on any platform that supports secure communication with the App Store API.
 
-<div class="title wiki-divider" aria-hidden="true"></div>
-
 ## The App Store API
 
 The App Store %%API%% allows apps to:
@@ -46,8 +44,6 @@ More Info:
 - [App Authentication Example](/wiki/dev/app_authentication_example.html)
 - [App Store Example using Postman](/wiki/dev/app_store_example_with_postman.html)
 - [Data Requests](/wiki/dev/app_store_data_requests.html)
-
-<div class="title wiki-divider" aria-hidden="true"></div>
 
 ## Next Steps
 
