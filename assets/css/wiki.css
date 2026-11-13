@@ -250,6 +250,26 @@
   background: var(--primaryColour);
   padding: 20px 32px 64px;
   min-width: 0;
+  transition: margin-left 0.5s ease, margin-right 0.5s ease;
+}
+
+/*
+ * Collapsing the contents menu must not re-flow the article: a wider column
+ * would move every line break, which reads as the text jumping around. So when
+ * the menu is closed the article keeps exactly the width it has when the menu is
+ * open (14rem reserved), and the 11.5rem the menu gives up is split evenly
+ * left/right, which centres the article instead of widening it.
+ * Both margins animate with the same easing the menu uses for its width, so the
+ * column slides across instead of jumping. Below 768px the menu is a full-screen
+ * overlay and the library's own rules apply unchanged.
+ */
+@media (min-width: 768px) {
+  .wiki-main > .ipLeftMenu.wrapper.collapsible.closed + .wiki-content {
+    flex-grow: 0;
+    flex-basis: calc(100% - 14rem);
+    margin-left: 5.75rem; /* (14rem - 2.5rem) / 2 */
+    margin-right: 5.75rem;
+  }
 }
 
 .wiki-article {
@@ -531,5 +551,9 @@
   .wiki-article .wiki-divider,
   .wiki-article hr {
     margin-inline: -12px;
+    /* The bands pull themselves 12px back to the card edge, so they must pad by the
+       same 12px — not by --horizontalPadding — or their text would sit 3px further
+       in than the paragraphs. */
+    padding-inline: 12px;
   }
 }

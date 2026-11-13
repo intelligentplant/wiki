@@ -114,8 +114,8 @@ All internet communication is encrypted via HTTPS.
 Intelligent Plant (who manage the Industrial App Store) are [ISO 9001](https://en.wikipedia.org/wiki/ISO_9000) and [ISO/IEC 27001](https://en.wikipedia.org/wiki/ISO/IEC_27001) accredited.
 
 <div class="wiki-image-row">
-<img src="/wiki/assets/media/general/27001-RGB-White.jpg" alt="ISO/IEC 27001 accreditation badge">
-<img src="/wiki/assets/media/general/9001-RGB-White.jpg" alt="ISO 9001 accreditation badge">
+<img src="/wiki/assets/media/general/27001-RGB-White.jpg" alt="ISO/IEC 27001 accreditation badge" width="280" height="280" loading="lazy">
+<img src="/wiki/assets/media/general/9001-RGB-White.jpg" alt="ISO 9001 accreditation badge" width="280" height="280" loading="lazy">
 </div>
 
 ### Will upgrading Windows OS impact Intelligent Plant software?

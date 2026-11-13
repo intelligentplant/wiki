@@ -37,7 +37,7 @@ engine.registerFilter('relative_url', (u) => u);
 engine.registerFilter('strip_html', (s) => String(s).replace(/<[^>]*>/g, ''));
 engine.registerFilter('normalize_whitespace', (s) => String(s).replace(/\s+/g, ' ').trim());
 engine.registerFilter('truncate', (s, n) => (String(s).length > n ? String(s).slice(0, n) : String(s)));
-engine.registerFilter('escape', (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
+engine.registerFilter('escape', (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'));
 
 function readFrontMatter(text) {
   // A leading BOM (editors on Windows add one) would stop the `---` matching.

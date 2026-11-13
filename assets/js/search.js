@@ -1,8 +1,8 @@
 /* Sidebar search over the static index written by tools/build-search-index.js.
  *
- * The whole index (~58 KB) is fetched on first use and filtered in the browser,
- * which keeps GitHub Pages a plain static host. Matching is a simple
- * substring score: title beats heading beats excerpt.
+ * The whole index (~370 KB, compressed in transit) is fetched on first use and
+ * filtered in the browser, which keeps GitHub Pages a plain static host. Matching
+ * is a simple substring score: title beats heading beats excerpt beats page text.
  */
 (function () {
   'use strict';
@@ -26,33 +26,46 @@
   var pages = null;
   var loading = null;
 
+  // The index is ~370 KB of text and every keystroke would otherwise lower-case all
+  // of it again, which is what made typing stutter. So each searchable field is
+  // lower-cased once, when the index arrives, and kept beside the original. Keeping
+  // the pair together also means a snippet cut at an index found in the lower-cased
+  // text cannot drift: some characters (Turkish İ, for example) do not lower-case to
+  // a single character, so lower-casing the two copies separately could misalign them.
+  function prepare(list) {
+    list.forEach(function (entry) {
+      entry._t = (entry.t || '').toLowerCase();
+      entry._e = (entry.e || '').toLowerCase();
+      entry._x = (entry.x || '').toLowerCase();
+      entry._h = (entry.h || []).map(function (h) { return h.t.toLowerCase(); });
+    });
+    return list;
+  }
+
   function load() {
     if (pages) return Promise.resolve(pages);
     if (!loading) {
       loading = fetch(INDEX_URL)
         .then(function (r) { return r.ok ? r.json() : []; })
-        .then(function (data) { pages = data; return data; })
+        .then(function (data) { pages = prepare(data); return pages; })
         .catch(function () { pages = []; return []; });
     }
     return loading;
   }
 
   function score(entry, terms) {
-    var title = entry.t.toLowerCase();
-    var excerpt = (entry.e || '').toLowerCase();
-    var body = (entry.x || '').toLowerCase();
     var total = 0;
     for (var i = 0; i < terms.length; i++) {
       var term = terms[i];
       var best = 0;
-      if (title.indexOf(term) !== -1) best = 5;
-      for (var h = 0; h < entry.h.length; h++) {
-        if (entry.h[h].t.toLowerCase().indexOf(term) !== -1) { best = Math.max(best, 3); break; }
+      if (entry._t.indexOf(term) !== -1) best = 5;
+      for (var h = 0; h < entry._h.length; h++) {
+        if (entry._h[h].indexOf(term) !== -1) { best = Math.max(best, 3); break; }
       }
-      if (!best && excerpt.indexOf(term) !== -1) best = 2;
+      if (!best && entry._e.indexOf(term) !== -1) best = 2;
       // Page text is the weakest signal: it matches far more often than a title
       // or heading does, so it must not outrank them.
-      if (!best && body.indexOf(term) !== -1) best = 1;
+      if (!best && entry._x.indexOf(term) !== -1) best = 1;
       if (!best) return 0; // every term must appear somewhere
       total += best;
     }
@@ -60,16 +73,17 @@
   }
 
   // A short window of page text around the first term that appears in it, so a
-  // body match shows the visitor why the page was found.
+  // body match shows the visitor why the page was found. The position comes from
+  // the same lower-cased copy that was searched, and is applied to the original.
   function snippet(entry, terms) {
-    var body = entry.x || '';
-    var lower = body.toLowerCase();
+    var lower = entry._x;
     var at = -1;
     for (var i = 0; i < terms.length; i++) {
       at = lower.indexOf(terms[i]);
       if (at !== -1) break;
     }
     if (at === -1) return '';
+    var body = entry.x || '';
     var from = Math.max(0, at - 40);
     var to = Math.min(body.length, at + 120);
     return (from > 0 ? '…' : '') +
@@ -141,16 +155,15 @@
         var e = r.entry;
         // Link straight at a matching heading when one exists.
         var heading = null;
-        for (var h = 0; h < e.h.length; h++) {
-          var t = e.h[h].t.toLowerCase();
+        for (var h = 0; h < e._h.length; h++) {
           for (var i = 0; i < terms.length; i++) {
-            if (t.indexOf(terms[i]) !== -1) { heading = e.h[h].t; break; }
+            if (e._h[h].indexOf(terms[i]) !== -1) { heading = e.h[h].t; break; }
           }
           if (heading) break;
         }
         var inTitle = false;
         for (var i = 0; i < terms.length; i++) {
-          if (e.t.toLowerCase().indexOf(terms[i]) !== -1) { inTitle = true; break; }
+          if (e._t.indexOf(terms[i]) !== -1) { inTitle = true; break; }
         }
         return {
           title: e.t,

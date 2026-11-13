@@ -232,7 +232,11 @@
       // rise above the line, so the plain rule would freeze the highlight on an
       // earlier one. Once the scroll is at the end, take the last heading that
       // has come into view instead.
-      if (pos >= max - 2) {
+      //
+      // Only when there is something to scroll: on a short page that fits on one
+      // screen every heading is in view, and this rule would mark the last one
+      // while the reader is still at the top. The plain rule below is correct there.
+      if (max > 0 && pos >= max - 2) {
         let last = null;
         headings.forEach((h) => { if (topOf(h) < viewBottom) last = h; });
         return last || headings[headings.length - 1];
