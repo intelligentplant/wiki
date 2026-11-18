@@ -29,7 +29,7 @@ The "BigData.BackupUtility" is a simple console app for managing Elasticsearch s
 
 Whilst it has an interactive mode, it's main intention is to be invoked from Windows Task Scheduler.
 
-It is available for download from: [http://downloads.intelligentplant.com/downloads/BigData.BackupUtility.zip](http://downloads.intelligentplant.com/downloads/BigData.BackupUtility.zip)
+It is available for download from: [https://downloads.intelligentplant.com/downloads/BigData.BackupUtility.zip](https://downloads.intelligentplant.com/downloads/BigData.BackupUtility.zip)
 
 2.2 Take a database Snapshot
 
