@@ -5,6 +5,29 @@ permalink: /general/apps/gestalttrend/releasenotes.html
 ---
 This page describes the release notes for [Gestalt Trend](https://appstore.intelligentplant.com/Home/AppProfile?appId=3fbd54df59964243aa9cf4b3f04823f6).
 
+### 2026-11-Minor
+Release date: 2026-11-27
+##### New Features
+
+- Added a pop up to show tags and their latest value.
+ <img src="/wiki/assets/media/general/apps/gestalttrend/Latest value menu.png" alt="Latest Value Menu" style="max-width:400px" loading="lazy" />
+ <img src="/wiki/assets/media/general/apps/gestalttrend/Latest value modal.png" alt="Latest Value Modal" style="max-width:400px" loading="lazy" />
+
+
+##### Modifications and Improvements
+- Added more flexibility to tag markers displays.
+-  <img src="/wiki/assets/media/general/apps/gestalttrend/Markers options.png" alt="Markers Options" style="max-width:400px" loading="lazy" />
+
+- Renamed "Live Updates" to "Refresh values" as it better reflects the behaviour of the tool. 
+- Reworked how Trend displays incoming values when Refresh values is ON.
+In this screenshot it can be seen the new way of displaying the received values.
+ - A - No new value since Live Update was turned ON: If the marker is pointing at the end of the Trend, and still showing the square marker, there hasn't been a new value since the "Refresh Values" was turned ON.
+ - B - Gap until the complete interval completes: While getting new values, calculating the interval will resolve in a erroneous value, as there are still missing values for this period, so the trend will stay blank until the interval completes and can calculate the proper values.
+ - C - Latest received value: The newly received values are shown as a dot on the right side of the screen. The value of these dots can be seen on the Latest Values pop up or in the Metrics Menu table.
+ <img src="/wiki/assets/media/general/apps/gestalttrend/Refresh values.jpg" alt="Refresh values example" style="max-width:400px" loading="lazy" />
+
+
+
 ### 2026-10-Minor
 
 ##### New Features
