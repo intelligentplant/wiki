@@ -95,12 +95,49 @@ writeValue("[Datasource Name]", "[Tag Name]", "[Value To Write]", "[Note]", "[Su
 
 #### Query Tag Data
 
-Retrieves the values for the specified tag and time.
+Retrieves the tag data for the specified tag and time.
+The returned object is the complete information of the tag (if available):
+```
+{
+// Limits
+  NOLLower 
+  NOLUpper
+  SDLLower
+  SDLUpper
+  SOLLower
+  SOLUpper
+  annotations = []  // List of annotations for the period requested
+  dataSourceId  =   //internal id to point to the data source
+  dataSourceName // Data source name
+  endTime // End time of requested period
+  interp // Flag to allow/restrict interpolation
+  isDigital // Flag showing if the tag is digital
+  maximumDataPosition // Where in the list is the max value
+  maximumDataValue // Max value of the requested period
+  meanDataValue // Mean value of the requested period
+  medianDataValue // Median value of the requested period
+  minimumDataPosition // Position in the list of the minimum value for the requested period
+  minimumDataValue // Min value of the requested period
+  originalQuery = []  // request as [start time, end time, interval, data function]
+  standardDeviationDataValue // standar deviation of the requested period
+  startTime //Start time of the requested period
+  states //
+  status // 
+  statusValues = [] // List of the status of each value of the requested period (Good, Bad, Uncertain)
+  tagData = [] // tag values of the requested period
+  tagDataTime  = [] // List of timestamp for each value of the requested period
+  tagFriendlyName // The ta friendly name
+  tagId // Internal ID to reference the requested tag
+  tagName // The name of the tag
+  tagStringValues = [] // List of the string values of the requested period
+  tagUnits // Unit of the tag
+}
+```
 
 ###### Method Signatures
 
 ```
-queryTagValues("[Datasource Name]", "[Tag Name]", "[Start Time]", "[End Time]", "[Interval]", "[Data Function]", "[Success Callback]", "[Fail Callback]", "[Show Notification]")
+queryTagData("[Datasource Name]", "[Tag Name]", "[Start Time]", "[End Time]", "[Interval]", "[Data Function]", "[Success Callback]", "[Fail Callback]", "[Show Notification]")
 ```
 
 <table class="wiki-table">
