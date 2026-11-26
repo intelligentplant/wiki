@@ -7,7 +7,7 @@ Bring your plant operations to life with visualisations created in PnID and prov
 
 [First Time User Access to Gestalt PnID and Trend](https://appstore.intelligentplant.com/NuGet/downloads/Gestalt/First%20Time%20User%20Access%20to%20PnID%20and%20Trend-Rev-0.2.pdf)
 
-[User Guide](https://appstore.intelligentplant.com/NuGet/downloads/Gestalt/PnID%20-%20User%20Guide%20-%20Rev%202.5.pdf)
+[User Guide](https://gestalt.intelligentplant.com/PnID/PnID/Guide)
 
 [Tips and Tricks](https://appstore.intelligentplant.com/NuGet/downloads/Gestalt/PnID%20-%20Tips%20and%20Tricks-Rev-0.4.pdf)
 
