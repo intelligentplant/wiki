@@ -11,10 +11,43 @@ We have released a new command-line tool to simplify App Store Connect administr
 
 You can download the tool from https://downloads.intelligentplant.com/data-core-update-manager
 
-### 2026-10
+### 2026-11
+Release date: 2026-11-27 <br />
+Version: 4.1.213
 
-Release date: 2026-10-30 <br />
-Version: <em>Details pending</em>
+This release brings the following changes:<br />
+
+Alarm Analysis Event Sink:
+- <code>[Bug Fix]</code>: Import script runtime errors are now written to the Import Errors index and respect the Transform Error Tolerance setting, instead of rejecting the whole batch.
+
+Alarm Analysis Driver:
+- <code>[Task]</code>: remove redundant UserConfigIndexSetting
+
+Data Streams
+- <code>[Bug Fix]</code>: Fixes a bug where a data streams tag mappings would be duplicated. NB: this bug did not cause unnecessary data to be stored.
+
+OPC Classic (Alarms and Events)
+- <code>[Enhancement]</code>: When the AE Idle Timeout is exceeded, the driver now establishes a replacement connection before closing the existing one, so that events are not missed during the switch-over.
+- <code>[Task]</code>: Under the hood improvements to reduce unnecessary queries to the OPC server
+
+
+TCP Event Sink
+- <code>[Bug Fix]</code>: Fixes a bug where the AckTimeout setting was ignored
+
+Printer Event Stream
+- <code>[Bug Fix]</code>: Update Intelligent Response handling to stop the driver from splitting valid events when an IntelligentResponse character is found.
+
+Out-Of-Process runner:
+- <code>[Bug Fix]</code>: Disables bInheritHandles to prevent an out-of-process driver from blocking ports used by other drivers 
+
+Text File Parser Event Source:
+- Fixes the following bugs:
+  - <code>[Bug Fix]</code>: The Skip Rows setting did not skip the leading rows of a file.
+  - <code>[Bug Fix]</code>: A file matching more than one Filename Filter (for example `*.csv,*.*`) was picked up more than once.
+  - <code>[Bug Fix]</code>: A file was archived even if the event source stopped before all of its events had been sent.
+  - <code>[Bug Fix]</code>: The Retry Limit was not applied to every import error, so a failing file was not always moved to the Reject Folder.
+- <code>[Enhancement]</code>: If a file cannot be moved to the Archive Folder or Reject Folder, the move is now retried until it succeeds, and the "File Archive" health status reports that import is blocked.
+- <code>[Enhancement]</code>: After an error checking the Import Folder for files, the event source now waits 5 seconds before checking again.
 
 ### 2026-08
 Release date: 2026-08-28 <br />
