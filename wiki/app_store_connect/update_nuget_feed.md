@@ -1,6 +1,7 @@
 ---
 layout: wiki
 title: "App Store Connect: Update NuGet Feed"
+nav: app_store_connect
 permalink: /app_store_connect/update_nuget_feed.html
 ---
 

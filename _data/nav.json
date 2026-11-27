@@ -180,6 +180,10 @@
         "href": "/app_store_connect/custom_data_connections.html"
       },
       {
+        "title": "App Store Connect: Update NuGet Feed",
+        "href": "/app_store_connect/update_nuget_feed.html"
+      },
+      {
         "title": "Authorize Apps to connect to Data Sources",
         "href": "/app_store_connect/authorize_apps_to_connect_to_your_data.html"
       },
@@ -251,6 +255,7 @@
       "/app_store_connect/back_up_and_restore.html",
       "/app_store_connect/connection_security.html",
       "/app_store_connect/custom_data_connections.html",
+      "/app_store_connect/update_nuget_feed.html",
       "/app_store_connect/authorize_apps_to_connect_to_your_data.html",
       "/app_store_connect/data_core_administrator_privileges.html",
       "/app_store_connect/honeywell_uniformance_phd.html",
