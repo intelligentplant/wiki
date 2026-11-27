@@ -15,7 +15,7 @@ Release date: 2026-11-27
 
 
 ##### Modifications and Improvements
-- Fixed time zones not loading correclty from browser.
+- Fixed time zones not loading correctly from browser.
 - Added more flexibility to tag markers displays.
  <img src="/wiki/assets/media/general/apps/gestalttrend/Markers options.png" alt="Markers Options" style="max-width:400px" loading="lazy" />
 
